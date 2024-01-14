@@ -232,7 +232,7 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_program_author) =
 				L"Д. М. Чамкин (Transistor, MathWindow)";
 			main_vocabulary.at(language_input).at(string_program_description) =
-				string_work::string_union_multy(
+				string_work::string_union(
 					L"Автор: ",
 					main_vocabulary.at(language_input).at(string_program_author),
 					L";\nВерсия: ",
@@ -374,7 +374,7 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_program_author) =
 				L"D. M. Chamkin (Transistor, MathWindow)";
 			main_vocabulary.at(language_input).at(string_program_description) =
-				string_work::string_union_multy(
+				string_work::string_union(
 					L"Author: ",
 					main_vocabulary.at(language_input).at(string_program_author),
 					L";\nVersion: ",

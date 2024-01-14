@@ -11,7 +11,7 @@
 #define class_window_header
 
 LPCWSTR main_window_name = 
-	string_work::string_union_multy(
+	string_work::string_union(
 		translate::translating_string(
 			translate::string_program_name
 		), 
