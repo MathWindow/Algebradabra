@@ -98,6 +98,12 @@
     <ClInclude Include="UpdatedMenu.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
+    <ClInclude Include="HistoryOfError.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Algebra.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Algebradabra.rc">

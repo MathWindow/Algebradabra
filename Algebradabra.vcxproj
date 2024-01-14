@@ -130,6 +130,7 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algebra.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ClassWindow.h" />
     <ClInclude Include="Combobox.h" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Edit.h" />
     <ClInclude Include="ExitDialog.h" />
     <ClInclude Include="FileDialog.h" />
+    <ClInclude Include="HistoryOfError.h" />
     <ClInclude Include="Listbox.h" />
     <ClInclude Include="Simbols.h" />
     <ClInclude Include="Toolbar.h" />
