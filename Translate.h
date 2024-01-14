@@ -3,7 +3,6 @@
 #include <string>
 #include "Counter.h"
 #include "VersionInfo.h"
-#include "ShortTypes.h"
 #include <vector>
 #include <winnt.h>
 
@@ -11,7 +10,7 @@
 #define translate_header
 
 namespace translate {
-	using language_index = u_char_;
+	using language_index = size_t;
 	using c_language_index = const language_index;
 
 	c_language_index language_per_vocabulary = 2;
@@ -25,14 +24,16 @@ namespace translate {
 	private:
 		std::array<std::vector<WCHAR>, language_per_vocabulary> fixed{};
 	public:
-		std::wstring show() {
-			return language.at(language_using);
-		}
+		std::array<std::wstring, language_per_vocabulary> language_variant{};
 
+		std::wstring show() {
+			return language_variant.at(language_using);
+		}
+		
 		void fix() {
 			if (fixed.at(language_using).size() == 0) {
 				for (size_t index_language = 0; index_language < language_per_vocabulary; index_language++) {
-					for (size_t index = 0; index < language.at(index_language).size(); index++) {
+					for (size_t index = 0; index < language_variant.at(index_language).size(); index++) {
 						fixed.at(index_language).push_back(*(show().c_str() + index));
 					}
 
@@ -41,26 +42,19 @@ namespace translate {
 			}
 		}
 
-		std::array<std::wstring, language_per_vocabulary> language{};
-
-		LPCWSTR show_c_style() {
-			if (fixed.at(language_using).size() == 0) {
-				return show().c_str();
-			}
-			else {
-				return fixed.at(language_using).data();
-			}
+		LPCWSTR show_fixed() {
+			return fixed.at(language_using).data();
 		}
 	};
-
+	
 	string_ set_string(
 		std::wstring string_English,
 		std::wstring string_Russian
 	) {
 		string_ string_bringer;
 
-		string_bringer.language.at(language_English) = string_English;
-		string_bringer.language.at(language_Russian) = string_Russian;
+		string_bringer.language_variant.at(language_English) = string_English;
+		string_bringer.language_variant.at(language_Russian) = string_Russian;
 
 		return string_bringer;
 	}
@@ -101,7 +95,7 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 	);
 
 	string_ string__program = set_string(L"Program", L"Программа");
-	string_ string_algebraic_book = set_string(L"Book .alg", L"Книга .alg");
+	string_ string__book_alg = set_string(L"Book .alg", L"Книга .alg");
 	string_ string__create = set_string(L"Create", L"Создать");
 	string_ string__open = set_string(L"Open", L"Открыть");
 	string_ string__save = set_string(L"Save", L"Сохранить");
@@ -136,12 +130,12 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 	string_ string__technical_windows_check = set_string(L"Technical window's check", L"Технический обзор окон");
 	string_ string__main_window = set_string(L"Main window", L"Главное окно");
 	string_ string_title_main_window = set_string(
-		string_program_name.language.at(language_English)
+		string_program_name.language_variant.at(language_English)
 		+ L" | "
-		+ string__main_window.language.at(language_English),
-		string_program_name.language.at(language_Russian)
+		+ string__main_window.language_variant.at(language_English),
+		string_program_name.language_variant.at(language_Russian)
 		+ L" | "
-		+ string__main_window.language.at(language_Russian)
+		+ string__main_window.language_variant.at(language_Russian)
 		);
 
 	string_ string_asking_for_save_before_exit = set_string(
@@ -172,6 +166,7 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 		L"Testing dialog box", 
 		L"Тестовое диалоговое окно"
 	);
+
 	string_ string_program_author = set_string(
 		L"D. M. Chamkin (Transistor, MathWindow)", 
 		L"Д. М. Чамкин (Transistor, MathWindow)"
@@ -179,12 +174,12 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 
 	string_ string_program_description = set_string(
 		L"Author: "
-		+ string_program_author.language.at(language_English)
+		+ string_program_author.language_variant.at(language_English)
 		+ L";\nVersion:"
 		+ program_version
 		+ L".",
 		L"Автор: "
-		+ string_program_author.language.at(language_Russian)
+		+ string_program_author.language_variant.at(language_Russian)
 		+ L";\nВерсия: "
 		+ program_version
 		+ L"."

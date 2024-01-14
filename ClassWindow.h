@@ -34,8 +34,8 @@ bool register_class_name(
 	if (!RegisterClassW(class_window_input)) {
 		MessageBoxW(
 			NULL, 
-			details.show_c_style(),
-			translate::string_program_name.show_c_style(),
+			details.show_fixed(),
+			translate::string_program_name.show_fixed(),
 			MB_ICONERROR
 		);
 

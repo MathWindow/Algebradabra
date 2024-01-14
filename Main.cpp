@@ -45,7 +45,7 @@ int WINAPI wWinMain(
 		HWND h_window_main = CreateWindowExW(
 			0UL,
 			main_window_class_name,
-			translate::string_title_main_window.show_c_style(),
+			translate::string_title_main_window.show_fixed(),
 			WS_OVERLAPPEDWINDOW,
 			main_window_x,
 			main_window_y,

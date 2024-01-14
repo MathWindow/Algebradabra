@@ -19,7 +19,7 @@ BOOL _stdcall translating_element_menu(
 	UINT_PTR numberCommand, 
 	translate::string_ title
 ) {
-	return AppendMenuW(h_menu, menu_flag, numberCommand, title.show_c_style());
+	return AppendMenuW(h_menu, menu_flag, numberCommand, title.show_fixed());
 }
 
 // Третий этаж
@@ -73,7 +73,7 @@ bool create_main_menu(HWND h_window) {
 
 	// Второй этаж
 
-	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)algebraic_book_menu, translate::string_algebraic_book);
+	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)algebraic_book_menu, translate::string__book_alg);
 	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)add_list_element_menu, translate::string__page_add);
 	line_element_menu(program_menu);
 	translating_element_menu(program_menu, MF_STRING, command_exit, translate::string__exit);
