@@ -4,6 +4,7 @@
 #include "HistoryOfError.h"
 #include "Translate.h"
 #include "WindowXY.h"
+#include "Naming.h"
 
 #ifndef create_book_dialog_header
 #define create_book_dialog_header
