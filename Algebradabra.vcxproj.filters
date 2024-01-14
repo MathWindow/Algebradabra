@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\FileWork">
+      <UniqueIdentifier>{71649fa4-4815-497b-a82f-ef5381eb3d9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window%27s elements and commands">
+      <UniqueIdentifier>{355e994c-ec92-4447-b3f5-858c2897b0a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window%27s elements and commands\Widgets">
+      <UniqueIdentifier>{b247c73d-834e-491d-97e7-49ba39996f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window%27s elements and commands\Main tools">
+      <UniqueIdentifier>{7e680716-bbf0-4166-8f50-f084adde3be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Dialog window">
+      <UniqueIdentifier>{3133b13f-8350-4e01-b0a3-f143ba4962f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Текстовые документы">
+      <UniqueIdentifier>{a2dfe397-efb7-4e99-9092-08c8d767cb17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Naming.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Translate.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="LockFile.h">
+      <Filter>Файлы заголовков\FileWork</Filter>
+    </ClInclude>
+    <ClInclude Include="FileWork.h">
+      <Filter>Файлы заголовков\FileWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Compression.h">
+      <Filter>Файлы заголовков\FileWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Widgets.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolbar.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBox.h">
+      <Filter>Файлы заголовков\Dialog window</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassWindow.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="FileDialog.h">
+      <Filter>Файлы заголовков\Dialog window</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitDialog.h">
+      <Filter>Файлы заголовков\Dialog window</Filter>
+    </ClInclude>
+    <ClInclude Include="Combobox.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Listbox.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Simbols.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Edit.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Algebradabra.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="POINTER.cur">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Текстовый документ.txt">
+      <Filter>Текстовые документы</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
