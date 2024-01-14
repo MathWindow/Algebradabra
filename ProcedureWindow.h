@@ -47,30 +47,30 @@ LRESULT CALLBACK main_procedure(
 		else if (w_param == command_translate_Russian) {
 			MessageBoxW(h_window,
 				L"„тобы перевод вступил в силу, программу нужно закрыть и заново открыть.",
-				translate::string(translate::string_program_name).c_str(),
+				translate::string(translate::index_program_name).c_str(),
 				MB_ICONINFORMATION
 			);
 		}
 		else if (w_param == command_translate_English) {
 			MessageBoxW(h_window,
 				L"User should close and open again to translate this program.",
-				translate::string(translate::string_program_name).c_str(),
+				translate::string(translate::index_program_name).c_str(),
 				MB_ICONINFORMATION
 			);
 		}
 		else if (w_param == command_whats_new) {
 			MessageBoxW(
 				h_window,
-				translate::string(translate::string_thats_new).c_str(),
-				translate::string(translate::string_program_name).c_str(),
+				translate::string(translate::index_thats_new).c_str(),
+				translate::string(translate::index_program_name).c_str(),
 				MB_ICONINFORMATION
 			);
 		}
 		else if (w_param == command_about) {
 			MessageBoxW(
 				h_window,
-				translate::string(translate::string_program_description).c_str(),
-				translate::string(translate::string_program_name).c_str(),
+				translate::string(translate::index_program_description).c_str(),
+				translate::string(translate::index_program_name).c_str(),
 				MB_ICONINFORMATION
 			);
 		}
@@ -95,8 +95,8 @@ LRESULT CALLBACK main_procedure(
 		else if (w_param == command_testing_dialog_window) {
 			MessageBoxW(
 				h_window, 
-				translate::string(translate::string_open_book).c_str(), 
-				translate::string(translate::string_program_name).c_str(), 
+				translate::string(translate::index_open_book).c_str(), 
+				translate::string(translate::index_program_name).c_str(), 
 				NULL
 			);
 		}

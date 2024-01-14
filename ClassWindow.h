@@ -8,7 +8,7 @@
 
 LPCWSTR main_window_class_name = L"Main window class";
 
-WNDCLASS main_class_example(
+WNDCLASSW main_class_example(
 	int background_color,
 	HINSTANCE h_instance,
 	int icon,
@@ -16,7 +16,7 @@ WNDCLASS main_class_example(
 	LPCWSTR class_string_name,
 	WNDPROC main_procedure
 ) {
-	WNDCLASS class_bringer = { 0 };
+	WNDCLASSW class_bringer = { 0 };
 
 	class_bringer.hbrBackground = (HBRUSH)background_color;
 	class_bringer.hInstance = h_instance;
@@ -29,14 +29,14 @@ WNDCLASS main_class_example(
 }
 
 bool register_class_name(
-	WNDCLASS* class_window_input,
-	translate::string_param details
+	WNDCLASSW* class_window_input,
+	translate::string_index details
 ) {
 	if (!RegisterClassW(class_window_input)) {
 		MessageBoxW(
 			NULL, 
 			translate::string(details).c_str(), 
-			translate::string(translate::string_program_name).c_str(), 
+			translate::string(translate::index_program_name).c_str(),
 			MB_ICONERROR
 		);
 
