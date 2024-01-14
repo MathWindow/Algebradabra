@@ -389,14 +389,11 @@ namespace translate {
 	std::wstring string(string_param string_input) {
 		set_all_vocabulary();
 
-		std::wstring* string_checking =
-			&(main_vocabulary.at(language_using).at(string_input));
-
-		if ((*string_checking).size() == 0) {
+		if (main_vocabulary.at(language_using).at(string_input).size() == 0) {
 			return simbol_plus_minus;
 		}
 
-		return *string_checking;
+		return main_vocabulary.at(language_using).at(string_input);
 	}
 }
 
