@@ -9,8 +9,8 @@
 #include "Commands.h"
 #include "ExitDialog.h"
 
-#ifndef procedure_window_header
-#define procedure_window_header
+#ifndef macro_header_procedure_window
+#define macro_header_procedure_window
 
 LRESULT CALLBACK main_procedure(
 	HWND h_window, 
@@ -30,6 +30,7 @@ LRESULT CALLBACK main_procedure(
 		switch (w_param) {
 		case NULL:
 			// It must be empty...
+			// Должно быть пусто...
 			break;
 		default:
 

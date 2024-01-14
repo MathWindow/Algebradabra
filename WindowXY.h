@@ -1,8 +1,8 @@
 #pragma once
 #include <winnt.h>
 
-#ifndef window_xy_header
-#define window_xy_header
+#ifndef macro_header_window_xy
+#define macro_header_window_xy
 
 LONG main_window_x = 0;
 LONG main_window_y = 0;

@@ -18,7 +18,7 @@ int WINAPI wWinMain(
 	WNDCLASSW main_class = main_class_example(
 		COLOR_WINDOW,
 		h_instance,
-		main_icon,
+		macro_icon_main_window,
 		IDC_ARROW,
 		main_window_class_name,
 		main_procedure
@@ -32,8 +32,6 @@ int WINAPI wWinMain(
 
 	if (main_class_is_registered) {
 		MSG main_message = { 0 };
-
-		get_monitor_information();
 
 		set_window_center_position(
 			main_window_width,
@@ -63,10 +61,18 @@ int WINAPI wWinMain(
 				number_command_show
 			);
 
-			while (GetMessage(&main_message, NULL, NULL, NULL)) {
+			while (GetMessageW(&main_message, NULL, NULL, NULL)) {
 				TranslateMessage(&main_message);
-				DispatchMessage(&main_message);
+				DispatchMessageW(&main_message);
 			}
+		}
+		else {
+			MessageBoxW(
+				NULL,
+				translate::string_cannot_create_main_window.c_style(),
+				translate::string_program_name.c_style(),
+				MB_ICONERROR
+			);
 		}
 	}
 

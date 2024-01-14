@@ -3,8 +3,8 @@
 #include <commdlg.h>
 #include <array>
 
-#ifndef color_dialog_header
-#define color_dialog_header
+#ifndef macro_header_color_dialog
+#define macro_header_color_dialog
 
 CHOOSECOLORW choose_color_1;
 static COLORREF rgb_current_1 = RGB(200, 200, 200);

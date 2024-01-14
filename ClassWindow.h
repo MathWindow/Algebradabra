@@ -2,8 +2,8 @@
 #include <windows.h>
 #include "Translate.h"
 
-#ifndef class_window_header
-#define class_window_header
+#ifndef macro_header_class_window
+#define macro_header_class_window
 
 LPCWSTR main_window_class_name = L"Main window class";
 

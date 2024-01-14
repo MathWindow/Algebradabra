@@ -1,8 +1,8 @@
 #pragma once
 #include <windows.h>
 
-#ifndef widgets_header
-#define widgets_header
+#ifndef macro_header_widgets
+#define macro_header_widgets
 
 LONG x_out = 10;
 LONG y_out = x_out;

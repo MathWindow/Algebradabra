@@ -1,8 +1,8 @@
 #pragma once
 #include "ShortTypes.h"
 
-#ifndef counter_header
-#define counter_header
+#ifndef macro_header_counter
+#define macro_header_counter
 
 cu_char_ continue_counting = 255;
 

@@ -5,8 +5,8 @@
 #include "ShortTypes.h"
 #include <cstring>
 
-#ifndef file_dialog_header
-#define file_dialog_header
+#ifndef macro_header_file_dialog
+#define macro_header_file_dialog
 
 cu_char_ string_path_max_size = 200;
 WCHAR string_path[string_path_max_size]{};
@@ -16,12 +16,10 @@ class open_file_name_w_x {
 public:
 	OPENFILENAMEW save;
 	OPENFILENAMEW open;
-	OPENFILENAMEW both_;
 
 	void zero_memory() {
 		memset(&save, 0, sizeof(save));
 		memset(&open, 0, sizeof(open));
-		memset(&both_, 0, sizeof(both_));
 	}
 
 	BOOL __stdcall open_file_dialog() {
@@ -32,17 +30,9 @@ public:
 		return GetSaveFileNameW(&save);
 	}
 
-	void continue_planning() {
-		if (both_.hwndOwner != NULL) {
-			open.hwndOwner = both_.hwndOwner;
-			save.hwndOwner = both_.hwndOwner;
-		}
-	}
-
 	void both_hwndOwner(HWND h_window) {
 		open.hwndOwner = h_window;
 		save.hwndOwner = h_window;
-		both_.hwndOwner = h_window;
 	}
 };
 

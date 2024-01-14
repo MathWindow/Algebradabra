@@ -1,12 +1,12 @@
 #pragma once
 #include <string>
 
-#ifndef version_info_header
-#define version_info_header
+#ifndef macro_header_version_info
+#define macro_header_version_info
 
 std::wstring program_version_family = L"May";
 std::wstring program_version_above = L"v1.1";
-std::wstring program_version_publication = L"66build";
+std::wstring program_version_publication = L"67build";
 
 std::wstring program_version =
 	program_version_family

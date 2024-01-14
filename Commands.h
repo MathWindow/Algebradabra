@@ -2,8 +2,8 @@
 #include "Counter.h"
 #include <minwindef.h>
 
-#ifndef commands_header
-#define commands_header
+#ifndef macro_header_commands
+#define macro_header_commands
 
 WPARAM command_exit = put_index_counter<WPARAM>(1);
 

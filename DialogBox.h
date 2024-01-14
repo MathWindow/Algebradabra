@@ -2,8 +2,8 @@
 #include <windows.h>
 #include "Monitor.h"
 
-#ifndef dialog_box_header
-#define dialog_box_header
+#ifndef macro_header_dialog_box
+#define macro_header_dialog_box
 
 void call_developers_dialog_box (
 	LPCWSTR class_name,
@@ -15,8 +15,6 @@ void call_developers_dialog_box (
 	LONG height,
 	HWND h_window
 ) {
-	get_monitor_information();
-
 	if ((dword_style & WS_CHILD) != WS_CHILD) {
 		set_window_center_position(
 			width, height,

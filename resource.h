@@ -2,8 +2,7 @@
 // Включаемый файл, созданный в Microsoft Visual C++.
 // Используется Algebradabra.rc
 //
-#define main_icon                       7
-#define IDI_ICON1                       101
+#define macro_icon_main_window          7
 
 // Next default values for new objects
 // 

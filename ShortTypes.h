@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef short_types_header
-#define short_types_header
+#ifndef macro_header_short_types
+#define macro_header_short_types
 
 using long_2_ = long long;
 

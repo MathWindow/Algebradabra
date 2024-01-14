@@ -2,8 +2,8 @@
 #include <windows.h>
 #include "Translate.h"
 
-#ifndef exit_dialog_header
-#define exit_dialog_header
+#ifndef macro_header_exit_dialog
+#define macro_header_exit_dialog
 
 bool ask_wish_save(HWND h_window) {
 	int answer_information = MessageBoxW(

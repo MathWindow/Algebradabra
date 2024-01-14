@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 
-#ifndef symbols_header
-#define symbols_header
+#ifndef macro_header_symbols
+#define macro_header_symbols
 
 std::wstring symbol_paragraph = L"§";
 std::wstring symbol_degree = L"°";
