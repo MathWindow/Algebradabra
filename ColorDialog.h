@@ -1,6 +1,5 @@
 #pragma once
 #include <windows.h>
-#include <array>
 #include <commdlg.h>
 using namespace std;
 
