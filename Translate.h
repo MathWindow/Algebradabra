@@ -72,6 +72,7 @@ c_string_param string_cannot_create_menu_element = put_index_running(false);
 c_string_param string_cannot_create_class_name = put_index_running(false);
 c_string_param string_cannot_create_class_main = put_index_running(false);
 c_string_param string_cannot_create_class_error_list = put_index_running(false);
+c_string_param string_cannot_create_class_create_algebraic_book = put_index_running(false);
 c_string_param string_splitting_into_zero = put_index_running(false);
 c_string_param string_root_of_negative = put_index_running(false);
 
@@ -191,6 +192,12 @@ void set_English_vocabulary() {
 		L"View";
 	main_vocabulary.at(language_English).at(string_help_settings) =
 		L"Help/Settings";
+	main_vocabulary.at(language_English).at(string_cannot_create_class_main) =
+		L"Cannot create main class";
+	main_vocabulary.at(language_English).at(string_cannot_create_class_error_list) =
+		L"Cannot create class of error's list";
+	main_vocabulary.at(language_English).at(string_cannot_create_class_create_algebraic_book) =
+		L"Cannot create class of creating algebraic book";
 }
 
 void set_all_vocabulary() {

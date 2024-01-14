@@ -93,7 +93,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		else if (w_param == command_what_new) {
 			MessageBoxW(
 				h_window, 
-				L"Ќичего нового не по€вилось, только небольшие технические изменени€.", 
+				L"ѕеределка иконки.", 
 				program_name, 
 				MB_ICONINFORMATION
 			);

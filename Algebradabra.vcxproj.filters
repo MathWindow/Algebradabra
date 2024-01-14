@@ -16,9 +16,6 @@
     <Filter Include="Файлы заголовков\FileWork">
       <UniqueIdentifier>{71649fa4-4815-497b-a82f-ef5381eb3d9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Dialog window">
-      <UniqueIdentifier>{3133b13f-8350-4e01-b0a3-f143ba4962f9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Scince headers">
       <UniqueIdentifier>{d9f26320-0df1-420a-affe-a626a74cb929}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,9 @@
     </Filter>
     <Filter Include="Файлы заголовков\Window &amp; monitor\Paints">
       <UniqueIdentifier>{328b7afe-9a1e-46f1-8b7e-bdb32a81341d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window &amp; monitor\Dialog window">
+      <UniqueIdentifier>{3133b13f-8350-4e01-b0a3-f143ba4962f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,10 +69,10 @@
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
     <ClInclude Include="FileDialog.h">
-      <Filter>Файлы заголовков\Dialog window</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
     <ClInclude Include="ExitDialog.h">
-      <Filter>Файлы заголовков\Dialog window</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
     <ClInclude Include="Combobox.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
@@ -90,10 +90,10 @@
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
     <ClInclude Include="DialogWindow.h">
-      <Filter>Файлы заголовков\Dialog window</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
     <ClInclude Include="CreateBookDialog.h">
-      <Filter>Файлы заголовков\Dialog window</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
     <ClInclude Include="Algebra.h">
       <Filter>Файлы заголовков\Scince headers\Math</Filter>
@@ -125,7 +125,7 @@
     <ClInclude Include="AssociationType.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
-    <ClInclude Include="MathsAnalizeClassic.h">
+    <ClInclude Include="MathsAnalize.h">
       <Filter>Файлы заголовков\Scince headers\Math</Filter>
     </ClInclude>
     <ClInclude Include="WindowXY.h">
@@ -141,7 +141,7 @@
       <Filter>Файлы заголовков\Window &amp; monitor</Filter>
     </ClInclude>
     <ClInclude Include="ColorDialog.h">
-      <Filter>Файлы заголовков\Dialog window</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

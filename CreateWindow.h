@@ -6,6 +6,7 @@
 #include "Monitor.h"
 #include "ShortTypes.h"
 #include "WindowXY.h"
+#include "Translate.h"
 using namespace std;
 
 #ifndef create_window_header
@@ -64,7 +65,7 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 
 	register_class_name(
 		&error_list_class, 
-		string_cannot_create_class_main,
+		string_cannot_create_class_error_list,
 		__FUNCTIONW__
 	);
 

@@ -147,7 +147,7 @@
     <ClInclude Include="Geometry.h" />
     <ClInclude Include="HistoryOfError.h" />
     <ClInclude Include="Listbox.h" />
-    <ClInclude Include="MathsAnalizeClassic.h" />
+    <ClInclude Include="MathsAnalize.h" />
     <ClInclude Include="Monitor.h" />
     <ClInclude Include="ShortTypes.h" />
     <ClInclude Include="Simbols.h" />

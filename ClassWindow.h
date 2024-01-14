@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "HistoryOfError.h"
+#include "Naming.h"
 
 #define class_example_arguments int background_color, HINSTANCE h_instance, int icon, LPCWSTR cursor, LPCWSTR class_string_name, WNDPROC main_procedure
 #define procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param
