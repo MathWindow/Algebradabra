@@ -3,23 +3,14 @@
 #include "resource.h"
 #include "ClassWindow.h"
 #include "Monitor.h"
-#include "ShortTypes.h"
 #include "WindowXY.h"
 #include "Translate.h"
 using namespace std;
 
+// 1
+
 #ifndef create_window_header
 #define create_window_header
-
-/*
-
-error_list_window_width = 
-	x_out * 3 + width_listbox_default + width_static_error_list + 10;
-
-error_list_window_height = 
-	y_out * 2 + height_static_error_list + 20;
-
-*/
 
 LRESULT CALLBACK main_procedure(procedure_arguments);
 LRESULT CALLBACK error_list_procedure(procedure_arguments);

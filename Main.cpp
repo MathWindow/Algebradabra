@@ -9,13 +9,15 @@
 #include "FileDialog.h"
 #include "ColorDialog.h"
 #include "Translate.h"
-#include <windowsx.h>
-#include <commdlg.h>
 #include "StringWork.h"
 #include "WindowXY.h"
 #include "ClassWindow.h"
+#include <windowsx.h>
+#include <commdlg.h>
 #include <WinUser.h>
 #include <minwindef.h>
+
+// 1
 
 LRESULT CALLBACK main_procedure(procedure_arguments) {
 	switch (message) {

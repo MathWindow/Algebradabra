@@ -6,6 +6,8 @@
 #include "AssociationType.h"
 #include "StringWork.h"
 
+// 1
+
 #ifndef class_window_header
 #define class_window_header
 

@@ -2,7 +2,8 @@
 #include <windows.h>
 #include "Commands.h"
 #include "Translate.h"
-#include "HistoryOfError.h"
+
+// 1
 
 #ifndef menu_header
 #define menu_header
