@@ -30,7 +30,7 @@ namespace translate {
 		}
 
 		void fix() {
-			if (fixed.size() == 0) {
+			if (fixed.at(language_using).size() == 0) {
 				for (size_t index_language = 0; index_language < language_per_vocabulary; index_language++) {
 					for (size_t index = 0; index < language.at(index_language).size(); index++) {
 						fixed.at(index_language).push_back(*(show().c_str() + index));
@@ -44,7 +44,7 @@ namespace translate {
 		std::array<std::wstring, language_per_vocabulary> language{};
 
 		LPCWSTR show_c_style() {
-			if (fixed.size() == 0) {
+			if (fixed.at(language_using).size() == 0) {
 				return show().c_str();
 			}
 			else {
