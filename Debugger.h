@@ -5,6 +5,7 @@
 #include <minwinbase.h>
 #include "ShortTypes.h"
 #include "Counter.h"
+#include <sysinfoapi.h>
 
 #ifndef macro_header_debugger
 #define macro_header_debugger
@@ -47,16 +48,16 @@ class block_information {
 
 	std::wstring name = L"";
 
-	void* address = nullptr;
+	void* variable_address = nullptr;
 };
 
 class event_information {
 public:
 	event_type_index type = event_type_message;
-	bool critical = false;
-	bool dangerous = false;
-	bool logical = false;
-	bool algebraic = false;
+	bool is_critical = false;
+	bool is_dangerous = false;
+	bool is_logical = false;
+	bool is_algebraic = false;
 
 	size_t title_index = 0;
 	size_t details_index = 0;
@@ -70,5 +71,36 @@ public:
 };
 
 std::vector<event_information> history_of_event{};
+
+void write_event(
+	event_type_index type,
+	bool is_critical,
+	bool is_dangerous,
+	bool is_logical,
+	bool is_algebraic,
+	size_t title_index,
+	size_t details_index,
+	size_t reason_index,
+	size_t advance_index,
+	std::vector<block_information> block_array
+) {
+	history_of_event.push_back(
+		{
+			type,
+			is_critical,
+			is_dangerous,
+			is_logical,
+			is_algebraic,
+			title_index,
+			details_index,
+			reason_index,
+			advance_index,
+			block_array
+		}
+	);
+
+	GetSystemTime(&history_of_event.back().time_system); 
+	GetLocalTime(&history_of_event.back().time_local); 
+}
 
 #endif

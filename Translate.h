@@ -269,6 +269,11 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 		L"Параметр программы"
 	);
 
+	string string__about_program = set_string(
+		L"About program",
+		L"О программе"
+	);
+
 	string string__language = set_string(
 		L"Language", 
 		L"Язык"
