@@ -60,6 +60,8 @@ void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.save.Flags = OFN_PATHMUSTEXIST;
 
 	ofn_algebraic_book.both.hwndOwner = h_window;
+
+	ofn_algebraic_book.continue_planning();
 }
 
 #endif
