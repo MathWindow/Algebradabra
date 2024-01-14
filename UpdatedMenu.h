@@ -89,7 +89,7 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_chapter_parameter);
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_page_parameter);
 	line_element_menu(help_settings_menu);
-	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_program_parameter);
+	translating_element_menu(help_settings_menu, MF_STRING, command_about, string_program_parameter);
 	translating_element_menu(help_settings_menu, MF_STRING, command_error_list, string_error_list);
 	translating_element_menu(help_settings_menu, MF_POPUP, (UINT_PTR)language_menu, string_language);
 
@@ -100,7 +100,7 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)view_menu, string_view_);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)help_settings_menu, string_help_settings);
 
-	translating_element_menu(root_menu, MF_STRING, NULL, string_what_new);
+	translating_element_menu(root_menu, MF_STRING, command_what_new, string_what_new);
 
 	SetMenu(h_window, root_menu);
 

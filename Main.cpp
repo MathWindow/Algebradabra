@@ -54,16 +54,18 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 			);
 			break;
 		case command_error_list:
-			call_dialog_window(
-				error_list_window_class_name,
-				L"Список ошибок", 
-				WS_VISIBLE | WS_OVERLAPPEDWINDOW, 
-				&error_list_x_position, 
-				&error_list_y_position, 
-				error_list_window_width, 
-				error_list_window_height, 
-				NULL
-			);
+			if (!error_list_turn_off) {
+				call_dialog_window(
+					error_list_window_class_name,
+					L"Список ошибок",
+					WS_VISIBLE | WS_OVERLAPPEDWINDOW,
+					&error_list_x_position,
+					&error_list_y_position,
+					error_list_window_width,
+					error_list_window_height,
+					NULL
+				);
+			}
 			break;
 		case command_translate:
 			MessageBoxW(h_window, 
@@ -72,7 +74,13 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 				MB_ICONINFORMATION
 			);
 			break;
+		case command_what_new:
+			MessageBoxW(h_window, L"Диалоговое окно, которое отображает список ошибок, отключен.", program_name, MB_ICONINFORMATION);
+			break;
 		case NULL:
+		case command_about:
+			MessageBoxW(h_window, L"Автор: " program_author L"\nВерсия: " program_version, program_name, MB_ICONINFORMATION);
+			break;
 			// It must be empty...
 			break;
 		default:

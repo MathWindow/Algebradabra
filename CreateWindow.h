@@ -75,7 +75,7 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 
 		CreateWindowW(
 			main_window_class_name,
-			program_name,
+			main_window_name,
 			WS_VISIBLE | WS_OVERLAPPEDWINDOW,
 			main_window_x_position,
 			main_window_y_position,
@@ -92,8 +92,6 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 			DispatchMessage(&main_message);
 		}
 	}
-
-	// Использовать return в качестве части отладчика бесполезно
 
 	return 0;
 }

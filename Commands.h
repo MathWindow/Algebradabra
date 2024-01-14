@@ -13,5 +13,8 @@ cuint_16 command_save_bag_document = 4;
 cuint_16 command_save_bag_document_as = 5;
 cuint_16 command_error_list = 6;
 cuint_16 command_translate = 7;
+cuint_16 command_what_new = 8;
+cuint_16 command_about = 9;
+cuint_16 command_1 = 10;
 
 #endif

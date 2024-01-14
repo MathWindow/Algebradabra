@@ -10,6 +10,8 @@ using namespace std;
 #ifndef history_of_error_header
 #define history_of_error_header
 
+const bool error_list_turn_off = true;
+
 cuint_16 string_operation_size = 1000000;
 
 array <wchar_t, string_operation_size> string_operation{};
