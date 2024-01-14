@@ -1,26 +1,23 @@
 #pragma once
 #include <windows.h>
 #include "ShortTypes.h"
-#include <string>
 
 // 1
 
 namespace string_work {
-	cu_short string_size_operation = (10 * 1024) / 2;
-
-	// 1 Кбайт = 1024 байт;
-	// При 1 символ = 2 байта: 1 байт = 0.5 символа;
+	svt::cu_short string_size_operation = (10 * 1024) / 2;
 
 	wchar_t string_operation[string_size_operation]{};
 
-	u_short string_operation_index = 0;
+	svt::u_short string_operation_index = 0;
 
-	u_short index_ = 0;
+	svt::u_short index_ = 0;
 
-	u_short string_size(LPCWSTR string_input) {
+	svt::u_short string_size(LPCWSTR string_input) {
 		index_ = 0;
 
-		for (; *(string_input + index_) != L'\0'; index_++) { // Найдена ошибка: забыл поставить L перед '\0'
+		// Mistake was found at next string: letter "L" has been forgotten to put before "'\0'". I'm sure that is reason of program's problem in opening.
+		for (; *(string_input + index_) != L'\0'; index_++) { // Найдена ошибка: забыл поставить "L" перед "'\0'". Я уверен, что из-за этого программа не смогла запуститься.
 			;
 		}
 
@@ -40,12 +37,12 @@ namespace string_work {
 
 		LPCWSTR string_output = string_operation + string_operation_index;
 
-		u_short string_size_1 = string_size(string_1);
-		u_short string_size_2 = string_size(string_2);
+		svt::u_short string_size_1 = string_size(string_1);
+		svt::u_short string_size_2 = string_size(string_2);
 
-		u_short string_size_output = string_size_1 + string_size_2;
+		svt::u_short string_size_output = string_size_1 + string_size_2;
 
-		for (u_short index = 0; index < string_size_output; index++) {
+		for (svt::u_short index = 0; index < string_size_output; index++) {
 			if (index < string_size_1) {
 				*(string_operation + index + string_operation_index) = *(string_1 + index);
 			}
@@ -79,7 +76,7 @@ namespace string_work {
 		return string_output;
 	}
 
-	u_short string_operation_check_free_space() {
+	svt::u_short string_operation_check_free_space() {
 		return string_size_operation - string_operation_index;
 	}
 }

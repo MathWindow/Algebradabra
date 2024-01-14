@@ -4,10 +4,10 @@
 #ifndef association_type_header
 #define association_type_header
 
-using language_param = u_char;
+using language_param = svt::u_char;
 using c_language_param = const language_param;
 
-using string_param = u_short;
+using string_param = svt::u_short;
 using c_string_param = const string_param;
 
 #endif

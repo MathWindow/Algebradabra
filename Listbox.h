@@ -1,12 +1,13 @@
 #pragma once
 #include <windows.h>
+#include "ShortTypes.h"
 
 LRESULT listbox_error_list_position = 0;
 
 LRESULT add_string(
 	HWND listbox_input, 
 	LPCWSTR string_input,
-	u_short index_input
+	svt::u_short index_input
 ) {
 	listbox_error_list_position =
 		SendMessageW(

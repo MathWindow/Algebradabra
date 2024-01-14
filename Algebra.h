@@ -1,11 +1,9 @@
 #pragma once
 #include <windows.h>
-#include <cmath>
-#include "Counter.h"
-#include "AssociationType.h"
-#include <complex>
-#include <array>
-#include <vector>
+#include "ShortTypes.h"
+
+// Will not be used in v1.1
+// Не будет использоваться в v1.1
 
 #ifndef algebra_header
 #define algebra_header
@@ -32,7 +30,7 @@ namespace math_algebra {
 			variable pseudo_variable;
 			variable* variable_pointer = &pseudo_variable;
 
-			for (u_int index = 0; *(string + index) != L'\0'; index++) {
+			for (svt::u_int index = 0; *(string + index) != L'\0'; index++) {
 				switch (*(string + index)) {
 				case L'x':
 					(*variable_pointer).exponentiation += 0;

@@ -1,11 +1,11 @@
 #pragma once
 #include <windows.h>
+#include <corecrt.h>
 #include "resource.h"
 #include "ClassWindow.h"
 #include "Monitor.h"
 #include "WindowXY.h"
 #include "Translate.h"
-using namespace std;
 
 // 1
 
@@ -13,7 +13,6 @@ using namespace std;
 #define create_window_header
 
 LRESULT CALLBACK main_procedure(procedure_arguments);
-LRESULT CALLBACK error_list_procedure(procedure_arguments);
 LRESULT CALLBACK algebraic_book_create_procedure(procedure_arguments);
 
 int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arguments, int no_command_show) {
@@ -24,15 +23,6 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 		IDC_ARROW, 
 		main_window_class_name, 
 		main_procedure
-	);
-
-	WNDCLASS error_list_class = main_class_example(
-		COLOR_WINDOW,
-		h_instance,
-		main_icon,
-		IDC_ARROW,
-		error_list_window_class_name,
-		error_list_procedure
 	);
 
 	WNDCLASS algebraic_book_create_class = main_class_example(
@@ -52,12 +42,6 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 			translate::string_cannot_create_class_main,
 			__FUNCTIONW__
 		);
-
-	register_class_name(
-		&error_list_class, 
-		translate::string_cannot_create_class_error_list,
-		__FUNCTIONW__
-	);
 
 	register_class_name(
 		&algebraic_book_create_class,

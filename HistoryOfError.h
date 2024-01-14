@@ -7,16 +7,18 @@
 #include "ShortTypes.h"
 #include "AssociationType.h"
 #include "Translate.h"
-using namespace std;
+
+// Will not be used in v1.1
+// Не будет использоваться в v1.1
 
 #ifndef history_of_error_header
 #define history_of_error_header
 
 const bool error_list_turn_off = false;
 
-cu_short string_operation_size = 1000000;
+svt::cu_short string_operation_size = 1000000;
 
-array <wchar_t, string_operation_size> string_operation{};
+std::array <wchar_t, string_operation_size> string_operation{};
 
 struct error_event {
 	string_param name = 0;
@@ -31,7 +33,7 @@ struct error_event {
 	string_param advice = 0;
 };
 
-vector <error_event> error_list_program;
+std::vector <error_event> error_list_program;
 
 #define message_box_arguments HWND h_window = NULL, bool complate = false
 
@@ -47,7 +49,7 @@ bool error_event_write(
 	string_param advice,
 	message_box_arguments
 ) {
-	u_long index_last_event = error_list_program.size();
+	svt::u_long index_last_event = error_list_program.size();
 
 	error_list_program.push_back({});
 
@@ -109,10 +111,10 @@ HWND create_widget_and_check(
 	LPCWSTR class_name,
 	LPCWSTR title,
 	DWORD window_style,
-	u_short x_position,
-	u_short y_position,
-	u_short width,
-	u_short height,
+	svt::u_short x_position,
+	svt::u_short y_position,
+	svt::u_short width,
+	svt::u_short height,
 	HMENU w_param_command,
 	LPCWSTR function_name,
 	long index_value,

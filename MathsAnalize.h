@@ -1,8 +1,7 @@
 #pragma once
-#include <cmath>
-#include <array>
-#include <vector>
-using namespace std;
+
+// Will not be used in v1.1
+// Не будет использоваться в v1.1
 
 #ifndef maths_analize_header
 #define maths_analize_header

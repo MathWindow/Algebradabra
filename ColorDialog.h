@@ -1,7 +1,6 @@
 #pragma once
 #include <windows.h>
 #include <commdlg.h>
-using namespace std;
 
 #ifndef color_dialog_header
 #define color_dialog_header

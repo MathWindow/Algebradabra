@@ -3,16 +3,12 @@
 #include "Menu.h"
 #include "Widgets.h"
 #include "ExitDialog.h"
-#include "DialogWindow.h"
 #include "Commands.h"
-#include "HistoryOfError.h"
 #include "FileDialog.h"
 #include "ColorDialog.h"
 #include "Translate.h"
 #include "StringWork.h"
-#include "WindowXY.h"
 #include "ClassWindow.h"
-#include <windowsx.h>
 #include <commdlg.h>
 #include <WinUser.h>
 #include <minwindef.h>
@@ -45,20 +41,6 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 				NULL,
 				NULL
 			);
-		}
-		else if (w_param == command_error_list) {
-			if (!error_list_turn_off) {
-				call_dialog_window(
-					error_list_window_class_name,
-					L"Список ошибок",
-					WS_VISIBLE | WS_OVERLAPPEDWINDOW,
-					&error_list_window_x,
-					&error_list_window_y,
-					error_list_window_width,
-					error_list_window_height,
-					NULL
-				);
-			}
 		}
 		else if (w_param == command_translate_Russian) {
 			MessageBoxW(h_window,
@@ -122,47 +104,6 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 
 		if(ask_wish_save(h_window))
 			PostQuitMessage(0);
-		break;
-	default:
-		return DefWindowProc(h_window, message, w_param, l_param);
-		break;
-	}
-}
-
-LRESULT CALLBACK error_list_procedure(procedure_arguments) {
-	LRESULT position_1 = 1;
-	LRESULT position_2 = 0;
-
-	switch (message) {
-	case WM_CREATE:
-		create_error_list_widgets(h_window);
-		break;
-	case WM_COMMAND:
-		switch (w_param) {
-		case NULL:
-			// It must be empty...
-			break;
-		default:
-			position_2 = ListBox_GetSel(listbox_error_list, position_1);
-
-			if (position_2 != LB_ERR) {
-				SetWindowTextW(
-					static_error_list,
-					error_list_program.at(position_2).function_name
-				);
-			}
-			else {
-				SetWindowTextA(
-					static_error_list,
-					"East"
-				);
-			}
-			break;
-		}
-
-		break;
-	case WM_DESTROY:
-		
 		break;
 	default:
 		return DefWindowProc(h_window, message, w_param, l_param);

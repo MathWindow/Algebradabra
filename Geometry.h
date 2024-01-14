@@ -1,5 +1,7 @@
 #pragma once
-#include "Algebra.h"
+
+// Will not be used in v1.1
+// Не будет использоваться в v1.1
 
 #ifndef geometry_header
 #define geometry_header

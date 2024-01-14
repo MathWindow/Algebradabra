@@ -7,7 +7,7 @@
 
 LPCWSTR program_version_family = L"May";
 LPCWSTR program_version_above = L"v1.1";
-LPCWSTR program_version_publication = L"40build";
+LPCWSTR program_version_publication = L"41build";
 
 LPCWSTR program_version = 
 	string_work::string_union_multy(

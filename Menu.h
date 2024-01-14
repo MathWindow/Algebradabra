@@ -2,6 +2,8 @@
 #include <windows.h>
 #include "Commands.h"
 #include "Translate.h"
+#include "AssociationType.h"
+#include <basetsd.h>
 
 // 1
 

@@ -6,7 +6,6 @@
 #include "VersionInfo.h"
 #include "Simbols.h"
 #include "StringWork.h"
-using namespace std;
 
 #ifndef translate_header
 #define translate_header
@@ -100,7 +99,7 @@ namespace translate {
 
 	language_param language_using = language_Russian;
 
-	array<array<LPCWSTR, string_per_language>, language_per_vocabulary> main_vocabulary{};
+	std::array<std::array<LPCWSTR, string_per_language>, language_per_vocabulary> main_vocabulary{};
 
 	void set_Russian_vocabulary() {
 		main_vocabulary.at(language_Russian).at(string_exit) =

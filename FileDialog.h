@@ -1,14 +1,13 @@
 #pragma once
 #include <windows.h>
+#include <commdlg.h>
 #include "Translate.h"
 #include "ShortTypes.h"
-#include <commdlg.h>
-using namespace std;
 
 #ifndef file_dialog_header
 #define file_dialog_header
 
-cu_char string_path_max_size = 200;
+svt::cu_char string_path_max_size = 200;
 wchar_t string_path[string_path_max_size]{};
 wchar_t string_path_technical_check[string_path_max_size]{};
 

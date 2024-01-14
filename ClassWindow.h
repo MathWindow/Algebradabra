@@ -1,7 +1,6 @@
 #pragma once
 #include <windows.h>
 #include "resource.h"
-#include "HistoryOfError.h"
 #include "Translate.h"
 #include "AssociationType.h"
 #include "StringWork.h"
@@ -78,20 +77,6 @@ bool register_class_name(
 	if (
 		!RegisterClassW(class_window_input)
 	) {
-		error_event_write(
-			translate::string_cannot_create_class_name,
-			details,
-			function_name,
-			0,
-			0,
-			false,
-			false,
-			translate::string_em_dash,
-			translate::string_em_dash,
-			NULL,
-			true
-		);
-
 		return false;
 	}
 	else {
