@@ -27,6 +27,7 @@ HMENU add_list_element_menu = CreateMenu();
 HMENU cancel_menu = CreateMenu();
 HMENU undo_menu = CreateMenu();
 HMENU language_menu = CreateMenu();
+HMENU technical_windows_check_menu = CreateMenu();
 
 // Второй этаж
 
@@ -63,6 +64,10 @@ bool create_main_menu(HWND h_window) {
 	AppendMenuW(language_menu, MF_STRING, command_translate_English, L"English");
 	AppendMenuW(language_menu, MF_STRING, command_translate_Russian, L"Русский");
 
+	translating_element_menu(technical_windows_check_menu, MF_STRING, command_open_file, string_opening_file_window);
+	translating_element_menu(technical_windows_check_menu, MF_STRING, command_save_file_as, string_saving_file_window);
+	translating_element_menu(technical_windows_check_menu, MF_STRING, command_choose_color, string_choosing_color_window);
+
 	// Второй этаж
 
 	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)algebraic_book_menu, string_algebraic_book);
@@ -86,9 +91,7 @@ bool create_main_menu(HWND h_window) {
 	line_element_menu(view_menu);
 	translating_element_menu(view_menu, MF_STRING, NULL, string_default_view);
 
-	translating_element_menu(window_menu, MF_STRING, NULL, string_em_dash);
-	translating_element_menu(window_menu, MF_STRING, NULL, string_em_dash);
-	translating_element_menu(window_menu, MF_STRING, command_choose_color, string_choose_color_window);
+	translating_element_menu(window_menu, MF_POPUP, (UINT_PTR)technical_windows_check_menu, string_technical_windows_check);
 
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_algebraic_book_parameter);
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_page_parameter);

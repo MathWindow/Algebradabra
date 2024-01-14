@@ -60,6 +60,7 @@ c_string_param string_program_parameter = put_index_running(false);
 c_string_param string_error_list = put_index_running(false);
 c_string_param string_language = put_index_running(false);
 c_string_param string_em_dash = put_index_running(false);
+c_string_param null_string = string_em_dash;
 c_string_param string_null_handle = put_index_running(false);
 c_string_param string_null_window_handle = put_index_running(false);
 c_string_param string_null_menu_handle = put_index_running(false);
@@ -78,7 +79,13 @@ c_string_param string_splitting_into_zero = put_index_running(false);
 c_string_param string_root_of_negative = put_index_running(false);
 c_string_param string_asking_for_save_before_exit = put_index_running(false);
 c_string_param string_window = put_index_running(false);
-c_string_param string_choose_color_window = put_index_running(false);
+c_string_param string_technical_windows_check = put_index_running(false);
+c_string_param string_opening_file_window = put_index_running(false);
+c_string_param string_saving_file_window = put_index_running(false);
+c_string_param string_choosing_color_window = put_index_running(false);
+c_string_param string_window_opening_file = string_opening_file_window;
+c_string_param string_window_saving_file = string_saving_file_window;
+c_string_param string_window_choosing_color = string_choosing_color_window;
 
 bool is_vocabulary_installed = false;
 
@@ -115,7 +122,7 @@ void set_Russian_vocabulary() {
 		L"Обнаружено деление на ноль";
 	main_vocabulary.at(language_Russian).at(string_root_of_negative) =
 		L"Обнаружено Корень отрицательного числа";
-	main_vocabulary.at(language_Russian).at(string_em_dash) =
+	main_vocabulary.at(language_Russian).at(string_em_dash | null_string) =
 		simbol_em_dash;
 	main_vocabulary.at(language_Russian).at(string_create) =
 		L"Создать";
@@ -191,8 +198,14 @@ void set_Russian_vocabulary() {
 		L"Сохранять документы перед выходом из программы?";
 	main_vocabulary.at(language_Russian).at(string_window) =
 		L"Окно";
-	main_vocabulary.at(language_Russian).at(string_choose_color_window) =
-		L"Обзор окна выбора цвета";
+	main_vocabulary.at(language_Russian).at(string_technical_windows_check) =
+		L"Технический обзор окон";
+	main_vocabulary.at(language_Russian).at(string_choosing_color_window | string_window_choosing_color) =
+		L"Окно выбора цвета";
+	main_vocabulary.at(language_Russian).at(string_saving_file_window | string_window_saving_file) =
+		L"Окно сохранения файла";
+	main_vocabulary.at(language_Russian).at(string_opening_file_window | string_window_opening_file) =
+		L"Окно открытия файла";
 }
 
 void set_English_vocabulary() {
@@ -224,7 +237,7 @@ void set_English_vocabulary() {
 		L"Splitting into zero was detected";
 	main_vocabulary.at(language_English).at(string_root_of_negative) =
 		L"Root of negative number was detected";
-	main_vocabulary.at(language_English).at(string_em_dash) =
+	main_vocabulary.at(language_English).at(string_em_dash | null_string) =
 		simbol_em_dash;
 	main_vocabulary.at(language_English).at(string_create) =
 		L"Create";
@@ -300,8 +313,14 @@ void set_English_vocabulary() {
 		L"Would you like to save documents before exit?";
 	main_vocabulary.at(language_English).at(string_window) =
 		L"Window";
-	main_vocabulary.at(language_English).at(string_choose_color_window) =
-		L"Choose color window show";
+	main_vocabulary.at(language_English).at(string_technical_windows_check) =
+		L"Technical window's check";
+	main_vocabulary.at(language_English).at(string_choosing_color_window | string_window_choosing_color) =
+		L"Choosing color window";
+	main_vocabulary.at(language_English).at(string_saving_file_window | string_window_saving_file) =
+		L"Saving file window";
+	main_vocabulary.at(language_English).at(string_opening_file_window | string_window_opening_file) =
+		L"Opening file window";
 }
 
 void set_all_vocabulary() {

@@ -9,7 +9,7 @@
 #if turn_macro_off == 0
 
 #define program_version_abovepublic L"v1.1"
-#define program_version_publication L"18build"
+#define program_version_publication L"19build"
 #define program_version_family L"May"
 #define program_version program_version_family L" " program_version_publication L" " program_version_abovepublic
 
