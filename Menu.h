@@ -20,61 +20,61 @@ BOOL _stdcall string_element_menu(HMENU h_menu, UINT_PTR numberCommand, LPCWSTR 
 
 /*
 
-Ñõåìà äåðåâà ìåíþ ñ ïîäñêàçêîé ãîðÿ÷åé êëàâèøè
+Схема дерева меню с подсказкой горячей клавиши
 Tree's circuit menu with hot key's tip
 
-Ïðîãðàììà
-	Ïàêåòíûé äîêóìåíò
-		Ñîçäàòü ctrl + N
-		Îòêðûòü ctrl + O
-		Ñîõðàíèòü ctrl + S
-		Ñîõðàíèòü êàê... ctrl + shift + S
+Программа
+	Пакетный документ
+		Создать ctrl + N
+		Открыть ctrl + O
+		Сохранить ctrl + S
+		Сохранить как... ctrl + shift + S
 		-
-		Ñæèìàòü F6
-		Çàáëîêèðîâàòü ïàðîëåì
+		Сжимать F6
+		Заблокировать паролем
 	-
-	Äîáàâèòü ëèñò ctrl + E
-	Äîáàâèòü ýëåìåíò ëèñòà
-		Êîîðäèíàòà E
-		Ñõåìà
-		Ðèñóíîê
-		Ôàéë rtf
+	Добавить лист ctrl + E
+	Добавить элемент листа
+		Координата E
+		Схема
+		Рисунок
+		Файл rtf
 	-
-	Âûõîä alt + F4
-Ïðàâêà
-	Ïîèñê êîìàíä ctrl + shift + F
-	Ïîèñê òåêñòîâûõ ôðàãìåíòîâ ctrl + F
+	Выход alt + F4
+Правка
+	Поиск команд ctrl + shift + F
+	Поиск текстовых фрагментов ctrl + F
 	-
-	Êîïèðîâàòü ëèñò ctrl + shift + C
-	Êîïèðîâàòü ýëåìåíò ëèñòà ctrl + C
-	Âñòàâèòü ctrl + V
+	Копировать лист ctrl + shift + C
+	Копировать элемент листа ctrl + C
+	Вставить ctrl + V
 	-
-	Îòìåíèòü
-		Îòìåíèòü ïîñëåäíåå ctrl + Z
-		<Ñïèñîê âûïîëíåííûõ äåéñòâèè>
-	Âîçâðàùàòü
-		Âîçâðàùàòü ïîñëåäíåå ctrl + Y
-		<Ñïèñîê îòìåíåííûõ äåéñòâèè>
-Âèä
-	Ìåíþ è ïàíåëü èíñòðóìåíòîâ
-	Êóðñîð
-	Êîîðäèíàòà
-	Ñòèëü
+	Отменить
+		Отменить последнее ctrl + Z
+		<Список выполненных действии>
+	Возвращать
+		Возвращать последнее ctrl + Y
+		<Список отмененных действии>
+Вид
+	Меню и панель инструментов
+	Курсор
+	Координата
+	Стиль
 	-
-	Ñáðîñèòü ïðåäñòàâëåíèå F5
-Ñâåäåíèå / Íàñòðîéêè
-	Ñâîéñòâî ïàêåòíîãî äîêóìåíòà
-	Ñâîéñòâî ëèñòà
-	Ñâîéñòâî ýëåìåíòà ëèñòà
+	Сбросить представление F5
+Сведение / Настройки
+	Свойство пакетного документа
+	Свойство листа
+	Свойство элемента листа
 	-
-	Ñâîéñòâî ïðîãðàììû F1
-	ßçûê
+	Свойство программы F1
+	Язык
 		English
-		Ðóññêèé
+		Русский
 
 */
 
-// Òðåòèé ýòàæ
+// Третий этаж
 
 HMENU bag_document_menu = CreateMenu();
 HMENU add_list_element_menu = CreateMenu();
@@ -82,80 +82,80 @@ HMENU cancel_menu = CreateMenu();
 HMENU undo_menu = CreateMenu();
 HMENU language_menu = CreateMenu();
 
-// Âòîðîé ýòàæ
+// Второй этаж
 
 HMENU program_menu = CreateMenu();
 HMENU edit_menu = CreateMenu();
 HMENU view_menu = CreateMenu();
 HMENU information_settings_menu = CreateMenu();
 
-// Ïåðâûé ýòàæ
+// Первый этаж
 
 HMENU root_menu = CreateMenu();
 
 bool create_menu(HWND h_window) {
-	// Òðåòèé ýòàæ
+	// Третий этаж
 
-	string_element_menu(bag_document_menu, NULL, L"Ñîçäàòü ctrl + N");
-	string_element_menu(bag_document_menu, NULL, L"Îòêðûòü ctrl + O");
-	string_element_menu(bag_document_menu, NULL, L"Ñîõðàíèòü ctrl + S");
-	string_element_menu(bag_document_menu, NULL, L"Ñîõðàíèòü êàê... ctrl + shift + S");
+	string_element_menu(bag_document_menu, NULL, L"Создать ctrl + N");
+	string_element_menu(bag_document_menu, NULL, L"Открыть ctrl + O");
+	string_element_menu(bag_document_menu, NULL, L"Сохранить ctrl + S");
+	string_element_menu(bag_document_menu, NULL, L"Сохранить как... ctrl + shift + S");
 	line_element_menu(bag_document_menu);
-	string_element_menu(bag_document_menu, NULL, L"Ñæèìàòü F6");
-	string_element_menu(bag_document_menu, NULL, L"Çàáëîêèðîâàòü ïàðîëåì");
+	string_element_menu(bag_document_menu, NULL, L"Сжимать F6");
+	string_element_menu(bag_document_menu, NULL, L"Заблокировать паролем");
 
-	string_element_menu(add_list_element_menu, NULL, L"Êîîðäèíàòà");
-	string_element_menu(add_list_element_menu, NULL, L"Ñõåìà");
-	string_element_menu(add_list_element_menu, NULL, L"Ðèñóíîê");
-	string_element_menu(add_list_element_menu, NULL, L"Ôàéë rtf");
+	string_element_menu(add_list_element_menu, NULL, L"Координата");
+	string_element_menu(add_list_element_menu, NULL, L"Схема");
+	string_element_menu(add_list_element_menu, NULL, L"Рисунок");
+	string_element_menu(add_list_element_menu, NULL, L"Файл rtf");
 
-	string_element_menu(cancel_menu, NULL, L"Îòìåíèòü ïîñëåäíåå");
+	string_element_menu(cancel_menu, NULL, L"Отменить последнее");
 
-	string_element_menu(undo_menu, NULL, L"Âîçâðàùàòü ïîñëåäíåå");
+	string_element_menu(undo_menu, NULL, L"Возвращать последнее");
 
 	string_element_menu(language_menu, NULL, L"English");
-	string_element_menu(language_menu, NULL, L"Ðóññêèé");
+	string_element_menu(language_menu, NULL, L"Русский");
 
-	// Âòîðîé ýòàæ
+	// Второй этаж
 
-	popup_element_menu(program_menu, bag_document_menu, L"Ïàêåòíûé äîêóìåíò");
+	popup_element_menu(program_menu, bag_document_menu, L"Пакетный документ");
 	line_element_menu(program_menu);
-	string_element_menu(program_menu, NULL, L"Äîáàâèòü ëèñò");
-	popup_element_menu(program_menu, add_list_element_menu, L"Äîáàâèòü ýëåìåíò ëèñòà");
+	string_element_menu(program_menu, NULL, L"Добавить лист");
+	popup_element_menu(program_menu, add_list_element_menu, L"Добавить элемент листа");
 	line_element_menu(program_menu);
-	string_element_menu(program_menu, command_exit, L"Âûõîä alt + F4");
+	string_element_menu(program_menu, command_exit, L"Выход alt + F4");
 
-	string_element_menu(edit_menu, NULL, L"Ïîèñê êîìàíä ctrl + shift + F");
-	string_element_menu(edit_menu, NULL, L"Ëèòåðàòóðíûé ïîèñê ctrl + F");
+	string_element_menu(edit_menu, NULL, L"Поиск команд ctrl + shift + F");
+	string_element_menu(edit_menu, NULL, L"Литературный поиск ctrl + F");
 	line_element_menu(edit_menu);
-	string_element_menu(edit_menu, NULL, L"Êîïèðîâàòü ëèñò ctrl + shift + C");
-	string_element_menu(edit_menu, NULL, L"Êîïèðîâàòü ýëåìåíò ëèñòà");
-	string_element_menu(edit_menu, NULL, L"Âñòàâèòü");
+	string_element_menu(edit_menu, NULL, L"Копировать лист ctrl + shift + C");
+	string_element_menu(edit_menu, NULL, L"Копировать элемент листа");
+	string_element_menu(edit_menu, NULL, L"Вставить");
 	line_element_menu(edit_menu);
-	popup_element_menu(edit_menu, cancel_menu, L"Îòìåíèòü");
-	popup_element_menu(edit_menu, undo_menu, L"Âîçâðàùàòü");
+	popup_element_menu(edit_menu, cancel_menu, L"Отменить");
+	popup_element_menu(edit_menu, undo_menu, L"Возвращать");
 
-	string_element_menu(view_menu, NULL, L"Ìåíþ è ïàíåëü èíñòðóìåíòîâ");
-	string_element_menu(view_menu, NULL, L"Êóðñîð");
-	string_element_menu(view_menu, NULL, L"Êîîðäèíàòà");
-	string_element_menu(view_menu, NULL, L"Ñòèëü");
+	string_element_menu(view_menu, NULL, L"Меню и панель инструментов");
+	string_element_menu(view_menu, NULL, L"Курсор");
+	string_element_menu(view_menu, NULL, L"Координата");
+	string_element_menu(view_menu, NULL, L"Стиль");
 	line_element_menu(view_menu);
-	string_element_menu(view_menu, NULL, L"Ñáðîñèòü ïðåäñòàâëåíèå");
+	string_element_menu(view_menu, NULL, L"Сбросить представление");
 	
-	string_element_menu(information_settings_menu, NULL, L"Ñâîéñòâî ïàêåòíîãî äîêóìåíòà");
-	string_element_menu(information_settings_menu, NULL, L"Ñâîéñòâî ëèñòà");
-	string_element_menu(information_settings_menu, NULL, L"Ñâîéñòâî ýëåìåíòà ëèñòà");
+	string_element_menu(information_settings_menu, NULL, L"Свойство пакетного документа");
+	string_element_menu(information_settings_menu, NULL, L"Свойство листа");
+	string_element_menu(information_settings_menu, NULL, L"Свойство элемента листа");
 	line_element_menu(information_settings_menu);
-	string_element_menu(information_settings_menu, NULL, L"Ñâîéñòâî ïðîãðàììû F1");
-	popup_element_menu(information_settings_menu, language_menu, L"ßçûê");
+	string_element_menu(information_settings_menu, NULL, L"Свойство программы F1");
+	popup_element_menu(information_settings_menu, language_menu, L"Язык");
 
-	// Ïåðâûé ýòàæ
+	// Первый этаж
 
-	popup_element_menu(root_menu, program_menu, L"Ïðîãðàììà");
-	popup_element_menu(root_menu, edit_menu, L"Ïðàâêà");
-	popup_element_menu(root_menu, view_menu, L"Âèä");
+	popup_element_menu(root_menu, program_menu, L"Программа");
+	popup_element_menu(root_menu, edit_menu, L"Правка");
+	popup_element_menu(root_menu, view_menu, L"Вид");
 	line_element_menu(root_menu);
-	popup_element_menu(root_menu, information_settings_menu, L"Ñâåäåíèå / Íàñòðîéêè");
+	popup_element_menu(root_menu, information_settings_menu, L"Сведение / Настройки");
 
 	SetMenu(h_window, root_menu);
 
