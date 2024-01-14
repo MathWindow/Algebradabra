@@ -20,6 +20,5 @@ void plan_choose_color_technical_check(HWND h_window) {
 	choose_color_1.rgbResult = rgb_current_1;
 	choose_color_1.Flags = CC_FULLOPEN | CC_RGBINIT;
 }
-#else
 
 #endif

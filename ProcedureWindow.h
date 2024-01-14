@@ -195,10 +195,10 @@ LRESULT CALLBACK debugger_procedure(
 		}
 		else if (w_param == command_write_random_event) {
 			debug::write_event(
-				(unsigned int)rand() % (debug::event_type_count + 1),
+				(unsigned int)rand() % 5,
 				debug::characteristic_none,
-				(unsigned int)rand() % (debug::title_index_count + 1),
-				(unsigned int)rand() % (debug::details_index_count + 1),
+				(unsigned int)rand() % 3,
+				(unsigned int)rand() % 5,
 				{},
 				{},
 				{}
