@@ -3,7 +3,7 @@
 #include <string>
 #include "Counter.h"
 #include "VersionInfo.h"
-#include "Simbols.h"
+#include "Symbols.h"
 #include "ShortTypes.h"
 
 #ifndef translate_header
@@ -98,7 +98,7 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_program) =
 				L"Программа";
 			main_vocabulary.at(language_input).at(string_em_dash) =
-				simbol_em_dash;
+				symbol_em_dash;
 			main_vocabulary.at(language_input).at(string_create) =
 				L"Создать";
 			main_vocabulary.at(language_input).at(string_open) =
@@ -211,7 +211,7 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_program) =
 				L"Program";
 			main_vocabulary.at(language_input).at(string_em_dash) =
-				simbol_em_dash;
+				symbol_em_dash;
 			main_vocabulary.at(language_input).at(string_create) =
 				L"Create";
 			main_vocabulary.at(language_input).at(string_open) =
@@ -330,7 +330,7 @@ namespace translate {
 		set_all_vocabulary();
 
 		if (main_vocabulary.at(language_using).at(string_input).size() == 0) {
-			return simbol_plus_minus;
+			return symbol_plus_minus;
 		}
 
 		return main_vocabulary.at(language_using).at(string_input);

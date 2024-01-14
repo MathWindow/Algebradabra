@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include <commdlg.h>
+#include <vector>
 #include "Translate.h"
 #include "ShortTypes.h"
 
@@ -10,6 +11,11 @@
 svt::cu_char string_path_max_size = 200;
 WCHAR string_path[string_path_max_size]{};
 WCHAR string_path_technical_check[string_path_max_size]{};
+
+std::vector<WCHAR> string_open_book_fixer{};
+std::vector<WCHAR> string_save_book_fixer{};
+std::vector<WCHAR> string_open_file_fixer{};
+std::vector<WCHAR> string_save_file_fixer{};
 
 class open_file_name_w_x {
 public:

@@ -140,7 +140,7 @@
     <ClInclude Include="FileDialog.h" />
     <ClInclude Include="Monitor.h" />
     <ClInclude Include="ShortTypes.h" />
-    <ClInclude Include="Simbols.h" />
+    <ClInclude Include="Symbols.h" />
     <ClInclude Include="Translate.h" />
     <ClInclude Include="ProcedureWindow.h" />
     <ClInclude Include="DialogWindow.h" />

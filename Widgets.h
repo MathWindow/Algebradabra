@@ -1,17 +1,16 @@
 #pragma once
 #include <windows.h>
-#include "ShortTypes.h"
 
 #ifndef widgets_header
 #define widgets_header
 
-svt::u_short x_out = 10;
-svt::u_short y_out = x_out;
+LONG x_out = 10;
+LONG y_out = x_out;
 
-svt::u_short width_edit_default = 150;
-svt::u_short height_edit_default = 20;
+LONG width_edit_default = 150;
+LONG height_edit_default = 20;
 
-HWND edit_main = NULL;
+HWND edit_main = nullptr;
 
 void create_main_widgets(HWND h_window) {
 	edit_main = CreateWindowExW(

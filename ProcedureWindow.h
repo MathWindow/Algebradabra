@@ -99,6 +99,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		if (ask_wish_save(h_window))
 			PostQuitMessage(0);
 		break;
+
 	default:
 		return DefWindowProc(h_window, message, w_param, l_param);
 		break;

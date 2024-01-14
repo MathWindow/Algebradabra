@@ -71,7 +71,7 @@
     <ClInclude Include="Translate.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
-    <ClInclude Include="Simbols.h">
+    <ClInclude Include="Symbols.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
     <ClInclude Include="ShortTypes.h">
@@ -86,16 +86,10 @@
     <ClInclude Include="Counter.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
-    <ClInclude Include="AssociationType.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
     <ClInclude Include="WindowXY.h">
       <Filter>Файлы заголовков\Window &amp; monitor</Filter>
     </ClInclude>
     <ClInclude Include="Monitor.h">
-      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
-    </ClInclude>
-    <ClInclude Include="CreateWindow.h">
       <Filter>Файлы заголовков\Window &amp; monitor</Filter>
     </ClInclude>
     <ClInclude Include="ClassWindow.h">
@@ -104,8 +98,8 @@
     <ClInclude Include="ColorDialog.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
-    <ClInclude Include="StringWork.h">
-      <Filter>Файлы заголовков\Others</Filter>
+    <ClInclude Include="ProcedureWindow.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -117,10 +111,5 @@
     <Image Include="icon1.ico">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="POINTER.cur">
-      <Filter>Файлы ресурсов</Filter>
-    </None>
   </ItemGroup>
 </Project>
