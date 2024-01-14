@@ -77,7 +77,7 @@ c_string_param string_root_of_negative = put_index_running(false);
 
 bool is_vocabulary_installed = false;
 
-lang_param using_language = language_English;
+lang_param language_using = language_English;
 
 array<array<LPCWSTR, string_per_language>, language_per_vocabulary> main_vocabulary{};
 
@@ -94,7 +94,7 @@ void set_English_vocabulary() {
 	main_vocabulary.at(language_English).at(string_exit) =
 		L"Exit";
 	main_vocabulary.at(language_English).at(string_whats_new) =
-		L"What is new?";
+		L"What's new?";
 	main_vocabulary.at(language_English).at(string_program) =
 		L"Program";
 	main_vocabulary.at(language_English).at(string_null_handle) =
@@ -208,10 +208,10 @@ LPCWSTR translating_string(string_param string_index_input) {
 	set_all_vocabulary();
 
 	LPCWSTR string_checking = 
-		main_vocabulary.at(using_language).at(string_index_input);
+		main_vocabulary.at(language_using).at(string_index_input);
 
 	if (string_checking == nullptr) {
-		return simbol_em_dash;
+		return simbol_plus_minus;
 	}
 
 	return string_checking;

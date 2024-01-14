@@ -18,4 +18,11 @@ namespace ma {
 	private:
 
 	};
+
+	class limit {
+	public:
+
+	private:
+
+	};
 }

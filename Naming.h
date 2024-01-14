@@ -3,8 +3,8 @@
 #ifndef naming_header
 #define naming_header
 
-#define program_version_abovepublic L"v1.0.3"
-#define program_version_publication L"3build_f"
+#define program_version_abovepublic L"v1.1"
+#define program_version_publication L"1build"
 #define program_version_family L"May"
 #define program_version program_version_family L" " program_version_publication L" " program_version_abovepublic
 

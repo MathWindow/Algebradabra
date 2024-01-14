@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "Naming.h"
+#include "ShortTypes.h"
 
 #ifndef monitor_header
 #define monitor_header

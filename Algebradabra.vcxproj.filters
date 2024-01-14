@@ -16,20 +16,8 @@
     <Filter Include="Файлы заголовков\FileWork">
       <UniqueIdentifier>{71649fa4-4815-497b-a82f-ef5381eb3d9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Window%27s elements and commands">
-      <UniqueIdentifier>{355e994c-ec92-4447-b3f5-858c2897b0a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Window%27s elements and commands\Widgets">
-      <UniqueIdentifier>{b247c73d-834e-491d-97e7-49ba39996f41}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Window%27s elements and commands\Main tools">
-      <UniqueIdentifier>{7e680716-bbf0-4166-8f50-f084adde3be8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Dialog window">
       <UniqueIdentifier>{3133b13f-8350-4e01-b0a3-f143ba4962f9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Текстовые документы">
-      <UniqueIdentifier>{a2dfe397-efb7-4e99-9092-08c8d767cb17}</UniqueIdentifier>
     </Filter>
     <Filter Include="Файлы заголовков\Scince headers">
       <UniqueIdentifier>{d9f26320-0df1-420a-affe-a626a74cb929}</UniqueIdentifier>
@@ -39,6 +27,21 @@
     </Filter>
     <Filter Include="Файлы заголовков\Others">
       <UniqueIdentifier>{5fc63ed2-5ccb-42d9-8fb8-0fd646e3b9f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window &amp; monitor">
+      <UniqueIdentifier>{4a5af9ee-9d8d-4257-9fe5-38b992f1d880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window &amp; monitor\Window%27s elements and commands">
+      <UniqueIdentifier>{355e994c-ec92-4447-b3f5-858c2897b0a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets">
+      <UniqueIdentifier>{b247c73d-834e-491d-97e7-49ba39996f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools">
+      <UniqueIdentifier>{7e680716-bbf0-4166-8f50-f084adde3be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window &amp; monitor\Paints">
+      <UniqueIdentifier>{328b7afe-9a1e-46f1-8b7e-bdb32a81341d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,13 +60,13 @@
       <Filter>Файлы заголовков\FileWork</Filter>
     </ClInclude>
     <ClInclude Include="Commands.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands</Filter>
     </ClInclude>
     <ClInclude Include="Widgets.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
     </ClInclude>
     <ClInclude Include="Toolbar.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
     <ClInclude Include="FileDialog.h">
       <Filter>Файлы заголовков\Dialog window</Filter>
@@ -72,19 +75,19 @@
       <Filter>Файлы заголовков\Dialog window</Filter>
     </ClInclude>
     <ClInclude Include="Combobox.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
     </ClInclude>
     <ClInclude Include="Listbox.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
     </ClInclude>
     <ClInclude Include="Edit.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="UpdatedMenu.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
+    <ClInclude Include="Menu.h">
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
     <ClInclude Include="DialogWindow.h">
       <Filter>Файлы заголовков\Dialog window</Filter>
@@ -113,29 +116,32 @@
     <ClInclude Include="Naming.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
-    <ClInclude Include="Monitor.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
     <ClInclude Include="HistoryOfError.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
-    <ClInclude Include="CreateWindow.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
     <ClInclude Include="Counter.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
-    <ClInclude Include="ClassWindow.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
     <ClInclude Include="AssociationType.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowXY.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
     <ClInclude Include="MathsAnalizeClassic.h">
       <Filter>Файлы заголовков\Scince headers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowXY.h">
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="Monitor.h">
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateWindow.h">
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassWindow.h">
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorDialog.h">
+      <Filter>Файлы заголовков\Dialog window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

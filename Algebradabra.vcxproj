@@ -135,6 +135,7 @@
     <ClInclude Include="AssociationType.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ClassWindow.h" />
+    <ClInclude Include="ColorDialog.h" />
     <ClInclude Include="Combobox.h" />
     <ClInclude Include="Commands.h" />
     <ClInclude Include="Compression.h" />
@@ -158,7 +159,7 @@
     <ClInclude Include="DialogWindow.h" />
     <ClInclude Include="Naming.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="UpdatedMenu.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Widgets.h" />
     <ClInclude Include="WindowXY.h" />
   </ItemGroup>
