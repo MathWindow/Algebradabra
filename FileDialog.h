@@ -4,6 +4,7 @@
 #include <vector>
 #include "Translate.h"
 #include "ShortTypes.h"
+#include <cstring>
 
 #ifndef file_dialog_header
 #define file_dialog_header
@@ -29,9 +30,9 @@ public:
 	OPENFILENAMEW both_;
 
 	void zero_memory() {
-		ZeroMemory(&save, sizeof(save));
-		ZeroMemory(&open, sizeof(open));
-		ZeroMemory(&both_, sizeof(both_));
+		memset(&save, 0, sizeof(save));
+		memset(&open, 0, sizeof(open));
+		memset(&both_, 0, sizeof(both_));
 	}
 
 	BOOL __stdcall open_file_dialog() {
