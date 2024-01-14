@@ -46,16 +46,16 @@ LRESULT CALLBACK main_procedure(
 		}
 		else if (w_param == command_translate_Russian) {
 			MessageBoxW(h_window,
-				L"„тобы перевод вступил в силу, программу нужно закрыть и заново открыть.",
+				L"ѕрограмма не переводит с одного €зыка на другого, так как она не пригодна дл€ использовани€.",
 				translate::string(&translate::index_program_name).c_str(),
-				MB_ICONINFORMATION
+				MB_ICONWARNING
 			);
 		}
 		else if (w_param == command_translate_English) {
 			MessageBoxW(h_window,
-				L"User should close and open again to translate this program.",
+				L"Program don't translate from one language to another because it is not able to be used.",
 				translate::string(&translate::index_program_name).c_str(),
-				MB_ICONINFORMATION
+				MB_ICONWARNING
 			);
 		}
 		else if (w_param == command_whats_new) {
@@ -78,7 +78,12 @@ LRESULT CALLBACK main_procedure(
 			ofn_algebraic_book.open_file_dialog();
 		}
 		else if (w_param == command_save_algebraic_book) {
-			SendMessageW(h_window, WM_COMMAND, command_save_algebraic_book_as, NULL);
+			SendMessageW(
+				h_window, 
+				WM_COMMAND, 
+				command_save_algebraic_book_as, 
+				NULL
+			);
 		}
 		else if (w_param == command_save_algebraic_book_as) {
 			ofn_algebraic_book.save_file_dialog();

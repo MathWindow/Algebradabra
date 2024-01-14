@@ -126,7 +126,8 @@ namespace translate {
 			set_string_in_vocabulary(&index_exit, L"Выход");
 			set_string_in_vocabulary(&index_whats_new, L"Что нового?");
 			set_string_in_vocabulary(&index_thats_new, 
-				L"Иконка полностью переделывалась, появились диалоговые окна открытия, сохранения файла и выбора цвета. Появились технические обзоры вышеперечисленных окон."
+				L"Иконка полностью переделывалась, появились диалоговые окна открытия и сохранения файла. \
+Появились технические обзоры вышеперечисленных окон, а также технический обзор выбора цвета."
 			);
 			set_string_in_vocabulary(&index_program, L"Программа");
 			set_string_in_vocabulary(&index_create, L"Создать");
@@ -192,7 +193,9 @@ namespace translate {
 			set_string_in_vocabulary(&index_exit, L"Exit");
 			set_string_in_vocabulary(&index_whats_new, L"What's new?");
 			set_string_in_vocabulary(&index_thats_new,
-				L"Icon was remade fully. Save, open file and choose color window were appeared. Technical window's checking of these windows appeared too."
+				L"Icon was remade fully. \
+Save & open file dialog boxes were appeared. \
+Technical window's checking of these dialog boxes & color choice were appeared too."
 			);
 			set_string_in_vocabulary(&index_program, L"Program");
 			set_string_in_vocabulary(&index_create, L"Create");

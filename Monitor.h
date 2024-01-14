@@ -4,7 +4,7 @@
 #ifndef monitor_header
 #define monitor_header
 
-RECT monitor_information = { 0 };
+RECT monitor_information{};
 LONG monitor_width = 0;
 LONG monitor_height = 0;
 
