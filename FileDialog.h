@@ -50,6 +50,7 @@ void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.open.lpstrTitle = L"Открыть книгу...";
 	ofn_algebraic_book.open.lpstrFile = string_path;
 	ofn_algebraic_book.open.lpstrFile[0] = L'\0';
+	ofn_algebraic_book.open.nMaxFile = sizeof(string_path);
 	ofn_algebraic_book.open.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST;
 }
 
