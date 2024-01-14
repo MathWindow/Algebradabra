@@ -5,6 +5,9 @@
 #include <vector>
 #include <array>
 #include <windows.h>
+#include "ShortTypes.h"
+#include <sysinfoapi.h>
+#include <minwinbase.h>
 using namespace std;
 
 #ifndef history_of_error_header

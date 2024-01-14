@@ -11,7 +11,7 @@ CHOOSECOLORW choose_color_1;
 static COLORREF rgb_current_1 = RGB(200, 200, 200);
 static COLORREF acr_custom_color_1[16]{};
 
-void plan_choose_color_dialog(HWND h_window) {
+void plan_choose_color_technical_check(HWND h_window) {
 	ZeroMemory(&choose_color_1, sizeof(choose_color_1));
 	
 	choose_color_1.lStructSize = sizeof(choose_color_1);

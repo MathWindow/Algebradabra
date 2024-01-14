@@ -15,14 +15,14 @@ namespace translate {
 }
 
 c_string_param string_per_language = 250;
-c_lang_param language_per_vocabulary = 6;
+c_language_param language_per_vocabulary = 6;
 
-c_lang_param language_Russian = put_index_running(true);
-c_lang_param language_English = put_index_running(false);
-c_lang_param language_German = put_index_running(false);
-c_lang_param language_French = put_index_running(false);
-c_lang_param language_Spanish = put_index_running(false);
-c_lang_param language_Italian = put_index_running(false);
+c_language_param language_Russian = put_index_running(true);
+c_language_param language_English = put_index_running(false);
+c_language_param language_German = put_index_running(false);
+c_language_param language_French = put_index_running(false);
+c_language_param language_Spanish = put_index_running(false);
+c_language_param language_Italian = put_index_running(false);
 
 c_string_param string_exit = put_index_running(true);
 c_string_param string_whats_new = put_index_running(false);
@@ -89,7 +89,7 @@ c_string_param string_window_choosing_color = string_choosing_color_window;
 
 bool is_vocabulary_installed = false;
 
-lang_param language_using = language_Russian;
+language_param language_using = language_Russian;
 
 array<array<LPCWSTR, string_per_language>, language_per_vocabulary> main_vocabulary{};
 
@@ -324,8 +324,6 @@ void set_English_vocabulary() {
 }
 
 void set_all_vocabulary() {
-	double count_of_unused_strings = 0;
-
 	if (!is_vocabulary_installed) {
 		set_Russian_vocabulary();
 		set_English_vocabulary();
@@ -341,7 +339,7 @@ LPCWSTR translating_string(string_param string_index_input) {
 		main_vocabulary.at(language_using).at(string_index_input);
 
 	if (string_checking == nullptr) {
-		return simbol_plus_minus;
+		return simbol_em_dash;
 	}
 
 	return string_checking;

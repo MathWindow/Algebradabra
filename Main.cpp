@@ -17,37 +17,8 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		create_main_menu(h_window);
 		create_main_widgets(h_window);
 		plan_ofn_algebraic_book(h_window);
-		plan_choose_color_dialog(h_window);
-
-		// Тестовая ошибка
-
-		error_event_write(
-			string_em_dash,
-			string_em_dash,
-			__FUNCTIONW__,
-			0,
-			0,
-			false,
-			false,
-			string_em_dash,
-			string_em_dash,
-			NULL,
-			false
-		);
-
-		error_event_write(
-			string_em_dash,
-			string_em_dash,
-			__FUNCTIONW__,
-			0,
-			0,
-			false,
-			false,
-			string_em_dash,
-			string_em_dash,
-			NULL,
-			false
-		);
+		plan_ofn_technical_check(h_window);
+		plan_choose_color_technical_check(h_window);
 		break;
 	case WM_COMMAND:
 		switch (w_param) {
@@ -125,6 +96,12 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		}
 		else if (w_param == command_choose_color) {
 			ChooseColorW(&choose_color_1);
+		}
+		else if (w_param == command_save_file_as) {
+			ofn_technical_check.save_file_dialog();
+		}
+		else if (w_param == command_open_file) {
+			ofn_technical_check.open_file_dialog();
 		}
 		break;
 	case WM_CLOSE:
