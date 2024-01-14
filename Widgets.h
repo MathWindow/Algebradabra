@@ -112,23 +112,4 @@ void create_widgets_debugger_window(HWND h_window) {
 	}
 }
 
-HWND listbox_debugger = nullptr;
-
-void create_widgets_debugger_window(HWND h_window) {
-	listbox_debugger = CreateWindowExW(
-		0,
-		L"listbox",
-		L"",
-		WS_VISIBLE | WS_CHILD | WS_BORDER | WS_VSCROLL,
-		x_out,
-		y_out,
-		150,
-		200,
-		h_window,
-		NULL,
-		NULL,
-		NULL
-	);
-}
-
 #endif

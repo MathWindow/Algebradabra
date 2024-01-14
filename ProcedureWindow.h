@@ -165,7 +165,7 @@ LRESULT CALLBACK debugger_procedure(
 		create_menu_debugger_window(h_window);
 		break;
 	case WM_COMMAND:
-		if (message == command_look_event) {
+		if (w_param == command_look_event) {
 			position = (int)SendMessageW(
 				listbox_debugger,
 				LB_GETCURSEL,
@@ -173,7 +173,7 @@ LRESULT CALLBACK debugger_procedure(
 				0
 			);
 
-			index = SendMessageW(
+			index = (int)SendMessageW(
 				listbox_debugger,
 				LB_GETITEMDATA,
 				position,
