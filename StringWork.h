@@ -42,10 +42,10 @@ namespace string_work {
 
 		for (u_short index = 0; index < string_size_output; index++) {
 			if (index < string_size_1 + string_size_output) {
-				*(string_operation + index) = *(string_1 + index);
+				*(string_operation + index + string_operation_index) = *(string_1 + index);
 			}
 			else {
-				*(string_operation + index) = *(string_2 + index - string_size_1);
+				*(string_operation + index + string_operation_index) = *(string_2 + index - string_size_1);
 			}
 		}
 
