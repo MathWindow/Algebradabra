@@ -10,7 +10,7 @@ using namespace std;
 cu_char string_path_max_size = 200;
 wchar_t string_path[string_path_max_size]{};
 
-class OPENFILENAMEW_X {
+class open_file_name_w_x {
 public:
 	OPENFILENAMEW save;
 	OPENFILENAMEW open;
@@ -29,15 +29,20 @@ public:
 	BOOL __stdcall save_file_dialog() {
 		return GetSaveFileNameW(&save);
 	}
+
+	void continue_planning() {
+		if (both.hwndOwner != NULL) {
+			open.hwndOwner = both.hwndOwner;
+			save.hwndOwner = both.hwndOwner;
+		}
+	}
 };
 
-OPENFILENAMEW_X ofn_algebraic_book;
+open_file_name_w_x ofn_algebraic_book;
 
 void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.zero_memory();
 
-	ofn_algebraic_book.open.hwndOwner = h_window;
-	ofn_algebraic_book.open.hInstance = NULL;
 	ofn_algebraic_book.open.lStructSize =
 		sizeof(ofn_algebraic_book.open);
 	ofn_algebraic_book.open.lpstrTitle = L"Открыть книгу...";
@@ -46,8 +51,6 @@ void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.open.nMaxFile = sizeof(string_path);
 	ofn_algebraic_book.open.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST;
 
-	ofn_algebraic_book.save.hwndOwner = h_window;
-	ofn_algebraic_book.save.hInstance = NULL;
 	ofn_algebraic_book.save.lStructSize =
 		sizeof(ofn_algebraic_book.save);
 	ofn_algebraic_book.save.lpstrTitle = L"Сохранить книгу как...";
@@ -55,6 +58,8 @@ void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.save.lpstrFile[0] = L'\0';
 	ofn_algebraic_book.save.nMaxFile = sizeof(string_path);
 	ofn_algebraic_book.save.Flags = OFN_PATHMUSTEXIST;
+
+	ofn_algebraic_book.both.hwndOwner = h_window;
 }
 
 #endif

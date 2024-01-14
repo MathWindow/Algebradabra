@@ -7,7 +7,7 @@ using namespace std;
 #ifndef maths_analize_header
 #define maths_analize_header
 
-namespace m_anal {
+namespace math_analize {
 	class differential {
 	public:
 

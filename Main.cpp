@@ -92,7 +92,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 				MB_ICONINFORMATION
 			);
 		}
-		else if (w_param == command_what_new) {
+		else if (w_param == command_whats_new) {
 			MessageBoxW(
 				h_window, 
 				L"Переделка иконки.", 
@@ -108,7 +108,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 				MB_ICONINFORMATION
 			);
 		}
-		else if (w_param == command_algebraic_book_create) {
+		else if (w_param == command_create_algebraic_book) {
 			window_algebraic_book_create(h_window);
 		}
 		else if (w_param == command_open_algebraic_book) {

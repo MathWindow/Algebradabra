@@ -29,7 +29,7 @@ c_string_param string_open = put_index_running(false);
 c_string_param string_save = put_index_running(false);
 c_string_param string_save_as = put_index_running(false);
 c_string_param string_compress = put_index_running(false);
-c_string_param string_lock = put_index_running(false);
+c_string_param string_lock_with_code = put_index_running(false);
 c_string_param string_page_add = put_index_running(false);
 c_string_param string_coordinate = put_index_running(false);
 c_string_param string_circuit = put_index_running(false);
@@ -121,8 +121,8 @@ void set_Russian_vocabulary() {
 		L"Сохранить как...";
 	main_vocabulary.at(language_Russian).at(string_compress) =
 		L"Сжать";
-	main_vocabulary.at(language_Russian).at(string_lock) =
-		L"Заблокировать паролем";
+	main_vocabulary.at(language_Russian).at(string_lock_with_code) =
+		L"Заблокировать кодом";
 	main_vocabulary.at(language_Russian).at(string_coordinate) =
 		L"Координата";
 	main_vocabulary.at(language_Russian).at(string_circuit) =
@@ -226,8 +226,8 @@ void set_English_vocabulary() {
 		L"Save as...";
 	main_vocabulary.at(language_English).at(string_compress) =
 		L"Compress";
-	main_vocabulary.at(language_English).at(string_lock) =
-		L"Lock file with help of password";
+	main_vocabulary.at(language_English).at(string_lock_with_code) =
+		L"Lock file with code";
 	main_vocabulary.at(language_English).at(string_coordinate) =
 		L"Coordinate";
 	main_vocabulary.at(language_English).at(string_circuit) =

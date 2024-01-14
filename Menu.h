@@ -42,13 +42,13 @@ HMENU root_menu = CreateMenu();
 bool create_main_menu(HWND h_window) {
 	// Третий этаж
 
-	translating_element_menu(algebraic_book_menu, MF_STRING, command_algebraic_book_create, string_create);
+	translating_element_menu(algebraic_book_menu, MF_STRING, command_create_algebraic_book, string_create);
 	translating_element_menu(algebraic_book_menu, MF_STRING, command_open_algebraic_book, string_open);
 	translating_element_menu(algebraic_book_menu, MF_STRING, command_save_algebraic_book, string_save);
 	translating_element_menu(algebraic_book_menu, MF_STRING, command_save_algebraic_book_as, string_save_as);
 	line_element_menu(algebraic_book_menu);
 	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_compress);
-	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_lock);
+	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_lock_with_code);
 
 	translating_element_menu(add_list_element_menu, MF_STRING, NULL, string_coordinate);
 	translating_element_menu(add_list_element_menu, MF_STRING, NULL, string_circuit);
@@ -99,7 +99,7 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)view_menu, string_view_);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)help_settings_menu, string_help_settings);
 
-	translating_element_menu(root_menu, MF_STRING, command_what_new, string_whats_new);
+	translating_element_menu(root_menu, MF_STRING, command_whats_new, string_whats_new);
 
 	SetMenu(h_window, root_menu);
 

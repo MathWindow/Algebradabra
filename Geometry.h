@@ -4,7 +4,7 @@
 #ifndef geometry_header
 #define geometry_header
 
-namespace m_geo {
+namespace math_geometry {
 
 }
 
