@@ -41,7 +41,7 @@ namespace string_work {
 		u_short string_size_output = string_size_1 + string_size_2;
 
 		for (u_short index = 0; index < string_size_output; index++) {
-			if (index < string_size_1 + string_size_output) {
+			if (index < string_size_1) {
 				*(string_operation + index + string_operation_index) = *(string_1 + index);
 			}
 			else {
