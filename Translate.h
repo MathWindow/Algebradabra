@@ -72,7 +72,8 @@ c_string_param string_cannot_create_class_error_list = put_index_running(false);
 c_string_param string_cannot_create_class_create_algebraic_book = put_index_running(false);
 c_string_param string_splitting_into_zero = put_index_running(false);
 c_string_param string_root_of_negative = put_index_running(false);
-c_string_param string_asking_for_exit = put_index_running(false);
+c_string_param string_asking_for_save_before_exit = put_index_running(false);
+c_string_param string_window = put_index_running(false);
 
 bool is_vocabulary_installed = false;
 
@@ -181,8 +182,10 @@ void set_Russian_vocabulary() {
 		L"Невозможно создать класс окна списка ошибок";
 	main_vocabulary.at(language_Russian).at(string_cannot_create_class_create_algebraic_book) =
 		L"Невозможно создать класс окна создания алгебраической книги";
-	main_vocabulary.at(language_Russian).at(string_asking_for_exit) =
+	main_vocabulary.at(language_Russian).at(string_asking_for_save_before_exit) =
 		L"Сохранять документы перед выходом из программы?";
+	main_vocabulary.at(language_Russian).at(string_window) =
+		L"Окно";
 }
 
 void set_English_vocabulary() {
@@ -286,8 +289,10 @@ void set_English_vocabulary() {
 		L"Cannot create class of error's list";
 	main_vocabulary.at(language_English).at(string_cannot_create_class_create_algebraic_book) =
 		L"Cannot create class of creating algebraic book";
-	main_vocabulary.at(language_English).at(string_asking_for_exit) =
+	main_vocabulary.at(language_English).at(string_asking_for_save_before_exit) =
 		L"Would you like to save documents before exit?";
+	main_vocabulary.at(language_English).at(string_window) =
+		L"Window";
 }
 
 void set_all_vocabulary() {

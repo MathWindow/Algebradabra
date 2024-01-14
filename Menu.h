@@ -33,6 +33,7 @@ HMENU language_menu = CreateMenu();
 HMENU program_menu = CreateMenu();
 HMENU edit_menu = CreateMenu();
 HMENU view_menu = CreateMenu();
+HMENU window_menu = CreateMenu();
 HMENU help_settings_menu = CreateMenu();
 
 // Первый этаж
@@ -85,6 +86,10 @@ bool create_main_menu(HWND h_window) {
 	line_element_menu(view_menu);
 	translating_element_menu(view_menu, MF_STRING, NULL, string_default_view);
 
+	translating_element_menu(window_menu, MF_STRING, NULL, string_em_dash);
+	translating_element_menu(window_menu, MF_STRING, NULL, string_em_dash);
+	translating_element_menu(window_menu, MF_STRING, command_choose_color, string_em_dash);
+
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_algebraic_book_parameter);
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_page_parameter);
 	line_element_menu(help_settings_menu);
@@ -97,6 +102,7 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)program_menu, string_program);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)edit_menu, string_edit);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)view_menu, string_view_);
+	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)window_menu, string_window);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)help_settings_menu, string_help_settings);
 
 	translating_element_menu(root_menu, MF_STRING, command_whats_new, string_whats_new);
