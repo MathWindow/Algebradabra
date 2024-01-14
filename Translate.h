@@ -26,6 +26,7 @@ c_language_param language_Italian = put_index_running(false);
 
 c_string_param string_exit = put_index_running(true);
 c_string_param string_whats_new = put_index_running(false);
+c_string_param string_thats_new = put_index_running(false);
 c_string_param string_program = put_index_running(false);
 c_string_param string_algebraic_book = put_index_running(false);
 c_string_param string_create = put_index_running(false);
@@ -86,6 +87,10 @@ c_string_param string_choosing_color_window = put_index_running(false);
 c_string_param string_window_opening_file = string_opening_file_window;
 c_string_param string_window_saving_file = string_saving_file_window;
 c_string_param string_window_choosing_color = string_choosing_color_window;
+c_string_param string_open_book = put_index_running(false);
+c_string_param string_save_book_as = put_index_running(false);
+c_string_param string_open_file = put_index_running(false);
+c_string_param string_save_file_as = put_index_running(false);
 
 bool is_vocabulary_installed = false;
 
@@ -98,6 +103,8 @@ void set_Russian_vocabulary() {
 		L"Выход";
 	main_vocabulary.at(language_Russian).at(string_whats_new) =
 		L"Что нового?";
+	main_vocabulary.at(language_Russian).at(string_thats_new) =
+		L"Иконка полностью переделывалась, появились диалоговые окна открытия, сохранения файла и выбора цвета. Появились технические обзоры вышеперечисленных окон.";
 	main_vocabulary.at(language_Russian).at(string_program) =
 		L"Программа";
 	main_vocabulary.at(language_Russian).at(string_null_handle) =
@@ -143,7 +150,7 @@ void set_Russian_vocabulary() {
 	main_vocabulary.at(language_Russian).at(string_paint) =
 		L"Рисунок";
 	main_vocabulary.at(language_Russian).at(string_file_txt) =
-		L"File *.txt";
+		L"Файл *.txt";
 	main_vocabulary.at(language_Russian).at(string_cancel_last) =
 		L"Отменить последнее";
 	main_vocabulary.at(language_Russian).at(string_undo_last) =
@@ -206,6 +213,14 @@ void set_Russian_vocabulary() {
 		L"Окно сохранения файла";
 	main_vocabulary.at(language_Russian).at(string_opening_file_window | string_window_opening_file) =
 		L"Окно открытия файла";
+	main_vocabulary.at(language_Russian).at(string_open_book) =
+		L"Открыть книгу...";
+	main_vocabulary.at(language_Russian).at(string_save_book_as) =
+		L"Сохранить книгу как...";
+	main_vocabulary.at(language_Russian).at(string_open_file) =
+		L"Открыть файл...";
+	main_vocabulary.at(language_Russian).at(string_save_file_as) =
+		L"Сохранить файл как...";
 }
 
 void set_English_vocabulary() {
@@ -213,6 +228,8 @@ void set_English_vocabulary() {
 		L"Exit";
 	main_vocabulary.at(language_English).at(string_whats_new) =
 		L"What's new?";
+	main_vocabulary.at(language_English).at(string_thats_new) =
+		L"Icon was remade fully. Save, open file and choose color window were appeared. Technical window's checking of thease windows appeard too.";
 	main_vocabulary.at(language_English).at(string_program) =
 		L"Program";
 	main_vocabulary.at(language_English).at(string_null_handle) =
@@ -321,6 +338,14 @@ void set_English_vocabulary() {
 		L"Saving file window";
 	main_vocabulary.at(language_English).at(string_opening_file_window | string_window_opening_file) =
 		L"Opening file window";
+	main_vocabulary.at(language_English).at(string_open_book) =
+		L"Open book...";
+	main_vocabulary.at(language_English).at(string_save_book_as) =
+		L"Save book as...";
+	main_vocabulary.at(language_English).at(string_open_file) =
+		L"Open file...";
+	main_vocabulary.at(language_English).at(string_save_file_as) =
+		L"Save file as...";
 }
 
 void set_all_vocabulary() {

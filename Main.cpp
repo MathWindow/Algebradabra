@@ -10,6 +10,7 @@
 #include "FileDialog.h"
 #include "ColorDialog.h"
 #include <commdlg.h>
+#include "Translate.h"
 
 LRESULT CALLBACK main_procedure(procedure_arguments) {
 	switch (message) {
@@ -69,7 +70,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		else if (w_param == command_whats_new) {
 			MessageBoxW(
 				h_window, 
-				L"Переделка иконки.", 
+				translating_string(string_thats_new),
 				program_name, 
 				MB_ICONINFORMATION
 			);

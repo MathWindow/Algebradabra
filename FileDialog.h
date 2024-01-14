@@ -42,6 +42,12 @@ public:
 			save.hwndOwner = both_.hwndOwner;
 		}
 	}
+
+	void both_hwndOwner(HWND h_window) {
+		open.hwndOwner = h_window;;
+		save.hwndOwner = h_window;
+		both_.hwndOwner = h_window;
+	}
 };
 
 open_file_name_w_x ofn_algebraic_book;
@@ -52,7 +58,7 @@ void plan_ofn_algebraic_book(HWND h_window) {
 
 	ofn_algebraic_book.open.lStructSize =
 		sizeof(ofn_algebraic_book.open);
-	ofn_algebraic_book.open.lpstrTitle = L"Открыть книгу...";
+	ofn_algebraic_book.open.lpstrTitle = translating_string(string_open_book);
 	ofn_algebraic_book.open.lpstrFile = string_path;
 	ofn_algebraic_book.open.lpstrFile[0] = L'\0';
 	ofn_algebraic_book.open.nMaxFile = sizeof(string_path);
@@ -60,7 +66,7 @@ void plan_ofn_algebraic_book(HWND h_window) {
 	
 	ofn_algebraic_book.save.lStructSize =
 		sizeof(ofn_algebraic_book.save);
-	ofn_algebraic_book.save.lpstrTitle = L"Сохранить книгу как...";
+	ofn_algebraic_book.save.lpstrTitle = translating_string(string_save_book_as);
 	ofn_algebraic_book.save.lpstrFile = string_path;
 	ofn_algebraic_book.save.lpstrFile[0] = L'\0';
 	ofn_algebraic_book.save.nMaxFile = sizeof(string_path);
@@ -75,14 +81,14 @@ void plan_ofn_technical_check(HWND h_window) {
 	ofn_technical_check.zero_memory();
 
 	ofn_technical_check.open.lStructSize = sizeof(ofn_technical_check.open);
-	ofn_technical_check.open.lpstrTitle = L"Открыть файл...";
+	ofn_technical_check.open.lpstrTitle = translating_string(string_open_file);
 	ofn_technical_check.open.lpstrFile = string_path_technical_check;
 	ofn_technical_check.open.lpstrFile[0] = L'\0';
 	ofn_technical_check.open.nMaxFile = sizeof(string_path_technical_check);
 	ofn_technical_check.open.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST;
 
 	ofn_technical_check.save.lStructSize = sizeof(ofn_technical_check.save);
-	ofn_technical_check.save.lpstrTitle = L"Сохранить файл как...";
+	ofn_technical_check.save.lpstrTitle = translating_string(string_save_file_as);
 	ofn_technical_check.save.lpstrFile = string_path_technical_check;
 	ofn_technical_check.save.lpstrFile[0] = L'\0';
 	ofn_technical_check.save.nMaxFile = sizeof(string_path_technical_check);
