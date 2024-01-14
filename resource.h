@@ -4,7 +4,6 @@
 //
 #define main_icon                       7
 #define IDI_ICON1                       101
-#define IDC_POINTER                     104
 
 // Next default values for new objects
 // 

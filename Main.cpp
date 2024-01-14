@@ -89,7 +89,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 			ofn_technical_check.open_file_dialog();
 		}
 		else if (w_param == command_testing_dialog_window) {
-			//MessageBoxW(h_window, , translate::string(translate::string_program_name).c_str(), NULL);
+			MessageBoxW(h_window, translate::string(translate::string_open_book).c_str(), translate::string(translate::string_program_name).c_str(), NULL);
 		}
 		break;
 	case WM_CLOSE:

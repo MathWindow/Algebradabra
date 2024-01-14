@@ -87,7 +87,7 @@ void plan_ofn_technical_check(HWND h_window) {
 	ofn_technical_check.save.nMaxFile = sizeof(string_path_technical_check);
 	ofn_technical_check.save.Flags = OFN_PATHMUSTEXIST;
 
-	ofn_algebraic_book.both_hwndOwner(h_window);
+	ofn_technical_check.both_hwndOwner(h_window);
 }
 
 #endif

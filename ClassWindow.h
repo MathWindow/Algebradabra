@@ -1,7 +1,6 @@
 #pragma once
 #include <windows.h>
 #include <string>
-#include "resource.h"
 #include "Translate.h"
 #include "AssociationType.h"
 
@@ -21,30 +20,30 @@ LPCWSTR main_window_class_name = L"Main window class";
 #define procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param
 
 WNDCLASS main_class_example(class_example_arguments) {
-	WNDCLASS class_inside = { 0 };
+	WNDCLASS class_bringer = { 0 };
 
-	class_inside.hbrBackground = (HBRUSH)background_color;
-	class_inside.hInstance = h_instance;
-	class_inside.hIcon = LoadIconW(h_instance, MAKEINTRESOURCE(icon));
+	class_bringer.hbrBackground = (HBRUSH)background_color;
+	class_bringer.hInstance = h_instance;
+	class_bringer.hIcon = LoadIconW(h_instance, MAKEINTRESOURCEW(icon));
+	class_bringer.hCursor = LoadCursorW(NULL, cursor);
+	class_bringer.lpszClassName = class_string_name;
+	class_bringer.lpfnWndProc = main_procedure;
 
-	if (cursor == L"From resource")
-		class_inside.hCursor = LoadCursor(h_instance, MAKEINTRESOURCE(IDC_POINTER));
-	else {
-		class_inside.hCursor = LoadCursor(NULL, cursor);
-	}
-
-	class_inside.lpszClassName = class_string_name;
-	class_inside.lpfnWndProc = main_procedure;
-
-	return class_inside;
+	return class_bringer;
 }
 
 bool register_class_name(
 	WNDCLASS* class_window_input,
-	string_param details,
-	LPCWSTR function_name
+	string_param details
 ) {
 	if (!RegisterClassW(class_window_input)) {
+		MessageBoxW(
+			NULL, 
+			translate::string(details).c_str(), 
+			translate::string(translate::string_program_name).c_str(), 
+			MB_ICONERROR
+		);
+
 		return false;
 	}
 	else {

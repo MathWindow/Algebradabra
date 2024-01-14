@@ -1,6 +1,5 @@
 #pragma once
 #include <windows.h>
-#include <corecrt.h>
 #include "resource.h"
 #include "ClassWindow.h"
 #include "Monitor.h"
@@ -27,8 +26,7 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 	bool main_class_is_registered = 
 		register_class_name (
 		&main_class,
-		translate::string_cannot_create_class_main,
-		__FUNCTIONW__
+		translate::string_cannot_create_class_main
 	);
 
 	if (main_class_is_registered) {
