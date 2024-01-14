@@ -13,82 +13,81 @@ namespace translate {
 	c_string_param string_per_language = 250;
 	c_language_param language_per_vocabulary = 2;
 
-	c_language_param language_Russian = put_index_running(true);
-	c_language_param language_English = put_index_running(false);
+	c_language_param language_Russian = put_index_counter<language_param>(true);
+	c_language_param language_English = put_index_counter<language_param>(false);
 
-	c_string_param string_exit = put_index_running(true);
-	c_string_param string_whats_new = put_index_running(false);
-	c_string_param string_thats_new = put_index_running(false);
-	c_string_param string_program = put_index_running(false);
-	c_string_param string_algebraic_book = put_index_running(false);
-	c_string_param string_create = put_index_running(false);
-	c_string_param string_open = put_index_running(false);
-	c_string_param string_save = put_index_running(false);
-	c_string_param string_save_as = put_index_running(false);
-	c_string_param string_compress = put_index_running(false);
-	c_string_param string_lock_with_code = put_index_running(false);
-	c_string_param string_page_add = put_index_running(false);
-	c_string_param string_coordinate = put_index_running(false);
-	c_string_param string_circuit = put_index_running(false);
-	c_string_param string_paint = put_index_running(false);
-	c_string_param string_file_txt = put_index_running(false);
-	c_string_param string_edit = put_index_running(false);
-	c_string_param string_search_command = put_index_running(false);
-	c_string_param string_search_string = put_index_running(false);
-	c_string_param string_page_copy = put_index_running(false);
-	c_string_param string_paste = put_index_running(false);
-	c_string_param string_cancel = put_index_running(false);
-	c_string_param string_cancel_last = put_index_running(false);
-	c_string_param string_undo = put_index_running(false);
-	c_string_param string_undo_last = put_index_running(false);
-	c_string_param string_view_ = put_index_running(false);
-	c_string_param string_menu_and_toolbar = put_index_running(false);
-	c_string_param string_cursor = put_index_running(false);
-	c_string_param string_style = put_index_running(false);
-	c_string_param string_default_view = put_index_running(false);
-	c_string_param string_help_settings = put_index_running(false);
-	c_string_param string_algebraic_book_parameter = put_index_running(false);
-	c_string_param string_page_parameter = put_index_running(false);
-	c_string_param string_program_parameter = put_index_running(false);
-	c_string_param string_language = put_index_running(false);
-	c_string_param string_em_dash = put_index_running(false);
-	c_string_param null_string = string_em_dash;
-	c_string_param string_null_handle = put_index_running(false);
-	c_string_param string_null_window_handle = put_index_running(false);
-	c_string_param string_null_menu_handle = put_index_running(false);
-	c_string_param string_cannot_create_dialog_window = put_index_running(false);
-	c_string_param string_cannot_create_edit_widget = put_index_running(false);
-	c_string_param string_cannot_create_listbox_widget = put_index_running(false);
-	c_string_param string_cannot_create_button_widget = put_index_running(false);
-	c_string_param string_cannot_create_static_widget = put_index_running(false);
-	c_string_param string_cannot_create_unknown_widget = put_index_running(false);
-	c_string_param string_cannot_create_menu_element = put_index_running(false);
-	c_string_param string_cannot_create_class_name = put_index_running(false);
-	c_string_param string_cannot_create_class_main = put_index_running(false);
-	c_string_param string_cannot_create_class_error_list = put_index_running(false);
-	c_string_param string_cannot_create_class_create_algebraic_book = put_index_running(false);
-	c_string_param string_splitting_into_zero = put_index_running(false);
-	c_string_param string_root_of_negative = put_index_running(false);
-	c_string_param string_asking_for_save_before_exit = put_index_running(false);
-	c_string_param string_window = put_index_running(false);
-	c_string_param string_technical_windows_check = put_index_running(false);
-	c_string_param string_opening_file_window = put_index_running(false);
-	c_string_param string_saving_file_window = put_index_running(false);
-	c_string_param string_choosing_color_window = put_index_running(false);
+	c_string_param string_exit = put_index_counter<string_param>(true);
+	c_string_param string_whats_new = put_index_counter<string_param>(false);
+	c_string_param string_thats_new = put_index_counter<string_param>(false);
+	c_string_param string_program = put_index_counter<string_param>(false);
+	c_string_param string_algebraic_book = put_index_counter<string_param>(false);
+	c_string_param string_create = put_index_counter<string_param>(false);
+	c_string_param string_open = put_index_counter<string_param>(false);
+	c_string_param string_save = put_index_counter<string_param>(false);
+	c_string_param string_save_as = put_index_counter<string_param>(false);
+	c_string_param string_compress = put_index_counter<string_param>(false);
+	c_string_param string_lock_with_code = put_index_counter<string_param>(false);
+	c_string_param string_page_add = put_index_counter<string_param>(false);
+	c_string_param string_coordinate = put_index_counter<string_param>(false);
+	c_string_param string_circuit = put_index_counter<string_param>(false);
+	c_string_param string_paint = put_index_counter<string_param>(false);
+	c_string_param string_file_txt = put_index_counter<string_param>(false);
+	c_string_param string_edit = put_index_counter<string_param>(false);
+	c_string_param string_search_command = put_index_counter<string_param>(false);
+	c_string_param string_search_string = put_index_counter<string_param>(false);
+	c_string_param string_page_copy = put_index_counter<string_param>(false);
+	c_string_param string_paste = put_index_counter<string_param>(false);
+	c_string_param string_cancel = put_index_counter<string_param>(false);
+	c_string_param string_cancel_last = put_index_counter<string_param>(false);
+	c_string_param string_undo = put_index_counter<string_param>(false);
+	c_string_param string_undo_last = put_index_counter<string_param>(false);
+	c_string_param string_view_ = put_index_counter<string_param>(false);
+	c_string_param string_menu_and_toolbar = put_index_counter<string_param>(false);
+	c_string_param string_cursor = put_index_counter<string_param>(false);
+	c_string_param string_style = put_index_counter<string_param>(false);
+	c_string_param string_default_view = put_index_counter<string_param>(false);
+	c_string_param string_help_settings = put_index_counter<string_param>(false);
+	c_string_param string_algebraic_book_parameter = put_index_counter<string_param>(false);
+	c_string_param string_page_parameter = put_index_counter<string_param>(false);
+	c_string_param string_program_parameter = put_index_counter<string_param>(false);
+	c_string_param string_language = put_index_counter<string_param>(false);
+	c_string_param string_em_dash = put_index_counter<string_param>(false);
+	c_string_param string_null_handle = put_index_counter<string_param>(false);
+	c_string_param string_null_window_handle = put_index_counter<string_param>(false);
+	c_string_param string_null_menu_handle = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_dialog_window = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_edit_widget = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_listbox_widget = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_button_widget = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_static_widget = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_unknown_widget = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_menu_element = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_class_name = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_class_main = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_class_error_list = put_index_counter<string_param>(false);
+	c_string_param string_cannot_create_class_create_algebraic_book = put_index_counter<string_param>(false);
+	c_string_param string_splitting_into_zero = put_index_counter<string_param>(false);
+	c_string_param string_root_of_negative = put_index_counter<string_param>(false);
+	c_string_param string_asking_for_save_before_exit = put_index_counter<string_param>(false);
+	c_string_param string_window = put_index_counter<string_param>(false);
+	c_string_param string_technical_windows_check = put_index_counter<string_param>(false);
+	c_string_param string_opening_file_window = put_index_counter<string_param>(false);
+	c_string_param string_saving_file_window = put_index_counter<string_param>(false);
+	c_string_param string_choosing_color_window = put_index_counter<string_param>(false);
 	c_string_param string_window_opening_file = string_opening_file_window;
 	c_string_param string_window_saving_file = string_saving_file_window;
 	c_string_param string_window_choosing_color = string_choosing_color_window;
-	c_string_param string_open_book = put_index_running(false);
-	c_string_param string_save_book_as = put_index_running(false);
-	c_string_param string_open_file = put_index_running(false);
-	c_string_param string_save_file_as = put_index_running(false);
-	c_string_param string_program_name = put_index_running(false);
-	c_string_param string_main_window = put_index_running(false);
-	c_string_param string_errors_list_window = put_index_running(false);
-	c_string_param string_create_algebraic_book_window = put_index_running(false);
-	c_string_param string_testing_dialog_window = put_index_running(false);
-	c_string_param string_program_author = put_index_running(false);
-	c_string_param string_program_description = put_index_running(false);
+	c_string_param string_open_book = put_index_counter<string_param>(false);
+	c_string_param string_save_book_as = put_index_counter<string_param>(false);
+	c_string_param string_open_file = put_index_counter<string_param>(false);
+	c_string_param string_save_file_as = put_index_counter<string_param>(false);
+	c_string_param string_program_name = put_index_counter<string_param>(false);
+	c_string_param string_main_window = put_index_counter<string_param>(false);
+	c_string_param string_errors_list_window = put_index_counter<string_param>(false);
+	c_string_param string_create_algebraic_book_window = put_index_counter<string_param>(false);
+	c_string_param string_testing_dialog_window = put_index_counter<string_param>(false);
+	c_string_param string_program_author = put_index_counter<string_param>(false);
+	c_string_param string_program_description = put_index_counter<string_param>(false);
 
 	bool is_vocabulary_installed = false;
 
@@ -128,7 +127,7 @@ namespace translate {
 				L"Обнаружено деление на ноль";
 			main_vocabulary.at(language_input).at(string_root_of_negative) =
 				L"Обнаружено корень отрицательного числа";
-			main_vocabulary.at(language_input).at(string_em_dash | null_string) =
+			main_vocabulary.at(language_input).at(string_em_dash) =
 				simbol_em_dash;
 			main_vocabulary.at(language_input).at(string_create) =
 				L"Создать";
@@ -219,7 +218,7 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_save_file_as) =
 				L"Сохранить файл как...";
 			main_vocabulary.at(language_input).at(string_program_name) =
-				L"";
+				L"Алгебрадабра " + program_version_family;
 			main_vocabulary.at(language_input).at(string_main_window) =
 				L"Главное окно";
 			main_vocabulary.at(language_input).at(string_errors_list_window) =
@@ -267,7 +266,7 @@ namespace translate {
 				L"Splitting into zero was detected";
 			main_vocabulary.at(language_input).at(string_root_of_negative) =
 				L"Root of negative number was detected";
-			main_vocabulary.at(language_input).at(string_em_dash | null_string) =
+			main_vocabulary.at(language_input).at(string_em_dash) =
 				simbol_em_dash;
 			main_vocabulary.at(language_input).at(string_create) =
 				L"Create";
@@ -387,17 +386,17 @@ namespace translate {
 		}
 	}
 
-	std::wstring string(string_param string_index_input) {
+	std::wstring string(string_param string_input) {
 		set_all_vocabulary();
 
-		std::wstring string_checking =
-			main_vocabulary.at(language_using).at(string_index_input);
+		std::wstring* string_checking =
+			&(main_vocabulary.at(language_using).at(string_input));
 
-		if (string_checking.size() == 0) {
-			return simbol_em_dash;
+		if ((*string_checking).size() == 0) {
+			return simbol_plus_minus;
 		}
 
-		return string_checking;
+		return *string_checking;
 	}
 }
 

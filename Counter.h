@@ -1,19 +1,18 @@
 #pragma once
-#include "ShortTypes.h"
 
 #ifndef counter_header
 #define counter_header
 
-svt::u_long index_running_global = 0;
+template<typename this_type> this_type put_index_counter(bool reverse, this_type start_number = 0) {
+	static this_type index_global = 0;
 
-svt::u_long put_index_running(bool reverse, svt::u_long start_number = 0) {
 	if (reverse) {
-		index_running_global = start_number;
+		index_global = start_number;
 	}
 
-	index_running_global++;
+	index_global++;
 
-	return index_running_global - 1;
+	return index_global - 1;
 }
 
 #endif
