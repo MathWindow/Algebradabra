@@ -8,6 +8,9 @@
 #include "ColorDialog.h"
 #include "Commands.h"
 #include "ExitDialog.h"
+#include "ClassWindow.h"
+#include "Monitor.h"
+#include "WindowXY.h"
 
 #ifndef macro_header_procedure_window
 #define macro_header_procedure_window
@@ -33,7 +36,7 @@ LRESULT CALLBACK main_procedure(
 			// Должно быть пусто...
 			break;
 		default:
-
+			
 			break;
 		}
 
@@ -106,6 +109,29 @@ LRESULT CALLBACK main_procedure(
 				NULL
 			);
 		}
+		else if (w_param == command_debugger) {
+			set_window_center_position(
+				&debugger_window_x,
+				&debugger_window_y,
+				debugger_window_width,
+				debugger_window_height
+			);
+
+			CreateWindowExW(
+				0,
+				debugger_window_class_name,
+				translate::string__debugger.c_style(),
+				WS_VISIBLE | WS_OVERLAPPEDWINDOW,
+				debugger_window_x,
+				debugger_window_y,
+				debugger_window_width,
+				debugger_window_height,
+				NULL,
+				NULL,
+				NULL,
+				NULL
+			);
+		}
 		break;
 	case WM_CLOSE:
 		// Use WM_CLOSE instead WM_DESTROY
@@ -120,6 +146,30 @@ LRESULT CALLBACK main_procedure(
 		break;
 	}
 
+	return 0L;
+}
+
+LRESULT CALLBACK debugger_procedure(
+	HWND h_window,
+	UINT message,
+	WPARAM w_param,
+	LPARAM l_param
+) {
+	switch (message) {
+	case WM_CREATE:
+
+		break;
+	case WM_COMMAND:
+
+		break;
+	case WM_DESTROY:
+		
+		break;
+	default:
+		return DefWindowProcW(h_window, message, w_param, l_param);
+		break;
+	}
+	
 	return 0L;
 }
 

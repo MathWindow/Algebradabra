@@ -24,11 +24,25 @@ int WINAPI wWinMain(
 		main_procedure
 	);
 
+	WNDCLASSW debugger_class = main_class_example(
+		COLOR_WINDOW,
+		h_instance,
+		macro_icon_main_window,
+		IDC_ARROW,
+		debugger_window_class_name,
+		debugger_procedure
+	);
+
 	bool main_class_is_registered =
 		register_class_name(
 			&main_class,
 			translate::string_cannot_create_class_main.c_style()
 		);
+
+	register_class_name(
+		&debugger_class,
+		translate::string_cannot_create_class_name.c_style()
+	);
 
 	if (main_class_is_registered) {
 		MSG main_message = { 0 };

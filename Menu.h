@@ -94,6 +94,7 @@ bool create_main_menu(HWND h_window) {
 	AppendMenuW(help_settings_menu, MF_STRING, NULL, translate::string__pages_parameter.c_style());
 	line_element_menu(help_settings_menu);
 	AppendMenuW(help_settings_menu, MF_STRING, NULL, translate::string__programs_parameter.c_style());
+	AppendMenuW(help_settings_menu, MF_STRING, command_debugger, translate::string__debugger.c_style());
 	AppendMenuW(help_settings_menu, MF_STRING, command_about, translate::string__about_program.c_style());
 	AppendMenuW(help_settings_menu, MF_POPUP, (UINT_PTR)language_menu, translate::string__language.c_style());
 

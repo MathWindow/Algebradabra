@@ -1,6 +1,6 @@
 #pragma once
-#include "Counter.h"
 #include <minwindef.h>
+#include "Counter.h"
 
 #ifndef macro_header_commands
 #define macro_header_commands
@@ -17,6 +17,8 @@ command_type command_translate_Russian = put_index_counter<command_type>(continu
 command_type command_translate_English = put_index_counter<command_type>(continue_counting);
 
 command_type command_whats_new = put_index_counter<command_type>(continue_counting);
+
+command_type command_debugger = put_index_counter<command_type>(continue_counting);
 
 command_type command_about = put_index_counter<command_type>(continue_counting);
 

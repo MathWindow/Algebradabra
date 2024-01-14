@@ -6,6 +6,7 @@
 #define macro_header_class_window
 
 LPCWSTR main_window_class_name = L"Main window class";
+LPCWSTR debugger_window_class_name = L"Debugger window class";
 
 WNDCLASSW main_class_example(
 	int background_color,

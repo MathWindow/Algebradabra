@@ -16,6 +16,6 @@ const wchar_t symbol_degree_char = L'°';
 const wchar_t symbol_plus_minus_char = L'±';
 const wchar_t symbol_show_list_char = L'»';
 const wchar_t symbol_hide_list_char = L'«';
-const wchar_t symbol_long_stick_char = L'—';
+const wchar_t symbol_em_dash_char = L'—';
 
 #endif

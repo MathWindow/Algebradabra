@@ -294,6 +294,11 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 		L"Главное окно"
 	);
 
+	string string__debugger = set_string(
+		L"Debugger",
+		L"Отладчик"
+	);
+
 	string string_title_main_window = set_string(
 		string_program_name.language_variant.at(language_English)
 		+ L" | "
