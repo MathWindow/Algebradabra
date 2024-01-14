@@ -18,9 +18,9 @@ std::vector<WCHAR> string_open_file_fixer{};
 std::vector<WCHAR> string_save_file_as_fixer{};
 
 LPCWSTR string_save_book_pointer = string_open_book_fixer.data();
-LPCWSTR string_open_book_pointer = string_open_book_fixer.data();
-LPCWSTR string_open_file_pointer = string_open_book_fixer.data();
-LPCWSTR string_save_file_pointer = string_open_book_fixer.data();
+LPCWSTR string_open_book_pointer = string_save_book_as_fixer.data();
+LPCWSTR string_open_file_pointer = string_open_file_fixer.data();
+LPCWSTR string_save_file_pointer = string_save_file_as_fixer.data();
 
 class open_file_name_w_x {
 public:
@@ -84,6 +84,8 @@ open_file_name_w_x ofn_technical_check;
 void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.zero_memory();
 
+	ofn_algebraic_book.prepare_string_fixing();
+
 	ofn_algebraic_book.open.lStructSize =
 		sizeof(ofn_algebraic_book.open);
 	ofn_algebraic_book.open.lpstrTitle = string_save_book_pointer;
@@ -105,6 +107,8 @@ void plan_ofn_algebraic_book(HWND h_window) {
 
 void plan_ofn_technical_check(HWND h_window) {
 	ofn_technical_check.zero_memory();
+
+	ofn_technical_check.prepare_string_fixing();
 
 	ofn_technical_check.open.lStructSize = sizeof(ofn_technical_check.open);
 	ofn_technical_check.open.lpstrTitle = string_open_file_pointer;
