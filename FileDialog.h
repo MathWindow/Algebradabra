@@ -62,12 +62,12 @@ open_file_name_w_x ofn_technical_check;
 
 void plan_ofn_algebraic_book(HWND h_window) {
 	translate::string_fix(
-		translate::string(translate::index_open_book),
+		translate::string(&translate::index_open_book),
 		&string_open_book_fixer
 	);
 
 	translate::string_fix(
-		translate::string(translate::index_save_book_as),
+		translate::string(&translate::index_save_book_as),
 		&string_save_book_as_fixer
 	);
 
@@ -95,12 +95,12 @@ void plan_ofn_algebraic_book(HWND h_window) {
 
 void plan_ofn_technical_check(HWND h_window) {
 	translate::string_fix(
-		translate::string(translate::index_open_file),
+		translate::string(&translate::index_open_file),
 		&string_open_file_fixer
 	);
 
 	translate::string_fix(
-		translate::string(translate::index_save_file_as),
+		translate::string(&translate::index_save_file_as),
 		&string_save_file_as_fixer
 	);
 

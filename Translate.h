@@ -8,7 +8,6 @@
 #include <vector>
 #include <winnt.h>
 #include <climits>
-#include <WinUser.h>
 
 #ifndef translate_header
 #define translate_header
@@ -109,27 +108,8 @@ namespace translate {
 		std::wstring string_input
 	) {
 		if (string_index_input != nullptr) {
-			if (*string_index_input == is_not_numbered) {
-				*string_index_input =
-					vocabulary.at(language_choosen_for_install).size();
-			}
-			else {
-				if (
-					*string_index_input
-					!= vocabulary.at(language_choosen_for_install).size()
-				) {
-					MessageBoxW(
-						NULL, 
-						(
-							std::to_wstring(*string_index_input)
-							+ L" | "
-							+ std::to_wstring(vocabulary.at(language_choosen_for_install).size())
-						).c_str(), 
-						NULL, 
-						MB_ICONERROR
-					);
-				}
-			}
+			*string_index_input =
+				vocabulary.at(language_choosen_for_install).size();
 			
 			vocabulary.at(language_choosen_for_install).push_back(string_input);
 		}
@@ -276,9 +256,9 @@ namespace translate {
 		}
 	}
 
-	void set_all_vocabulary() {
-		static bool is_vocabulary_installed = false;
+	bool is_vocabulary_installed = false;
 
+	void set_all_vocabulary() {
 		if (!is_vocabulary_installed) {
 			set_vocabulary(language_Russian);
 			set_vocabulary(language_English);
@@ -287,11 +267,11 @@ namespace translate {
 		}
 	}
 
-	std::wstring string(string_index index_input) {
+	std::wstring string(string_index* index_input) {
 		set_all_vocabulary();
 
 		std::wstring string_output =
-			vocabulary.at(language_using).at(index_input);
+			vocabulary.at(language_using).at(*index_input);
 
 		if (string_output.size() == 0) {
 			return symbol_plus_minus;

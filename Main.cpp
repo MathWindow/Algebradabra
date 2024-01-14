@@ -28,7 +28,7 @@ int WINAPI wWinMain(
 	bool main_class_is_registered =
 		register_class_name(
 			&main_class,
-			translate::index_cannot_create_class_main
+			&translate::index_cannot_create_class_main
 		);
 
 	if (main_class_is_registered) {
@@ -46,7 +46,7 @@ int WINAPI wWinMain(
 		CreateWindowExW(
 			0UL,
 			main_window_class_name,
-			translate::string(translate::index_main_window_title).c_str(),
+			translate::string(&translate::index_main_window_title).c_str(),
 			WS_VISIBLE | WS_OVERLAPPEDWINDOW,
 			main_window_x,
 			main_window_y,

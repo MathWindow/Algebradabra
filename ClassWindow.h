@@ -30,13 +30,13 @@ WNDCLASSW main_class_example(
 
 bool register_class_name(
 	WNDCLASSW* class_window_input,
-	translate::string_index details
+	translate::string_index* details
 ) {
 	if (!RegisterClassW(class_window_input)) {
 		MessageBoxW(
 			NULL, 
 			translate::string(details).c_str(), 
-			translate::string(translate::index_program_name).c_str(),
+			translate::string(&translate::index_program_name).c_str(),
 			MB_ICONERROR
 		);
 
