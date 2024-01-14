@@ -151,13 +151,14 @@
     <ClInclude Include="Monitor.h" />
     <ClInclude Include="ShortTypes.h" />
     <ClInclude Include="Simbols.h" />
+    <ClInclude Include="StringWork.h" />
     <ClInclude Include="Toolbar.h" />
     <ClInclude Include="Translate.h" />
     <ClInclude Include="FileWork.h" />
     <ClInclude Include="LockFile.h" />
     <ClInclude Include="CreateWindow.h" />
     <ClInclude Include="DialogWindow.h" />
-    <ClInclude Include="Naming.h" />
+    <ClInclude Include="VersionInfo.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Widgets.h" />

@@ -1,6 +1,6 @@
 #pragma once
 #include <windows.h>
-#include "Naming.h"
+#include "VersionInfo.h"
 #include "Monitor.h"
 #include "HistoryOfError.h"
 #include "Translate.h"
@@ -46,7 +46,7 @@ void call_dialog_window (
 	check_h_window(
 		ghost_h_dialog_window,
 		__FUNCTIONW__,
-		string_cannot_create_dialog_window,
+		translate::string_cannot_create_dialog_window,
 		0,
 		0,
 		false,

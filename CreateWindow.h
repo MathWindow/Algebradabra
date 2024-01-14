@@ -59,19 +59,19 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 	main_class_is_registered = 
 		register_class_name(
 			&main_class, 
-			string_cannot_create_class_main,
+			translate::string_cannot_create_class_main,
 			__FUNCTIONW__
 		);
 
 	register_class_name(
 		&error_list_class, 
-		string_cannot_create_class_error_list,
+		translate::string_cannot_create_class_error_list,
 		__FUNCTIONW__
 	);
 
 	register_class_name(
 		&algebraic_book_create_class,
-		string_cannot_create_class_main,
+		translate::string_cannot_create_class_main,
 		__FUNCTIONW__
 	);
 

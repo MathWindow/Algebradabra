@@ -113,7 +113,7 @@
     <ClInclude Include="resource.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
-    <ClInclude Include="Naming.h">
+    <ClInclude Include="VersionInfo.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
     <ClInclude Include="HistoryOfError.h">
@@ -142,6 +142,9 @@
     </ClInclude>
     <ClInclude Include="ColorDialog.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
+    </ClInclude>
+    <ClInclude Include="StringWork.h">
+      <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

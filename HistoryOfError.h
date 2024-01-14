@@ -1,7 +1,7 @@
 #pragma once
 #include "AssociationType.h"
 #include "Translate.h"
-#include "Naming.h"
+#include "VersionInfo.h"
 #include <vector>
 #include <array>
 #include <windows.h>
@@ -66,7 +66,7 @@ bool error_event_write(
 	error_list_program.at(index_last_event).advice = advice;
 
 	if (complate) {
-		MessageBoxW(h_window, translating_string(details), program_name, MB_ICONERROR);
+		MessageBoxW(h_window, translate::translating_string(details), program_name, MB_ICONERROR);
 	}
 
 	return false;
@@ -84,15 +84,15 @@ bool check_h_window(
 ) {
 	if (window_output == NULL) {
 		return error_event_write(
-			string_null_window_handle,
+			translate::string_null_window_handle,
 			details,
 			function_name,
 			index_value,
 			index_second,
 			was_in_for,
 			was_catch,
-			string_em_dash,
-			string_em_dash,
+			translate::string_em_dash,
+			translate::string_em_dash,
 			h_window,
 			complate
 		);
@@ -117,7 +117,7 @@ HWND create_widget_and_check(
 	bool was_catch = false,
 	message_box_arguments
 ) {
-	string_param part_of_details = string_em_dash;
+	string_param part_of_details = translate::string_em_dash;
 
 	HWND h_window_checker = CreateWindowExW(
 		0,
@@ -135,16 +135,16 @@ HWND create_widget_and_check(
 	);
 
 	if (class_name == L"edit" || class_name == L"RichEdit") {
-		part_of_details = string_cannot_create_edit_widget;
+		part_of_details = translate::string_cannot_create_edit_widget;
 	}
 	else if (class_name == L"button") {
-		part_of_details = string_cannot_create_button_widget;
+		part_of_details = translate::string_cannot_create_button_widget;
 	}
 	else if (class_name == L"listbox") {
-		part_of_details = string_cannot_create_listbox_widget;
+		part_of_details = translate::string_cannot_create_listbox_widget;
 	}
 	else {
-		part_of_details = string_cannot_create_unknown_widget;
+		part_of_details = translate::string_cannot_create_unknown_widget;
 	}
 
 	check_h_window(
@@ -177,15 +177,15 @@ bool check_value(
 	if (is_splitting) {
 		if (number_output == 0) {
 			return error_event_write(
-				string_splitting_into_zero,
-				string_splitting_into_zero,
+				translate::string_splitting_into_zero,
+				translate::string_splitting_into_zero,
 				function_name,
 				index_value,
 				index_second,
 				was_in_for,
 				was_catch,
-				string_em_dash,
-				string_em_dash,
+				translate::string_em_dash,
+				translate::string_em_dash,
 				h_window,
 				complate
 			);

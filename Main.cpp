@@ -70,7 +70,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		else if (w_param == command_whats_new) {
 			MessageBoxW(
 				h_window, 
-				translating_string(string_thats_new),
+				translate::translating_string(translate::string_thats_new),
 				program_name, 
 				MB_ICONINFORMATION
 			);

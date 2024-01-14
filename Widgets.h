@@ -1,7 +1,7 @@
 #pragma once
 #include <windows.h>
 #include <vector>
-#include "Naming.h"
+#include "VersionInfo.h"
 #include "Listbox.h"
 #include "HistoryOfError.h"
 #include "Translate.h"
@@ -73,7 +73,7 @@ void create_error_list_widgets(HWND h_window) {
 			listbox_error_list_position =
 				add_string(
 					listbox_error_list,
-					translating_string(error_list_program.at(index_running).name),
+					translate::translating_string(error_list_program.at(index_running).name),
 					index_running
 				);
 		}
