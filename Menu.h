@@ -20,61 +20,61 @@ BOOL _stdcall string_element_menu(HMENU h_menu, UINT_PTR numberCommand, LPCWSTR 
 
 /*
 
-Схема дерева меню с подсказкой горячей клавиши
+Г‘ГµГҐГ¬Г  Г¤ГҐГ°ГҐГўГ  Г¬ГҐГ­Гѕ Г± ГЇГ®Г¤Г±ГЄГ Г§ГЄГ®Г© ГЈГ®Г°ГїГ·ГҐГ© ГЄГ«Г ГўГЁГёГЁ
 Tree's circuit menu with hot key's tip
 
-Программа
-	Пакетный документ
-		Создать ctrl + N
-		Открыть ctrl + O
-		Сохранить ctrl + S
-		Сохранить как... ctrl + shift + S
+ГЏГ°Г®ГЈГ°Г Г¬Г¬Г 
+	ГЏГ ГЄГҐГІГ­Г»Г© Г¤Г®ГЄГіГ¬ГҐГ­ГІ
+		Г‘Г®Г§Г¤Г ГІГј ctrl + N
+		ГЋГІГЄГ°Г»ГІГј ctrl + O
+		Г‘Г®ГµГ°Г Г­ГЁГІГј ctrl + S
+		Г‘Г®ГµГ°Г Г­ГЁГІГј ГЄГ ГЄ... ctrl + shift + S
 		-
-		Сжимать F6
-		Заблокировать паролем
+		Г‘Г¦ГЁГ¬Г ГІГј F6
+		Г‡Г ГЎГ«Г®ГЄГЁГ°Г®ГўГ ГІГј ГЇГ Г°Г®Г«ГҐГ¬
 	-
-	Добавить лист ctrl + E
-	Добавить элемент листа
-		Координата E
-		Схема
-		Рисунок
-		Файл rtf
+	Г„Г®ГЎГ ГўГЁГІГј Г«ГЁГ±ГІ ctrl + E
+	Г„Г®ГЎГ ГўГЁГІГј ГЅГ«ГҐГ¬ГҐГ­ГІ Г«ГЁГ±ГІГ 
+		ГЉГ®Г®Г°Г¤ГЁГ­Г ГІГ  E
+		Г‘ГµГҐГ¬Г 
+		ГђГЁГ±ГіГ­Г®ГЄ
+		Г”Г Г©Г« rtf
 	-
-	Выход alt + F4
-Правка
-	Поиск команд ctrl + shift + F
-	Поиск текстовых фрагментов ctrl + F
+	Г‚Г»ГµГ®Г¤ alt + F4
+ГЏГ°Г ГўГЄГ 
+	ГЏГ®ГЁГ±ГЄ ГЄГ®Г¬Г Г­Г¤ ctrl + shift + F
+	ГЏГ®ГЁГ±ГЄ ГІГҐГЄГ±ГІГ®ГўГ»Гµ ГґГ°Г ГЈГ¬ГҐГ­ГІГ®Гў ctrl + F
 	-
-	Копировать лист ctrl + shift + C
-	Копировать элемент листа ctrl + C
-	Вставить ctrl + V
+	ГЉГ®ГЇГЁГ°Г®ГўГ ГІГј Г«ГЁГ±ГІ ctrl + shift + C
+	ГЉГ®ГЇГЁГ°Г®ГўГ ГІГј ГЅГ«ГҐГ¬ГҐГ­ГІ Г«ГЁГ±ГІГ  ctrl + C
+	Г‚Г±ГІГ ГўГЁГІГј ctrl + V
 	-
-	Отменить
-		Отменить последнее ctrl + Z
-		<Список выполненных действии>
-	Возвращать
-		Возвращать последнее ctrl + Y
-		<Список отмененных действии>
-Вид
-	Меню и панель инструментов
-	Курсор
-	Координата
-	Стиль
+	ГЋГІГ¬ГҐГ­ГЁГІГј
+		ГЋГІГ¬ГҐГ­ГЁГІГј ГЇГ®Г±Г«ГҐГ¤Г­ГҐГҐ ctrl + Z
+		<Г‘ГЇГЁГ±Г®ГЄ ГўГ»ГЇГ®Г«Г­ГҐГ­Г­Г»Гµ Г¤ГҐГ©Г±ГІГўГЁГЁ>
+	Г‚Г®Г§ГўГ°Г Г№Г ГІГј
+		Г‚Г®Г§ГўГ°Г Г№Г ГІГј ГЇГ®Г±Г«ГҐГ¤Г­ГҐГҐ ctrl + Y
+		<Г‘ГЇГЁГ±Г®ГЄ Г®ГІГ¬ГҐГ­ГҐГ­Г­Г»Гµ Г¤ГҐГ©Г±ГІГўГЁГЁ>
+Г‚ГЁГ¤
+	ГЊГҐГ­Гѕ ГЁ ГЇГ Г­ГҐГ«Гј ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ®Гў
+	ГЉГіГ°Г±Г®Г°
+	ГЉГ®Г®Г°Г¤ГЁГ­Г ГІГ 
+	Г‘ГІГЁГ«Гј
 	-
-	Сбросить представление F5
-Сведение / Настройки
-	Свойство пакетного документа
-	Свойство листа
-	Свойство элемента листа
+	Г‘ГЎГ°Г®Г±ГЁГІГј ГЇГ°ГҐГ¤Г±ГІГ ГўГ«ГҐГ­ГЁГҐ F5
+Г‘ГўГҐГ¤ГҐГ­ГЁГҐ / ГЌГ Г±ГІГ°Г®Г©ГЄГЁ
+	Г‘ГўГ®Г©Г±ГІГўГ® ГЇГ ГЄГҐГІГ­Г®ГЈГ® Г¤Г®ГЄГіГ¬ГҐГ­ГІГ 
+	Г‘ГўГ®Г©Г±ГІГўГ® Г«ГЁГ±ГІГ 
+	Г‘ГўГ®Г©Г±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ  Г«ГЁГ±ГІГ 
 	-
-	Свойство программы F1
-	Язык
+	Г‘ГўГ®Г©Г±ГІГўГ® ГЇГ°Г®ГЈГ°Г Г¬Г¬Г» F1
+	ГџГ§Г»ГЄ
 		English
-		Русский
+		ГђГіГ±Г±ГЄГЁГ©
 
 */
 
-// Третий этаж
+// Г’Г°ГҐГІГЁГ© ГЅГІГ Г¦
 
 HMENU bag_document_menu = CreateMenu();
 HMENU add_list_element_menu = CreateMenu();
@@ -82,80 +82,80 @@ HMENU cancel_menu = CreateMenu();
 HMENU undo_menu = CreateMenu();
 HMENU language_menu = CreateMenu();
 
-// Второй этаж
+// Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦
 
 HMENU program_menu = CreateMenu();
 HMENU edit_menu = CreateMenu();
 HMENU view_menu = CreateMenu();
 HMENU information_settings_menu = CreateMenu();
 
-// Первый этаж
+// ГЏГҐГ°ГўГ»Г© ГЅГІГ Г¦
 
 HMENU root_menu = CreateMenu();
 
 bool create_menu(HWND h_window) {
-	// Третий этаж
+	// Г’Г°ГҐГІГЁГ© ГЅГІГ Г¦
 
-	string_element_menu(bag_document_menu, NULL, L"Создать ctrl + N");
-	string_element_menu(bag_document_menu, NULL, L"Открыть ctrl + O");
-	string_element_menu(bag_document_menu, NULL, L"Сохранить ctrl + S");
-	string_element_menu(bag_document_menu, NULL, L"Сохранить как... ctrl + shift + S");
+	string_element_menu(bag_document_menu, NULL, L"Г‘Г®Г§Г¤Г ГІГј ctrl + N");
+	string_element_menu(bag_document_menu, NULL, L"ГЋГІГЄГ°Г»ГІГј ctrl + O");
+	string_element_menu(bag_document_menu, NULL, L"Г‘Г®ГµГ°Г Г­ГЁГІГј ctrl + S");
+	string_element_menu(bag_document_menu, NULL, L"Г‘Г®ГµГ°Г Г­ГЁГІГј ГЄГ ГЄ... ctrl + shift + S");
 	line_element_menu(bag_document_menu);
-	string_element_menu(bag_document_menu, NULL, L"Сжимать F6");
-	string_element_menu(bag_document_menu, NULL, L"Заблокировать паролем");
+	string_element_menu(bag_document_menu, NULL, L"Г‘Г¦ГЁГ¬Г ГІГј F6");
+	string_element_menu(bag_document_menu, NULL, L"Г‡Г ГЎГ«Г®ГЄГЁГ°Г®ГўГ ГІГј ГЇГ Г°Г®Г«ГҐГ¬");
 
-	string_element_menu(add_list_element_menu, NULL, L"Координата");
-	string_element_menu(add_list_element_menu, NULL, L"Схема");
-	string_element_menu(add_list_element_menu, NULL, L"Рисунок");
-	string_element_menu(add_list_element_menu, NULL, L"Файл rtf");
+	string_element_menu(add_list_element_menu, NULL, L"ГЉГ®Г®Г°Г¤ГЁГ­Г ГІГ ");
+	string_element_menu(add_list_element_menu, NULL, L"Г‘ГµГҐГ¬Г ");
+	string_element_menu(add_list_element_menu, NULL, L"ГђГЁГ±ГіГ­Г®ГЄ");
+	string_element_menu(add_list_element_menu, NULL, L"Г”Г Г©Г« rtf");
 
-	string_element_menu(cancel_menu, NULL, L"Отменить последнее");
+	string_element_menu(cancel_menu, NULL, L"ГЋГІГ¬ГҐГ­ГЁГІГј ГЇГ®Г±Г«ГҐГ¤Г­ГҐГҐ");
 
-	string_element_menu(undo_menu, NULL, L"Возвращать последнее");
+	string_element_menu(undo_menu, NULL, L"Г‚Г®Г§ГўГ°Г Г№Г ГІГј ГЇГ®Г±Г«ГҐГ¤Г­ГҐГҐ");
 
 	string_element_menu(language_menu, NULL, L"English");
-	string_element_menu(language_menu, NULL, L"Русский");
+	string_element_menu(language_menu, NULL, L"ГђГіГ±Г±ГЄГЁГ©");
 
-	// Второй этаж
+	// Г‚ГІГ®Г°Г®Г© ГЅГІГ Г¦
 
-	popup_element_menu(program_menu, bag_document_menu, L"Пакетный документ");
+	popup_element_menu(program_menu, bag_document_menu, L"ГЏГ ГЄГҐГІГ­Г»Г© Г¤Г®ГЄГіГ¬ГҐГ­ГІ");
 	line_element_menu(program_menu);
-	string_element_menu(program_menu, NULL, L"Добавить лист");
-	popup_element_menu(program_menu, add_list_element_menu, L"Добавить элемент листа");
+	string_element_menu(program_menu, NULL, L"Г„Г®ГЎГ ГўГЁГІГј Г«ГЁГ±ГІ");
+	popup_element_menu(program_menu, add_list_element_menu, L"Г„Г®ГЎГ ГўГЁГІГј ГЅГ«ГҐГ¬ГҐГ­ГІ Г«ГЁГ±ГІГ ");
 	line_element_menu(program_menu);
-	string_element_menu(program_menu, command_exit, L"Выход alt + F4");
+	string_element_menu(program_menu, command_exit, L"Г‚Г»ГµГ®Г¤ alt + F4");
 
-	string_element_menu(edit_menu, NULL, L"Поиск команд ctrl + shift + F");
-	string_element_menu(edit_menu, NULL, L"Литературный поиск ctrl + F");
+	string_element_menu(edit_menu, NULL, L"ГЏГ®ГЁГ±ГЄ ГЄГ®Г¬Г Г­Г¤ ctrl + shift + F");
+	string_element_menu(edit_menu, NULL, L"Г‹ГЁГІГҐГ°Г ГІГіГ°Г­Г»Г© ГЇГ®ГЁГ±ГЄ ctrl + F");
 	line_element_menu(edit_menu);
-	string_element_menu(edit_menu, NULL, L"Копировать лист ctrl + shift + C");
-	string_element_menu(edit_menu, NULL, L"Копировать элемент листа");
-	string_element_menu(edit_menu, NULL, L"Вставить");
+	string_element_menu(edit_menu, NULL, L"ГЉГ®ГЇГЁГ°Г®ГўГ ГІГј Г«ГЁГ±ГІ ctrl + shift + C");
+	string_element_menu(edit_menu, NULL, L"ГЉГ®ГЇГЁГ°Г®ГўГ ГІГј ГЅГ«ГҐГ¬ГҐГ­ГІ Г«ГЁГ±ГІГ ");
+	string_element_menu(edit_menu, NULL, L"Г‚Г±ГІГ ГўГЁГІГј");
 	line_element_menu(edit_menu);
-	popup_element_menu(edit_menu, cancel_menu, L"Отменить");
-	popup_element_menu(edit_menu, undo_menu, L"Возвращать");
+	popup_element_menu(edit_menu, cancel_menu, L"ГЋГІГ¬ГҐГ­ГЁГІГј");
+	popup_element_menu(edit_menu, undo_menu, L"Г‚Г®Г§ГўГ°Г Г№Г ГІГј");
 
-	string_element_menu(view_menu, NULL, L"Меню и панель инструментов");
-	string_element_menu(view_menu, NULL, L"Курсор");
-	string_element_menu(view_menu, NULL, L"Координата");
-	string_element_menu(view_menu, NULL, L"Стиль");
+	string_element_menu(view_menu, NULL, L"ГЊГҐГ­Гѕ ГЁ ГЇГ Г­ГҐГ«Гј ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ®Гў");
+	string_element_menu(view_menu, NULL, L"ГЉГіГ°Г±Г®Г°");
+	string_element_menu(view_menu, NULL, L"ГЉГ®Г®Г°Г¤ГЁГ­Г ГІГ ");
+	string_element_menu(view_menu, NULL, L"Г‘ГІГЁГ«Гј");
 	line_element_menu(view_menu);
-	string_element_menu(view_menu, NULL, L"Сбросить представление");
+	string_element_menu(view_menu, NULL, L"Г‘ГЎГ°Г®Г±ГЁГІГј ГЇГ°ГҐГ¤Г±ГІГ ГўГ«ГҐГ­ГЁГҐ");
 	
-	string_element_menu(information_settings_menu, NULL, L"Свойство пакетного документа");
-	string_element_menu(information_settings_menu, NULL, L"Свойство листа");
-	string_element_menu(information_settings_menu, NULL, L"Свойство элемента листа");
+	string_element_menu(information_settings_menu, NULL, L"Г‘ГўГ®Г©Г±ГІГўГ® ГЇГ ГЄГҐГІГ­Г®ГЈГ® Г¤Г®ГЄГіГ¬ГҐГ­ГІГ ");
+	string_element_menu(information_settings_menu, NULL, L"Г‘ГўГ®Г©Г±ГІГўГ® Г«ГЁГ±ГІГ ");
+	string_element_menu(information_settings_menu, NULL, L"Г‘ГўГ®Г©Г±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ  Г«ГЁГ±ГІГ ");
 	line_element_menu(information_settings_menu);
-	string_element_menu(information_settings_menu, NULL, L"Свойство программы F1");
-	popup_element_menu(information_settings_menu, language_menu, L"Язык");
+	string_element_menu(information_settings_menu, NULL, L"Г‘ГўГ®Г©Г±ГІГўГ® ГЇГ°Г®ГЈГ°Г Г¬Г¬Г» F1");
+	popup_element_menu(information_settings_menu, language_menu, L"ГџГ§Г»ГЄ");
 
-	// Первый этаж
+	// ГЏГҐГ°ГўГ»Г© ГЅГІГ Г¦
 
-	popup_element_menu(root_menu, program_menu, L"Программа");
-	popup_element_menu(root_menu, edit_menu, L"Правка");
-	popup_element_menu(root_menu, view_menu, L"Вид");
+	popup_element_menu(root_menu, program_menu, L"ГЏГ°Г®ГЈГ°Г Г¬Г¬Г ");
+	popup_element_menu(root_menu, edit_menu, L"ГЏГ°Г ГўГЄГ ");
+	popup_element_menu(root_menu, view_menu, L"Г‚ГЁГ¤");
 	line_element_menu(root_menu);
-	popup_element_menu(root_menu, information_settings_menu, L"Сведение / Настройки");
+	popup_element_menu(root_menu, information_settings_menu, L"Г‘ГўГҐГ¤ГҐГ­ГЁГҐ / ГЌГ Г±ГІГ°Г®Г©ГЄГЁ");
 
 	SetMenu(h_window, root_menu);
 
