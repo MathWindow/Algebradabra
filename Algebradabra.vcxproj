@@ -132,7 +132,6 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AssociationType.h" />
     <ClInclude Include="ClassWindow.h" />
     <ClInclude Include="ColorDialog.h" />
     <ClInclude Include="Commands.h" />

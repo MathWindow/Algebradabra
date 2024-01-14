@@ -2,14 +2,20 @@
 #include <array>
 #include <string>
 #include "Counter.h"
-#include "AssociationType.h"
 #include "VersionInfo.h"
 #include "Simbols.h"
+#include "ShortTypes.h"
 
 #ifndef translate_header
 #define translate_header
 
 namespace translate {
+	using language_param = svt::u_char;
+	using c_language_param = const language_param;
+
+	using string_param = svt::u_short;
+	using c_string_param = const string_param;
+
 	c_string_param string_per_language = 250;
 	c_language_param language_per_vocabulary = 2;
 
@@ -52,22 +58,8 @@ namespace translate {
 	c_string_param string_program_parameter = put_index_counter<string_param>(false);
 	c_string_param string_language = put_index_counter<string_param>(false);
 	c_string_param string_em_dash = put_index_counter<string_param>(false);
-	c_string_param string_null_handle = put_index_counter<string_param>(false);
-	c_string_param string_null_window_handle = put_index_counter<string_param>(false);
-	c_string_param string_null_menu_handle = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_dialog_window = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_edit_widget = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_listbox_widget = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_button_widget = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_static_widget = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_unknown_widget = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_menu_element = put_index_counter<string_param>(false);
 	c_string_param string_cannot_create_class_name = put_index_counter<string_param>(false);
 	c_string_param string_cannot_create_class_main = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_class_error_list = put_index_counter<string_param>(false);
-	c_string_param string_cannot_create_class_create_algebraic_book = put_index_counter<string_param>(false);
-	c_string_param string_splitting_into_zero = put_index_counter<string_param>(false);
-	c_string_param string_root_of_negative = put_index_counter<string_param>(false);
 	c_string_param string_asking_for_save_before_exit = put_index_counter<string_param>(false);
 	c_string_param string_window = put_index_counter<string_param>(false);
 	c_string_param string_technical_windows_check = put_index_counter<string_param>(false);
@@ -105,28 +97,6 @@ namespace translate {
 				L"Иконка полностью переделывалась, появились диалоговые окна открытия, сохранения файла и выбора цвета. Появились технические обзоры вышеперечисленных окон.";
 			main_vocabulary.at(language_input).at(string_program) =
 				L"Программа";
-			main_vocabulary.at(language_input).at(string_null_handle) =
-				L"Пустой дескриптор";
-			main_vocabulary.at(language_input).at(string_null_window_handle) =
-				L"Пустой дескриптор окна";
-			main_vocabulary.at(language_input).at(string_null_menu_handle) =
-				L"Пустой дескриптор меню";
-			main_vocabulary.at(language_input).at(string_cannot_create_dialog_window) =
-				L"Невозможно создать диалоговое окно";
-			main_vocabulary.at(language_input).at(string_cannot_create_edit_widget) =
-				L"Невозможно создать виджет в виде текстового поля (edit widget)";
-			main_vocabulary.at(language_input).at(string_cannot_create_listbox_widget) =
-				L"Невозможно создать виджет в виде списка (listbox widget)";
-			main_vocabulary.at(language_input).at(string_cannot_create_button_widget) =
-				L"Невозможно создать виджет в виде кнопки (button widget)";
-			main_vocabulary.at(language_input).at(string_cannot_create_static_widget) =
-				L"Невозможно создать виджет в виде надписи (static widget)";
-			main_vocabulary.at(language_input).at(string_cannot_create_menu_element) =
-				L"Невозможно создать элемент меню";
-			main_vocabulary.at(language_input).at(string_splitting_into_zero) =
-				L"Обнаружено деление на ноль";
-			main_vocabulary.at(language_input).at(string_root_of_negative) =
-				L"Обнаружено корень отрицательного числа";
 			main_vocabulary.at(language_input).at(string_em_dash) =
 				simbol_em_dash;
 			main_vocabulary.at(language_input).at(string_create) =
@@ -193,10 +163,6 @@ namespace translate {
 				L"Справка/Настройка";
 			main_vocabulary.at(language_input).at(string_cannot_create_class_main) =
 				L"Невозможно создать класс главного окна";
-			main_vocabulary.at(language_input).at(string_cannot_create_class_error_list) =
-				L"Невозможно создать класс окна списка ошибок";
-			main_vocabulary.at(language_input).at(string_cannot_create_class_create_algebraic_book) =
-				L"Невозможно создать класс окна создания алгебраической книги";
 			main_vocabulary.at(language_input).at(string_asking_for_save_before_exit) =
 				L"Сохранять документы перед выходом из программы?";
 			main_vocabulary.at(language_input).at(string_window) =
@@ -244,28 +210,6 @@ namespace translate {
 				L"Icon was remade fully. Save, open file and choose color window were appeared. Technical window's checking of these windows appeared too.";
 			main_vocabulary.at(language_input).at(string_program) =
 				L"Program";
-			main_vocabulary.at(language_input).at(string_null_handle) =
-				L"Null handle";
-			main_vocabulary.at(language_input).at(string_null_window_handle) =
-				L"Null window handle";
-			main_vocabulary.at(language_input).at(string_null_menu_handle) =
-				L"Null menu handle";
-			main_vocabulary.at(language_input).at(string_cannot_create_dialog_window) =
-				L"Cannot create dialog window";
-			main_vocabulary.at(language_input).at(string_cannot_create_edit_widget) =
-				L"Cannot create edit widget";
-			main_vocabulary.at(language_input).at(string_cannot_create_listbox_widget) =
-				L"Cannot create listbox widget";
-			main_vocabulary.at(language_input).at(string_cannot_create_button_widget) =
-				L"Cannot create button widget";
-			main_vocabulary.at(language_input).at(string_cannot_create_static_widget) =
-				L"Cannot create static widget";
-			main_vocabulary.at(language_input).at(string_cannot_create_menu_element) =
-				L"Cannot create menu element";
-			main_vocabulary.at(language_input).at(string_splitting_into_zero) =
-				L"Splitting into zero was detected";
-			main_vocabulary.at(language_input).at(string_root_of_negative) =
-				L"Root of negative number was detected";
 			main_vocabulary.at(language_input).at(string_em_dash) =
 				simbol_em_dash;
 			main_vocabulary.at(language_input).at(string_create) =
@@ -332,10 +276,6 @@ namespace translate {
 				L"Help/Settings";
 			main_vocabulary.at(language_input).at(string_cannot_create_class_main) =
 				L"Cannot create main class";
-			main_vocabulary.at(language_input).at(string_cannot_create_class_error_list) =
-				L"Cannot create class of error's list";
-			main_vocabulary.at(language_input).at(string_cannot_create_class_create_algebraic_book) =
-				L"Cannot create class of creating algebraic book";
 			main_vocabulary.at(language_input).at(string_asking_for_save_before_exit) =
 				L"Would you like to save documents before exit?";
 			main_vocabulary.at(language_input).at(string_window) =

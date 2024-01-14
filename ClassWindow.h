@@ -2,7 +2,6 @@
 #include <windows.h>
 #include <string>
 #include "Translate.h"
-#include "AssociationType.h"
 
 // 3
 
@@ -17,7 +16,6 @@ std::wstring main_window_title =
 LPCWSTR main_window_class_name = L"Main window class";
 
 #define class_example_arguments int background_color, HINSTANCE h_instance, int icon, LPCWSTR cursor, LPCWSTR class_string_name, WNDPROC main_procedure
-#define procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param
 
 WNDCLASS main_class_example(class_example_arguments) {
 	WNDCLASS class_bringer = { 0 };
@@ -34,7 +32,7 @@ WNDCLASS main_class_example(class_example_arguments) {
 
 bool register_class_name(
 	WNDCLASS* class_window_input,
-	string_param details
+	translate::string_param details
 ) {
 	if (!RegisterClassW(class_window_input)) {
 		MessageBoxW(

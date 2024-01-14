@@ -8,8 +8,8 @@
 #define file_dialog_header
 
 svt::cu_char string_path_max_size = 200;
-wchar_t string_path[string_path_max_size]{};
-wchar_t string_path_technical_check[string_path_max_size]{};
+WCHAR string_path[string_path_max_size]{};
+WCHAR string_path_technical_check[string_path_max_size]{};
 
 class open_file_name_w_x {
 public:

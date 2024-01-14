@@ -1,7 +1,6 @@
 #pragma once
 #include <windows.h>
 #include "Monitor.h"
-#include "ShortTypes.h"
 
 #ifndef dialog_window_header
 #define dialog_window_header

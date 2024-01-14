@@ -3,7 +3,6 @@
 #include <basetsd.h>
 #include "Commands.h"
 #include "Translate.h"
-#include "AssociationType.h"
 
 // 1
 
@@ -18,7 +17,7 @@ BOOL _stdcall translating_element_menu(
 	HMENU h_menu, 
 	UINT menu_flag, 
 	UINT_PTR numberCommand, 
-	string_param title
+	translate::string_param title
 ) {
 	return AppendMenuW(h_menu, menu_flag, numberCommand, translate::string(title).c_str());
 }
