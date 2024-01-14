@@ -6,8 +6,8 @@
 #define version_info_header
 
 LPCWSTR program_version_family = L"May";
-LPCWSTR program_version_abovepublic = L"v1.1";
-LPCWSTR program_version_publication = L"30build";
+LPCWSTR program_version_above = L"v1.1";
+LPCWSTR program_version_publication = L"31build";
 
 LPCWSTR program_version = 
 	string_work::string_union_multy(
@@ -15,7 +15,7 @@ LPCWSTR program_version =
 		L" ", 
 		program_version_publication, 
 		L" ", 
-		program_version_abovepublic
+		program_version_above
 	);
 
 #endif

@@ -14,6 +14,8 @@
 #include "StringWork.h"
 #include "WindowXY.h"
 #include "ClassWindow.h"
+#include <WinUser.h>
+#include <minwindef.h>
 
 LRESULT CALLBACK main_procedure(procedure_arguments) {
 	switch (message) {
