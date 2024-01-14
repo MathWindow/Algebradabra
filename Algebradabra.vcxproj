@@ -173,9 +173,6 @@
   <ItemGroup>
     <None Include="POINTER.cur" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Текстовый документ.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

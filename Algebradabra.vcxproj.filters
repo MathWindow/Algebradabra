@@ -153,9 +153,4 @@
       <Filter>Файлы ресурсов</Filter>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Текстовый документ.txt">
-      <Filter>Текстовые документы</Filter>
-    </Text>
-  </ItemGroup>
 </Project>

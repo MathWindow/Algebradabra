@@ -76,9 +76,16 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 				);
 			}
 		}
-		else if (w_param == command_translate) {
+		else if (w_param == command_translate_Russian) {
 			MessageBoxW(h_window,
-				L"Чтобы перевод вступил в силу, программу нужно закрыть и заново открыть",
+				L"Чтобы перевод вступил в силу, программу нужно закрыть и заново открыть.",
+				program_name,
+				MB_ICONINFORMATION
+			);
+		}
+		else if (w_param == command_translate_English) {
+			MessageBoxW(h_window,
+				L"User should close and open again to translate this program.",
 				program_name,
 				MB_ICONINFORMATION
 			);
@@ -94,7 +101,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		else if (w_param == command_about) {
 			MessageBoxW(
 				h_window, 
-				L"Автор: " program_author L"\nВерсия: " program_version, 
+				L"Автор: " program_author L";\nВерсия: " program_version L".",
 				program_name, 
 				MB_ICONINFORMATION
 			);

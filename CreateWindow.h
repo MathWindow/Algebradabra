@@ -11,14 +11,15 @@ using namespace std;
 #ifndef create_window_header
 #define create_window_header
 
-cuint_16 error_list_window_width = 
+/*
+
+error_list_window_width = 
 	x_out * 3 + width_listbox_default + width_static_error_list + 10;
 
-cuint_16 error_list_window_height = 
+error_list_window_height = 
 	y_out * 2 + height_static_error_list + 20;
 
-uint_16 error_list_x_position = 30;
-uint_16 error_list_y_position = 50;
+*/
 
 LRESULT CALLBACK main_procedure(procedure_arguments);
 LRESULT CALLBACK error_list_procedure(procedure_arguments);

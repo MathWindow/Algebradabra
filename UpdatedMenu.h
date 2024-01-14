@@ -56,8 +56,8 @@ bool create_main_menu(HWND h_window) {
 
 	translating_element_menu(undo_menu, MF_STRING, NULL, string_undo_last);
 
-	AppendMenuW(language_menu, MF_STRING, command_translate, L"English");
-	AppendMenuW(language_menu, MF_STRING, command_translate, L"Русский");
+	AppendMenuW(language_menu, MF_STRING, command_translate_Russian, L"English");
+	AppendMenuW(language_menu, MF_STRING, command_translate_Russian, L"Русский");
 
 	// Второй этаж
 
@@ -100,7 +100,7 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)view_menu, string_view_);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)help_settings_menu, string_help_settings);
 
-	translating_element_menu(root_menu, MF_STRING, command_what_new, string_what_new);
+	translating_element_menu(root_menu, MF_STRING, command_what_new, string_whats_new);
 
 	SetMenu(h_window, root_menu);
 

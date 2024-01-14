@@ -21,7 +21,7 @@ c_lang_param language_Spanish = put_index_running(false);
 c_lang_param language_Italian = put_index_running(false);
 
 c_string_param string_exit = put_index_running(true);
-c_string_param string_what_new = put_index_running(false);
+c_string_param string_whats_new = put_index_running(false);
 c_string_param string_program = put_index_running(false);
 c_string_param string_algebraic_book = put_index_running(false);
 c_string_param string_create = put_index_running(false);
@@ -84,7 +84,7 @@ array<array<LPCWSTR, string_per_language>, language_per_vocabulary> main_vocabul
 void set_Russian_vocabulary() {
 	main_vocabulary.at(language_Russian).at(string_exit) =
 		L"Выход";
-	main_vocabulary.at(language_Russian).at(string_what_new) =
+	main_vocabulary.at(language_Russian).at(string_whats_new) =
 		L"Что нового?";
 	main_vocabulary.at(language_Russian).at(string_program) =
 		L"Программа";
@@ -93,7 +93,7 @@ void set_Russian_vocabulary() {
 void set_English_vocabulary() {
 	main_vocabulary.at(language_English).at(string_exit) =
 		L"Exit";
-	main_vocabulary.at(language_English).at(string_what_new) =
+	main_vocabulary.at(language_English).at(string_whats_new) =
 		L"What is new?";
 	main_vocabulary.at(language_English).at(string_program) =
 		L"Program";

@@ -4,16 +4,18 @@
 #include <vector>
 using namespace std;
 
-class different_ma {
-public:
+namespace ma {
+	class differential {
+	public:
 
-private:
+	private:
 
-};
+	};
 
-class integral_ma {
-public:
+	class integral {
+	public:
 
-private:
+	private:
 
-};
+	};
+}
