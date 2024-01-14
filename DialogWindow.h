@@ -3,6 +3,7 @@
 #include "Naming.h"
 #include "Monitor.h"
 #include "HistoryOfError.h"
+#include "Translate.h"
 
 #ifndef dialog_window_header
 #define dialog_window_header

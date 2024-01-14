@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include <array>
+#include <vector>
 #include "ShortTypes.h"
 using namespace std;
 

@@ -8,6 +8,8 @@
 #include "HistoryOfError.h"
 #include <windowsx.h>
 #include "FileDialog.h"
+#include "ColorDialog.h"
+#include <commdlg.h>
 
 LRESULT CALLBACK main_procedure(procedure_arguments) {
 	switch (message) {
@@ -119,6 +121,9 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		}
 		else if (w_param == command_save_algebraic_book_as) {
 			ofn_algebraic_book.save_file_dialog();
+		}
+		else if (w_param == command_choose_color) {
+			ChooseColorW(&choose_color_1);
 		}
 		break;
 	case WM_CLOSE:

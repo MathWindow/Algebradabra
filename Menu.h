@@ -88,7 +88,7 @@ bool create_main_menu(HWND h_window) {
 
 	translating_element_menu(window_menu, MF_STRING, NULL, string_em_dash);
 	translating_element_menu(window_menu, MF_STRING, NULL, string_em_dash);
-	translating_element_menu(window_menu, MF_STRING, command_choose_color, string_em_dash);
+	translating_element_menu(window_menu, MF_STRING, command_choose_color, string_choose_color_window);
 
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_algebraic_book_parameter);
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_page_parameter);
