@@ -3,6 +3,9 @@
 #include "Naming.h"
 #include "Translate.h"
 
+#ifndef exit_dialog_header
+#define exit_dialog_header
+
 bool ask_wish_save(HWND h_window) {
 	int answer_information = MessageBoxW(h_window, translating_string(string_asking_for_exit), program_name, MB_ICONWARNING | MB_YESNOCANCEL);
 
@@ -15,3 +18,5 @@ bool ask_wish_save(HWND h_window) {
 
 	return true;
 }
+
+#endif

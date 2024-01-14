@@ -4,6 +4,9 @@
 #include "Translate.h"
 #include "HistoryOfError.h"
 
+#ifndef menu_header
+#define menu_header
+
 BOOL _stdcall line_element_menu(HMENU h_menu) {
 	return AppendMenuW(h_menu, MF_SEPARATOR, NULL, NULL);
 }
@@ -106,3 +109,5 @@ bool create_main_menu(HWND h_window) {
 
 	return true;
 }
+
+#endif

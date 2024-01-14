@@ -4,6 +4,9 @@
 #include "Monitor.h"
 #include "HistoryOfError.h"
 
+#ifndef dialog_window_header
+#define dialog_window_header
+
 void call_dialog_window (
 	LPCWSTR class_name,
 	LPCWSTR title,
@@ -51,3 +54,5 @@ void call_dialog_window (
 		true
 	);
 }
+
+#endif

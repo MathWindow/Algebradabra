@@ -25,23 +25,16 @@ public:
 	BOOL __stdcall open_file_dialog() {
 		return GetOpenFileNameW(&open);
 	}
+
+	BOOL __stdcall save_file_dialog() {
+		return GetSaveFileNameW(&save);
+	}
 };
 
 OPENFILENAMEW_X ofn_algebraic_book;
 
 void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.zero_memory();
-
-	/*
-
-	ofn_algebraic_book.both.hwndOwner = h_window;
-	ofn_algebraic_book.both.hInstance = NULL;
-	ofn_algebraic_book.open.lpstrTitle = L"Открыть книгу...";
-	ofn_algebraic_book.save.lpstrTitle = L"Сохранить книгу как...";
-	ofn_algebraic_book.open.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST;
-	ofn_algebraic_book.save.Flags = OFN_PATHMUSTEXIST;
-
-	*/
 
 	ofn_algebraic_book.open.hwndOwner = h_window;
 	ofn_algebraic_book.open.hInstance = NULL;
@@ -52,6 +45,16 @@ void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.open.lpstrFile[0] = L'\0';
 	ofn_algebraic_book.open.nMaxFile = sizeof(string_path);
 	ofn_algebraic_book.open.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST;
+
+	ofn_algebraic_book.save.hwndOwner = h_window;
+	ofn_algebraic_book.save.hInstance = NULL;
+	ofn_algebraic_book.save.lStructSize =
+		sizeof(ofn_algebraic_book.save);
+	ofn_algebraic_book.save.lpstrTitle = L"Сохранить книгу как...";
+	ofn_algebraic_book.save.lpstrFile = string_path;
+	ofn_algebraic_book.save.lpstrFile[0] = L'\0';
+	ofn_algebraic_book.save.nMaxFile = sizeof(string_path);
+	ofn_algebraic_book.save.Flags = OFN_PATHMUSTEXIST;
 }
 
 #endif

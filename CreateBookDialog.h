@@ -5,6 +5,9 @@
 #include "Translate.h"
 #include "WindowXY.h"
 
+#ifndef create_book_dialog_header
+#define create_book_dialog_header
+
 void window_algebraic_book_create(
 	HWND h_window
 ) {
@@ -19,3 +22,5 @@ void window_algebraic_book_create(
 		h_window
 	);
 }
+
+#endif

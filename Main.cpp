@@ -114,6 +114,12 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		else if (w_param == command_open_algebraic_book) {
 			ofn_algebraic_book.open_file_dialog();
 		}
+		else if (w_param == command_save_algebraic_book) {
+			SendMessageW(h_window, WM_COMMAND, command_save_algebraic_book_as, NULL);
+		}
+		else if (w_param == command_save_algebraic_book_as) {
+			ofn_algebraic_book.save_file_dialog();
+		}
 		break;
 	case WM_CLOSE:
 		// Use WM_CLOSE instead WM_DESTROY
