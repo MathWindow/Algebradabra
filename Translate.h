@@ -5,6 +5,8 @@
 #include "VersionInfo.h"
 #include "Symbols.h"
 #include "ShortTypes.h"
+#include <vector>
+#include <winnt.h>
 
 #ifndef translate_header
 #define translate_header
@@ -334,6 +336,21 @@ namespace translate {
 		}
 
 		return main_vocabulary.at(language_using).at(string_input);
+	}
+
+	void string_fix(
+		std::wstring string_input,
+		std::vector<WCHAR>* string_fixing_input
+	) {
+		svt::cu_short string_input_size = string_input.size();
+
+		for (svt::u_short index = 0; index < string_input_size; index++) {
+			(*string_fixing_input).push_back(
+				*(string_input.c_str() + index)
+			);
+		}
+
+		(*string_fixing_input).push_back(L'\0');
 	}
 }
 

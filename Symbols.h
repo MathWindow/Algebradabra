@@ -11,11 +11,11 @@ std::wstring symbol_show_list = L"»";
 std::wstring symbol_hide_list = L"«";
 std::wstring symbol_em_dash = L"—";
 
-const char symbol_paragraph_char = L'§';
-const char symbol_degree_char = L'°';
-const char symbol_plus_minus_char = L'±';
-const char symbol_show_list_char = L'»';
-const char symbol_hide_list_char = L'«';
-const char symbol_long_stick_char = L'—';
+const wchar_t symbol_paragraph_char = L'§';
+const wchar_t symbol_degree_char = L'°';
+const wchar_t symbol_plus_minus_char = L'±';
+const wchar_t symbol_show_list_char = L'»';
+const wchar_t symbol_hide_list_char = L'«';
+const wchar_t symbol_long_stick_char = L'—';
 
 #endif
