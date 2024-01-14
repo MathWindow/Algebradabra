@@ -4,7 +4,9 @@
 #include <array>
 #include "Counter.h"
 #include "AssociationType.h"
+#include "VersionInfo.h"
 #include "Simbols.h"
+#include "StringWork.h"
 using namespace std;
 
 #ifndef translate_header
@@ -94,6 +96,8 @@ namespace translate {
 	c_string_param string_errors_list_window = put_index_running(false);
 	c_string_param string_create_algebraic_book_window = put_index_running(false);
 	c_string_param string_testing_dialog_window = put_index_running(false);
+	c_string_param string_program_author = put_index_running(false);
+	c_string_param string_program_description = put_index_running(false);
 
 	bool is_vocabulary_installed = false;
 
@@ -223,7 +227,7 @@ namespace translate {
 		main_vocabulary.at(language_Russian).at(string_save_file_as) =
 			L"Сохранить файл как...";
 		main_vocabulary.at(language_Russian).at(string_program_name) =
-			L"Алгебрадабра";
+			string_work::string_union(L"Алгебрадабра ", program_version_family);
 		main_vocabulary.at(language_Russian).at(string_main_window) =
 			L"Главное окно";
 		main_vocabulary.at(language_Russian).at(string_errors_list_window) =
@@ -232,6 +236,16 @@ namespace translate {
 			L"Создать книгу";
 		main_vocabulary.at(language_Russian).at(string_testing_dialog_window) =
 			L"Тестовое диалоговое окно";
+		main_vocabulary.at(language_Russian).at(string_program_author) =
+			L"Д. М. Чамкин (Transistor, MathWindow)";
+		main_vocabulary.at(language_Russian).at(string_program_description) =
+			string_work::string_union_multy(
+				L"Автор: ", 
+				main_vocabulary.at(language_Russian).at(string_program_author),
+				L";\nВерсия (название семейства, порядок публикации компиляции или постройки, надверсия): ", 
+				program_version,
+				L"."
+			);
 	}
 
 	void set_English_vocabulary() {
@@ -356,7 +370,7 @@ namespace translate {
 		main_vocabulary.at(language_English).at(string_save_file_as) =
 			L"Save file as...";
 		main_vocabulary.at(language_English).at(string_program_name) =
-			L"Algebradabra";
+			string_work::string_union(L"Algebradabra ", program_version_family);
 		main_vocabulary.at(language_English).at(string_main_window) =
 			L"Main window";
 		main_vocabulary.at(language_English).at(string_errors_list_window) =
@@ -365,6 +379,16 @@ namespace translate {
 			L"Create book";
 		main_vocabulary.at(language_English).at(string_testing_dialog_window) =
 			L"Testing dialog window";
+		main_vocabulary.at(language_English).at(string_program_author) =
+			L"D. M. Chamkin (Transistor, MathWindow)";
+		main_vocabulary.at(language_English).at(string_program_description) =
+			string_work::string_union_multy(
+				L"Author: ",
+				main_vocabulary.at(language_English).at(string_program_author),
+				L";\nVersion (family's title, number of compilation or building, aboveversion): ",
+				program_version,
+				L"."
+			);
 	}
 
 	void set_all_vocabulary() {

@@ -4,20 +4,49 @@
 #include "HistoryOfError.h"
 #include "Translate.h"
 #include "AssociationType.h"
+#include "StringWork.h"
 #include "VersionInfo.h"
+#include "Simbols.h"
 
 #ifndef class_window_header
 #define class_window_header
 
-#define program_author L"Ä. Ì. ×àìêèí"
+LPCWSTR main_window_name = 
+	string_work::string_union_multy(
+		translate::translating_string(
+			translate::string_program_name
+		), 
+		simbol_em_dash L" ",
+		translate::translating_string(
+			translate::string_main_window
+		)
+	);
 
-#define main_window_name program_name L" — main window"
-#define error_list_window_name program_name L" — error list"
-#define algebraic_book_create_name program_name L" — create algebraic book"
+LPCWSTR error_list_window_name = 
+	string_work::string_union_multy(
+		translate::translating_string(
+			translate::string_program_name
+		),
+		simbol_em_dash L" ",
+		translate::translating_string(
+			translate::string_errors_list_window
+		)
+	);
 
-LPCWSTR main_window_class_name = L"Main window";
-LPCWSTR error_list_window_class_name = L"Error list window";
-LPCWSTR algebraic_book_create_window_class_name = L"Algebraic book create window";
+LPCWSTR algebraic_book_create_name = 
+	string_work::string_union_multy(
+		translate::translating_string(
+			translate::string_program_name
+		),
+		simbol_em_dash L" ",
+		translate::translating_string(
+			translate::string_create_algebraic_book_window
+		)
+	);
+
+LPCWSTR main_window_class_name = L"Main window class";
+LPCWSTR error_list_window_class_name = L"Error list window class";
+LPCWSTR algebraic_book_create_window_class_name = L"Algebraic book create window class";
 
 #define class_example_arguments int background_color, HINSTANCE h_instance, int icon, LPCWSTR cursor, LPCWSTR class_string_name, WNDPROC main_procedure
 #define procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param

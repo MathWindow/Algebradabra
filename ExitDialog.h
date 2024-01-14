@@ -11,7 +11,7 @@ bool ask_wish_save(HWND h_window) {
 	int answer_information = MessageBoxW(
 		h_window, 
 		translate::translating_string(translate::string_asking_for_save_before_exit), 
-		program_name, 
+		translate::translating_string(translate::string_program_name),
 		MB_ICONWARNING | MB_YESNOCANCEL
 	);
 

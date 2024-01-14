@@ -66,7 +66,12 @@ bool error_event_write(
 	error_list_program.at(index_last_event).advice = advice;
 
 	if (complate) {
-		MessageBoxW(h_window, translate::translating_string(details), program_name, MB_ICONERROR);
+		MessageBoxW(
+			h_window, 
+			translate::translating_string(details), 
+			translate::translating_string(translate::string_program_name),
+			MB_ICONERROR
+		);
 	}
 
 	return false;
