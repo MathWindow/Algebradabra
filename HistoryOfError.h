@@ -13,8 +13,6 @@ using namespace std;
 #ifndef history_of_error_header
 #define history_of_error_header
 
-#define program_name_extra L"Algebradabra " program_version_family
-
 const bool error_list_turn_off = true;
 
 cu_short string_operation_size = 1000000;
@@ -68,7 +66,7 @@ bool error_event_write(
 	error_list_program.at(index_last_event).advice = advice;
 
 	if (complate) {
-		MessageBoxW(h_window, translate::translating_string(details), program_name_extra, MB_ICONERROR);
+		MessageBoxW(h_window, translate::translating_string(details), program_name, MB_ICONERROR);
 	}
 
 	return false;

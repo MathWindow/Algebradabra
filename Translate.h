@@ -10,6 +10,8 @@ using namespace std;
 #ifndef translate_header
 #define translate_header
 
+#define program_name L"Algebradabra " program_version_family
+
 namespace translate {
 	c_string_param string_per_language = 250;
 	c_language_param language_per_vocabulary = 6;
@@ -361,7 +363,7 @@ namespace translate {
 			L"List of error";
 		main_vocabulary.at(language_English).at(string_create_algebraic_book_window) =
 			L"Create book";
-		main_vocabulary.at(language_Russian).at(string_testing_dialog_window) =
+		main_vocabulary.at(language_English).at(string_testing_dialog_window) =
 			L"Testing dialog window";
 	}
 

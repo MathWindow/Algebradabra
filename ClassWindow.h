@@ -9,7 +9,6 @@
 #ifndef class_window_header
 #define class_window_header
 
-#define program_name L"Algebradabra " program_version_family
 #define program_author L"Д. М. Чамкин"
 
 #define main_window_name program_name L" — main window"

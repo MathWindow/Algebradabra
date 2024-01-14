@@ -110,6 +110,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		else if (w_param == command_testing_dialog_window) {
 			MessageBoxW(h_window, string_work::string_union(L"Пример", L" строки"), program_name, NULL);
 			MessageBoxW(h_window, string_work::string_union(L"Тук-", L"тук!"), program_name, NULL);
+			MessageBoxW(h_window, string_work::string_union_multy(L"Тра-", L"та-", L"та-", L"та-", L"та!"), program_name, NULL);
 		}
 		break;
 	case WM_CLOSE:
