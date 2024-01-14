@@ -17,6 +17,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		create_main_menu(h_window);
 		create_main_widgets(h_window);
 		plan_ofn_algebraic_book(h_window);
+		plan_choose_color_dialog(h_window);
 
 		// Тестовая ошибка
 
