@@ -36,8 +36,8 @@ namespace string_work {
 
 		LPCWSTR string_output = string_operation + string_operation_index;
 
-		u_short string_size_1 = string_size(string_1);
-		u_short string_size_2 = string_size(string_2);
+		u_short string_size_1 = sizeof(string_1);
+		u_short string_size_2 = sizeof(string_2);
 
 		u_short string_size_output = string_size_1 + string_size_2;
 
