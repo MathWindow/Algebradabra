@@ -11,8 +11,6 @@ using namespace std;
 #ifndef translate_header
 #define translate_header
 
-#define program_name L"Algebradabra " program_version_family
-
 namespace translate {
 	c_string_param string_per_language = 250;
 	c_language_param language_per_vocabulary = 6;
