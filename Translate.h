@@ -104,11 +104,10 @@ namespace translate {
 		string_index* string_index_input,
 		std::wstring string_input
 	) {
-		size_t index_this = vocabulary.at(language_choosen_for_install).size();
+		*string_index_input = 
+			vocabulary.at(language_choosen_for_install).size();
 
 		vocabulary.at(language_choosen_for_install).push_back(string_input);
-
-		*string_index_input = index_this;
 	}
 
 	std::wstring already_using_string(string_index index_index_input) {
@@ -181,6 +180,7 @@ namespace translate {
 				+ already_using_string(index_program_author)
 				+ L";\nВерсия: "
 				+ program_version
+				+ L"."
 			);
 		}
 		else if (language_input == language_English) {
@@ -246,6 +246,7 @@ namespace translate {
 				+ already_using_string(index_program_author)
 				+ L";\nVersion: "
 				+ program_version
+				+ L"."
 			);
 		}
 	}
