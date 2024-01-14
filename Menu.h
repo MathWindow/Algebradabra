@@ -100,14 +100,13 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, translate::string_page_parameter);
 	line_element_menu(help_settings_menu);
 	translating_element_menu(help_settings_menu, MF_STRING, command_about, translate::string_program_parameter);
-	translating_element_menu(help_settings_menu, MF_STRING, NULL, translate::string_errors_list_window);
 	translating_element_menu(help_settings_menu, MF_POPUP, (UINT_PTR)language_menu, translate::string_language);
 
 	// Первый этаж
 
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)program_menu, translate::string_program);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)edit_menu, translate::string_edit);
-	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)view_menu, translate::string_view_);
+	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)view_menu, translate::string_view);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)window_menu, translate::string_window);
 	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)help_settings_menu, translate::string_help_settings);
 

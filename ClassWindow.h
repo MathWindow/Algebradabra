@@ -6,11 +6,6 @@
 #ifndef class_window_header
 #define class_window_header
 
-std::wstring main_window_title =
-	translate::string(translate::string_program_name)
-	+ L" | "
-	+ translate::string(translate::string_main_window);
-
 LPCWSTR main_window_class_name = L"Main window class";
 
 WNDCLASS main_class_example(

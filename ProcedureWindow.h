@@ -12,7 +12,12 @@
 #ifndef procedure_window_header
 #define procedure_window_header
 
-LRESULT CALLBACK main_procedure(HWND h_window, UINT message, WPARAM w_param, LPARAM l_param) {
+LRESULT CALLBACK main_procedure(
+	HWND h_window, 
+	UINT message, 
+	WPARAM w_param, 
+	LPARAM l_param
+) {
 	switch (message) {
 	case WM_CREATE:
 		create_main_menu(h_window);
@@ -88,7 +93,12 @@ LRESULT CALLBACK main_procedure(HWND h_window, UINT message, WPARAM w_param, LPA
 			ofn_technical_check.open_file_dialog();
 		}
 		else if (w_param == command_testing_dialog_window) {
-			MessageBoxW(h_window, translate::string(translate::string_open_book).c_str(), translate::string(translate::string_program_name).c_str(), NULL);
+			MessageBoxW(
+				h_window, 
+				translate::string(translate::string_open_book).c_str(), 
+				translate::string(translate::string_program_name).c_str(), 
+				NULL
+			);
 		}
 		break;
 	case WM_CLOSE:
