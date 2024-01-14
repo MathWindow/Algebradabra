@@ -8,7 +8,7 @@
 #ifndef file_dialog_header
 #define file_dialog_header
 
-svt::cu_char string_path_max_size = 200;
+cu_char_ string_path_max_size = 200;
 WCHAR string_path[string_path_max_size]{};
 WCHAR string_path_technical_check[string_path_max_size]{};
 
@@ -76,14 +76,14 @@ void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.zero_memory();
 
 	ofn_algebraic_book.open.lStructSize = sizeof(ofn_algebraic_book.open);
-	ofn_algebraic_book.open.lpstrTitle = string_save_book_as_pointer;
+	ofn_algebraic_book.open.lpstrTitle = string_open_book_pointer;
 	ofn_algebraic_book.open.lpstrFile = string_path;
 	ofn_algebraic_book.open.lpstrFile[0] = L'\0';
 	ofn_algebraic_book.open.nMaxFile = sizeof(string_path);
 	ofn_algebraic_book.open.Flags = OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST;
 	
 	ofn_algebraic_book.save.lStructSize = sizeof(ofn_algebraic_book.save);
-	ofn_algebraic_book.save.lpstrTitle = string_open_book_pointer;
+	ofn_algebraic_book.save.lpstrTitle = string_save_book_as_pointer;
 	ofn_algebraic_book.save.lpstrFile = string_path;
 	ofn_algebraic_book.save.lpstrFile[0] = L'\0';
 	ofn_algebraic_book.save.nMaxFile = sizeof(string_path);

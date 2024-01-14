@@ -3,8 +3,6 @@
 #include <string>
 #include "Translate.h"
 
-// 3
-
 #ifndef class_window_header
 #define class_window_header
 
@@ -15,9 +13,14 @@ std::wstring main_window_title =
 
 LPCWSTR main_window_class_name = L"Main window class";
 
-#define class_example_arguments int background_color, HINSTANCE h_instance, int icon, LPCWSTR cursor, LPCWSTR class_string_name, WNDPROC main_procedure
-
-WNDCLASS main_class_example(class_example_arguments) {
+WNDCLASS main_class_example(
+	int background_color,
+	HINSTANCE h_instance,
+	int icon,
+	LPCWSTR cursor,
+	LPCWSTR class_string_name,
+	WNDPROC main_procedure
+) {
 	WNDCLASS class_bringer = { 0 };
 
 	class_bringer.hbrBackground = (HBRUSH)background_color;

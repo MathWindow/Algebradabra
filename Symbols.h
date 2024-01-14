@@ -18,4 +18,4 @@ const wchar_t symbol_show_list_char = L'»';
 const wchar_t symbol_hide_list_char = L'«';
 const wchar_t symbol_long_stick_char = L'—';
 
-#endif
+#endif 

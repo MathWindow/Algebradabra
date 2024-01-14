@@ -3,28 +3,26 @@
 #ifndef short_types_header
 #define short_types_header
 
-namespace svt {
-	using long_2 = long long;
+using long_2_ = long long;
 
-	using u_char = unsigned char;
-	using u_short = unsigned short;
-	using u_int = unsigned int;
-	using u_long = unsigned long;
-	using u_long_2 = unsigned long long;
+using u_char_ = unsigned char;
+using u_short_ = unsigned short;
+using u_int_ = unsigned int;
+using u_long_ = unsigned long;
+using u_long_2_ = unsigned long long;
 
-	using c_char = const char;
-	using c_short = const short;
-	using c_int = const int;
-	using c_long = const long;
-	using c_long_2 = const long long;
-	using c_float = const float;
-	using c_double = const double;
+using c_char_ = const char;
+using c_short_ = const short;
+using c_int_ = const int;
+using c_long_ = const long;
+using c_long_2_ = const long long;
+using c_float_ = const float;
+using c_double_ = const double;
 
-	using cu_char = const unsigned char;
-	using cu_short = const unsigned short;
-	using cu_int = const unsigned int;
-	using cu_long = const unsigned long;
-	using cu_long_2 = const unsigned long long;
-}
+using cu_char_ = const unsigned char;
+using cu_short_ = const unsigned short;
+using cu_int_ = const unsigned int;
+using cu_long_ = const unsigned long;
+using cu_long_2_ = const unsigned long long;
 
 #endif

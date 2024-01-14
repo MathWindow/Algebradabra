@@ -12,9 +12,7 @@
 #ifndef procedure_window_header
 #define procedure_window_header
 
-#define procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param
-
-LRESULT CALLBACK main_procedure(procedure_arguments) {
+LRESULT CALLBACK main_procedure(HWND h_window, UINT message, WPARAM w_param, LPARAM l_param) {
 	switch (message) {
 	case WM_CREATE:
 		create_main_menu(h_window);
@@ -104,6 +102,8 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		return DefWindowProc(h_window, message, w_param, l_param);
 		break;
 	}
+
+	return 0L;
 }
 
 #endif

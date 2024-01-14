@@ -14,6 +14,7 @@ bool ask_wish_save(HWND h_window) {
 	);
 
 	if (answer_information == IDYES) {
+		// Saving documents...
 		// Сохранение документов...
 	}
 	else if (answer_information != IDNO) {
