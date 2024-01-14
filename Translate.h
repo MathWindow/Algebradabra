@@ -55,7 +55,6 @@ namespace translate {
 	c_string_param string_algebraic_book_parameter = put_index_running(false);
 	c_string_param string_page_parameter = put_index_running(false);
 	c_string_param string_program_parameter = put_index_running(false);
-	c_string_param string_error_list = put_index_running(false);
 	c_string_param string_language = put_index_running(false);
 	c_string_param string_em_dash = put_index_running(false);
 	c_string_param null_string = string_em_dash;
@@ -89,6 +88,10 @@ namespace translate {
 	c_string_param string_open_file = put_index_running(false);
 	c_string_param string_save_file_as = put_index_running(false);
 	c_string_param string_program_name = put_index_running(false);
+	c_string_param string_main_window = put_index_running(false);
+	c_string_param string_errors_list_window = put_index_running(false);
+	c_string_param string_create_algebraic_book_window = put_index_running(false);
+	c_string_param string_testing_dialog_window = put_index_running(false);
 
 	bool is_vocabulary_installed = false;
 
@@ -148,13 +151,13 @@ namespace translate {
 		main_vocabulary.at(language_Russian).at(string_paint) =
 			L"Рисунок";
 		main_vocabulary.at(language_Russian).at(string_file_txt) =
-			L"Файл *.txt";
+			L"Файл .txt";
 		main_vocabulary.at(language_Russian).at(string_cancel_last) =
 			L"Отменить последнее";
 		main_vocabulary.at(language_Russian).at(string_undo_last) =
 			L"Возвращать последнее";
 		main_vocabulary.at(language_Russian).at(string_algebraic_book) =
-			L"Алгебраическая книга";
+			L"Книга .alg";
 		main_vocabulary.at(language_Russian).at(string_page_add) =
 			L"Добавить страницу";
 		main_vocabulary.at(language_Russian).at(string_search_command) =
@@ -183,8 +186,6 @@ namespace translate {
 			L"Параметр страницы";
 		main_vocabulary.at(language_Russian).at(string_program_parameter) =
 			L"Параметр программы";
-		main_vocabulary.at(language_Russian).at(string_error_list) =
-			L"Список ошибок";
 		main_vocabulary.at(language_Russian).at(string_language) =
 			L"Язык";
 		main_vocabulary.at(language_Russian).at(string_edit) =
@@ -219,6 +220,16 @@ namespace translate {
 			L"Открыть файл...";
 		main_vocabulary.at(language_Russian).at(string_save_file_as) =
 			L"Сохранить файл как...";
+		main_vocabulary.at(language_Russian).at(string_program_name) =
+			L"Алгебрадабра";
+		main_vocabulary.at(language_Russian).at(string_main_window) =
+			L"Главное окно";
+		main_vocabulary.at(language_Russian).at(string_errors_list_window) =
+			L"Список ошибок";
+		main_vocabulary.at(language_Russian).at(string_create_algebraic_book_window) =
+			L"Создать книгу";
+		main_vocabulary.at(language_Russian).at(string_testing_dialog_window) =
+			L"Тестовое диалоговое окно";
 	}
 
 	void set_English_vocabulary() {
@@ -227,7 +238,7 @@ namespace translate {
 		main_vocabulary.at(language_English).at(string_whats_new) =
 			L"What's new?";
 		main_vocabulary.at(language_English).at(string_thats_new) =
-			L"Icon was remade fully. Save, open file and choose color window were appeared. Technical window's checking of thease windows appeard too.";
+			L"Icon was remade fully. Save, open file and choose color window were appeared. Technical window's checking of these windows appeared too.";
 		main_vocabulary.at(language_English).at(string_program) =
 			L"Program";
 		main_vocabulary.at(language_English).at(string_null_handle) =
@@ -273,13 +284,13 @@ namespace translate {
 		main_vocabulary.at(language_English).at(string_paint) =
 			L"Paint";
 		main_vocabulary.at(language_English).at(string_file_txt) =
-			L"File *.txt";
+			L"File .txt";
 		main_vocabulary.at(language_English).at(string_cancel_last) =
 			L"Cancel the last";
 		main_vocabulary.at(language_English).at(string_undo_last) =
 			L"Undo the last";
 		main_vocabulary.at(language_English).at(string_algebraic_book) =
-			L"Algebraic book";
+			L"Book .alg";
 		main_vocabulary.at(language_English).at(string_page_add) =
 			L"Add the page";
 		main_vocabulary.at(language_English).at(string_search_command) =
@@ -308,8 +319,6 @@ namespace translate {
 			L"Parameter of page";
 		main_vocabulary.at(language_English).at(string_program_parameter) =
 			L"Parameter of program";
-		main_vocabulary.at(language_English).at(string_error_list) =
-			L"Error list";
 		main_vocabulary.at(language_English).at(string_language) =
 			L"Language";
 		main_vocabulary.at(language_English).at(string_edit) =
@@ -344,6 +353,16 @@ namespace translate {
 			L"Open file...";
 		main_vocabulary.at(language_English).at(string_save_file_as) =
 			L"Save file as...";
+		main_vocabulary.at(language_English).at(string_program_name) =
+			L"Algebradabra";
+		main_vocabulary.at(language_English).at(string_main_window) =
+			L"Main window";
+		main_vocabulary.at(language_English).at(string_errors_list_window) =
+			L"List of error";
+		main_vocabulary.at(language_English).at(string_create_algebraic_book_window) =
+			L"Create book";
+		main_vocabulary.at(language_Russian).at(string_testing_dialog_window) =
+			L"Testing dialog window";
 	}
 
 	void set_all_vocabulary() {

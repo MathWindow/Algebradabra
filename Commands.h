@@ -27,5 +27,6 @@ cu_short command_about = put_index_running(false);
 cu_short command_save_file_as = put_index_running(false);
 cu_short command_open_file = put_index_running(false);
 cu_short command_choose_color = put_index_running(false);
+cu_short command_testing_dialog_window = put_index_running(false);
 
 #endif

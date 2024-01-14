@@ -67,6 +67,7 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(technical_windows_check_menu, MF_STRING, command_open_file, translate::string_opening_file_window);
 	translating_element_menu(technical_windows_check_menu, MF_STRING, command_save_file_as, translate::string_saving_file_window);
 	translating_element_menu(technical_windows_check_menu, MF_STRING, command_choose_color, translate::string_choosing_color_window);
+	translating_element_menu(technical_windows_check_menu, MF_STRING, command_testing_dialog_window, translate::string_testing_dialog_window);
 
 	// Второй этаж
 
@@ -97,7 +98,7 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, translate::string_page_parameter);
 	line_element_menu(help_settings_menu);
 	translating_element_menu(help_settings_menu, MF_STRING, command_about, translate::string_program_parameter);
-	translating_element_menu(help_settings_menu, MF_STRING, command_error_list, translate::string_error_list);
+	translating_element_menu(help_settings_menu, MF_STRING, command_error_list, translate::string_errors_list_window);
 	translating_element_menu(help_settings_menu, MF_POPUP, (UINT_PTR)language_menu, translate::string_language);
 
 	// Первый этаж

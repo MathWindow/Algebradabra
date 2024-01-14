@@ -11,6 +11,9 @@
 #include "Translate.h"
 #include <windowsx.h>
 #include <commdlg.h>
+#include "VersionInfo.h"
+#include "StringWork.h"
+#include "WindowXY.h"
 
 LRESULT CALLBACK main_procedure(procedure_arguments) {
 	switch (message) {
@@ -103,6 +106,10 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		}
 		else if (w_param == command_open_file) {
 			ofn_technical_check.open_file_dialog();
+		}
+		else if (w_param == command_testing_dialog_window) {
+			MessageBoxW(h_window, string_work::string_union(L"Пример", L" строки"), program_name, NULL);
+			MessageBoxW(h_window, string_work::string_union(L"Тук-", L"тук!"), program_name, NULL);
 		}
 		break;
 	case WM_CLOSE:

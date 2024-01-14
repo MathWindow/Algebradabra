@@ -1,11 +1,7 @@
 #pragma once
 #include <windows.h>
-#include <array>
-#include <vector>
 #include "Translate.h"
 #include "ShortTypes.h"
-#include "AssociationType.h"
-#include "Counter.h"
 #include <commdlg.h>
 using namespace std;
 
