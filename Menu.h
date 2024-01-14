@@ -11,31 +11,31 @@ BOOL _stdcall line_element_menu(HMENU h_menu) {
 	return AppendMenuW(h_menu, MF_SEPARATOR, NULL, NULL);
 }
 
-// Third floor
-// Третий этаж
+void create_menu_main_window(HWND h_window) {
+	// Third floor
+	// Третий этаж
 
-HMENU algebraic_book_menu = CreateMenu();
-HMENU add_list_element_menu = CreateMenu();
-HMENU cancel_menu = CreateMenu();
-HMENU undo_menu = CreateMenu();
-HMENU language_menu = CreateMenu();
-HMENU technical_windows_check_menu = CreateMenu();
+	HMENU algebraic_book_menu = CreateMenu();
+	HMENU add_list_element_menu = CreateMenu();
+	HMENU cancel_menu = CreateMenu();
+	HMENU undo_menu = CreateMenu();
+	HMENU language_menu = CreateMenu();
+	HMENU technical_windows_check_menu = CreateMenu();
 
-// Second floor
-// Второй этаж
+	// Second floor
+	// Второй этаж
 
-HMENU program_menu = CreateMenu();
-HMENU edit_menu = CreateMenu();
-HMENU view_menu = CreateMenu();
-HMENU window_menu = CreateMenu();
-HMENU help_settings_menu = CreateMenu();
+	HMENU program_menu = CreateMenu();
+	HMENU edit_menu = CreateMenu();
+	HMENU view_menu = CreateMenu();
+	HMENU window_menu = CreateMenu();
+	HMENU help_settings_menu = CreateMenu();
 
-// First floor
-// Первый этаж
+	// First floor
+	// Первый этаж
 
-HMENU root_menu = CreateMenu();
+	HMENU root_menu = CreateMenu();
 
-bool create_menu_main_window(HWND h_window) {
 	// Third floor
 	// Третий этаж
 
@@ -110,8 +110,14 @@ bool create_menu_main_window(HWND h_window) {
 	AppendMenuW(root_menu, MF_STRING, command_whats_new, translate::string__whats_new.c_style());
 
 	SetMenu(h_window, root_menu);
+}
 
-	return true;
+void create_menu_debugger_window(HWND h_window) {
+	HMENU root_menu = CreateMenu();
+
+	AppendMenuW(root_menu, MF_STRING, command_look_event, translate::string__look.c_style());
+
+	SetMenu(h_window, root_menu);
 }
 
 #endif

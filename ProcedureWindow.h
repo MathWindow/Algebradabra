@@ -11,6 +11,7 @@
 #include "ClassWindow.h"
 #include "Monitor.h"
 #include "WindowXY.h"
+#include "Debugger.h"
 
 #ifndef macro_header_procedure_window
 #define macro_header_procedure_window
@@ -155,12 +156,37 @@ LRESULT CALLBACK debugger_procedure(
 	WPARAM w_param,
 	LPARAM l_param
 ) {
+	int position = 0;
+	int index = 0;
+
 	switch (message) {
 	case WM_CREATE:
 		create_widgets_debugger_window(h_window);
+		create_menu_debugger_window(h_window);
 		break;
 	case WM_COMMAND:
+		if (message == command_look_event) {
+			position = (int)SendMessageW(
+				listbox_debugger,
+				LB_GETCURSEL,
+				0,
+				0
+			);
 
+			index = SendMessageW(
+				listbox_debugger,
+				LB_GETITEMDATA,
+				position,
+				0
+			);
+
+			if (index >= 0) {
+				SetWindowTextW(
+					static_details_debugger,
+					debug::history_of_event.at(index).show_details().c_style()
+				);
+			}
+		}
 		break;
 	case WM_DESTROY:
 		

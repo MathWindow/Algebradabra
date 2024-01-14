@@ -379,6 +379,14 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 		+ program_version
 		+ L"."
 	);
+
+	// Window as debugger
+	// Окно как отладчик
+
+	string string__look = set_string(
+		L"Look",
+		L"Посмотреть"
+	);
 }
 
 #endif

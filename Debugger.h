@@ -18,6 +18,8 @@ namespace debug {
 	using c_characteristic_parameter
 		= const characteristic_parameter;
 
+	c_characteristic_parameter characteristic_none = ~0;
+
 	c_characteristic_parameter characteristic_critical
 		= ~(1 << put_index_counter<characteristic_parameter>(0));
 	c_characteristic_parameter characteristic_dangerous

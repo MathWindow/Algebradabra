@@ -7,6 +7,9 @@
 
 using command_type = WPARAM;
 
+// For main window
+// Для главного окна
+
 command_type command_exit = put_index_counter<command_type>(1);
 
 command_type command_save_algebraic_book = put_index_counter<command_type>(continue_counting);
@@ -26,5 +29,10 @@ command_type command_save_file_as = put_index_counter<command_type>(continue_cou
 command_type command_open_file = put_index_counter<command_type>(continue_counting);
 command_type command_choose_color = put_index_counter<command_type>(continue_counting);
 command_type command_testing_dialog_window = put_index_counter<command_type>(continue_counting);
+
+// For window like debugger
+// Для окна как отладчика
+
+command_type command_look_event = put_index_counter<command_type>(continue_counting);
 
 #endif
