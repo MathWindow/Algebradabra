@@ -39,7 +39,7 @@ HMENU root_menu = CreateMenu();
 bool create_main_menu(HWND h_window) {
 	// Третий этаж
 
-	translating_element_menu(bag_document_menu, MF_STRING, command_new_bag_document, string_create);
+	translating_element_menu(bag_document_menu, MF_STRING, command_algebraic_book_create, string_create);
 	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_open);
 	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_save);
 	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_save_as);

@@ -46,15 +46,23 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		break;
 	case WM_COMMAND:
 		switch (w_param) {
-		case command_exit:
+		case NULL:
+			// It must be empty...
+			break;
+		default:
+			
+			break;
+		}
+
+		if (w_param == command_exit) {
 			SendMessage(
-				h_window, 
-				WM_CLOSE, 
-				NULL, 
+				h_window,
+				WM_CLOSE,
+				NULL,
 				NULL
 			);
-			break;
-		case command_error_list:
+		}
+		else if (w_param == command_error_list) {
 			if (!error_list_turn_off) {
 				call_dialog_window(
 					error_list_window_class_name,
@@ -67,31 +75,33 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 					NULL
 				);
 			}
-			break;
-		case command_translate:
-			MessageBoxW(h_window, 
-				L"Чтобы перевод вступил в силу, программу нужно закрыть и заново открыть", 
+		}
+		else if (w_param == command_translate) {
+			MessageBoxW(h_window,
+				L"Чтобы перевод вступил в силу, программу нужно закрыть и заново открыть",
+				program_name,
+				MB_ICONINFORMATION
+			);
+		}
+		else if (w_param == command_what_new) {
+			MessageBoxW(
+				h_window, 
+				L"Ничего нового не появилось, только небольшие технические изменения.", 
 				program_name, 
 				MB_ICONINFORMATION
 			);
-			break;
-		case command_what_new:
-			MessageBoxW(h_window, L"Ничего нового не появилось, только небольшие технические изменения.", program_name, MB_ICONINFORMATION);
-			break;
-		case command_about:
-			MessageBoxW(h_window, L"Автор: " program_author L"\nВерсия: " program_version, program_name, MB_ICONINFORMATION);
-			break;
-		case command_new_bag_document:
-			window_algebraic_book_create(h_window);
-			break;
-		case NULL:
-			// It must be empty...
-			break;
-		default:
-			
-			break;
 		}
-
+		else if (w_param == command_about) {
+			MessageBoxW(
+				h_window, 
+				L"Автор: " program_author L"\nВерсия: " program_version, 
+				program_name, 
+				MB_ICONINFORMATION
+			);
+		}
+		else if (w_param == command_algebraic_book_create) {
+			window_algebraic_book_create(h_window);
+		}
 		break;
 	case WM_CLOSE:
 		// Use WM_CLOSE instead WM_DESTROY
