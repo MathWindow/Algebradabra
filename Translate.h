@@ -10,6 +10,10 @@ using namespace std;
 #ifndef translate_header
 #define translate_header
 
+namespace translate {
+
+}
+
 c_string_param string_per_language = 250;
 c_lang_param language_per_vocabulary = 6;
 
@@ -74,6 +78,7 @@ c_string_param string_splitting_into_zero = put_index_running(false);
 c_string_param string_root_of_negative = put_index_running(false);
 c_string_param string_asking_for_save_before_exit = put_index_running(false);
 c_string_param string_window = put_index_running(false);
+c_string_param string_choose_color_window = put_index_running(false);
 
 bool is_vocabulary_installed = false;
 
@@ -186,6 +191,8 @@ void set_Russian_vocabulary() {
 		L"Сохранять документы перед выходом из программы?";
 	main_vocabulary.at(language_Russian).at(string_window) =
 		L"Окно";
+	main_vocabulary.at(language_Russian).at(string_choose_color_window) =
+		L"Обзор окна выбора цвета";
 }
 
 void set_English_vocabulary() {
@@ -293,6 +300,8 @@ void set_English_vocabulary() {
 		L"Would you like to save documents before exit?";
 	main_vocabulary.at(language_English).at(string_window) =
 		L"Window";
+	main_vocabulary.at(language_English).at(string_choose_color_window) =
+		L"Choose color window show";
 }
 
 void set_all_vocabulary() {
