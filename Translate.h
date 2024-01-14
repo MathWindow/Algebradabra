@@ -387,6 +387,15 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 		L"Look",
 		L"Посмотреть"
 	);
+
+	string string_title_debugger_window = set_string(
+		string_program_name.language_variant.at(language_English)
+		+ L" | "
+		+ string__debugger.language_variant.at(language_English),
+		string_program_name.language_variant.at(language_Russian)
+		+ L" | "
+		+ string__debugger.language_variant.at(language_Russian)
+	);
 }
 
 #endif

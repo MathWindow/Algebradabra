@@ -12,11 +12,14 @@ LONG y_out = x_out;
 LONG edit_width_default = 150;
 LONG edit_height_default = 20;
 
-LONG listbox_width_default = 150;
+LONG listbox_width_default = 200;
 LONG listbox_height_default = 200;
 
-LONG static_width_default = 200;
-LONG static_height_default = 20;
+LONG static_width_event_type = 300;
+LONG static_height_event_type = 20;
+
+LONG static_width_details = 300;
+LONG static_height_details = 40;
 
 HWND edit_main = nullptr;
 
@@ -58,6 +61,7 @@ void create_widgets_main_window(HWND h_window) {
 }
 
 HWND listbox_debugger = nullptr;
+HWND static_event_type_debugger = nullptr;
 HWND static_details_debugger = nullptr;
 
 void create_widgets_debugger_window(HWND h_window) {
@@ -76,15 +80,30 @@ void create_widgets_debugger_window(HWND h_window) {
 		NULL
 	);
 
-	static_details_debugger = CreateWindowExW(
+	static_event_type_debugger = CreateWindowExW(
 		0,
 		L"static",
 		L"",
 		WS_VISIBLE | WS_CHILD | WS_BORDER,
 		x_out * 2 + listbox_width_default,
 		y_out,
-		static_width_default,
-		static_height_default,
+		static_width_event_type,
+		static_height_event_type,
+		h_window,
+		NULL,
+		NULL,
+		NULL
+	);
+
+	static_details_debugger = CreateWindowExW(
+		0,
+		L"static",
+		L"",
+		WS_VISIBLE | WS_CHILD | WS_BORDER,
+		x_out * 2 + listbox_width_default,
+		y_out * 2 + static_width_event_type,
+		static_width_details,
+		static_height_details,
 		h_window,
 		NULL,
 		NULL,

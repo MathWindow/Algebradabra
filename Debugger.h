@@ -73,7 +73,7 @@ namespace debug {
 
 	class block_information {
 	public:
-		block_type_index type = block_type_function;
+		block_type_index event_type = block_type_function;
 
 		std::wstring name = L"";
 
@@ -83,7 +83,7 @@ namespace debug {
 
 	class event_information {
 	public:
-		event_type_index type = event_type_message;
+		event_type_index event_type = event_type_message;
 		characteristic_parameter characteristic = ~0;
 
 		size_t title_index = 0;
@@ -95,6 +95,38 @@ namespace debug {
 
 		SYSTEMTIME time_system{};
 		SYSTEMTIME time_local{};
+
+		translate::string show_type() {
+			if (event_type == event_type_message) {
+				return translate::set_string(
+					L"Message",
+					L"Сообщение"
+				);
+			}
+			else if (event_type == event_type_question) {
+				return translate::set_string(
+					L"Question",
+					L"Вопрос"
+				);
+			}
+			else if (event_type == event_type_warning) {
+				return translate::set_string(
+					L"Warning",
+					L"Предупреждение"
+				);
+			}
+			else if (event_type == event_type_error) {
+				return translate::set_string(
+					L"Error",
+					L"Ошибка"
+				);
+			}
+
+			return translate::set_string(
+				L"Where is type?",
+				L"Где тип?"
+			);
+		}
 
 		translate::string show_title() {
 			if (title_index == title_index_just_message) {
@@ -109,6 +141,11 @@ namespace debug {
 					L"Не удалось создать имя класса"
 				);
 			}
+
+			return translate::set_string(
+				L"Where is title?",
+				L"Где заголовок?"
+			);
 		}
 
 		translate::string show_details() {
@@ -136,13 +173,18 @@ namespace debug {
 					L"Не удалось создать класс для неизвестного окна"
 				);
 			}
+
+			return translate::set_string(
+				L"Where is details?",
+				L"Где подробности?"
+			);
 		}
 	};
 
 	std::vector<event_information> history_of_event{};
 
 	void write_event(
-		event_type_index type,
+		event_type_index event_type,
 		characteristic_parameter characteristic,
 		size_t title_index,
 		size_t details_index,
@@ -152,7 +194,7 @@ namespace debug {
 	) {
 		history_of_event.push_back(
 			{
-				type,
+				event_type,
 				characteristic,
 				title_index,
 				details_index,

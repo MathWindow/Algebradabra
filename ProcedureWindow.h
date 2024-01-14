@@ -121,7 +121,7 @@ LRESULT CALLBACK main_procedure(
 			CreateWindowExW(
 				0,
 				debugger_window_class_name,
-				translate::string__debugger.c_style(),
+				translate::string_title_debugger_window.c_style(),
 				WS_VISIBLE | WS_OVERLAPPEDWINDOW,
 				debugger_window_x,
 				debugger_window_y,
