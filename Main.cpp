@@ -1,4 +1,4 @@
-#include "CreateWindow.h"
+#include "ProcedureWindow.h"
 #include "Menu.h"
 #include "Widgets.h"
 #include "ExitDialog.h"
@@ -6,7 +6,6 @@
 #include "FileDialog.h"
 #include "ColorDialog.h"
 #include "Translate.h"
-#include "StringWork.h"
 #include "ClassWindow.h"
 #include <commdlg.h>
 #include <WinUser.h>
@@ -44,30 +43,30 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		else if (w_param == command_translate_Russian) {
 			MessageBoxW(h_window,
 				L"Чтобы перевод вступил в силу, программу нужно закрыть и заново открыть.",
-				translate::translating_string(translate::string_program_name),
+				translate::string(translate::string_program_name).c_str(),
 				MB_ICONINFORMATION
 			);
 		}
 		else if (w_param == command_translate_English) {
 			MessageBoxW(h_window,
 				L"User should close and open again to translate this program.",
-				translate::translating_string(translate::string_program_name),
+				translate::string(translate::string_program_name).c_str(),
 				MB_ICONINFORMATION
 			);
 		}
 		else if (w_param == command_whats_new) {
 			MessageBoxW(
 				h_window, 
-				translate::translating_string(translate::string_thats_new),
-				translate::translating_string(translate::string_program_name),
+				translate::string(translate::string_thats_new).c_str(),
+				translate::string(translate::string_program_name).c_str(),
 				MB_ICONINFORMATION
 			);
 		}
 		else if (w_param == command_about) {
 			MessageBoxW(
 				h_window,
-				translate::translating_string(translate::string_program_description),
-				translate::translating_string(translate::string_program_name),
+				translate::string(translate::string_program_description).c_str(),
+				translate::string(translate::string_program_name).c_str(),
 				MB_ICONINFORMATION
 			);
 		}
@@ -90,9 +89,7 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 			ofn_technical_check.open_file_dialog();
 		}
 		else if (w_param == command_testing_dialog_window) {
-			MessageBoxW(h_window, string_work::string_union(L"Пример", L" строки"), translate::translating_string(translate::string_program_name), NULL);
-			MessageBoxW(h_window, string_work::string_union(L"Тук-", L"тук!"), translate::translating_string(translate::string_program_name), NULL);
-			MessageBoxW(h_window, string_work::string_union(L"Тра-", L"та-", L"та-", L"та-", L"та!"), translate::translating_string(translate::string_program_name), NULL);
+			//MessageBoxW(h_window, , translate::string(translate::string_program_name).c_str(), NULL);
 		}
 		break;
 	case WM_CLOSE:

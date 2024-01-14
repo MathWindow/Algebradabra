@@ -1,11 +1,10 @@
 ﻿#pragma once
-#include <windows.h>
 #include <array>
+#include <string>
 #include "Counter.h"
 #include "AssociationType.h"
 #include "VersionInfo.h"
 #include "Simbols.h"
-#include "StringWork.h"
 
 #ifndef translate_header
 #define translate_header
@@ -95,7 +94,7 @@ namespace translate {
 
 	language_param language_using = language_Russian;
 
-	std::array<std::array<LPCWSTR, string_per_language>, language_per_vocabulary> main_vocabulary{};
+	std::array<std::array<std::wstring, string_per_language>, language_per_vocabulary> main_vocabulary{};
 
 	void set_vocabulary(language_param language_input) {
 		if (language_input == language_Russian) {
@@ -220,7 +219,7 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_save_file_as) =
 				L"Сохранить файл как...";
 			main_vocabulary.at(language_input).at(string_program_name) =
-				string_work::string_union(L"Алгебрадабра ", program_version_family);
+				L"";
 			main_vocabulary.at(language_input).at(string_main_window) =
 				L"Главное окно";
 			main_vocabulary.at(language_input).at(string_errors_list_window) =
@@ -232,13 +231,10 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_program_author) =
 				L"Д. М. Чамкин (Transistor, MathWindow)";
 			main_vocabulary.at(language_input).at(string_program_description) =
-				string_work::string_union(
-					L"Автор: ",
-					main_vocabulary.at(language_input).at(string_program_author),
-					L";\nВерсия: ",
-					program_version,
-					L"."
-				);
+				L"Автор: "
+				+ main_vocabulary.at(language_input).at(string_program_author)
+				+ L";\nВерсия: "
+				+ program_version;
 		}
 		else if (language_input == language_English) {
 			main_vocabulary.at(language_input).at(string_exit) =
@@ -362,7 +358,7 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_save_file_as) =
 				L"Save file as...";
 			main_vocabulary.at(language_input).at(string_program_name) =
-				string_work::string_union(L"Algebradabra ", program_version_family);
+				L"Algebradabra " + program_version_family;
 			main_vocabulary.at(language_input).at(string_main_window) =
 				L"Main window";
 			main_vocabulary.at(language_input).at(string_errors_list_window) =
@@ -374,13 +370,11 @@ namespace translate {
 			main_vocabulary.at(language_input).at(string_program_author) =
 				L"D. M. Chamkin (Transistor, MathWindow)";
 			main_vocabulary.at(language_input).at(string_program_description) =
-				string_work::string_union(
-					L"Author: ",
-					main_vocabulary.at(language_input).at(string_program_author),
-					L";\nVersion: ",
-					program_version,
-					L"."
-				);
+				main_vocabulary.at(language_input).at(string_program_description) =
+				L"Author: "
+				+ main_vocabulary.at(language_input).at(string_program_author)
+				+ L";\nVersion: "
+				+ program_version;
 		}
 	}
 
@@ -393,13 +387,13 @@ namespace translate {
 		}
 	}
 
-	LPCWSTR translating_string(string_param string_index_input) {
+	std::wstring string(string_param string_index_input) {
 		set_all_vocabulary();
 
-		LPCWSTR string_checking =
+		std::wstring string_checking =
 			main_vocabulary.at(language_using).at(string_index_input);
 
-		if (string_checking == nullptr) {
+		if (string_checking.size() == 0) {
 			return simbol_em_dash;
 		}
 

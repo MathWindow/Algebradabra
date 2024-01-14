@@ -45,7 +45,7 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 
 		CreateWindowW(
 			main_window_class_name,
-			main_window_name,
+			main_window_name.c_str(),
 			WS_VISIBLE | WS_OVERLAPPEDWINDOW,
 			main_window_x,
 			main_window_y,

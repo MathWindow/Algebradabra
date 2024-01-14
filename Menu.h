@@ -20,7 +20,7 @@ BOOL _stdcall translating_element_menu(
 	UINT_PTR numberCommand, 
 	string_param title
 ) {
-	return AppendMenuW(h_menu, menu_flag, numberCommand, translate::translating_string(title));
+	return AppendMenuW(h_menu, menu_flag, numberCommand, translate::string(title).c_str());
 }
 
 // Третий этаж

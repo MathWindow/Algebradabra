@@ -1,25 +1,18 @@
 #pragma once
 #include <windows.h>
+#include <string>
 #include "resource.h"
 #include "Translate.h"
 #include "AssociationType.h"
-#include "StringWork.h"
 
 // 3
 
 #ifndef class_window_header
 #define class_window_header
 
-LPCWSTR main_window_name = 
-	string_work::string_union(
-		translate::translating_string(
-			translate::string_program_name
-		), 
-		L" | ",
-		translate::translating_string(
-			translate::string_main_window
-		)
-	);
+std::wstring main_window_name =
+	translate::string(translate::string_program_name)
+	+ translate::string(translate::string_main_window);
 
 LPCWSTR main_window_class_name = L"Main window class";
 
@@ -50,9 +43,7 @@ bool register_class_name(
 	string_param details,
 	LPCWSTR function_name
 ) {
-	if (
-		!RegisterClassW(class_window_input)
-	) {
+	if (!RegisterClassW(class_window_input)) {
 		return false;
 	}
 	else {

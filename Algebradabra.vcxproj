@@ -141,9 +141,8 @@
     <ClInclude Include="Monitor.h" />
     <ClInclude Include="ShortTypes.h" />
     <ClInclude Include="Simbols.h" />
-    <ClInclude Include="StringWork.h" />
     <ClInclude Include="Translate.h" />
-    <ClInclude Include="CreateWindow.h" />
+    <ClInclude Include="ProcedureWindow.h" />
     <ClInclude Include="DialogWindow.h" />
     <ClInclude Include="VersionInfo.h" />
     <ClInclude Include="resource.h" />
