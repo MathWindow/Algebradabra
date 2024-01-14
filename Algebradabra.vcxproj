@@ -145,10 +145,10 @@
     <ClInclude Include="FileWork.h" />
     <ClInclude Include="LockFile.h" />
     <ClInclude Include="MainWindow.h" />
-    <ClInclude Include="Menu.h" />
     <ClInclude Include="MessageBox.h" />
     <ClInclude Include="Naming.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="UpdatedMenu.h" />
     <ClInclude Include="Widgets.h" />
   </ItemGroup>
   <ItemGroup>

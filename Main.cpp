@@ -1,5 +1,5 @@
 #include "MainWindow.h"
-#include "Menu.h"
+#include "UpdatedMenu.h"
 #include "Widgets.h"
 #include "ExitDialog.h"
 

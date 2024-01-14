@@ -65,9 +65,6 @@
     <ClInclude Include="Widgets.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
-    </ClInclude>
     <ClInclude Include="Toolbar.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
@@ -97,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdatedMenu.h">
+      <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
