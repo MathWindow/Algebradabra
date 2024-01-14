@@ -3,7 +3,7 @@
 #include "ShortTypes.h"
 
 namespace string_work {
-	cu_short string_size_operation = (1 * 1024) / 2;
+	cu_short string_size_operation = (2 * 1024) / 2;
 
 	// 1 Кбайт = 1024 байт;
 	// При 1 символ = 2 байта: 1 байт = 0.5 символа;
@@ -66,5 +66,15 @@ namespace string_work {
 		LPCWSTR string_output = nullptr;
 
 		string_output = string_union(string_1, string_2);
+		string_output = string_union(string_output, string_3);
+		string_output = string_union(string_output, string_4);
+		string_output = string_union(string_output, string_5);
+		string_output = string_union(string_output, string_6);
+		
+		return string_output;
+	}
+
+	u_short string_operation_check_free_space() {
+		return string_size_operation - string_operation_index;
 	}
 }

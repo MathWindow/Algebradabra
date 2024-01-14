@@ -6,11 +6,11 @@
 #include "DialogWindow.h"
 #include "Commands.h"
 #include "HistoryOfError.h"
-#include <windowsx.h>
 #include "FileDialog.h"
 #include "ColorDialog.h"
-#include <commdlg.h>
 #include "Translate.h"
+#include <windowsx.h>
+#include <commdlg.h>
 
 LRESULT CALLBACK main_procedure(procedure_arguments) {
 	switch (message) {

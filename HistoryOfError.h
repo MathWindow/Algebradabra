@@ -1,17 +1,19 @@
 #pragma once
-#include "AssociationType.h"
-#include "Translate.h"
-#include "VersionInfo.h"
-#include <vector>
-#include <array>
 #include <windows.h>
-#include "ShortTypes.h"
 #include <sysinfoapi.h>
 #include <minwinbase.h>
+#include <vector>
+#include <array>
+#include "ShortTypes.h"
+#include "VersionInfo.h"
+#include "AssociationType.h"
+#include "Translate.h"
 using namespace std;
 
 #ifndef history_of_error_header
 #define history_of_error_header
+
+#define program_name_extra L"Algebradabra " program_version_family
 
 const bool error_list_turn_off = true;
 
@@ -66,7 +68,7 @@ bool error_event_write(
 	error_list_program.at(index_last_event).advice = advice;
 
 	if (complate) {
-		MessageBoxW(h_window, translate::translating_string(details), program_name, MB_ICONERROR);
+		MessageBoxW(h_window, translate::translating_string(details), program_name_extra, MB_ICONERROR);
 	}
 
 	return false;

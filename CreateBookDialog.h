@@ -5,6 +5,7 @@
 #include "Translate.h"
 #include "WindowXY.h"
 #include "VersionInfo.h"
+#include "ClassWindow.h"
 
 #ifndef create_book_dialog_header
 #define create_book_dialog_header

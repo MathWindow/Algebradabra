@@ -2,7 +2,6 @@
 #include <windows.h>
 #include "resource.h"
 #include "ClassWindow.h"
-#include "Widgets.h"
 #include "Monitor.h"
 #include "ShortTypes.h"
 #include "WindowXY.h"

@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "VersionInfo.h"
 #include "Translate.h"
+#include "ClassWindow.h"
 
 #ifndef exit_dialog_header
 #define exit_dialog_header

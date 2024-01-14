@@ -1,7 +1,24 @@
 #pragma once
 #include <windows.h>
+#include "resource.h"
 #include "HistoryOfError.h"
+#include "Translate.h"
+#include "AssociationType.h"
 #include "VersionInfo.h"
+
+#ifndef class_window_header
+#define class_window_header
+
+#define program_name L"Algebradabra " program_version_family
+#define program_author L"Ä. Ì. ×àìêèí"
+
+#define main_window_name program_name L" — main window"
+#define error_list_window_name program_name L" — error list"
+#define algebraic_book_create_name program_name L" — create algebraic book"
+
+LPCWSTR main_window_class_name = L"Main window";
+LPCWSTR error_list_window_class_name = L"Error list window";
+LPCWSTR algebraic_book_create_window_class_name = L"Algebraic book create window";
 
 #define class_example_arguments int background_color, HINSTANCE h_instance, int icon, LPCWSTR cursor, LPCWSTR class_string_name, WNDPROC main_procedure
 #define procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param
@@ -53,3 +70,5 @@ bool register_class_name(
 		return true;
 	}
 }
+
+#endif

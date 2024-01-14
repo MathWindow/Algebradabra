@@ -88,6 +88,7 @@ namespace translate {
 	c_string_param string_save_book_as = put_index_running(false);
 	c_string_param string_open_file = put_index_running(false);
 	c_string_param string_save_file_as = put_index_running(false);
+	c_string_param string_program_name = put_index_running(false);
 
 	bool is_vocabulary_installed = false;
 
