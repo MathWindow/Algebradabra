@@ -66,7 +66,6 @@ bool create_main_menu(HWND h_window) {
 
 	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)algebraic_book_menu, string_algebraic_book);
 	line_element_menu(program_menu);
-	translating_element_menu(program_menu, MF_STRING, NULL, string_chapter_add);
 	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)add_list_element_menu, string_page_add);
 	line_element_menu(program_menu);
 	translating_element_menu(program_menu, MF_STRING, command_exit, string_exit);
@@ -74,7 +73,6 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(edit_menu, MF_STRING, NULL, string_search_command);
 	translating_element_menu(edit_menu, MF_STRING, NULL, string_search_string);
 	line_element_menu(edit_menu);
-	translating_element_menu(edit_menu, MF_STRING, NULL, string_chapter_copy);
 	translating_element_menu(edit_menu, MF_STRING, NULL, string_page_copy);
 	translating_element_menu(edit_menu, MF_STRING, NULL, string_paste);
 	line_element_menu(edit_menu);
@@ -89,7 +87,6 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(view_menu, MF_STRING, NULL, string_default_view);
 
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_algebraic_book_parameter);
-	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_chapter_parameter);
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_page_parameter);
 	line_element_menu(help_settings_menu);
 	translating_element_menu(help_settings_menu, MF_STRING, command_about, string_program_parameter);

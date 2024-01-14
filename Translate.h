@@ -30,7 +30,6 @@ c_string_param string_save = put_index_running(false);
 c_string_param string_save_as = put_index_running(false);
 c_string_param string_compress = put_index_running(false);
 c_string_param string_lock = put_index_running(false);
-c_string_param string_chapter_add = put_index_running(false);
 c_string_param string_page_add = put_index_running(false);
 c_string_param string_coordinate = put_index_running(false);
 c_string_param string_circuit = put_index_running(false);
@@ -39,7 +38,6 @@ c_string_param string_file_txt = put_index_running(false);
 c_string_param string_edit = put_index_running(false);
 c_string_param string_search_command = put_index_running(false);
 c_string_param string_search_string = put_index_running(false);
-c_string_param string_chapter_copy = put_index_running(false);
 c_string_param string_page_copy = put_index_running(false);
 c_string_param string_paste = put_index_running(false);
 c_string_param string_cancel = put_index_running(false);
@@ -53,7 +51,6 @@ c_string_param string_style = put_index_running(false);
 c_string_param string_default_view = put_index_running(false);
 c_string_param string_help_settings = put_index_running(false);
 c_string_param string_algebraic_book_parameter = put_index_running(false);
-c_string_param string_chapter_parameter = put_index_running(false);
 c_string_param string_page_parameter = put_index_running(false);
 c_string_param string_program_parameter = put_index_running(false);
 c_string_param string_error_list = put_index_running(false);
@@ -149,16 +146,12 @@ void set_English_vocabulary() {
 		L"Undo the last";
 	main_vocabulary.at(language_English).at(string_algebraic_book) =
 		L"Algebraic book";
-	main_vocabulary.at(language_English).at(string_chapter_add) =
-		L"Add the chapter";
 	main_vocabulary.at(language_English).at(string_page_add) =
 		L"Add the page";
 	main_vocabulary.at(language_English).at(string_search_command) =
 		L"Search command";
 	main_vocabulary.at(language_English).at(string_search_string) =
 		L"Search string";
-	main_vocabulary.at(language_English).at(string_chapter_copy) =
-		L"Copy the chapter";
 	main_vocabulary.at(language_English).at(string_page_copy) =
 		L"Copy the page";
 	main_vocabulary.at(language_English).at(string_paste) =
@@ -177,8 +170,6 @@ void set_English_vocabulary() {
 		L"Default view";
 	main_vocabulary.at(language_English).at(string_algebraic_book_parameter) =
 		L"Parameter of algebraic book";
-	main_vocabulary.at(language_English).at(string_chapter_parameter) =
-		L"Parameter of chapter";
 	main_vocabulary.at(language_English).at(string_page_parameter) =
 		L"Parameter of page";
 	main_vocabulary.at(language_English).at(string_program_parameter) =
