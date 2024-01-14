@@ -93,6 +93,8 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 			MessageBoxW(h_window, string_work::string_union(L"Пример", L" строки"), translate::translating_string(translate::string_program_name), NULL);
 			MessageBoxW(h_window, string_work::string_union(L"Тук-", L"тук!"), translate::translating_string(translate::string_program_name), NULL);
 			MessageBoxW(h_window, string_work::string_union_multy(L"Тра-", L"та-", L"та-", L"та-", L"та!"), translate::translating_string(translate::string_program_name), NULL);
+			MessageBoxW(h_window, test::string_union(L"Пример ", L" строки"), translate::translating_string(translate::string_program_name), NULL);
+			MessageBoxW(h_window, test::string_union(L"Кто то ра", L"зве не глючит!?"), translate::translating_string(translate::string_program_name), NULL);
 		}
 		break;
 	case WM_CLOSE:

@@ -73,8 +73,32 @@ namespace string_work {
 		
 		return string_output;
 	}
+}
 
-	svt::u_short string_operation_check_free_space() {
-		return string_size_operation - string_operation_index;
+namespace test {
+	std::vector<WCHAR> string_server{};
+
+	void put_string_in_server(LPCWSTR string_input) {
+		if (
+			string_input != L""
+			|| string_input != nullptr
+		) {
+			for (svt::u_int index = 0; *(string_input + index) != L'\0'; index++) {
+				string_server.push_back(*(string_input + index));
+			}
+		}
+	}
+
+	LPCWSTR string_union(
+		LPCWSTR string_1,
+		LPCWSTR string_2
+	) {
+		svt::u_int begin_string_union = string_server.size();
+
+		put_string_in_server(string_1);
+		put_string_in_server(string_2);
+		string_server.push_back(L'\0');
+
+		return string_server.data() + begin_string_union;
 	}
 }

@@ -235,7 +235,7 @@ namespace translate {
 				string_work::string_union_multy(
 					L"Автор: ",
 					main_vocabulary.at(language_input).at(string_program_author),
-					L";\nВерсия (название семейства, порядок публикации компиляции или постройки, надверсия): ",
+					L";\nВерсия: ",
 					program_version,
 					L"."
 				);
@@ -377,7 +377,7 @@ namespace translate {
 				string_work::string_union_multy(
 					L"Author: ",
 					main_vocabulary.at(language_input).at(string_program_author),
-					L";\nVersion (family's title, number of compilation or building, aboveversion): ",
+					L";\nVersion: ",
 					program_version,
 					L"."
 				);
