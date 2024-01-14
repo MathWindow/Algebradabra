@@ -1,80 +1,21 @@
 #pragma once
 #include <windows.h>
 #include "Commands.h"
+#include "Translate.h"
 #include "HistoryOfError.h"
 
 BOOL _stdcall line_element_menu(HMENU h_menu) {
 	return AppendMenuW(h_menu, MF_SEPARATOR, NULL, NULL);
 }
 
-BOOL _stdcall popup_element_menu(HMENU h_menu, HMENU next_menu, LPCWSTR title) {
-	return AppendMenuW(h_menu, MF_POPUP, (UINT_PTR)next_menu, title);
+BOOL _stdcall translating_element_menu(
+	HMENU h_menu, 
+	UINT menu_flag, 
+	UINT_PTR numberCommand, 
+	string_param title
+) {
+	return AppendMenuW(h_menu, menu_flag, numberCommand, translating_string(title));
 }
-
-BOOL _stdcall popup_help_element_menu(HMENU h_menu, HMENU next_menu, LPCWSTR title) {
-	return AppendMenuW(h_menu, MF_POPUP | MF_HELP, (UINT_PTR)next_menu, title);
-}
-
-BOOL _stdcall string_element_menu(HMENU h_menu, UINT_PTR numberCommand, LPCWSTR title) {
-	return AppendMenuW(h_menu, MF_STRING, numberCommand, title);
-}
-
-/*
-
-Схема дерева меню с подсказкой горячей клавиши
-Tree's circuit menu with hot key's tip
-
-Программа
-	Пакетный документ
-		Создать ctrl + N
-		Открыть ctrl + O
-		Сохранить ctrl + S
-		Сохранить как... ctrl + shift + S
-		-
-		Сжимать F6
-		Заблокировать паролем
-	-
-	Добавить лист ctrl + E
-	Добавить элемент листа
-		Координата E
-		Схема
-		Рисунок
-		Файл rtf
-	-
-	Выход alt + F4
-Правка
-	Поиск команд ctrl + shift + F
-	Поиск текстовых фрагментов ctrl + F
-	-
-	Копировать лист ctrl + shift + C
-	Копировать элемент листа ctrl + C
-	Вставить ctrl + V
-	-
-	Отменить
-		Отменить последнее ctrl + Z
-		<Список выполненных действии>
-	Возвращать
-		Возвращать последнее ctrl + Y
-		<Список отмененных действии>
-Вид
-	Меню и панель инструментов
-	Курсор
-	Координата
-	Стиль
-	-
-	Сбросить представление F5
-Сведение / Настройки
-	Свойство пакетного документа
-	Свойство листа
-	Свойство элемента листа
-	-
-	Свойство программы F1
-	Список ошибок
-	Язык
-		English
-		Русский
-
-*/
 
 // Третий этаж
 
@@ -89,7 +30,7 @@ HMENU language_menu = CreateMenu();
 HMENU program_menu = CreateMenu();
 HMENU edit_menu = CreateMenu();
 HMENU view_menu = CreateMenu();
-HMENU information_settings_menu = CreateMenu();
+HMENU help_settings_menu = CreateMenu();
 
 // Первый этаж
 
@@ -98,67 +39,68 @@ HMENU root_menu = CreateMenu();
 bool create_main_menu(HWND h_window) {
 	// Третий этаж
 
-	string_element_menu(bag_document_menu, NULL, L"Создать ctrl + N");
-	string_element_menu(bag_document_menu, NULL, L"Открыть ctrl + O");
-	string_element_menu(bag_document_menu, NULL, L"Сохранить ctrl + S");
-	string_element_menu(bag_document_menu, NULL, L"Сохранить как... ctrl + shift + S");
+	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_create);
+	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_open);
+	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_save);
+	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_save_as);
 	line_element_menu(bag_document_menu);
-	string_element_menu(bag_document_menu, NULL, L"Сжимать F6");
-	string_element_menu(bag_document_menu, NULL, L"Заблокировать паролем");
+	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_compress);
+	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_lock);
 
-	string_element_menu(add_list_element_menu, NULL, L"Координата");
-	string_element_menu(add_list_element_menu, NULL, L"Схема");
-	string_element_menu(add_list_element_menu, NULL, L"Рисунок");
-	string_element_menu(add_list_element_menu, NULL, L"Файл rtf");
+	translating_element_menu(add_list_element_menu, MF_STRING, NULL, string_coordinate);
+	translating_element_menu(add_list_element_menu, MF_STRING, NULL, string_circuit);
+	translating_element_menu(add_list_element_menu, MF_STRING, NULL, string_paint);
+	translating_element_menu(add_list_element_menu, MF_STRING, NULL, string_file_txt);
 
-	string_element_menu(cancel_menu, NULL, L"Отменить последнее");
+	translating_element_menu(cancel_menu, MF_STRING, NULL, string_cancel_last);
 
-	string_element_menu(undo_menu, NULL, L"Возвращать последнее");
+	translating_element_menu(undo_menu, MF_STRING, NULL, string_undo_last);
 
-	string_element_menu(language_menu, NULL, L"English");
-	string_element_menu(language_menu, NULL, L"Русский");
+	AppendMenuW(language_menu, MF_STRING, command_translate, L"English");
+	AppendMenuW(language_menu, MF_STRING, command_translate, L"Русский");
 
 	// Второй этаж
 
-	popup_element_menu(program_menu, bag_document_menu, L"Пакетный документ");
+	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)bag_document_menu, string_algebraic_book);
 	line_element_menu(program_menu);
-	string_element_menu(program_menu, NULL, L"Добавить лист");
-	popup_element_menu(program_menu, add_list_element_menu, L"Добавить элемент листа");
+	translating_element_menu(program_menu, MF_STRING, NULL, string_chapter_add);
+	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)add_list_element_menu, string_page_add);
 	line_element_menu(program_menu);
-	string_element_menu(program_menu, command_exit, L"Выход alt + F4");
+	translating_element_menu(program_menu, MF_STRING, command_exit, string_exit);
 
-	string_element_menu(edit_menu, NULL, L"Поиск команд ctrl + shift + F");
-	string_element_menu(edit_menu, NULL, L"Литературный поиск ctrl + F");
+	translating_element_menu(edit_menu, MF_STRING, NULL, string_search_command);
+	translating_element_menu(edit_menu, MF_STRING, NULL, string_search_string);
 	line_element_menu(edit_menu);
-	string_element_menu(edit_menu, NULL, L"Копировать лист ctrl + shift + C");
-	string_element_menu(edit_menu, NULL, L"Копировать элемент листа");
-	string_element_menu(edit_menu, NULL, L"Вставить");
+	translating_element_menu(edit_menu, MF_STRING, NULL, string_chapter_copy);
+	translating_element_menu(edit_menu, MF_STRING, NULL, string_page_copy);
+	translating_element_menu(edit_menu, MF_STRING, NULL, string_paste);
 	line_element_menu(edit_menu);
-	popup_element_menu(edit_menu, cancel_menu, L"Отменить");
-	popup_element_menu(edit_menu, undo_menu, L"Возвращать");
+	translating_element_menu(edit_menu, MF_POPUP, (UINT_PTR)cancel_menu, string_cancel);
+	translating_element_menu(edit_menu, MF_POPUP, (UINT_PTR)undo_menu, string_undo);
 
-	string_element_menu(view_menu, NULL, L"Меню и панель инструментов");
-	string_element_menu(view_menu, NULL, L"Курсор");
-	string_element_menu(view_menu, NULL, L"Координата");
-	string_element_menu(view_menu, NULL, L"Стиль");
+	translating_element_menu(view_menu, MF_STRING, NULL, string_menu_and_toolbar);
+	translating_element_menu(view_menu, MF_STRING, NULL, string_cursor);
+	translating_element_menu(view_menu, MF_STRING, NULL, string_coordinate);
+	translating_element_menu(view_menu, MF_STRING, NULL, string_style);
 	line_element_menu(view_menu);
-	string_element_menu(view_menu, NULL, L"Сбросить представление");
+	translating_element_menu(view_menu, MF_STRING, NULL, string_default_view);
 
-	string_element_menu(information_settings_menu, NULL, L"Свойство пакетного документа");
-	string_element_menu(information_settings_menu, NULL, L"Свойство листа");
-	string_element_menu(information_settings_menu, NULL, L"Свойство элемента листа");
-	line_element_menu(information_settings_menu);
-	string_element_menu(information_settings_menu, NULL, L"Свойство программы F1");
-	string_element_menu(information_settings_menu, command_error_list, L"Список ошибок");
-	popup_element_menu(information_settings_menu, language_menu, L"Язык");
+	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_algebraic_book_parameter);
+	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_chapter_parameter);
+	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_page_parameter);
+	line_element_menu(help_settings_menu);
+	translating_element_menu(help_settings_menu, MF_STRING, NULL, string_program_parameter);
+	translating_element_menu(help_settings_menu, MF_STRING, command_error_list, string_error_list);
+	translating_element_menu(help_settings_menu, MF_POPUP, (UINT_PTR)language_menu, string_language);
 
 	// Первый этаж
 
-	popup_element_menu(root_menu, program_menu, L"Программа");
-	popup_element_menu(root_menu, edit_menu, L"Правка");
-	popup_element_menu(root_menu, view_menu, L"Вид");
-	line_element_menu(root_menu);
-	popup_element_menu(root_menu, information_settings_menu, L"Сведение / Настройки");
+	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)program_menu, string_program);
+	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)edit_menu, string_edit);
+	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)view_menu, string_view_);
+	translating_element_menu(root_menu, MF_POPUP, (UINT_PTR)help_settings_menu, string_help_settings);
+
+	translating_element_menu(root_menu, MF_STRING, NULL, string_what_new);
 
 	SetMenu(h_window, root_menu);
 

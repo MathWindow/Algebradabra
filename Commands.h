@@ -1,25 +1,17 @@
 #pragma once
-#include <array>
+#include "ShortTypes.h"
+#include "Counter.h"
 using namespace std;
 
 #ifndef commands_header
 #define commands_header
 
-#define command_exit 1
-#define command_new_bag_document 2
-#define command_open_bag_doucument 3
-#define command_save_bag_document 4
-#define command_save_bag_document_as 5
-#define command_error_list 6
-
-/*
-* 
-class command {
-public:
-	array <wchar_t, 50> command_name = { L"No name" };
-	int command_number = 0;
-};
-
-*/
+cuint_16 command_exit = 1;
+cuint_16 command_new_bag_document = 2;
+cuint_16 command_open_bag_document = 3;
+cuint_16 command_save_bag_document = 4;
+cuint_16 command_save_bag_document_as = 5;
+cuint_16 command_error_list = 6;
+cuint_16 command_translate = 7;
 
 #endif

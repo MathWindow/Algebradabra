@@ -41,15 +41,13 @@ void call_dialog_window (
 
 	check_h_window(
 		ghost_h_dialog_window,
-		L"Средняя серьезность",
-		to_wstring_this_function,
-		L"Не удалось создать диалоговое окно",
+		__FUNCTIONW__,
+		string_cannot_create_dialog_window,
 		0,
 		0,
 		false,
 		false,
 		h_window,
-		program_name,
 		true
 	);
 }

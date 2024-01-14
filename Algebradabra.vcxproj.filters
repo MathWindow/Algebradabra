@@ -44,7 +44,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainWindow.h">
+    <ClInclude Include="CreateWindow.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Naming.h">
@@ -115,6 +115,18 @@
     </ClInclude>
     <ClInclude Include="Algebra.h">
       <Filter>Файлы заголовков\Scince headers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometry.h">
+      <Filter>Файлы заголовков\Scince headers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Counter.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortTypes.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="AssociationType.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

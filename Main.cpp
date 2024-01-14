@@ -16,33 +16,29 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		// Тестовая ошибка
 
 		error_event_write(
-			L"Ошибка 1",
-			L"...",
-			L"Эта ошибка ложна",
-			(LPCWSTR)__func__,
+			string_em_dash,
+			string_em_dash,
+			__FUNCTIONW__,
 			0,
 			0,
 			false,
 			false,
-			L"Да никак не могло появиться!",
-			L"Устранять эту лжеошибку не надо, только если вам не раздражает",
-			NULL,
+			string_em_dash,
+			string_em_dash,
 			NULL,
 			false
 		);
 
 		error_event_write(
-			L"Ошибка 2021",
-			L"...",
-			L"Эта ошибка ложна",
-			L"2",
+			string_em_dash,
+			string_em_dash,
+			__FUNCTIONW__,
 			0,
 			0,
 			false,
 			false,
-			L"Ты кто такой?! Я тебе не звал, идите к ЧЕРТУ!",
-			L"...",
-			NULL,
+			string_em_dash,
+			string_em_dash,
 			NULL,
 			false
 		);
@@ -69,6 +65,13 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 				NULL
 			);
 			break;
+		case command_translate:
+			MessageBoxW(h_window, 
+				L"Чтобы перевод вступил в силу, программу нужно закрыть и заново открыть", 
+				program_name, 
+				MB_ICONINFORMATION
+			);
+			break;
 		case NULL:
 			// It must be empty...
 			break;
@@ -91,7 +94,8 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 }
 
 LRESULT CALLBACK error_list_procedure(procedure_arguments) {
-	LRESULT position_1 = 0;
+	LRESULT position_1 = 1;
+	LRESULT position_2 = 0;
 
 	switch (message) {
 	case WM_CREATE:
@@ -103,12 +107,18 @@ LRESULT CALLBACK error_list_procedure(procedure_arguments) {
 			// It must be empty...
 			break;
 		default:
-			ListBox_GetSel(listbox_error_list, position_1);
+			position_2 = ListBox_GetSel(listbox_error_list, position_1);
 
-			if (position_1 > LB_ERR) {
+			if (position_2 != LB_ERR) {
+				SetWindowTextW(
+					static_error_list,
+					error_list_program.at(position_2).function_name
+				);
+			}
+			else {
 				SetWindowTextA(
 					static_error_list,
-					(LPCSTR)error_list_program.at(position_1).function_name
+					"East"
 				);
 			}
 			break;

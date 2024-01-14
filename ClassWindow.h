@@ -1,5 +1,6 @@
 #pragma once
 #include <windows.h>
+#include "HistoryOfError.h"
 
 #define class_example_arguments int background_color, HINSTANCE h_instance, int icon, LPCWSTR cursor, LPCWSTR class_string_name, WNDPROC main_procedure
 #define procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param
@@ -21,4 +22,33 @@ WNDCLASS main_class_example(class_example_arguments) {
 	class_inside.lpfnWndProc = main_procedure;
 
 	return class_inside;
+}
+
+bool register_class_name(
+	WNDCLASS* class_window_input,
+	string_param details,
+	LPCWSTR function_name
+) {
+	if (
+		!RegisterClassW(class_window_input)
+	) {
+		error_event_write(
+			string_cannot_create_class_name,
+			details,
+			function_name,
+			0,
+			0,
+			false,
+			false,
+			string_em_dash,
+			string_em_dash,
+			NULL,
+			true
+		);
+
+		return false;
+	}
+	else {
+		return true;
+	}
 }

@@ -90,6 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -131,24 +132,28 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algebra.h" />
+    <ClInclude Include="AssociationType.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ClassWindow.h" />
     <ClInclude Include="Combobox.h" />
     <ClInclude Include="Commands.h" />
     <ClInclude Include="Compression.h" />
+    <ClInclude Include="Counter.h" />
     <ClInclude Include="CreateBookDialog.h" />
     <ClInclude Include="Edit.h" />
     <ClInclude Include="ExitDialog.h" />
     <ClInclude Include="FileDialog.h" />
+    <ClInclude Include="Geometry.h" />
     <ClInclude Include="HistoryOfError.h" />
     <ClInclude Include="Listbox.h" />
     <ClInclude Include="Monitor.h" />
+    <ClInclude Include="ShortTypes.h" />
     <ClInclude Include="Simbols.h" />
     <ClInclude Include="Toolbar.h" />
     <ClInclude Include="Translate.h" />
     <ClInclude Include="FileWork.h" />
     <ClInclude Include="LockFile.h" />
-    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="CreateWindow.h" />
     <ClInclude Include="DialogWindow.h" />
     <ClInclude Include="Naming.h" />
     <ClInclude Include="resource.h" />
