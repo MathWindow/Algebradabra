@@ -75,6 +75,7 @@ c_string_param string_cannot_create_class_error_list = put_index_running(false);
 c_string_param string_cannot_create_class_create_algebraic_book = put_index_running(false);
 c_string_param string_splitting_into_zero = put_index_running(false);
 c_string_param string_root_of_negative = put_index_running(false);
+c_string_param string_asking_for_exit = put_index_running(false);
 
 bool is_vocabulary_installed = false;
 
@@ -133,7 +134,7 @@ void set_English_vocabulary() {
 	main_vocabulary.at(language_English).at(string_compress) =
 		L"Compress";
 	main_vocabulary.at(language_English).at(string_lock) =
-		L"Lock with help of password";
+		L"Lock file with help of password";
 	main_vocabulary.at(language_English).at(string_coordinate) =
 		L"Coordinate";
 	main_vocabulary.at(language_English).at(string_circuit) =
@@ -198,6 +199,8 @@ void set_English_vocabulary() {
 		L"Cannot create class of error's list";
 	main_vocabulary.at(language_English).at(string_cannot_create_class_create_algebraic_book) =
 		L"Cannot create class of creating algebraic book";
+	main_vocabulary.at(language_English).at(string_asking_for_exit) =
+		L"Would you like to save documents before exit?";
 }
 
 void set_all_vocabulary() {

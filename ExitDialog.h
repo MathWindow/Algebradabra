@@ -4,7 +4,7 @@
 #include "Translate.h"
 
 bool ask_wish_save(HWND h_window) {
-	int answer_information = MessageBoxW(h_window, L"Сохранять документы перед выходом из программы?", program_name, MB_ICONWARNING | MB_YESNOCANCEL);
+	int answer_information = MessageBoxW(h_window, translating_string(string_asking_for_exit), program_name, MB_ICONWARNING | MB_YESNOCANCEL);
 
 	if (answer_information == IDYES) {
 		// Сохранение документов...

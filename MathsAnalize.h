@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-namespace ma {
+namespace m_anal {
 	class differential {
 	public:
 

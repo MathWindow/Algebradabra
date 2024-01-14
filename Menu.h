@@ -19,7 +19,7 @@ BOOL _stdcall translating_element_menu(
 
 // Третий этаж
 
-HMENU bag_document_menu = CreateMenu();
+HMENU algebraic_book_menu = CreateMenu();
 HMENU add_list_element_menu = CreateMenu();
 HMENU cancel_menu = CreateMenu();
 HMENU undo_menu = CreateMenu();
@@ -39,13 +39,13 @@ HMENU root_menu = CreateMenu();
 bool create_main_menu(HWND h_window) {
 	// Третий этаж
 
-	translating_element_menu(bag_document_menu, MF_STRING, command_algebraic_book_create, string_create);
-	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_open);
-	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_save);
-	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_save_as);
-	line_element_menu(bag_document_menu);
-	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_compress);
-	translating_element_menu(bag_document_menu, MF_STRING, NULL, string_lock);
+	translating_element_menu(algebraic_book_menu, MF_STRING, command_algebraic_book_create, string_create);
+	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_open);
+	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_save);
+	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_save_as);
+	line_element_menu(algebraic_book_menu);
+	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_compress);
+	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_lock);
 
 	translating_element_menu(add_list_element_menu, MF_STRING, NULL, string_coordinate);
 	translating_element_menu(add_list_element_menu, MF_STRING, NULL, string_circuit);
@@ -61,7 +61,7 @@ bool create_main_menu(HWND h_window) {
 
 	// Второй этаж
 
-	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)bag_document_menu, string_algebraic_book);
+	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)algebraic_book_menu, string_algebraic_book);
 	line_element_menu(program_menu);
 	translating_element_menu(program_menu, MF_STRING, NULL, string_chapter_add);
 	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)add_list_element_menu, string_page_add);

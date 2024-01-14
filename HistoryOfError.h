@@ -12,7 +12,7 @@ using namespace std;
 
 const bool error_list_turn_off = true;
 
-cuint_16 string_operation_size = 1000000;
+cushort string_operation_size = 1000000;
 
 array <wchar_t, string_operation_size> string_operation{};
 
@@ -45,7 +45,7 @@ bool error_event_write(
 	string_param advice,
 	message_box_arguments
 ) {
-	uint_32 index_last_event = error_list_program.size();
+	ulong index_last_event = error_list_program.size();
 
 	error_list_program.push_back({});
 
@@ -102,10 +102,10 @@ HWND create_widget_and_check(
 	LPCWSTR class_name,
 	LPCWSTR title,
 	DWORD window_style,
-	uint_16 x_position,
-	uint_16 y_position,
-	uint_16 width,
-	uint_16 height,
+	ushort x_position,
+	ushort y_position,
+	ushort width,
+	ushort height,
 	HMENU w_param_command,
 	LPCWSTR function_name,
 	long index_value,
