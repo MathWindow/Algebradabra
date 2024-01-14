@@ -2,7 +2,6 @@
 #include <WinUser.h>
 #include <minwindef.h>
 #include <winnt.h>
-#include <string>
 #include "Translate.h"
 #include "ClassWindow.h"
 #include "resource.h"
@@ -28,7 +27,7 @@ int WINAPI wWinMain(
 	bool main_class_is_registered =
 		register_class_name(
 			&main_class,
-			&translate::index_cannot_create_class_main
+			translate::string_cannot_create_class_main
 		);
 
 	if (main_class_is_registered) {
@@ -46,7 +45,7 @@ int WINAPI wWinMain(
 		HWND h_window_main = CreateWindowExW(
 			0UL,
 			main_window_class_name,
-			translate::string(&translate::index_main_window_title).c_str(),
+			translate::string_title_main_window.show_c_style(),
 			WS_OVERLAPPEDWINDOW,
 			main_window_x,
 			main_window_y,

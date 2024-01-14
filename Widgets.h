@@ -16,7 +16,7 @@ void create_main_widgets(HWND h_window) {
 	edit_main = CreateWindowExW(
 		0L,
 		L"edit",
-		L"",
+		L"Эта программа не готова к использованию :-(",
 		WS_VISIBLE | WS_CHILD | WS_BORDER | ES_AUTOHSCROLL,
 		x_out,
 		y_out,

@@ -65,7 +65,7 @@
     <ClInclude Include="Menu.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
-    <ClInclude Include="DialogWindow.h">
+    <ClInclude Include="DialogBox.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
     <ClInclude Include="Translate.h">

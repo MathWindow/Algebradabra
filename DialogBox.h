@@ -2,10 +2,10 @@
 #include <windows.h>
 #include "Monitor.h"
 
-#ifndef dialog_window_header
-#define dialog_window_header
+#ifndef dialog_box_header
+#define dialog_box_header
 
-void call_dialog_box (
+void call_developers_dialog_box (
 	LPCWSTR class_name,
 	LPCWSTR title,
 	DWORD dword_style,
@@ -24,7 +24,7 @@ void call_dialog_box (
 		);
 	}
 
-	HWND ghost_h_dialog_window = CreateWindowExW(
+	CreateWindowExW(
 		0,
 		class_name,
 		title,

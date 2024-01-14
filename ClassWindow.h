@@ -1,6 +1,5 @@
 #pragma once
 #include <windows.h>
-#include <string>
 #include "Translate.h"
 
 #ifndef class_window_header
@@ -30,13 +29,13 @@ WNDCLASSW main_class_example(
 
 bool register_class_name(
 	WNDCLASSW* class_window_input,
-	translate::string_index* details
+	translate::string_ details
 ) {
 	if (!RegisterClassW(class_window_input)) {
 		MessageBoxW(
 			NULL, 
-			translate::string(details).c_str(), 
-			translate::string(&translate::index_program_name).c_str(),
+			details.show_c_style(),
+			translate::string_program_name.show_c_style(),
 			MB_ICONERROR
 		);
 

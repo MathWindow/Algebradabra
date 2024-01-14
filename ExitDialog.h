@@ -8,8 +8,8 @@
 bool ask_wish_save(HWND h_window) {
 	int answer_information = MessageBoxW(
 		h_window, 
-		translate::string(&translate::index_asking_for_save_before_exit).c_str(),
-		translate::string(&translate::index_program_name).c_str(),
+		translate::string_asking_for_save_before_exit.show_c_style(),
+		translate::string_program_name.show_c_style(),
 		MB_ICONWARNING | MB_YESNOCANCEL
 	);
 
