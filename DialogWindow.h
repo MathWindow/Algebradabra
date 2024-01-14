@@ -5,7 +5,7 @@
 #ifndef dialog_window_header
 #define dialog_window_header
 
-void call_dialog_window (
+void call_dialog_box (
 	LPCWSTR class_name,
 	LPCWSTR title,
 	DWORD dword_style,
@@ -15,8 +15,6 @@ void call_dialog_window (
 	LONG height,
 	HWND h_window
 ) {
-	HWND ghost_h_dialog_window = NULL;
-
 	get_monitor_information();
 
 	if ((dword_style & WS_CHILD) != WS_CHILD) {
@@ -26,7 +24,8 @@ void call_dialog_window (
 		);
 	}
 
-	ghost_h_dialog_window = CreateWindowW(
+	HWND ghost_h_dialog_window = CreateWindowExW(
+		0,
 		class_name,
 		title,
 		dword_style,
@@ -37,7 +36,7 @@ void call_dialog_window (
 		h_window,
 		NULL,
 		NULL,
-		NULL,
+		NULL
 	);
 }
 

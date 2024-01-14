@@ -43,11 +43,11 @@ int WINAPI wWinMain(
 			&main_window_y
 		);
 
-		CreateWindowExW(
+		HWND h_window_main = CreateWindowExW(
 			0UL,
 			main_window_class_name,
 			translate::string(&translate::index_main_window_title).c_str(),
-			WS_VISIBLE | WS_OVERLAPPEDWINDOW,
+			WS_OVERLAPPEDWINDOW,
 			main_window_x,
 			main_window_y,
 			main_window_width,
@@ -58,9 +58,16 @@ int WINAPI wWinMain(
 			NULL
 		);
 
-		while (GetMessage(&main_message, NULL, NULL, NULL)) {
-			TranslateMessage(&main_message);
-			DispatchMessage(&main_message);
+		if (h_window_main != nullptr) {
+			ShowWindow(
+				h_window_main,
+				number_command_show
+			);
+
+			while (GetMessage(&main_message, NULL, NULL, NULL)) {
+				TranslateMessage(&main_message);
+				DispatchMessage(&main_message);
+			}
 		}
 	}
 

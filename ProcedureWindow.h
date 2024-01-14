@@ -108,6 +108,7 @@ LRESULT CALLBACK main_procedure(
 		break;
 	case WM_CLOSE:
 		// Use WM_CLOSE instead WM_DESTROY
+		// Используй(те) WM_CLOSE вместо WM_DESTROY
 
 		if (ask_wish_save(h_window))
 			PostQuitMessage(0);
