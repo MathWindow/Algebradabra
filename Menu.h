@@ -56,7 +56,7 @@ bool create_main_menu(HWND h_window) {
 
 	translating_element_menu(undo_menu, MF_STRING, NULL, string_undo_last);
 
-	AppendMenuW(language_menu, MF_STRING, command_translate_Russian, L"English");
+	AppendMenuW(language_menu, MF_STRING, command_translate_English, L"English");
 	AppendMenuW(language_menu, MF_STRING, command_translate_Russian, L"Русский");
 
 	// Второй этаж
