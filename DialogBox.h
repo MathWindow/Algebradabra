@@ -17,8 +17,8 @@ void call_developers_dialog_box (
 ) {
 	if ((dword_style & WS_CHILD) != WS_CHILD) {
 		set_window_center_position(
-			width, height,
-			x_position, y_position
+			x_position, y_position,
+			width, height
 		);
 	}
 

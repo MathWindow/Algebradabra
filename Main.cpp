@@ -34,14 +34,14 @@ int WINAPI wWinMain(
 		MSG main_message = { 0 };
 
 		set_window_center_position(
-			main_window_width,
-			main_window_height,
 			&main_window_x,
-			&main_window_y
+			&main_window_y,
+			main_window_width,
+			main_window_height
 		);
 
 		HWND h_window_main = CreateWindowExW(
-			0UL,
+			0,
 			main_window_class_name,
 			translate::string_title_main_window.c_style(),
 			WS_OVERLAPPEDWINDOW,

@@ -10,10 +10,10 @@ LONG monitor_height = 0;
 
 void set_window_center_position
 (
-	LONG width,
-	LONG height,
 	LONG* x_position,
-	LONG* y_position
+	LONG* y_position,
+	LONG width,
+	LONG height
 ) {
 	static bool has_got_monitor_information = false;
 
