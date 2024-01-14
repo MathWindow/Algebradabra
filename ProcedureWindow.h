@@ -47,30 +47,30 @@ LRESULT CALLBACK main_procedure(
 		else if (w_param == command_translate_Russian) {
 			MessageBoxW(h_window,
 				L"ѕрограмма не переводит с одного €зыка на другого, так как она не пригодна дл€ использовани€.",
-				translate::string_program_name.show_fixed(),
+				translate::string_program_name.c_style(),
 				MB_ICONWARNING
 			);
 		}
 		else if (w_param == command_translate_English) {
 			MessageBoxW(h_window,
 				L"Program don't translate from one language to another because it is not able to be used.",
-				translate::string_program_name.show_fixed(),
+				translate::string_program_name.c_style(),
 				MB_ICONWARNING
 			);
 		}
 		else if (w_param == command_whats_new) {
 			MessageBoxW(
 				h_window,
-				translate::string_thats_new.show_fixed(),
-				translate::string_program_name.show_fixed(),
+				translate::string_thats_new.c_style(),
+				translate::string_program_name.c_style(),
 				MB_ICONINFORMATION
 			);
 		}
 		else if (w_param == command_about) {
 			MessageBoxW(
 				h_window,
-				translate::string_program_description.show_fixed(),
-				translate::string_program_name.show_fixed(),
+				translate::string_program_description.c_style(),
+				translate::string_program_name.c_style(),
 				MB_ICONINFORMATION
 			);
 		}
@@ -100,8 +100,8 @@ LRESULT CALLBACK main_procedure(
 		else if (w_param == command_testing_dialog_window) {
 			MessageBoxW(
 				h_window,
-				translate::string_title_dialog_box_open_file.show_fixed(),
-				translate::string_program_name.show_fixed(),
+				translate::string_title_dialog_box_open_file.c_style(),
+				translate::string_program_name.c_style(),
 				NULL
 			);
 		}

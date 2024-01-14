@@ -29,13 +29,13 @@ WNDCLASSW main_class_example(
 
 bool register_class_name(
 	WNDCLASSW* class_window_input,
-	translate::string_ details
+	LPCWSTR details
 ) {
 	if (!RegisterClassW(class_window_input)) {
 		MessageBoxW(
 			NULL, 
-			details.show_fixed(),
-			translate::string_program_name.show_fixed(),
+			details,
+			translate::string_program_name.c_style(),
 			MB_ICONERROR
 		);
 

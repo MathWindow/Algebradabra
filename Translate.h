@@ -6,8 +6,8 @@
 #include <vector>
 #include <winnt.h>
 
-#ifndef translate_header
-#define translate_header
+#ifndef macro_header_translate
+#define macro_header_translate
 
 namespace translate {
 	using language_index = size_t;
@@ -26,24 +26,24 @@ namespace translate {
 	public:
 		std::array<std::wstring, language_per_vocabulary> language_variant{};
 
-		std::wstring show() {
-			return language_variant.at(language_using);
+		LPCWSTR c_style() {
+			fix();
+
+			return fixed.at(language_using).data();
 		}
 		
 		void fix() {
 			if (fixed.at(language_using).size() == 0) {
 				for (size_t index_language = 0; index_language < language_per_vocabulary; index_language++) {
 					for (size_t index = 0; index < language_variant.at(index_language).size(); index++) {
-						fixed.at(index_language).push_back(*(show().c_str() + index));
+						fixed.at(index_language).push_back(
+							*(language_variant.at(language_using).c_str() + index)
+						);
 					}
 
 					fixed.at(index_language).push_back(L'\0');
 				}
 			}
-		}
-
-		LPCWSTR show_fixed() {
-			return fixed.at(language_using).data();
 		}
 	};
 	
@@ -129,6 +129,7 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 	string_ string__window = set_string(L"Window", L"Окно");
 	string_ string__technical_windows_check = set_string(L"Technical window's check", L"Технический обзор окон");
 	string_ string__main_window = set_string(L"Main window", L"Главное окно");
+
 	string_ string_title_main_window = set_string(
 		string_program_name.language_variant.at(language_English)
 		+ L" | "
