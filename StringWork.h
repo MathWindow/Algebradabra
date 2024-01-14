@@ -4,7 +4,7 @@
 #include <string>
 
 namespace string_work {
-	cu_short string_size_operation = (2 * 1024) / 2;
+	cu_short string_size_operation = (10 * 1024) / 2;
 
 	// 1 Кбайт = 1024 байт;
 	// При 1 символ = 2 байта: 1 байт = 0.5 символа;
@@ -38,8 +38,8 @@ namespace string_work {
 
 		LPCWSTR string_output = string_operation + string_operation_index;
 
-		u_short string_size_1 = sizeof(string_1);
-		u_short string_size_2 = sizeof(string_2);
+		u_short string_size_1 = string_size(string_1);
+		u_short string_size_2 = string_size(string_2);
 
 		u_short string_size_output = string_size_1 + string_size_2;
 
