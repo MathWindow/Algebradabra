@@ -35,7 +35,7 @@ HMENU help_settings_menu = CreateMenu();
 
 HMENU root_menu = CreateMenu();
 
-bool create_main_menu(HWND h_window) {
+bool create_menu_main_window(HWND h_window) {
 	// Third floor
 	// Третий этаж
 

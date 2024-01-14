@@ -23,8 +23,8 @@ LRESULT CALLBACK main_procedure(
 ) {
 	switch (message) {
 	case WM_CREATE:
-		create_main_menu(h_window);
-		create_main_widgets(h_window);
+		create_menu_main_window(h_window);
+		create_widgets_main_window(h_window);
 		plan_ofn_algebraic_book(h_window);
 		plan_ofn_technical_check(h_window);
 		plan_choose_color_technical_check(h_window);
@@ -157,7 +157,7 @@ LRESULT CALLBACK debugger_procedure(
 ) {
 	switch (message) {
 	case WM_CREATE:
-
+		create_widgets_debugger_window(h_window);
 		break;
 	case WM_COMMAND:
 
