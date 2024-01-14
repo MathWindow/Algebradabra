@@ -342,9 +342,7 @@ namespace translate {
 		std::wstring string_input,
 		std::vector<WCHAR>* string_fixing_input
 	) {
-		svt::cu_short string_input_size = string_input.size();
-
-		for (svt::u_short index = 0; index < string_input_size; index++) {
+		for (size_t index = 0; index < string_input.size(); index++) {
 			(*string_fixing_input).push_back(
 				*(string_input.c_str() + index)
 			);
