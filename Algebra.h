@@ -3,10 +3,13 @@
 #include <array>
 using namespace std;
 
+#ifndef algebra_header
+#define algebra_header
+
 #define prime_table_max_size 256
 
-void is_prime() {
-
+bool is_prime() {
+	return false;
 }
 
 class prime_table {
@@ -62,3 +65,5 @@ public:
 		}
 	}
 };
+
+#endif

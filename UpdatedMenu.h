@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "Commands.h"
+#include "HistoryOfError.h"
 
 BOOL _stdcall line_element_menu(HMENU h_menu) {
 	return AppendMenuW(h_menu, MF_SEPARATOR, NULL, NULL);
@@ -68,6 +69,7 @@ Tree's circuit menu with hot key's tip
 	—войство элемента листа
 	-
 	—войство программы F1
+	—писок ошибок
 	язык
 		English
 		–усский
@@ -93,9 +95,7 @@ HMENU information_settings_menu = CreateMenu();
 
 HMENU root_menu = CreateMenu();
 
-//array <TCHAR, 20> exit_string = { L"¬ыход alt + F4" };
-
-bool create_menu(HWND h_window) {
+bool create_main_menu(HWND h_window) {
 	// “ретий этаж
 
 	string_element_menu(bag_document_menu, NULL, L"—оздать ctrl + N");
@@ -149,6 +149,7 @@ bool create_menu(HWND h_window) {
 	string_element_menu(information_settings_menu, NULL, L"—войство элемента листа");
 	line_element_menu(information_settings_menu);
 	string_element_menu(information_settings_menu, NULL, L"—войство программы F1");
+	string_element_menu(information_settings_menu, command_error_list, L"—писок ошибок");
 	popup_element_menu(information_settings_menu, language_menu, L"язык");
 
 	// ѕервый этаж

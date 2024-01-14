@@ -31,6 +31,12 @@
     <Filter Include="Текстовые документы">
       <UniqueIdentifier>{a2dfe397-efb7-4e99-9092-08c8d767cb17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Scince headers">
+      <UniqueIdentifier>{d9f26320-0df1-420a-affe-a626a74cb929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Scince headers\Math">
+      <UniqueIdentifier>{6ca5fe22-4144-42cd-a029-31e1b0858186}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -68,9 +74,6 @@
     <ClInclude Include="Toolbar.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
-    <ClInclude Include="MessageBox.h">
-      <Filter>Файлы заголовков\Dialog window</Filter>
-    </ClInclude>
     <ClInclude Include="ClassWindow.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -101,8 +104,17 @@
     <ClInclude Include="HistoryOfError.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Algebra.h">
+    <ClInclude Include="Monitor.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogWindow.h">
+      <Filter>Файлы заголовков\Dialog window</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateBookDialog.h">
+      <Filter>Файлы заголовков\Dialog window</Filter>
+    </ClInclude>
+    <ClInclude Include="Algebra.h">
+      <Filter>Файлы заголовков\Scince headers\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
