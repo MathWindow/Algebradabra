@@ -4,20 +4,20 @@
 #ifndef association_type_header
 #define association_type_header
 
-using lang_param = uchar;
+using lang_param = u_char;
 using c_lang_param = const lang_param;
 
-using string_param = ushort;
+using string_param = u_short;
 using c_string_param = const string_param;
 
 
-using alg_oper_param = ushort;
+using alg_oper_param = u_short;
 using c_alg_oper_param = const alg_oper_param;
 
-using alg_string_bool_param = ushort;
+using alg_string_bool_param = u_short;
 using c_alg_string_bool_param = const alg_string_bool_param;
 
-using alg_action_param = ushort;
+using alg_action_param = u_short;
 using c_alg_action_param = const alg_action_param;
 
 #endif

@@ -13,8 +13,8 @@ using namespace std;
 
 namespace m_alg_old {
 	struct uint_128 {
-		ulong_2 forward;
-		ulong_2 back;
+		u_long_2 forward;
+		u_long_2 back;
 
 		uint_128 operator + (uint_128 right_value) {
 
@@ -27,7 +27,7 @@ namespace m_alg_old {
 
 	class number_list {
 	public:
-		array <ulong, prime_table_max_size> number{};
+		array <u_long, prime_table_max_size> number{};
 
 		bool created = false;
 
@@ -35,12 +35,12 @@ namespace m_alg_old {
 			if (!created) {
 				number.at(0) = 2;
 
-				ulong value_helper = 3;
+				u_long value_helper = 3;
 
 				bool may_printed = false;
 
 				for (
-					ushort index_fulling_number = 1;
+					u_short index_fulling_number = 1;
 					index_fulling_number < prime_table_max_size;
 					index_fulling_number++
 				) {
@@ -49,7 +49,7 @@ namespace m_alg_old {
 						may_printed = true;
 
 						for (
-							ushort index_preview_number = 0;
+							u_short index_preview_number = 0;
 							index_preview_number < index_fulling_number;
 							index_preview_number++
 						) {
@@ -72,10 +72,10 @@ namespace m_alg_old {
 
 	number_list main_prime_list;
 
-	bool is_prime(ulong number_input) {
+	bool is_prime(u_long number_input) {
 		main_prime_list.create();
 
-		ushort index_running = 0;
+		u_short index_running = 0;
 
 		for (
 			index_running = 0;
@@ -121,7 +121,7 @@ namespace m_alg_old {
 		vector<operation_information> operation_list{};
 
 		for (
-			ushort index_running = 0;
+			u_short index_running = 0;
 			*(string_input + index_running) != 0;
 			index_running++
 		) {

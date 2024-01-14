@@ -5,24 +5,24 @@
 
 using long_2 = long long;
 
-using uchar = unsigned char;
-using ushort = unsigned short;
-using uint = unsigned int;
-using ulong = unsigned long;
-using ulong_2 = unsigned long long;
+using u_char = unsigned char;
+using u_short = unsigned short;
+using u_int = unsigned int;
+using u_long = unsigned long;
+using u_long_2 = unsigned long long;
 
-using cchar = const char;
-using cshort = const short;
-using cint = const int;
-using clong = const long;
-using clong_2 = const long long;
-using cfloat = const float;
-using cdouble = const double;
+using c_char = const char;
+using c_short = const short;
+using c_int = const int;
+using c_long = const long;
+using c_long_2 = const long long;
+using c_float = const float;
+using c_double = const double;
 
-using cuchar = const unsigned char;
-using cushort = const unsigned short;
-using cuint = const unsigned int;
-using culong = const unsigned long;
-using culong_2 = const unsigned long long;
+using cu_char = const unsigned char;
+using cu_short = const unsigned short;
+using cu_int = const unsigned int;
+using cu_long = const unsigned long;
+using cu_long_2 = const unsigned long long;
 
 #endif

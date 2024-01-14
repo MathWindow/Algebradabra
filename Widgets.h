@@ -9,17 +9,17 @@
 #ifndef widgets_header
 #define widgets_header
 
-ushort x_out = 10;
-ushort y_out = x_out;
+u_short x_out = 10;
+u_short y_out = x_out;
 
-ushort width_edit_default = 150;
-ushort height_edit_default = 20;
+u_short width_edit_default = 150;
+u_short height_edit_default = 20;
 
-ushort width_listbox_default = 200;
-ushort height_listbox_default = 300;
+u_short width_listbox_default = 200;
+u_short height_listbox_default = 300;
 
-ushort width_static_error_list = 300;
-ushort height_static_error_list = 300;
+u_short width_static_error_list = 300;
+u_short height_static_error_list = 300;
 
 HWND edit_main = NULL;
 
@@ -66,7 +66,7 @@ void create_error_list_widgets(HWND h_window) {
 
 	if (listbox_error_list != NULL) {
 		for (
-			ushort index_running = 0;
+			u_short index_running = 0;
 			index_running < error_list_program.size();
 			index_running++
 		) {

@@ -50,7 +50,7 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 		h_instance,
 		main_icon,
 		IDC_ARROW,
-		algebraic_book_create_class_name,
+		algebraic_book_create_window_class_name,
 		algebraic_book_create_procedure
 	);
 

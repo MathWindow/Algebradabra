@@ -6,7 +6,7 @@ LRESULT listbox_error_list_position = 0;
 LRESULT add_string(
 	HWND listbox_input, 
 	LPCWSTR string_input,
-	ushort index_input
+	u_short index_input
 ) {
 	listbox_error_list_position =
 		SendMessageW(

@@ -9,7 +9,7 @@ void window_algebraic_book_create(
 	HWND h_window
 ) {
 	call_dialog_window(
-		algebraic_book_create_class_name,
+		algebraic_book_create_window_class_name,
 		algebraic_book_create_name,
 		WS_VISIBLE | WS_OVERLAPPEDWINDOW,
 		&algebraic_book_create_window_x,

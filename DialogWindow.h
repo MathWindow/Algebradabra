@@ -8,10 +8,10 @@ void call_dialog_window (
 	LPCWSTR class_name,
 	LPCWSTR title,
 	DWORD dword_style,
-	ushort* x_position,
-	ushort* y_position,
-	ushort width,
-	ushort height,
+	u_short* x_position,
+	u_short* y_position,
+	u_short width,
+	u_short height,
 	HWND h_window
 ) {
 	HWND ghost_h_dialog_window = NULL;

@@ -40,9 +40,9 @@ bool create_main_menu(HWND h_window) {
 	// Третий этаж
 
 	translating_element_menu(algebraic_book_menu, MF_STRING, command_algebraic_book_create, string_create);
-	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_open);
-	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_save);
-	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_save_as);
+	translating_element_menu(algebraic_book_menu, MF_STRING, command_open_algebraic_book, string_open);
+	translating_element_menu(algebraic_book_menu, MF_STRING, command_save_algebraic_book, string_save);
+	translating_element_menu(algebraic_book_menu, MF_STRING, command_save_algebraic_book_as, string_save_as);
 	line_element_menu(algebraic_book_menu);
 	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_compress);
 	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, string_lock);

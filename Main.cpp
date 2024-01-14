@@ -7,12 +7,14 @@
 #include "Commands.h"
 #include "HistoryOfError.h"
 #include <windowsx.h>
+#include "FileDialog.h"
 
 LRESULT CALLBACK main_procedure(procedure_arguments) {
 	switch (message) {
 	case WM_CREATE:
 		create_main_menu(h_window);
 		create_main_widgets(h_window);
+		plan_ofn_algebraic_book(h_window);
 
 		// Тестовая ошибка
 
@@ -108,6 +110,9 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 		}
 		else if (w_param == command_algebraic_book_create) {
 			window_algebraic_book_create(h_window);
+		}
+		else if (w_param == command_open_algebraic_book) {
+			ofn_algebraic_book.open_file_dialog();
 		}
 		break;
 	case WM_CLOSE:
