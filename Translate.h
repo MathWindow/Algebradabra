@@ -94,7 +94,7 @@ c_string_param string_save_file_as = put_index_running(false);
 
 bool is_vocabulary_installed = false;
 
-language_param language_using = language_Russian;
+language_param language_using = language_English;
 
 array<array<LPCWSTR, string_per_language>, language_per_vocabulary> main_vocabulary{};
 
