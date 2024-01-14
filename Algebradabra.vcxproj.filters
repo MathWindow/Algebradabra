@@ -99,7 +99,10 @@
       <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
     <ClInclude Include="ProcedureWindow.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="Debugger.h">
+      <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

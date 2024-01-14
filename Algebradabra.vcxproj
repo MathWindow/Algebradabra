@@ -136,6 +136,7 @@
     <ClInclude Include="ColorDialog.h" />
     <ClInclude Include="Commands.h" />
     <ClInclude Include="Counter.h" />
+    <ClInclude Include="Debugger.h" />
     <ClInclude Include="ExitDialog.h" />
     <ClInclude Include="FileDialog.h" />
     <ClInclude Include="Monitor.h" />

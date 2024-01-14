@@ -116,7 +116,7 @@ LRESULT CALLBACK main_procedure(
 		break;
 
 	default:
-		return DefWindowProc(h_window, message, w_param, l_param);
+		return DefWindowProcW(h_window, message, w_param, l_param);
 		break;
 	}
 
