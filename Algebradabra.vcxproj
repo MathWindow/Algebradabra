@@ -131,31 +131,18 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Algebra.h" />
     <ClInclude Include="AssociationType.h" />
-    <ClInclude Include="Button.h" />
     <ClInclude Include="ClassWindow.h" />
     <ClInclude Include="ColorDialog.h" />
-    <ClInclude Include="Combobox.h" />
     <ClInclude Include="Commands.h" />
-    <ClInclude Include="Compression.h" />
     <ClInclude Include="Counter.h" />
-    <ClInclude Include="CreateBookDialog.h" />
-    <ClInclude Include="Edit.h" />
     <ClInclude Include="ExitDialog.h" />
     <ClInclude Include="FileDialog.h" />
-    <ClInclude Include="Geometry.h" />
-    <ClInclude Include="HistoryOfError.h" />
-    <ClInclude Include="Listbox.h" />
-    <ClInclude Include="MathsAnalize.h" />
     <ClInclude Include="Monitor.h" />
     <ClInclude Include="ShortTypes.h" />
     <ClInclude Include="Simbols.h" />
     <ClInclude Include="StringWork.h" />
-    <ClInclude Include="Toolbar.h" />
     <ClInclude Include="Translate.h" />
-    <ClInclude Include="FileWork.h" />
-    <ClInclude Include="LockFile.h" />
     <ClInclude Include="CreateWindow.h" />
     <ClInclude Include="DialogWindow.h" />
     <ClInclude Include="VersionInfo.h" />

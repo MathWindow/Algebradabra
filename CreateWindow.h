@@ -13,7 +13,6 @@
 #define create_window_header
 
 LRESULT CALLBACK main_procedure(procedure_arguments);
-LRESULT CALLBACK algebraic_book_create_procedure(procedure_arguments);
 
 int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arguments, int no_command_show) {
 	WNDCLASS main_class = main_class_example(
@@ -25,27 +24,10 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 		main_procedure
 	);
 
-	WNDCLASS algebraic_book_create_class = main_class_example(
-		COLOR_WINDOW,
-		h_instance,
-		main_icon,
-		IDC_ARROW,
-		algebraic_book_create_window_class_name,
-		algebraic_book_create_procedure
-	);
-
-	bool main_class_is_registered = false;
-
-	main_class_is_registered = 
-		register_class_name(
-			&main_class, 
-			translate::string_cannot_create_class_main,
-			__FUNCTIONW__
-		);
-
-	register_class_name(
-		&algebraic_book_create_class,
-		translate::string_cannot_create_class_create_algebraic_book,
+	bool main_class_is_registered = 
+		register_class_name (
+		&main_class,
+		translate::string_cannot_create_class_main,
 		__FUNCTIONW__
 	);
 

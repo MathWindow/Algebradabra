@@ -50,23 +50,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LockFile.h">
-      <Filter>Файлы заголовков\FileWork</Filter>
-    </ClInclude>
-    <ClInclude Include="FileWork.h">
-      <Filter>Файлы заголовков\FileWork</Filter>
-    </ClInclude>
-    <ClInclude Include="Compression.h">
-      <Filter>Файлы заголовков\FileWork</Filter>
-    </ClInclude>
     <ClInclude Include="Commands.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands</Filter>
     </ClInclude>
     <ClInclude Include="Widgets.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
-    </ClInclude>
-    <ClInclude Include="Toolbar.h">
-      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
     <ClInclude Include="FileDialog.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
@@ -74,32 +62,11 @@
     <ClInclude Include="ExitDialog.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
-    <ClInclude Include="Combobox.h">
-      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
-    </ClInclude>
-    <ClInclude Include="Listbox.h">
-      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
-    </ClInclude>
-    <ClInclude Include="Edit.h">
-      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
-    </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Widgets</Filter>
-    </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
     <ClInclude Include="DialogWindow.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
-    </ClInclude>
-    <ClInclude Include="CreateBookDialog.h">
-      <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
-    </ClInclude>
-    <ClInclude Include="Algebra.h">
-      <Filter>Файлы заголовков\Scince headers\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Geometry.h">
-      <Filter>Файлы заголовков\Scince headers\Math</Filter>
     </ClInclude>
     <ClInclude Include="Translate.h">
       <Filter>Файлы заголовков\Others</Filter>
@@ -116,17 +83,11 @@
     <ClInclude Include="VersionInfo.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
-    <ClInclude Include="HistoryOfError.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
     <ClInclude Include="Counter.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
     <ClInclude Include="AssociationType.h">
       <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
-    <ClInclude Include="MathsAnalize.h">
-      <Filter>Файлы заголовков\Scince headers\Math</Filter>
     </ClInclude>
     <ClInclude Include="WindowXY.h">
       <Filter>Файлы заголовков\Window &amp; monitor</Filter>

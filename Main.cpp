@@ -1,5 +1,4 @@
 #include "CreateWindow.h"
-#include "CreateBookDialog.h"
 #include "Menu.h"
 #include "Widgets.h"
 #include "ExitDialog.h"
@@ -72,9 +71,6 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 				MB_ICONINFORMATION
 			);
 		}
-		else if (w_param == command_create_algebraic_book) {
-			window_algebraic_book_create(h_window);
-		}
 		else if (w_param == command_open_algebraic_book) {
 			ofn_algebraic_book.open_file_dialog();
 		}
@@ -104,31 +100,6 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 
 		if(ask_wish_save(h_window))
 			PostQuitMessage(0);
-		break;
-	default:
-		return DefWindowProc(h_window, message, w_param, l_param);
-		break;
-	}
-}
-
-LRESULT CALLBACK algebraic_book_create_procedure(procedure_arguments) {
-	switch (message) {
-	case WM_CREATE:
-		
-		break;
-	case WM_COMMAND:
-		switch (w_param) {
-		case NULL:
-			// It must be empty...
-			break;
-		default:
-			
-			break;
-		}
-
-		break;
-	case WM_DESTROY:
-
 		break;
 	default:
 		return DefWindowProc(h_window, message, w_param, l_param);

@@ -1,9 +1,9 @@
 #pragma once
 #include <windows.h>
+#include <basetsd.h>
 #include "Commands.h"
 #include "Translate.h"
 #include "AssociationType.h"
-#include <basetsd.h>
 
 // 1
 
@@ -47,7 +47,7 @@ HMENU root_menu = CreateMenu();
 bool create_main_menu(HWND h_window) {
 	// Третий этаж
 
-	translating_element_menu(algebraic_book_menu, MF_STRING, command_create_algebraic_book, translate::string_create);
+	translating_element_menu(algebraic_book_menu, MF_STRING, NULL, translate::string_create);
 	translating_element_menu(algebraic_book_menu, MF_STRING, command_open_algebraic_book, translate::string_open);
 	translating_element_menu(algebraic_book_menu, MF_STRING, command_save_algebraic_book, translate::string_save);
 	translating_element_menu(algebraic_book_menu, MF_STRING, command_save_algebraic_book_as, translate::string_save_as);
@@ -101,7 +101,7 @@ bool create_main_menu(HWND h_window) {
 	translating_element_menu(help_settings_menu, MF_STRING, NULL, translate::string_page_parameter);
 	line_element_menu(help_settings_menu);
 	translating_element_menu(help_settings_menu, MF_STRING, command_about, translate::string_program_parameter);
-	translating_element_menu(help_settings_menu, MF_STRING, command_error_list, translate::string_errors_list_window);
+	translating_element_menu(help_settings_menu, MF_STRING, NULL, translate::string_errors_list_window);
 	translating_element_menu(help_settings_menu, MF_POPUP, (UINT_PTR)language_menu, translate::string_language);
 
 	// Первый этаж

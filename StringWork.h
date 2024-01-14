@@ -1,5 +1,6 @@
 #pragma once
 #include <windows.h>
+#include <vector>
 #include "ShortTypes.h"
 
 // 1
@@ -11,13 +12,10 @@ namespace string_work {
 
 	svt::u_short string_operation_index = 0;
 
-	svt::u_short index_ = 0;
-
 	svt::u_short string_size(LPCWSTR string_input) {
-		index_ = 0;
-
-		// Mistake was found at next string: letter "L" has been forgotten to put before "'\0'". I'm sure that is reason of program's problem in opening.
-		for (; *(string_input + index_) != L'\0'; index_++) { // Найдена ошибка: забыл поставить "L" перед "'\0'". Я уверен, что из-за этого программа не смогла запуститься.
+		svt::u_short index_ = 0;
+		
+		for (; *(string_input + index_) != L'\0'; index_++) {
 			;
 		}
 
