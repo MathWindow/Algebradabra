@@ -388,6 +388,11 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 		L"Посмотреть"
 	);
 
+	string string__write_random_event = set_string(
+		L"Write random event",
+		L"Записать случайное событие"
+	);
+
 	string string_title_debugger_window = set_string(
 		string_program_name.language_variant.at(language_English)
 		+ L" | "
