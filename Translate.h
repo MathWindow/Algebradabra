@@ -7,6 +7,8 @@
 #include "ShortTypes.h"
 #include <vector>
 #include <winnt.h>
+#include <climits>
+#include <WinUser.h>
 
 #ifndef translate_header
 #define translate_header
@@ -23,76 +25,78 @@ namespace translate {
 	c_language_index language_Russian = put_index_counter<language_index>(0);
 	c_language_index language_English = put_index_counter<language_index>(continue_counting);
 
+	string_index is_not_numbered = UINT_MAX;
+
 	// Главное окно
 	// Main window
 
-	string_index index_main_window_title = 0;
-	string_index index_exit = 0;
-	string_index index_whats_new = 0;
-	string_index index_thats_new = 0;
-	string_index index_program = 0;
-	string_index index_algebraic_book = 0;
-	string_index index_create = 0;
-	string_index index_open = 0;
-	string_index index_save = 0;
-	string_index index_save_as = 0;
-	string_index index_compress = 0;
-	string_index index_lock_with_code = 0;
-	string_index index_page_add = 0;
-	string_index index_coordinate = 0;
-	string_index index_circuit = 0;
-	string_index index_paint = 0;
-	string_index index_file_txt = 0;
-	string_index index_edit = 0;
-	string_index index_search_command = 0;
-	string_index index_search_string = 0;
-	string_index index_page_copy = 0;
-	string_index index_paste = 0;
-	string_index index_cancel = 0;
-	string_index index_cancel_last = 0;
-	string_index index_undo = 0;
-	string_index index_undo_last = 0;
-	string_index index_view = 0;
-	string_index index_menu_and_toolbar = 0;
-	string_index index_cursor = 0;
-	string_index index_style = 0;
-	string_index index_default_view = 0;
-	string_index index_help_settings = 0;
-	string_index index_algebraic_book_parameter = 0;
-	string_index index_page_parameter = 0;
-	string_index index_program_parameter = 0;
-	string_index index_language = 0;
-	string_index index_window = 0;
-	string_index index_technical_windows_check = 0;
-	string_index index_main_window = 0;
+	string_index index_main_window_title = is_not_numbered;
+	string_index index_exit = is_not_numbered;
+	string_index index_whats_new = is_not_numbered;
+	string_index index_thats_new = is_not_numbered;
+	string_index index_program = is_not_numbered;
+	string_index index_algebraic_book = is_not_numbered;
+	string_index index_create = is_not_numbered;
+	string_index index_open = is_not_numbered;
+	string_index index_save = is_not_numbered;
+	string_index index_save_as = is_not_numbered;
+	string_index index_compress = is_not_numbered;
+	string_index index_lock_with_code = is_not_numbered;
+	string_index index_page_add = is_not_numbered;
+	string_index index_coordinate = is_not_numbered;
+	string_index index_circuit = is_not_numbered;
+	string_index index_paint = is_not_numbered;
+	string_index index_file_txt = is_not_numbered;
+	string_index index_edit = is_not_numbered;
+	string_index index_search_command = is_not_numbered;
+	string_index index_search_string = is_not_numbered;
+	string_index index_page_copy = is_not_numbered;
+	string_index index_paste = is_not_numbered;
+	string_index index_cancel = is_not_numbered;
+	string_index index_cancel_last = is_not_numbered;
+	string_index index_undo = is_not_numbered;
+	string_index index_undo_last = is_not_numbered;
+	string_index index_view = is_not_numbered;
+	string_index index_menu_and_toolbar = is_not_numbered;
+	string_index index_cursor = is_not_numbered;
+	string_index index_style = is_not_numbered;
+	string_index index_default_view = is_not_numbered;
+	string_index index_help_settings = is_not_numbered;
+	string_index index_algebraic_book_parameter = is_not_numbered;
+	string_index index_page_parameter = is_not_numbered;
+	string_index index_program_parameter = is_not_numbered;
+	string_index index_language = is_not_numbered;
+	string_index index_window = is_not_numbered;
+	string_index index_technical_windows_check = is_not_numbered;
+	string_index index_main_window = is_not_numbered;
 
-	string_index index_asking_for_save_before_exit = 0;
+	string_index index_asking_for_save_before_exit = is_not_numbered;
 
-	string_index index_opening_file_window = 0;
-	string_index index_saving_file_window = 0;
-	string_index index_choosing_color_window = 0;
+	string_index index_opening_file_window = is_not_numbered;
+	string_index index_saving_file_window = is_not_numbered;
+	string_index index_choosing_color_window = is_not_numbered;
 	string_index& index_window_opening_file = index_opening_file_window;
 	string_index& index_window_saving_file = index_saving_file_window;
 	string_index& index_window_choosing_color = index_choosing_color_window;
-	string_index index_open_file = 0;
-	string_index index_save_file_as = 0;
+	string_index index_open_file = is_not_numbered;
+	string_index index_save_file_as = is_not_numbered;
 
-	string_index index_open_book = 0;
-	string_index index_save_book_as = 0;
+	string_index index_open_book = is_not_numbered;
+	string_index index_save_book_as = is_not_numbered;
 
 	// Window about program
 	// Окно о программе
 	
-	string_index index_testing_dialog_window = 0;
-	string_index index_program_author = 0;
-	string_index index_program_description = 0;
+	string_index index_testing_dialog_window = is_not_numbered;
+	string_index index_program_author = is_not_numbered;
+	string_index index_program_description = is_not_numbered;
 
 	// Universal using
 	// Универсальное применение
 
-	string_index index_program_name = 0;
-	string_index index_cannot_create_class_name = 0;
-	string_index index_cannot_create_class_main = 0;
+	string_index index_program_name = is_not_numbered;
+	string_index index_cannot_create_class_name = is_not_numbered;
+	string_index index_cannot_create_class_main = is_not_numbered;
 
 	language_index language_using = language_Russian;
 
@@ -104,10 +108,31 @@ namespace translate {
 		string_index* string_index_input,
 		std::wstring string_input
 	) {
-		*string_index_input = 
-			vocabulary.at(language_choosen_for_install).size();
-
-		vocabulary.at(language_choosen_for_install).push_back(string_input);
+		if (string_index_input != nullptr) {
+			if (*string_index_input == is_not_numbered) {
+				*string_index_input =
+					vocabulary.at(language_choosen_for_install).size();
+			}
+			else {
+				if (
+					*string_index_input
+					!= vocabulary.at(language_choosen_for_install).size()
+				) {
+					MessageBoxW(
+						NULL, 
+						(
+							std::to_wstring(*string_index_input)
+							+ L" | "
+							+ std::to_wstring(vocabulary.at(language_choosen_for_install).size())
+						).c_str(), 
+						NULL, 
+						MB_ICONERROR
+					);
+				}
+			}
+			
+			vocabulary.at(language_choosen_for_install).push_back(string_input);
+		}
 	}
 
 	std::wstring already_using_string(string_index index_index_input) {
