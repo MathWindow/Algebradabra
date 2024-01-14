@@ -13,14 +13,16 @@ namespace string_work {
 
 	u_short string_operation_index = 0;
 
-	u_short string_size(LPCWSTR string_input) {
-		u_short index = 0;
+	u_short index_ = 0;
 
-		for (; *(string_input + index) != '\0'; index++) {
+	u_short string_size(LPCWSTR string_input) {
+		index_ = 0;
+
+		for (; *(string_input + index_) != L'\0'; index_++) { // Найдена ошибка: забыл поставить L перед '\0'
 			;
 		}
 
-		return index;
+		return index_;
 	}
 
 	LPCWSTR string_union(
