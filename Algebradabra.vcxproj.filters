@@ -37,6 +37,9 @@
     <Filter Include="Файлы заголовков\Scince headers\Math">
       <UniqueIdentifier>{6ca5fe22-4144-42cd-a029-31e1b0858186}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Others">
+      <UniqueIdentifier>{5fc63ed2-5ccb-42d9-8fb8-0fd646e3b9f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -44,18 +47,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CreateWindow.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Naming.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Translate.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="LockFile.h">
       <Filter>Файлы заголовков\FileWork</Filter>
     </ClInclude>
@@ -74,9 +65,6 @@
     <ClInclude Include="Toolbar.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
-    <ClInclude Include="ClassWindow.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="FileDialog.h">
       <Filter>Файлы заголовков\Dialog window</Filter>
     </ClInclude>
@@ -89,9 +77,6 @@
     <ClInclude Include="Listbox.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
     </ClInclude>
-    <ClInclude Include="Simbols.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Edit.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Widgets</Filter>
     </ClInclude>
@@ -100,12 +85,6 @@
     </ClInclude>
     <ClInclude Include="UpdatedMenu.h">
       <Filter>Файлы заголовков\Window%27s elements and commands\Main tools</Filter>
-    </ClInclude>
-    <ClInclude Include="HistoryOfError.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Monitor.h">
-      <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="DialogWindow.h">
       <Filter>Файлы заголовков\Dialog window</Filter>
@@ -119,14 +98,44 @@
     <ClInclude Include="Geometry.h">
       <Filter>Файлы заголовков\Scince headers\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Counter.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="Translate.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="Simbols.h">
+      <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
     <ClInclude Include="ShortTypes.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="Naming.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="Monitor.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="HistoryOfError.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateWindow.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="Counter.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="ClassWindow.h">
+      <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
     <ClInclude Include="AssociationType.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowXY.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="MathsAnalizeClassic.h">
+      <Filter>Файлы заголовков\Scince headers\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 #include "CreateWindow.h"
+#include "CreateBookDialog.h"
 #include "UpdatedMenu.h"
 #include "Widgets.h"
 #include "ExitDialog.h"
@@ -75,12 +76,15 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 			);
 			break;
 		case command_what_new:
-			MessageBoxW(h_window, L"Диалоговое окно, которое отображает список ошибок, отключен.", program_name, MB_ICONINFORMATION);
+			MessageBoxW(h_window, L"Ничего нового не появилось, только небольшие технические изменения.", program_name, MB_ICONINFORMATION);
 			break;
-		case NULL:
 		case command_about:
 			MessageBoxW(h_window, L"Автор: " program_author L"\nВерсия: " program_version, program_name, MB_ICONINFORMATION);
 			break;
+		case command_new_bag_document:
+			window_algebraic_book_create(h_window);
+			break;
+		case NULL:
 			// It must be empty...
 			break;
 		default:
@@ -135,6 +139,31 @@ LRESULT CALLBACK error_list_procedure(procedure_arguments) {
 		break;
 	case WM_DESTROY:
 		
+		break;
+	default:
+		return DefWindowProc(h_window, message, w_param, l_param);
+		break;
+	}
+}
+
+LRESULT CALLBACK algebraic_book_create_procedure(procedure_arguments) {
+	switch (message) {
+	case WM_CREATE:
+		
+		break;
+	case WM_COMMAND:
+		switch (w_param) {
+		case NULL:
+			// It must be empty...
+			break;
+		default:
+			
+			break;
+		}
+
+		break;
+	case WM_DESTROY:
+
 		break;
 	default:
 		return DefWindowProc(h_window, message, w_param, l_param);

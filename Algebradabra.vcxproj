@@ -146,6 +146,7 @@
     <ClInclude Include="Geometry.h" />
     <ClInclude Include="HistoryOfError.h" />
     <ClInclude Include="Listbox.h" />
+    <ClInclude Include="MathsAnalizeClassic.h" />
     <ClInclude Include="Monitor.h" />
     <ClInclude Include="ShortTypes.h" />
     <ClInclude Include="Simbols.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="UpdatedMenu.h" />
     <ClInclude Include="Widgets.h" />
+    <ClInclude Include="WindowXY.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Algebradabra.rc" />
