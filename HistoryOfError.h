@@ -12,7 +12,7 @@ using namespace std;
 #ifndef history_of_error_header
 #define history_of_error_header
 
-const bool error_list_turn_off = true;
+const bool error_list_turn_off = false;
 
 cu_short string_operation_size = 1000000;
 

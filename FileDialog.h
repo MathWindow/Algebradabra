@@ -40,7 +40,7 @@ public:
 	}
 
 	void both_hwndOwner(HWND h_window) {
-		open.hwndOwner = h_window;;
+		open.hwndOwner = h_window;
 		save.hwndOwner = h_window;
 		both_.hwndOwner = h_window;
 	}
@@ -68,9 +68,7 @@ void plan_ofn_algebraic_book(HWND h_window) {
 	ofn_algebraic_book.save.nMaxFile = sizeof(string_path);
 	ofn_algebraic_book.save.Flags = OFN_PATHMUSTEXIST;
 	
-	ofn_algebraic_book.both_.hwndOwner = h_window;
-
-	ofn_algebraic_book.continue_planning();
+	ofn_algebraic_book.both_hwndOwner(h_window);
 }
 
 void plan_ofn_technical_check(HWND h_window) {
@@ -90,9 +88,7 @@ void plan_ofn_technical_check(HWND h_window) {
 	ofn_technical_check.save.nMaxFile = sizeof(string_path_technical_check);
 	ofn_technical_check.save.Flags = OFN_PATHMUSTEXIST;
 
-	ofn_technical_check.both_.hwndOwner = h_window;
-
-	ofn_technical_check.continue_planning();
+	ofn_algebraic_book.both_hwndOwner(h_window);
 }
 
 #endif
