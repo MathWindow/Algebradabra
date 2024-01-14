@@ -65,7 +65,6 @@ bool create_main_menu(HWND h_window) {
 	// Второй этаж
 
 	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)algebraic_book_menu, string_algebraic_book);
-	line_element_menu(program_menu);
 	translating_element_menu(program_menu, MF_POPUP, (UINT_PTR)add_list_element_menu, string_page_add);
 	line_element_menu(program_menu);
 	translating_element_menu(program_menu, MF_STRING, command_exit, string_exit);

@@ -70,8 +70,8 @@ LRESULT CALLBACK main_procedure(procedure_arguments) {
 					error_list_window_class_name,
 					L"Список ошибок",
 					WS_VISIBLE | WS_OVERLAPPEDWINDOW,
-					&error_list_x_position,
-					&error_list_y_position,
+					&error_list_window_x,
+					&error_list_window_y,
 					error_list_window_width,
 					error_list_window_height,
 					NULL

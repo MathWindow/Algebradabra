@@ -76,7 +76,7 @@ c_string_param string_asking_for_exit = put_index_running(false);
 
 bool is_vocabulary_installed = false;
 
-lang_param language_using = language_English;
+lang_param language_using = language_Russian;
 
 array<array<LPCWSTR, string_per_language>, language_per_vocabulary> main_vocabulary{};
 
@@ -87,6 +87,102 @@ void set_Russian_vocabulary() {
 		L"Что нового?";
 	main_vocabulary.at(language_Russian).at(string_program) =
 		L"Программа";
+	main_vocabulary.at(language_Russian).at(string_null_handle) =
+		L"Пустой дескриптор";
+	main_vocabulary.at(language_Russian).at(string_null_window_handle) =
+		L"Пустой дескриптор окна";
+	main_vocabulary.at(language_Russian).at(string_null_menu_handle) =
+		L"Пустой дескриптор меню";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_dialog_window) =
+		L"Невозможно создать диалоговое окно";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_edit_widget) =
+		L"Невозможно создать виджет в виде текстового поля (edit widget)";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_listbox_widget) =
+		L"Невозможно создать виджет в виде списка (listbox widget)";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_button_widget) =
+		L"Невозможно создать виджет в виде кнопки (button widget)";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_static_widget) =
+		L"Невозможно создать виджет в виде надписи (static widget)";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_menu_element) =
+		L"Невозможно создать элемент меню";
+	main_vocabulary.at(language_Russian).at(string_splitting_into_zero) =
+		L"Обнаружено деление на ноль";
+	main_vocabulary.at(language_Russian).at(string_root_of_negative) =
+		L"Обнаружено Корень отрицательного числа";
+	main_vocabulary.at(language_Russian).at(string_em_dash) =
+		simbol_em_dash;
+	main_vocabulary.at(language_Russian).at(string_create) =
+		L"Создать";
+	main_vocabulary.at(language_Russian).at(string_open) =
+		L"Открыть";
+	main_vocabulary.at(language_Russian).at(string_save) =
+		L"Сохранить";
+	main_vocabulary.at(language_Russian).at(string_save_as) =
+		L"Сохранить как...";
+	main_vocabulary.at(language_Russian).at(string_compress) =
+		L"Сжать";
+	main_vocabulary.at(language_Russian).at(string_lock) =
+		L"Заблокировать паролем";
+	main_vocabulary.at(language_Russian).at(string_coordinate) =
+		L"Координата";
+	main_vocabulary.at(language_Russian).at(string_circuit) =
+		L"Схема";
+	main_vocabulary.at(language_Russian).at(string_paint) =
+		L"Рисунок";
+	main_vocabulary.at(language_Russian).at(string_file_txt) =
+		L"File *.txt";
+	main_vocabulary.at(language_Russian).at(string_cancel_last) =
+		L"Отменить последнее";
+	main_vocabulary.at(language_Russian).at(string_undo_last) =
+		L"Возвращать последнее";
+	main_vocabulary.at(language_Russian).at(string_algebraic_book) =
+		L"Алгебраическая книга";
+	main_vocabulary.at(language_Russian).at(string_page_add) =
+		L"Добавить страницу";
+	main_vocabulary.at(language_Russian).at(string_search_command) =
+		L"Найти команду";
+	main_vocabulary.at(language_Russian).at(string_search_string) =
+		L"Найти строку";
+	main_vocabulary.at(language_Russian).at(string_page_copy) =
+		L"Копировать страницу";
+	main_vocabulary.at(language_Russian).at(string_paste) =
+		L"Вставить";
+	main_vocabulary.at(language_Russian).at(string_cancel) =
+		L"Отменить";
+	main_vocabulary.at(language_Russian).at(string_undo) =
+		L"Возвращать";
+	main_vocabulary.at(language_Russian).at(string_menu_and_toolbar) =
+		L"Меню и панель инструментов";
+	main_vocabulary.at(language_Russian).at(string_cursor) =
+		L"Курсор";
+	main_vocabulary.at(language_Russian).at(string_style) =
+		L"Стиль";
+	main_vocabulary.at(language_Russian).at(string_default_view) =
+		L"Вид по умолчанию";
+	main_vocabulary.at(language_Russian).at(string_algebraic_book_parameter) =
+		L"Параметр алгебраической книги";
+	main_vocabulary.at(language_Russian).at(string_page_parameter) =
+		L"Параметр страницы";
+	main_vocabulary.at(language_Russian).at(string_program_parameter) =
+		L"Параметр программы";
+	main_vocabulary.at(language_Russian).at(string_error_list) =
+		L"Список ошибок";
+	main_vocabulary.at(language_Russian).at(string_language) =
+		L"Язык";
+	main_vocabulary.at(language_Russian).at(string_edit) =
+		L"Правка";
+	main_vocabulary.at(language_Russian).at(string_view_) =
+		L"Вид";
+	main_vocabulary.at(language_Russian).at(string_help_settings) =
+		L"Справка/Настройка";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_class_main) =
+		L"Невозможно создать класс главного окна";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_class_error_list) =
+		L"Невозможно создать класс окна списка ошибок";
+	main_vocabulary.at(language_Russian).at(string_cannot_create_class_create_algebraic_book) =
+		L"Невозможно создать класс окна создания алгебраической книги";
+	main_vocabulary.at(language_Russian).at(string_asking_for_exit) =
+		L"Сохранять документы перед выходом из программы?";
 }
 
 void set_English_vocabulary() {
