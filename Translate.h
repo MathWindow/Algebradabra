@@ -107,11 +107,11 @@ namespace translate {
 	);
 
 	string string_thats_new = set_string(
-		L"Иконка полностью переделывалась, появились диалоговые окна открытия и сохранения файла. \
-Появились технические обзоры вышеперечисленных окон, а также технический обзор выбора цвета.", 
 		L"Icon was remade fully. \
 Save & open file dialog boxes were appeared. \
-Technical window's checking of these dialog boxes & color choice were appeared too."
+Technical window's checking of these dialog boxes & color choice were appeared too.",
+		L"Иконка полностью переделывалась, появились диалоговые окна открытия и сохранения файла. \
+Появились технические обзоры вышеперечисленных окон, а также технический обзор выбора цвета."
 	);
 
 	string string__program = set_string(
