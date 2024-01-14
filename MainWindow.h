@@ -4,21 +4,35 @@
 #include "resource.h"
 #include "Naming.h"
 #include "ClassWindow.h"
+#include "Monitor.h"
 using namespace std;
 
-RECT monitor_information = { 0 };
-int monitor_width = 0;
-int monitor_height = 0;
+const unsigned short main_window_width = 900;
+const unsigned short main_window_height = 500;
+unsigned short main_window_x_position = 0;
+unsigned short main_window_y_position = 0;
 
-const int main_window_width = 900;
-const int main_window_height = 500;
-int main_window_x_position = 0;
-int main_window_y_position = 0;
-
-LRESULT CALLBACK main_procedure(main_procedure_arguments);
+LRESULT CALLBACK main_procedure(procedure_arguments);
+LRESULT CALLBACK error_list_procedure(procedure_arguments);
 
 int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arguments, int no_command_show) {
-	WNDCLASS main_class = main_class_example(COLOR_WINDOW, h_instance, main_icon, IDC_ARROW, L"Main window", main_procedure);
+	WNDCLASS main_class = main_class_example(
+		COLOR_WINDOW, 
+		h_instance, 
+		main_icon, 
+		IDC_ARROW, 
+		main_window_class_name, 
+		main_procedure
+	);
+
+	WNDCLASS error_list_class = main_class_example(
+		COLOR_WINDOW,
+		h_instance,
+		main_icon,
+		IDC_ARROW,
+		error_list_window_class_name,
+		error_list_procedure
+	);
 
 	if (!RegisterClassW(&main_class)) {
 		MessageBoxW(NULL, L"Произошла ошибка во время загрузки ПО", program_name, MB_ICONERROR);
@@ -26,19 +40,25 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 		return -1;
 	}
 
+	if (!RegisterClassW(&error_list_class)) {
+		MessageBoxW(NULL, L"Произошла ошибка во время загрузки ПО", program_name, MB_ICONERROR);
+	}
+
 	MSG main_message = { 0 };
 
-	GetClipCursor(&monitor_information);
-	monitor_width = monitor_information.right;
-	monitor_height = monitor_information.bottom;
+	get_monitor_information();
 
-	main_window_x_position = (monitor_width - main_window_width) / 2;
-	main_window_y_position = (monitor_height - main_window_height) / 2;
+	set_window_center_position(
+		main_window_width, 
+		main_window_height, 
+		&main_window_x_position, 
+		&main_window_y_position
+	);
 
 	CreateWindowW(
-		L"Main window", 
+		main_window_class_name, 
 		program_name, 
-		WS_VISIBLE | WS_OVERLAPPEDWINDOW,
+		WS_VISIBLE | WS_OVERLAPPEDWINDOW, 
 		main_window_x_position, 
 		main_window_y_position, 
 		main_window_width, 

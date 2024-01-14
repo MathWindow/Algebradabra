@@ -1,10 +1,10 @@
 #pragma once
 #include <windows.h>
 
-#define main_class_example_arguments int background_color, HINSTANCE h_instance, int icon, LPCWSTR cursor, LPCWSTR class_string_name, WNDPROC main_procedure
-#define main_procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param
+#define class_example_arguments int background_color, HINSTANCE h_instance, int icon, LPCWSTR cursor, LPCWSTR class_string_name, WNDPROC main_procedure
+#define procedure_arguments HWND h_window, UINT message, WPARAM w_param, LPARAM l_param
 
-WNDCLASS main_class_example(main_class_example_arguments) {
+WNDCLASS main_class_example(class_example_arguments) {
 	WNDCLASS class_inside = { 0 };
 
 	class_inside.hbrBackground = (HBRUSH)background_color;
