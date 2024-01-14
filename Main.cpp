@@ -11,9 +11,9 @@
 #include "Translate.h"
 #include <windowsx.h>
 #include <commdlg.h>
-#include "VersionInfo.h"
 #include "StringWork.h"
 #include "WindowXY.h"
+#include "ClassWindow.h"
 
 LRESULT CALLBACK main_procedure(procedure_arguments) {
 	switch (message) {

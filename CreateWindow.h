@@ -70,7 +70,7 @@ int WINAPI WinMain(HINSTANCE h_instance, HINSTANCE h_preview_instance, LPSTR arg
 
 	register_class_name(
 		&algebraic_book_create_class,
-		translate::string_cannot_create_class_main,
+		translate::string_cannot_create_class_create_algebraic_book,
 		__FUNCTIONW__
 	);
 

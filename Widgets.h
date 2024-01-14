@@ -1,7 +1,6 @@
 #pragma once
 #include <windows.h>
 #include <vector>
-#include "VersionInfo.h"
 #include "Listbox.h"
 #include "HistoryOfError.h"
 #include "Translate.h"

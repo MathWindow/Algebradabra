@@ -5,8 +5,6 @@
 #include "Translate.h"
 #include "AssociationType.h"
 #include "StringWork.h"
-#include "VersionInfo.h"
-#include "Simbols.h"
 
 #ifndef class_window_header
 #define class_window_header
@@ -16,7 +14,7 @@ LPCWSTR main_window_name =
 		translate::translating_string(
 			translate::string_program_name
 		), 
-		simbol_em_dash L" ",
+		L"— ",
 		translate::translating_string(
 			translate::string_main_window
 		)
@@ -27,7 +25,7 @@ LPCWSTR error_list_window_name =
 		translate::translating_string(
 			translate::string_program_name
 		),
-		simbol_em_dash L" ",
+		L"— ",
 		translate::translating_string(
 			translate::string_errors_list_window
 		)
@@ -38,7 +36,7 @@ LPCWSTR algebraic_book_create_name =
 		translate::translating_string(
 			translate::string_program_name
 		),
-		simbol_em_dash L" ",
+		L"— ",
 		translate::translating_string(
 			translate::string_create_algebraic_book_window
 		)

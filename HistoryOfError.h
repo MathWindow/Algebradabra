@@ -5,7 +5,6 @@
 #include <vector>
 #include <array>
 #include "ShortTypes.h"
-#include "VersionInfo.h"
 #include "AssociationType.h"
 #include "Translate.h"
 using namespace std;

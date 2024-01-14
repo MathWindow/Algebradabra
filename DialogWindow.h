@@ -1,6 +1,5 @@
 #pragma once
 #include <windows.h>
-#include "VersionInfo.h"
 #include "Monitor.h"
 #include "HistoryOfError.h"
 #include "Translate.h"

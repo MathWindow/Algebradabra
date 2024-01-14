@@ -1,6 +1,5 @@
 #pragma once
 #include <windows.h>
-#include "VersionInfo.h"
 #include "ShortTypes.h"
 
 #ifndef monitor_header

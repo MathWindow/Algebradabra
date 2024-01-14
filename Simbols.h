@@ -1,5 +1,4 @@
 #pragma once
-#include <windows.h>
 
 #ifndef simbols_header
 #define simbols_header

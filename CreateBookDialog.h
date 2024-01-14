@@ -1,10 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "DialogWindow.h"
-#include "HistoryOfError.h"
-#include "Translate.h"
 #include "WindowXY.h"
-#include "VersionInfo.h"
 #include "ClassWindow.h"
 
 #ifndef create_book_dialog_header

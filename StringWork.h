@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include "ShortTypes.h"
+#include <string>
 
 namespace string_work {
 	cu_short string_size_operation = (2 * 1024) / 2;

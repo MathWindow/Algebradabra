@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include <windows.h>
-#include <string>
 #include <array>
 #include "Counter.h"
 #include "AssociationType.h"
