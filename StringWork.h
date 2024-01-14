@@ -3,6 +3,8 @@
 #include "ShortTypes.h"
 #include <string>
 
+// 1
+
 namespace string_work {
 	cu_short string_size_operation = (10 * 1024) / 2;
 
