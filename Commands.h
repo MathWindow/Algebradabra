@@ -34,5 +34,6 @@ command_type command_testing_dialog_window = put_index_counter<command_type>(con
 // Для окна как отладчика
 
 command_type command_look_event = put_index_counter<command_type>(continue_counting);
+command_type command_write_random_event = put_index_counter<command_type>(continue_counting);
 
 #endif

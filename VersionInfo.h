@@ -6,7 +6,7 @@
 
 std::wstring program_version_family = L"May";
 std::wstring program_version_above = L"v1.2";
-std::wstring program_version_publication = L"8build";
+std::wstring program_version_publication = L"9build";
 
 std::wstring program_version =
 	program_version_family

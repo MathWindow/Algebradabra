@@ -116,7 +116,7 @@ void create_menu_debugger_window(HWND h_window) {
 	HMENU root_menu = CreateMenu();
 
 	AppendMenuW(root_menu, MF_STRING, command_look_event, translate::string__look.c_style());
-	AppendMenuW(root_menu, MF_STRING, NULL, translate::string__write_random_event.c_style());
+	AppendMenuW(root_menu, MF_STRING, command_write_random_event, translate::string__write_random_event.c_style());
 
 	SetMenu(h_window, root_menu);
 }

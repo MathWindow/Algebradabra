@@ -12,6 +12,7 @@
 #include "Monitor.h"
 #include "WindowXY.h"
 #include "Debugger.h"
+#include <cstdlib>
 
 #ifndef macro_header_procedure_window
 #define macro_header_procedure_window
@@ -191,6 +192,17 @@ LRESULT CALLBACK debugger_procedure(
 					debug::history_of_event.at(index).show_details().c_style()
 				);
 			}
+		}
+		else if (w_param == command_write_random_event) {
+			debug::write_event(
+				(unsigned int)rand() % (debug::event_type_count + 1),
+				debug::characteristic_none,
+				(unsigned int)rand() % (debug::title_index_count + 1),
+				(unsigned int)rand() % (debug::details_index_count + 1),
+				{},
+				{},
+				{}
+			);
 		}
 		break;
 	case WM_DESTROY:

@@ -34,6 +34,9 @@ namespace debug {
 	const size_t title_index_cannot_register_class_name
 		= put_index_counter<size_t>(continue_counting);
 
+	const size_t title_index_count
+		= put_index_counter<size_t>(no_counting) + 1;
+
 	const size_t details_index_it_is_a_test
 		= put_index_counter<size_t>(0);
 	const size_t details_index_cannot_register_main_class_name
@@ -42,6 +45,9 @@ namespace debug {
 		= put_index_counter<size_t>(continue_counting);
 	const size_t details_index_cannot_register_unknown_class_name
 		= put_index_counter<size_t>(continue_counting);
+
+	const size_t details_index_count
+		= put_index_counter<size_t>(no_counting) + 1;
 
 	using event_type_index = u_char_;
 	using c_event_type_index = const event_type_index;
@@ -54,6 +60,9 @@ namespace debug {
 		= put_index_counter<event_type_index>(continue_counting);
 	c_event_type_index event_type_error
 		= put_index_counter<event_type_index>(continue_counting);
+
+	c_event_type_index event_type_count
+		= put_index_counter<event_type_index>(no_counting) + 1;
 	
 	using block_type_index = u_char_;
 	using c_block_type_index = const block_type_index;
