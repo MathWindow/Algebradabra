@@ -17,7 +17,7 @@
 #else
 LPCWSTR program_name = L"Algebradabra";
 LPCWSTR program_verstion_abovepublic = L"v1.1"
-LPCWSTR program_version_publication = L"23build";
+LPCWSTR program_version_publication = L"24build";
 LPCWSTR program_version_family = L"May";
 LPCWSTR program_version = string_union_x(program_version_family, L" ", program_version_publication, L" ", program_version_abovepublic);
 #endif
