@@ -42,10 +42,6 @@ LPCWSTR algebraic_book_create_name =
 		)
 	);
 
-LPCWSTR main_window_name = L"Algebradabra May — main window";
-LPCWSTR error_list_window_name = L"Algebradabra May — error's list";
-LPCWSTR algebraic_book_create_name = L"Algebradabra May — create algebraic book";
-
 LPCWSTR main_window_class_name = L"Main window class";
 LPCWSTR error_list_window_class_name = L"Error list window class";
 LPCWSTR algebraic_book_create_window_class_name = L"Algebraic book create window class";
