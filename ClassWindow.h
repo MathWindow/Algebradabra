@@ -9,14 +9,12 @@
 #ifndef class_window_header
 #define class_window_header
 
-/*
-
 LPCWSTR main_window_name = 
 	string_work::string_union_multy(
 		translate::translating_string(
 			translate::string_program_name
 		), 
-		L"— ",
+		L"â€” ",
 		translate::translating_string(
 			translate::string_main_window
 		)
@@ -27,7 +25,7 @@ LPCWSTR error_list_window_name =
 		translate::translating_string(
 			translate::string_program_name
 		),
-		L"— ",
+		L"â€” ",
 		translate::translating_string(
 			translate::string_errors_list_window
 		)
@@ -38,17 +36,15 @@ LPCWSTR algebraic_book_create_name =
 		translate::translating_string(
 			translate::string_program_name
 		),
-		L"— ",
+		L"â€” ",
 		translate::translating_string(
 			translate::string_create_algebraic_book_window
 		)
 	);
 
-*/
-
-LPCWSTR main_window_name = L"Algebradabra May — main window";
-LPCWSTR error_list_window_name = L"Algebradabra May — error's list";
-LPCWSTR algebraic_book_create_name = L"Algebradabra May — create algebraic book";
+LPCWSTR main_window_name = L"Algebradabra May â€” main window";
+LPCWSTR error_list_window_name = L"Algebradabra May â€” error's list";
+LPCWSTR algebraic_book_create_name = L"Algebradabra May â€” create algebraic book";
 
 LPCWSTR main_window_class_name = L"Main window class";
 LPCWSTR error_list_window_class_name = L"Error list window class";
