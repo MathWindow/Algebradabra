@@ -54,8 +54,8 @@ namespace xy {
 	}
 }
 
-const LONG main_window_width = 900;
-const LONG main_window_height = 500;
+const LONG main_window_width = monitor_width / 3 * 2;
+const LONG main_window_height = monitor_height / 3 * 2;
 LONG main_window_x = 0;
 LONG main_window_y = 0;
 

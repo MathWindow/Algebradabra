@@ -70,87 +70,87 @@ namespace debug {
 		SYSTEMTIME time_system{};
 		SYSTEMTIME time_local{};
 
-		translate::string show_type() {
-			if (event_type == event_type_message) {
+		translate::string show_type( ) {
+			if ( event_type == event_type_message ) {
 				return translate::set_string(
 					L"Message",
-					L"РЎРѕРѕР±С‰РµРЅРёРµ"
+					L"Сообщение"
 				);
 			}
-			else if (event_type == event_type_question) {
+			else if ( event_type == event_type_question ) {
 				return translate::set_string(
 					L"Question",
-					L"Р’РѕРїСЂРѕСЃ"
+					L"Вопрос"
 				);
 			}
-			else if (event_type == event_type_warning) {
+			else if ( event_type == event_type_warning ) {
 				return translate::set_string(
 					L"Warning",
-					L"РџСЂРµРґСѓРїСЂРµР¶РґРµРЅРёРµ"
+					L"Предупреждение"
 				);
 			}
-			else if (event_type == event_type_error) {
+			else if ( event_type == event_type_error ) {
 				return translate::set_string(
 					L"Error",
-					L"РћС€РёР±РєР°"
+					L"Ошибка"
 				);
 			}
 
 			return translate::set_string(
 				L"Where is type?",
-				L"Р“РґРµ С‚РёРї?"
+				L"Где тип?"
 			);
 		}
 
-		translate::string show_title() {
-			if (title_index == title_index_just_message) {
+		translate::string show_title( ) {
+			if ( title_index == title_index_just_message ) {
 				return translate::set_string(
 					L"Just a message",
-					L"РџСЂРѕСЃС‚Рѕ СЃРѕРѕР±С‰РµРЅРёРµ"
+					L"Просто сообщение"
 				);
 			}
-			else if (title_index == title_index_cannot_register_class_name) {
+			else if ( title_index == title_index_cannot_register_class_name ) {
 				return translate::set_string(
 					L"Couldn't create class' name",
-					L"РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РёРјСЏ РєР»Р°СЃСЃР°"
+					L"Не удалось создать имя класса"
 				);
 			}
 
 			return translate::set_string(
 				L"Where is title?",
-				L"Р“РґРµ Р·Р°РіРѕР»РѕРІРѕРє?"
+				L"Где заголовок?"
 			);
 		}
 
-		translate::string show_details() {
-			if (details_index == details_index_it_is_a_test) {
+		translate::string show_details( ) {
+			if ( details_index == details_index_it_is_a_test ) {
 				return translate::set_string(
 					L"This is a test",
-					L"Р­С‚Рѕ СЏРІР»СЏРµС‚СЃСЏ С‚РµСЃС‚РѕРј"
+					L"Это является тестом"
 				);
 			}
-			else if (details_index == details_index_cannot_register_main_class_name) {
+			else if ( details_index == details_index_cannot_register_main_class_name ) {
 				return translate::set_string(
 					L"Couldn't create class' name for main window",
-					L"РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РёРјСЏ РєР»Р°СЃСЃР° РґР»СЏ РіР»Р°РІРЅРѕРіРѕ РѕРєРЅР°"
+					L"Не удалось создать имя класса для главного окна"
 				);
 			}
-			else if (details_index == details_index_cannot_register_debugger_class_name) {
+			else if ( details_index == details_index_cannot_register_debugger_class_name ) {
 				return translate::set_string(
 					L"Couldn't create class' name for debugger's window",
-					L"РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РёРјСЏ РєР»Р°СЃСЃР° РґР»СЏ РѕРєРЅР° РѕС‚Р»Р°РґС‡РёРєР°"
+					L"Не удалось создать имя класса для окна отладчика"
 				);
 			}
-			else if (details_index == details_index_cannot_register_unknown_class_name) {
+			else if ( details_index == details_index_cannot_register_unknown_class_name ) {
 				return translate::set_string(
 					L"Couldn't create class' name for unknown window",
-					L"РќРµ СѓРґР°Р»РѕСЃСЊ СЃРѕР·РґР°С‚СЊ РёРјСЏ РєР»Р°СЃСЃР° РґР»СЏ РЅРµРёР·РІРµСЃС‚РЅРѕРіРѕ РѕРєРЅР°"
+					L"Не удалось создать имя класса для неизвестного окна"
 				);
 			}
 
 			return translate::set_string(
 				L"Where is details?",
-				L"Р“РґРµ РїРѕРґСЂРѕР±РЅРѕСЃС‚Рё?"
+				L"Где подробности?"
 			);
 		}
 	};
@@ -178,8 +178,8 @@ namespace debug {
 			}
 		);
 
-		GetSystemTime(&history_of_event.back().time_system);
-		GetLocalTime(&history_of_event.back().time_local);
+		GetSystemTime(&history_of_event.back( ).time_system);
+		GetLocalTime(&history_of_event.back( ).time_local);
 	}
 }
 
