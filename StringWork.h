@@ -75,8 +75,8 @@ std::vector<size_t> show_indexes_from_vector_searching(
 				) {
 					result.push_back(index_list);
 
-					index_symbol = string_searcher.size( );
-					index_member = string_2d_vector_argument.at(index_list).size( );
+					index_symbol = string_searcher.size();
+					index_member = string_2d_vector_argument.at(index_list).size();
 				}
 			}
 		}

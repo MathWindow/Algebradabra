@@ -99,7 +99,7 @@ namespace coordinate {
 		return result;
 	}
 
-	RECT convert_size_position_to_rect(
+	RECT convert_size_position_to_RECT(
 		size size_,
 		position_point left_top_point,
 		macro_add_block_argument
@@ -118,18 +118,19 @@ namespace coordinate {
 		return result;
 	}
 
-	coordinate::position_point out = coordinate::set_position_point(10, 10, {});
+	position_point out = set_position_point(10, 10, {});
 
-	coordinate::size edit_size_standard = coordinate::set_size(150, 20, {});
+	size edit_size_standard = set_size(150, 20, {});
 
-	coordinate::size listbox_size_standard_1 = coordinate::set_size(150, 150, {});
-	coordinate::size listbox_size_standard_2 = coordinate::set_size(200, 200, {});
+	size listbox_size_standard_1 = set_size(150, 150, {});
+	size listbox_size_standard_2 = set_size(200, 200, {});
 
-	coordinate::size static_size_standard_1 = coordinate::set_size(300, 20, {});
-	coordinate::size static_size_standard_2 = coordinate::set_size(300, 100, {});
-	coordinate::size static_size_standard_time = coordinate::set_size(150, 20, {});
+	size static_size_standard_1 = set_size(300, 20, {});
+	size static_size_standard_2 = set_size(300, 40, {});
+	size static_size_standard_3 = set_size(300, 100, {});
+	size static_size_standard_time = set_size(150, 20, {});
 
-	coordinate::size button_size_standard = coordinate::set_size(90, 30, {});
+	size button_size_standard = set_size(90, 30, {});
 
 	using step_index = u_int_;
 	using c_step_index = const step_index;
@@ -156,7 +157,8 @@ namespace coordinate {
 
 		position_point result{};
 
-		static coordinate::position_point count_of_out = coordinate::set_position_point(1, 1, place);
+		static coordinate::position_point count_of_out 
+			= coordinate::set_position_point(1, 1, place);
 
 		static coordinate::size total_size = coordinate::set_size(0, 0, place);
 
@@ -189,9 +191,6 @@ namespace coordinate {
 		else if (step == step_make_out) {
 			count_of_out.ordinate += 1;
 		}
-		else if (step == step_set_widget_vertically) {
-			// Nothing to do...
-		}
 
 		if (step == step_set_widget_horizontally) {
 			width_in_this_place += width;
@@ -223,14 +222,5 @@ namespace coordinate {
 		return result;
 	}
 }
-
-coordinate::size_position main_window_position 
-	= coordinate::set_windows_position_and_size(900, 500, {});
-
-coordinate::size_position debugger_window_position
-	= coordinate::set_windows_position_and_size(850, 500, {});
-
-coordinate::size_position create_book_window_position
-	= coordinate::set_windows_position_and_size(200, 400, {});
 
 #endif

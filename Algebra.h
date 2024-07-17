@@ -80,15 +80,15 @@ namespace algebra {
 				return (double)number / (double)splitter;
 			}
 			else if (boolean_was_not_pointed) {
+#if turn_debugger_on
 				debug::write_event(
-					debug::event_type_error,
-					debug::title_index_split_by_zero,
-					debug::extra_title_index_split_by_zero,
+					debug::title_split_by_zero,
 					place,
 					nullptr,
 					0,
 					L""
 				);
+#endif
 			}
 
 			return 0;

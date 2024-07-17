@@ -12,6 +12,8 @@
 #include "Bitmap.h"
 #include "Debugger.h"
 #include "CodeWork.h"
+#include "Window-main.h"
+#include "Window-debugger.h"
 
 int WINAPI wWinMain(
 	HINSTANCE h_instance,
@@ -20,23 +22,15 @@ int WINAPI wWinMain(
 	int number_command_show
 ) {
 	macro_add_block_function({});
-
+#if turn_debugger_on
 	debug::write_event(
-		debug::event_type_message,
-		debug::title_index_main_function_was_called,
-		debug::extra_title_index_main_function_was_called,
+		debug::title_main_function_was_called,
 		place,
 		nullptr,
 		0,
 		L""
 	);
-	
-	h_bitmap_coordinate = debug::load_bitmap_w(
-		h_instance, 
-		MAKEINTRESOURCEW(IDB_BITMAP4),
-		place
-	);
-
+#endif
 	h_bitmap_add_paper = debug::load_bitmap_w(
 		h_instance, 
 		MAKEINTRESOURCEW(IDB_BITMAP5),
@@ -49,48 +43,54 @@ int WINAPI wWinMain(
 		place
 	);
 
-	WNDCLASSW main_class = set_window_class(
+	window_class main_class = set_window_class(
+		true,
 		h_instance,
 		h_icon_main_window,
-		main_window_class_name,
+		window_class_main,
 		main_procedure,
 		place
 	);
-	
-	WNDCLASSW debugger_class = set_window_class(
+
+	window_class debugger_class = set_window_class(
+		turn_debugger_on,
 		h_instance,
 		h_icon_main_window,
-		debugger_window_class_name,
+		window_class_debugger,
 		debugger_procedure,
 		place
 	);
 
-	WNDCLASS create_book_class = set_window_class(
+	window_class create_book_class = set_window_class(
+		true,
 		h_instance,
 		h_icon_main_window,
-		create_book_window_class_name,
+		window_class_create_book,
 		create_book_procedure,
 		place
 	);
 
-	ATOM main_class_is_registered = RegisterClassW(&main_class);
-	ATOM debugger_class_is_registered = RegisterClassW(&debugger_class);
-	RegisterClassW(&create_book_class);
+	ATOM main_class_is_registered 
+		= main_class.register_(true, place);
+
+	ATOM debugger_class_is_registered 
+		= debugger_class.register_(turn_debugger_on, place);
+
+	create_book_class.register_(true, place);
 
 	HWND h_window_main = nullptr;
+	HWND h_window_debugger = nullptr;
 
-	MSG message_ = { 0 };
-
-	reopen_window = true;
-
-	while (reopen_window) {
+	do {
 		reopen_window = false;
 
-		if (!main_class_is_registered) {
-			if (debugger_class_is_registered) {
-				HWND h_window_debugger = debug::create_window_ex_w(
+		if (main_class_is_registered == FALSE) {
+#if turn_debugger_on
+			if (debugger_class_is_registered != FALSE) {
+
+				h_window_debugger = debug::create_window_ex_w_modification(
 					0,
-					debugger_window_class_name,
+					window_class_debugger,
 					translate::string_title_debugger_window.show().c_str(),
 					WS_OVERLAPPEDWINDOW,
 					debugger_window_position.left_top_point.abscissa,
@@ -110,13 +110,22 @@ int WINAPI wWinMain(
 						number_command_show
 					);
 				}
+				else {
+					MessageBoxW(
+						nullptr,
+						L"h_window_debugger == nullptr",
+						translate::string_program_name.show().c_str(),
+						NULL
+					);
+				}
 			}
+#endif
 		}
 		else {
-			h_window_main = debug::create_window_ex_w(
+			h_window_main = debug::create_window_ex_w_modification(
 				0,
-				main_window_class_name,
-				translate::string_title_main_window.show( ).c_str( ),
+				window_class_main,
+				translate::string_title_main_window.show().c_str(),
 				WS_OVERLAPPEDWINDOW,
 				main_window_position.left_top_point.abscissa,
 				main_window_position.left_top_point.ordinate,
@@ -135,9 +144,25 @@ int WINAPI wWinMain(
 					number_command_show
 				);
 			}
+			else {
+				MessageBoxW(
+					nullptr,
+					L"h_window_main == nullptr",
+					translate::string_program_name.show().c_str(),
+					NULL
+				);
+			}
 		}
 
-		if (main_class_is_registered || debugger_class_is_registered) {
+		MSG message_ = { 0 };
+
+		bool debugger_was_created_successfully
+			= (debugger_class_is_registered && h_window_debugger != nullptr);
+
+		if (
+			(main_class_is_registered && h_window_main != nullptr)
+			|| debugger_was_created_successfully
+		) {
 			while (GetMessageW(&message_, NULL, NULL, NULL)) {
 				TranslateMessage(&message_);
 				DispatchMessageW(&message_);
@@ -151,7 +176,7 @@ int WINAPI wWinMain(
 				DestroyWindow(h_window_main);
 			}
 		}
-	}
+	} while (reopen_window);
 
 	return 0;
 }

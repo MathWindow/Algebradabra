@@ -66,6 +66,21 @@ namespace translate {
 		return string_bringer;
 	}
 
+	string set_string(
+		std::wstring string_English,
+		std::wstring string_English_extra,
+		std::wstring string_Russian,
+		std::wstring string_Russian_extra,
+		bool is_extra
+	) {
+		return is_extra
+			? set_string(
+				string_English + string_English_extra, 
+				string_Russian + string_Russian_extra
+			)
+			: set_string(string_English, string_Russian);
+	}
+
 	string convert_to_translating(
 		std::wstring string_argument
 	) {
@@ -97,8 +112,8 @@ namespace translate {
 	);
 
 	string string_that_is_new = set_string(
-		L"Ability to build graphic function is appeared, but it has serious constraint.",
-		L"Появился возможность чертить график функции через выражение, но пока что имеет серьезное ограничение."
+		L"Program was optimized. Debugger was taken away.",
+		L"Программа оптимизирована. Отладчик убран."
 	);
 
 	string string__program = set_string(
@@ -146,94 +161,9 @@ namespace translate {
 		L"Добавить страницу"
 	);
 
-	string string__edit = set_string(
-		L"Edit", 
-		L"Правка"
-	);
-
-	string string__search_command = set_string(
-		L"Search command", 
-		L"Найти команду"
-	);
-
-	string string__search_string = set_string(
-		L"Search string", 
-		L"Найти строку"
-	);
-
-	string string_page_copy = set_string(
-		L"Copy this page", 
-		L"Копировать страницу"
-	);
-
-	string string__paste = set_string(
-		L"Paste", 
-		L"Вставить"
-	);
-
-	string string__cancel = set_string(
-		L"Cancel", 
-		L"Отменить"
-	);
-
-	string string__cancel_the_last = set_string(
-		L"Cancel the last", 
-		L"Отменить последнее"
-	);
-
-	string string__undo = set_string(
-		L"Undo", 
-		L"Возвратить"
-	);
-
-	string string__undo_the_last = set_string(
-		L"Undo the last", 
-		L"Возвратить последнее"
-	);
-
-	string string__view = set_string(
-		L"View", 
-		L"Вид"
-	);
-
-	string string__menu_and_toolbar = set_string(
-		L"Menu & toolbar", 
-		L"Меню и панель инструментов"
-	);
-
-	string string__cursor = set_string(
-		L"Cursor", 
-		L"Курсор"
-	);
-
-	string string__style = set_string(
-		L"Style", 
-		L"Стиль"
-	);
-
-	string string__default_view = set_string(
-		L"Default view", 
-		L"Вид по умолчанию"
-	);
-
-	string string_help_and_settings = set_string(
-		L"Help/Settings", 
-		L"Настройки/Справка"
-	);
-
-	string string__algebraic_books_parameter = set_string(
-		L"Book's parameter", 
-		L"Параметр книги"
-	);
-
-	string string__pages_parameter = set_string(
-		L"Page's parameter", 
-		L"Параметр страницы"
-	);
-
-	string string__programs_parameter = set_string(
-		L"Program's parameter", 
-		L"Параметр программы"
+	string string__help = set_string(
+		L"Help", 
+		L"Справка"
 	);
 
 	string string__about_program = set_string(
@@ -399,11 +329,6 @@ namespace translate {
 		L"Имя класса виджета или окна"
 	);
 
-	string string_index_about_other_event = set_string(
-		L"Index about other event",
-		L"Индекс другого события"
-	);
-	
 	string string__local_time = set_string(
 		L"Local time",
 		L"Локальное время"

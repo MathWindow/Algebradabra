@@ -74,9 +74,6 @@
     <ClInclude Include="FileDialog.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
     </ClInclude>
-    <ClInclude Include="ExitDialog.h">
-      <Filter>Файлы заголовков\Window &amp; monitor\Dialog window</Filter>
-    </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
@@ -122,9 +119,6 @@
     <ClInclude Include="Translate.h">
       <Filter>Файлы заголовков\Text work</Filter>
     </ClInclude>
-    <ClInclude Include="Symbols.h">
-      <Filter>Файлы заголовков\Text work</Filter>
-    </ClInclude>
     <ClInclude Include="Algebra.h">
       <Filter>Файлы заголовков\Scince headers\Math</Filter>
     </ClInclude>
@@ -134,17 +128,20 @@
     <ClInclude Include="StringWork.h">
       <Filter>Файлы заголовков\Text work</Filter>
     </ClInclude>
-    <ClInclude Include="ArrayWork.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
     <ClInclude Include="ShortTypes.h">
       <Filter>Файлы заголовков\Variable work</Filter>
     </ClInclude>
     <ClInclude Include="DocumentWork.h">
       <Filter>Файлы заголовков\Document work</Filter>
     </ClInclude>
-    <ClInclude Include="Paint.h">
-      <Filter>Файлы заголовков\Window &amp; monitor\Paints</Filter>
+    <ClInclude Include="Window-main.h">
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="Window-debugger.h">
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="Window-createBook.h">
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -154,12 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="Bitmap.bmp">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
-    <Image Include="bitmap2.bmp">
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="bitmap3.bmp">

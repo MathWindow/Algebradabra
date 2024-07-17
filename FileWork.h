@@ -104,7 +104,7 @@ public:
 			if (to_load_value) {
 				for (
 					size_t index_symbol = 0;
-					index_symbol < string_->size( );
+					index_symbol < string_->size();
 					index_symbol++
 				) {
 					if (string_->at(index_symbol) == L'!') {

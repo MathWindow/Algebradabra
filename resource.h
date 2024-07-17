@@ -4,7 +4,6 @@
 //
 #define macro_icon_main_window          7
 #define IDI_ICON1                       103
-#define IDB_BITMAP4                     106
 #define IDB_BITMAP5                     107
 
 // Next default values for new objects

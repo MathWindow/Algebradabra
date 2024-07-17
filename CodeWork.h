@@ -7,8 +7,17 @@
 #ifndef macro_header_block_code
 #define macro_header_block_code
 
+#define turn_debugger_on false
+
+#if turn_debugger_on
+
 #define macro_add_block_function(i) std::vector<coding::block_information> place = i; \
 								place.push_back(coding::set_block_information(coding::block_type_function, __FUNCTIONW__, nullptr, 0))
+#else
+
+#define macro_add_block_function(i) std::vector<coding::block_information> place = {};
+
+#endif
 
 #define macro_add_block_argument std::vector<coding::block_information> place_argument
 
@@ -16,9 +25,19 @@
 
 #define begin_block {
 
+#if turn_debugger_on
+
 #define end_block place.pop_back(); }
 
+#else
+
+#define end_block }
+
+#endif
+
 namespace coding {
+	std::wstring empty_string = L"";
+
 	using block_type_index = u_char_;
 	using c_block_type_index = const block_type_index;
 
@@ -134,6 +153,7 @@ namespace coding {
 		long_2_ variable_value,
 		macro_add_block_argument_address
 	) {
+#if turn_debugger_on
 		(*place_address).push_back(
 			set_block_information(
 				block_type_switch,
@@ -142,7 +162,7 @@ namespace coding {
 				variable_value
 			)
 		);
-
+#endif
 		return variable_value;
 	};
 }

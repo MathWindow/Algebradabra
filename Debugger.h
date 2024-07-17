@@ -17,128 +17,117 @@
 #define macro_header_debugger
 
 namespace debug {
+#if turn_debugger_on
+	// event's type
+
+	using event_type = u_char_;
+	using c_event_type = const event_type;
+
+	c_event_type event_type_message
+		= put_index_counter<event_type>(0);
+	c_event_type event_type_question
+		= put_index_counter<event_type>(continue_counting);
+	c_event_type event_type_warning
+		= put_index_counter<event_type>(continue_counting);
+	c_event_type event_type_error
+		= put_index_counter<event_type>(continue_counting);
+
 	// title & extra title
 
-	// test
+	using title_index = u_char_;
+	using c_title_index = const title_index;
 
-	c_size_t title_index_just_message
-		= put_index_counter<size_t>(0);
+	class title {
+	public:
+		title_index index = 0;
+		event_type event_type_ = 0;
+	};
 
-	c_size_t extra_title_index_it_is_a_test
-		= put_index_counter<size_t>(0);
+	title set_title(
+		event_type event_type
+	) {
+		title result{};
+
+		static title_index index_ = 0;
+
+		result.index = index_;
+		result.event_type_ = event_type;
+
+		index_++;
+
+		return result;
+	}
 
 	// window's class name
 
-	c_size_t title_index_cannot_register_class_name
-		= put_index_counter<size_t>(continue_counting);
-
-	c_size_t extra_title_index_cannot_register_unknown_class_name
-		= put_index_counter<size_t>(continue_counting);
+	title title_cannot_register_class_name
+		= set_title(event_type_error);
 
 	// main function
 
-	c_size_t title_index_main_function_was_called
-		= put_index_counter<size_t>(continue_counting);
-
-	c_size_t extra_title_index_main_function_was_called
-		= put_index_counter<size_t>(continue_counting);
+	title title_main_function_was_called
+		= set_title(event_type_message);
 
 	// block's hierarchy
 
-	c_size_t title_index_block_hierarchy_has_not_been_pointed
-		= put_index_counter<size_t>(continue_counting);
-
-	c_size_t extra_title_index_block_hierarchy_has_not_been_pointed
-		= put_index_counter<size_t>(continue_counting);
+	title title_block_hierarchy_has_not_been_pointed
+		= set_title(event_type_error);
 
 	// handle
 
-	c_size_t title_index_handle_was_created
-		= put_index_counter<size_t>(continue_counting);
-	c_size_t title_index_couldnt_create_handle
-		= put_index_counter<size_t>(continue_counting);
-	c_size_t title_index_instance_was_pointed
-		= put_index_counter<size_t>(continue_counting);
-	c_size_t title_index_handle_has_not_been_pointed
-		= put_index_counter<size_t>(continue_counting);
-
-	c_size_t extra_title_index_handle_was_created
-		= put_index_counter<size_t>(continue_counting);
-	c_size_t extra_title_index_could_not_create_handle
-		= put_index_counter<size_t>(continue_counting);
-	c_size_t extra_title_index_instance_was_pointed
-		= put_index_counter<size_t>(continue_counting);
-	c_size_t extra_title_index_handle_has_not_been_pointed
-		= put_index_counter<size_t>(continue_counting);
+	title title_handle_was_created
+		= set_title(event_type_message);
+	title title_could_not_create_handle
+		= set_title(event_type_error);
+	title title_instance_was_pointed
+		= set_title(event_type_message);
+	title title_handle_has_not_been_pointed
+		= set_title(event_type_error);
 
 	// operator "new"
 
-	c_size_t title_index_operator_new_was_called
-		= put_index_counter<size_t>(continue_counting);
-
-	c_size_t extra_title_index_operator_new_was_called
-		= put_index_counter<size_t>(continue_counting);
+	title title_operator_new_was_called
+		= set_title(event_type_warning);
 
 	// command
 
-	c_size_t title_index_command_has_not_been_pointed
-		= put_index_counter<size_t>(continue_counting);
-
-	c_size_t extra_title_index_command_has_not_been_pointed
-		= put_index_counter<size_t>(continue_counting);
+	title title_command_has_not_been_pointed
+		= set_title(event_type_error);
 
 	// splitting by zero
 
-	c_size_t title_index_split_by_zero
-		= put_index_counter<size_t>(continue_counting);
-
-	c_size_t extra_title_index_split_by_zero
-		= put_index_counter<size_t>(continue_counting);
-
-
-	// event's type
-
-	using event_type_index = u_char_;
-	using c_event_type_index = const event_type_index;
-
-	c_event_type_index event_type_message
-		= put_index_counter<event_type_index>(0);
-	c_event_type_index event_type_question
-		= put_index_counter<event_type_index>(continue_counting);
-	c_event_type_index event_type_warning
-		= put_index_counter<event_type_index>(continue_counting);
-	c_event_type_index event_type_error
-		= put_index_counter<event_type_index>(continue_counting);
+	title title_split_by_zero
+		= set_title(event_type_error);
 
 	// handle type
 
-	using handle_type_index = u_char_;
-	using c_handle_type_index = const handle_type_index;
+	using handle_type = u_char_;
+	using c_handle_type = const handle_type;
 
-	c_handle_type_index handle_type_none
-		= put_index_counter<handle_type_index>(0);
-	c_handle_type_index handle_type_unknown
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_simple
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_window
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_menu
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_icon
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_bitmap
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_instance
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_brush
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_context
-		= put_index_counter<handle_type_index>(continue_counting);
-	c_handle_type_index handle_type_font
-		= put_index_counter<handle_type_index>(continue_counting);
+	c_handle_type handle_type_none
+		= put_index_counter<handle_type>(0);
+	c_handle_type handle_type_unknown
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_simple
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_window
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_menu
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_icon
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_bitmap
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_instance
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_brush
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_context
+		= put_index_counter<handle_type>(continue_counting);
+	c_handle_type handle_type_font
+		= put_index_counter<handle_type>(continue_counting);
 
-	handle_type_index translate_handle_type_to_index(
+	handle_type translate_handle_type_to_index(
 		LPCSTR name 
 	) {
 		if (name == typeid(HANDLE).name()) {
@@ -168,51 +157,45 @@ namespace debug {
 		else if (name == typeid(HFONT).name()) {
 			return handle_type_font;
 		}
-		else {
-			return handle_type_unknown;
-		}
+
+		return handle_type_unknown;
 	}
 
-	// class
+	// class "event's information"
 
 	class event_information {
 	public:
-		event_type_index event_type = event_type_message;
-
-		size_t title_index = 0;
-		size_t extra_title_index = 0;
-
 		std::vector<coding::block_information> block_hierarchy{};
 
+		title title_;
+
 		void* handle_value = nullptr;
-		handle_type_index handle_type = handle_type_none;
+		handle_type handle_type = handle_type_none;
 		std::wstring window_class_name = L"";
-		
-		size_t index_about_other_event_plus_one = 0;
 
 		SYSTEMTIME time_system{};
 		SYSTEMTIME time_local{};
 
 		translate::string show_type() {
-			if (event_type == event_type_message) {
+			if (title_.event_type_ == event_type_message) {
 				return translate::set_string(
 					L"Message",
 					L"Сообщение"
 				);
 			}
-			else if (event_type == event_type_question) {
+			else if (title_.event_type_ == event_type_question) {
 				return translate::set_string(
 					L"Question",
 					L"Вопрос"
 				);
 			}
-			else if (event_type == event_type_warning) {
+			else if (title_.event_type_ == event_type_warning) {
 				return translate::set_string(
 					L"Warning",
 					L"Предупреждение"
 				);
 			}
-			else if (event_type == event_type_error) {
+			else if (title_.event_type_ == event_type_error) {
 				return translate::set_string(
 					L"Error",
 					L"Ошибка"
@@ -225,155 +208,101 @@ namespace debug {
 			);
 		}
 
-		translate::string show_title() {
-			if (title_index == title_index_just_message) {
-				return translate::set_string(
-					L"Just a message",
-					L"Просто сообщение"
-				);
-			}
-			else if (title_index == title_index_cannot_register_class_name) {
+		translate::string show_title(bool is_extra) {
+			if (title_.index == title_cannot_register_class_name.index) {
 				return translate::set_string(
 					L"Couldn't create class' name",
-					L"Не удалось создать имя класса"
+					L" for window",
+					L"Не удалось создать имя класса",
+					L" для окна",
+					is_extra
 				);
 			}
-			else if (title_index == title_index_main_function_was_called) {
+			else if (title_.index == title_main_function_was_called.index) {
 				return translate::set_string(
 					L"Main function was called",
-					L"Главная функция была вызвана"
+					L" by program",
+					L"Главная функция была вызвана",
+					L" программой",
+					is_extra
 				);
 			}
-			else if (title_index == title_index_block_hierarchy_has_not_been_pointed) {
+			else if (title_.index == title_block_hierarchy_has_not_been_pointed.index) {
 				return translate::set_string(
 					L"Block's hierarchy hasn't been pointed",
-					L"Иерархия блока не указана"
+					L" by developer",
+					L"Иерархия блока не указана",
+					L" разработчиком",
+					is_extra
 				);
 			}
-			else if (title_index == title_index_handle_was_created) {
+			else if (title_.index == title_handle_was_created.index) {
 				return translate::set_string(
 					L"Handle was created",
 					L"Дескриптор был создан"
 				);
 			}
-			else if (title_index == title_index_couldnt_create_handle) {
+			else if (title_.index == title_could_not_create_handle.index) {
 				return translate::set_string(
 					L"Couldn't create handle",
 					L"Не удалось создать дескриптор"
 				);
 			}
-			else if (title_index == title_index_instance_was_pointed) {
+			else if (title_.index == title_instance_was_pointed.index) {
 				return translate::set_string(
 					L"Instance was pointed",
-					L"Наследование было указано"
+					L" дескриптором",
+					L"Наследование было указано",
+					L" by handle",
+					is_extra
 				);
 			}
-			else if (title_index == title_index_operator_new_was_called) {
+			else if (title_.index == title_operator_new_was_called.index) {
 				return translate::set_string(
 					L"Operator \"new\" was called",
-					L"Оператор \"new\" был вызван"
+					L". It can make problem, especially if operator \"delete\" was forgotten to write.",
+					L"Оператор \"new\" был вызван",
+					L". Это может создавать проблему, особенно если оператор \"delete\" забыт в написании.",
+					is_extra
 				);
 			}
-			else if (title_index == title_index_handle_has_not_been_pointed) {
+			else if (title_.index == title_handle_has_not_been_pointed.index) {
 				return translate::set_string(
 					L"Handle hasn't been pointed",
 					L"Дескриптор не был указан"
 				);
 			}
-			else if (title_index == title_index_command_has_not_been_pointed) {
+			else if (title_.index == title_command_has_not_been_pointed.index) {
 				return translate::set_string(
 					L"Command has not been pointed",
 					L"Команда не была указана"
 				);
 			}
-			else if (title_index == title_index_split_by_zero) {
+			else if (title_.index == title_split_by_zero.index) {
 				return translate::set_string(
 					L"Program has tried to split number by zero",
-					L"Программа попыталась делить число на ноль"
+					L". Splitting by zero is not possible.",
+					L"Программа попыталась делить число на ноль",
+					L". Деление на ноль не представляется возможным.",
+					is_extra
 				);
 			}
 
-			return translate::set_string(
-				L"Where is title?",
-				L"Где заголовок?"
-			);
+			if (is_extra) {
+				return translate::set_string(
+					L"Where is extra title?",
+					L"Где расширенный заголовок?"
+				);
+			}
+			else {
+				return translate::set_string(
+					L"Where is title?",
+					L"Где заголовок?"
+				);
+			}
 		}
 
-		translate::string show_extra_title() {
-			if (extra_title_index == extra_title_index_it_is_a_test) {
-				return translate::set_string(
-					L"This is a test",
-					L"Это является тестом"
-				);
-			}
-			else if (extra_title_index == extra_title_index_cannot_register_unknown_class_name) {
-				return translate::set_string(
-					L"Couldn't create class' name for unknown window",
-					L"Не удалось создать имя класса для неизвестного окна"
-				);
-			}
-			else if (extra_title_index == extra_title_index_main_function_was_called) {
-				return translate::set_string(
-					L"Main function was called by program",
-					L"Главная функция вызвана программами"
-				);
-			}
-			else if (extra_title_index == extra_title_index_block_hierarchy_has_not_been_pointed) {
-				return translate::set_string(
-					L"Block's hierarchy hasn't been pointed by developer",
-					L"Иерархия блока не указана разработчиком"
-				);
-			}
-			else if (extra_title_index == extra_title_index_handle_was_created) {
-				return translate::set_string(
-					L"Handle was created",
-					L"Дескриптор был создан"
-				);
-			}
-			else if (extra_title_index == extra_title_index_could_not_create_handle) {
-				return translate::set_string(
-					L"Couldn't create handle",
-					L"Не удалось создать дескриптор"
-				);
-			}
-			else if (extra_title_index == extra_title_index_instance_was_pointed) {
-				return translate::set_string(
-					L"Instance was pointed by handle",
-					L"Наследование было указано дескриптором"
-				);
-			}
-			else if (extra_title_index == extra_title_index_operator_new_was_called) {
-				return translate::set_string(
-					L"Operator \"new\" was called. It can make problem, especially if operator \"delete\" was forgotten to write.",
-					L"Оператор \"new\" был вызван. Это может создавать проблему, особенно если оператор \"delete\" забыт в написании."
-				);
-			}
-			else if (extra_title_index == extra_title_index_handle_has_not_been_pointed) {
-				return translate::set_string(
-					L"Handle hasn't been pointed",
-					L"Дескриптор не был указан"
-				);
-			}
-			else if (extra_title_index == extra_title_index_command_has_not_been_pointed) {
-				return translate::set_string(
-					L"Command has not been pointed",
-					L"Команда не была указана"
-				);
-			}
-			else if (extra_title_index == extra_title_index_split_by_zero) {
-				return translate::set_string(
-					L"Program has tried to split number by zero. Splitting by zero is not possible.",
-					L"Программа попыталась делить число на ноль. Деление на ноль не представляется возможным."
-				);
-			}
-
-			return translate::set_string(
-				L"Where is extra title?",
-				L"Где расширенный заголовок?"
-			);
-		}
-
-		translate::string show_handle_type( ) {
+		translate::string show_handle_type() {
 			if (handle_type == handle_type_unknown) {
 				return translate::set_string(
 					L"Unknown type",
@@ -451,12 +380,6 @@ namespace debug {
 			}
 		}
 
-		std::wstring show_index_about_other_event() {
-			return index_about_other_event_plus_one != 0 
-				? std::to_wstring(index_about_other_event_plus_one - 1) 
-				: L"";
-		}
-
 		std::wstring show_time(bool is_local) {
 			SYSTEMTIME time = is_local ? time_local : time_system;
 
@@ -471,12 +394,11 @@ namespace debug {
 		std::vector<std::wstring> show_string_array() {
 			return {
 				show_type().show(),
-				show_title().show(),
-				show_extra_title().show(),
+				show_title(false).show(),
+				show_title(true).show(),
 				show_handle_value(),
 				show_handle_type().show(),
 				window_class_name,
-				show_index_about_other_event(),
 				show_time(true),
 				show_time(false)
 			};
@@ -499,25 +421,20 @@ namespace debug {
 		return result;
 	}
 
+
 	void write_event(
-		event_type_index event_type,
-		size_t title_index,
-		size_t extra_title_index,
+		title title_,
 		std::vector<coding::block_information> block_hierarchy,
 		void* handle,
-		handle_type_index handle_type,
+		handle_type handle_type,
 		std::wstring window_class_name
 	) {
-		size_t index_of_writing_event = list_of_event.size();
-
 		list_of_event.push_back({});
 
 		GetSystemTime(&list_of_event.back().time_system);
 		GetLocalTime(&list_of_event.back().time_local);
 
-		list_of_event.back().event_type = event_type;
-		list_of_event.back().title_index = title_index;
-		list_of_event.back().extra_title_index = extra_title_index;
+		list_of_event.back().title_ = title_;
 		list_of_event.back().block_hierarchy = block_hierarchy;
 		list_of_event.back().handle_value = handle;
 		list_of_event.back().handle_type = handle_type;
@@ -527,14 +444,12 @@ namespace debug {
 	void write_event_about_handle(
 		std::vector<coding::block_information> block_hierarchy,
 		void* handle,
-		handle_type_index handle_type,
+		handle_type handle_type,
 		std::wstring window_class_name
 	) {
 		if (handle == nullptr) {
 			write_event(
-				event_type_error,
-				title_index_couldnt_create_handle,
-				extra_title_index_could_not_create_handle,
+				title_handle_has_not_been_pointed,
 				block_hierarchy,
 				handle,
 				handle_type,
@@ -543,9 +458,7 @@ namespace debug {
 		}
 		else if(handle_type == handle_type_instance) {
 			write_event(
-				event_type_message,
-				title_index_instance_was_pointed,
-				extra_title_index_instance_was_pointed,
+				title_instance_was_pointed,
 				block_hierarchy,
 				handle,
 				handle_type,
@@ -554,9 +467,7 @@ namespace debug {
 		}
 		else {
 			write_event(
-				event_type_message,
-				title_index_handle_was_created,
-				extra_title_index_handle_was_created,
+				title_handle_was_created,
 				block_hierarchy,
 				handle,
 				handle_type,
@@ -564,10 +475,10 @@ namespace debug {
 			);
 		}
 	}
-
-	HWND __stdcall create_window_ex_w(
+#endif
+	HWND __stdcall create_window_ex_w_modification (
 		DWORD extra_style,
-		LPCWSTR class_name,
+		std::wstring class_name,
 		LPCWSTR title,
 		DWORD style,
 		int abscissa,
@@ -582,7 +493,7 @@ namespace debug {
 	) {
 		HWND result = CreateWindowExW( 
 			extra_style,
-			class_name,
+			class_name.c_str(),
 			title,
 			style,
 			abscissa,
@@ -594,27 +505,27 @@ namespace debug {
 			h_instance,
 			l_param
 		);
-
+#if turn_debugger_on
 		write_event_about_handle(
 			place_argument,
 			result,
 			translate_handle_type_to_index(typeid(result).name()),
 			class_name
 		);
-
+#endif
 		return result;
 	}
 
 	HMENU _stdcall create_menu(macro_add_block_argument) {
 		HMENU result = CreateMenu();
-
+#if turn_debugger_on
 		write_event_about_handle(
 			place_argument,
 			result,
 			translate_handle_type_to_index(typeid(result).name()),
 			L""
 		);
-
+#endif
 		return result;
 	}
 
@@ -637,14 +548,14 @@ namespace debug {
 			flags_and_attributes,
 			h_template_file
 		);
-
+#if turn_debugger_on
 		write_event_about_handle(
 			place_argument,
 			result,
 			translate_handle_type_to_index(typeid(result).name()),
 			L""
 		);
-
+#endif
 		return result;
 	}
 
@@ -667,14 +578,14 @@ namespace debug {
 			flags_and_attributes,
 			h_template_file
 		);
-
+#if turn_debugger_on
 		write_event_about_handle(
 			place_argument,
 			result,
 			translate_handle_type_to_index(typeid(result).name()),
 			L""
 		);
-
+#endif
 		return result;
 	}
 
@@ -687,14 +598,14 @@ namespace debug {
 			h_instance,
 			string
 		);
-
+#if turn_debugger_on
 		write_event_about_handle(
 			place_argument,
 			result,
 			translate_handle_type_to_index(typeid(result).name()),
 			L""
 		);
-
+#endif
 		return result;
 	}
 
@@ -707,7 +618,7 @@ namespace debug {
 			h_instance,
 			string
 		);
-
+#if turn_debugger_on
 		write_event_about_handle(
 			place_argument,
 			result,
@@ -723,7 +634,7 @@ namespace debug {
 				L""
 			);
 		}
-
+#endif
 		return result;
 	}
 
@@ -735,43 +646,32 @@ namespace debug {
 		macro_add_block_argument
 	) {
 		if (h_menu == nullptr) {
-			write_event( 
-				event_type_error,
-				title_index_handle_has_not_been_pointed,
-				extra_title_index_handle_has_not_been_pointed,
+#if turn_debugger_on
+			write_event(
+				title_handle_has_not_been_pointed,
 				place_argument,
 				nullptr,
 				translate_handle_type_to_index(typeid(h_menu).name()),
 				L""
 			);
+#endif
 		}
 		else {
 			AppendMenuW(h_menu, flags, command, title);
 		}
 
 		if (command == NULL && (flags & MF_SEPARATOR) != MF_SEPARATOR) {
-			write_event( 
-				event_type_warning,
-				title_index_command_has_not_been_pointed,
-				extra_title_index_command_has_not_been_pointed,
+#if turn_debugger_on
+			write_event(
+				title_command_has_not_been_pointed,
 				place_argument,
 				h_menu,
 				translate_handle_type_to_index(typeid(h_menu).name()),
 				L""
 			);
+#endif
 		}
 	}
 }
-
-#define macro_operator_new_array(variable_name, type, size) type * variable_name = new type[size]{}; \
-	debug::write_event( \
-		debug::event_type_warning, \
-		debug::title_index_operator_new_was_called, \
-		debug::extra_title_index_operator_new_was_called, \
-		place, \
-		nullptr, \
-		debug::handle_type_none, \
-		L"" \
-	)
 
 #endif

@@ -4,12 +4,13 @@
 #include <vector>
 #include <string>
 #include "Translate.h"
-#include "Menu.h"
 #include "Widgets.h"
+#include "Window-main.h"
+#include "Window-debugger.h"
+#include "Window-createBook.h"
 #include "FileDialog.h"
 #include "ColorDialog.h"
 #include "Commands.h"
-#include "ExitDialog.h"
 #include "ClassWindow.h"
 #include "Coordinate.h"
 #include "Debugger.h"
@@ -103,9 +104,9 @@ LRESULT CALLBACK main_procedure(
 			);
 		}
 		else if (w_param == command_create_book) {
-			debug::create_window_ex_w(
+			debug::create_window_ex_w_modification(
 				0,
-				create_book_window_class_name,
+				window_class_create_book,
 				translate::string_title_create_book_window.show().c_str(),
 				WS_VISIBLE | WS_POPUPWINDOW | WS_CAPTION,
 				create_book_window_position.left_top_point.abscissa,
@@ -153,9 +154,10 @@ LRESULT CALLBACK main_procedure(
 			);
 		}
 		else if (w_param == command_debugger) {
-			debug::create_window_ex_w(
+#if turn_debugger_on
+			debug::create_window_ex_w_modification(
 				0,
-				debugger_window_class_name,
+				window_class_debugger,
 				translate::string_title_debugger_window.show().c_str(),
 				WS_VISIBLE | WS_POPUPWINDOW | WS_CAPTION,
 				debugger_window_position.left_top_point.abscissa,
@@ -168,6 +170,7 @@ LRESULT CALLBACK main_procedure(
 				NULL,
 				place
 			);
+#endif
 		}
 		else if (w_param == command_reopen_window) {
 			reopen_window = true;
@@ -245,7 +248,7 @@ LRESULT CALLBACK debugger_procedure(
 	LPARAM l_param
 ) {
 	macro_add_block_function({});
-
+#if turn_debugger_on
 	static size_t index_selected_event_list = 0;
 	static size_t index_selected_block_hierarchy = 0;
 
@@ -267,13 +270,12 @@ LRESULT CALLBACK debugger_procedure(
 				{
 					debug::list_of_event.at(index_selected_event_list).show_time(true),
 					debug::list_of_event.at(index_selected_event_list).show_time(false),
-					debug::list_of_event.at(index_selected_event_list).show_title().show(),
+					debug::list_of_event.at(index_selected_event_list).show_title(false).show(),
 					debug::list_of_event.at(index_selected_event_list).show_type().show(),
-					debug::list_of_event.at(index_selected_event_list).show_extra_title().show(),
+					debug::list_of_event.at(index_selected_event_list).show_title(true).show(),
 					debug::list_of_event.at(index_selected_event_list).show_handle_type().show(),
 					debug::list_of_event.at(index_selected_event_list).show_handle_value(),
 					debug::list_of_event.at(index_selected_event_list).window_class_name,
-					debug::list_of_event.at(index_selected_event_list).show_index_about_other_event()
 				},
 				place
 			);
@@ -372,7 +374,9 @@ LRESULT CALLBACK debugger_procedure(
 				) {
 					listbox_event_list.add_string_to_listbox(
 						std::to_wstring(index_vector.at(index)) + L" | " 
-						+ debug::list_of_event.at(index_vector.at(index)).show_title().show().c_str(),
+						+ debug::list_of_event.at(
+							index_vector.at(index)
+						).show_title(false).show().c_str(),
 						index_vector.at(index),
 						place
 					);
@@ -390,6 +394,8 @@ LRESULT CALLBACK debugger_procedure(
 		break;
 	
 	end_block
+
+#endif
 	
 	return 0L;
 }

@@ -5,6 +5,7 @@
 #include "Debugger.h"
 #include "CodeWork.h"
 #include "Bitmap.h"
+#include "ClassWindow.h"
 
 #ifndef macro_header_toolbar
 #define macro_header_toolbar
@@ -29,9 +30,9 @@ void append_button_toolbar(
 		row = 1;
 	}
 
-	HWND button = debug::create_window_ex_w(
+	HWND button = debug::create_window_ex_w_modification(
 		0,
-		L"button",
+		widget_class_button,
 		L"",
 		WS_VISIBLE | WS_CHILD | WS_BORDER | BS_BITMAP,
 		coordinate::out.abscissa * row + button_size_toolbar.width * (row - 1),
@@ -61,17 +62,9 @@ LONG create_toolbar(
 
 	append_button_toolbar(
 		h_window,
-		h_bitmap_coordinate,
-		NULL,
-		false,
-		place
-	);
-
-	append_button_toolbar(
-		h_window,
 		h_bitmap_add_paper,
 		command_create_book,
-		true,
+		false,
 		place
 	);
 
