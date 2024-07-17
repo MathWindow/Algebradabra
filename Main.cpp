@@ -2,101 +2,145 @@
 #include <WinUser.h>
 #include <minwindef.h>
 #include <winnt.h>
+#include <cstring>
 #include "Translate.h"
 #include "ClassWindow.h"
 #include "resource.h"
-#include "Monitor.h"
-#include "WindowXY.h"
+#include "Coordinate.h"
 #include "ProcedureWindow.h"
-#include "Counter.h"
+#include "Icon.h"
+#include "Bitmap.h"
+#include "Debugger.h"
+#include "CodeWork.h"
 
 int WINAPI wWinMain(
-	HINSTANCE h_instance, 
-	HINSTANCE h_instance_unused, 
-	LPWSTR arguments, 
+	HINSTANCE h_instance,
+	HINSTANCE h_instance_unused,
+	LPWSTR arguments,
 	int number_command_show
 ) {
-	WNDCLASSW main_class = main_class_example(
-		COLOR_WINDOW,
+	macro_add_block_function({});
+
+	debug::write_event(
+		debug::event_type_message,
+		debug::title_index_main_function_was_called,
+		debug::extra_title_index_main_function_was_called,
+		place,
+		nullptr,
+		0,
+		L""
+	);
+	
+	h_bitmap_coordinate = debug::load_bitmap_w(
+		h_instance, 
+		MAKEINTRESOURCEW(IDB_BITMAP2),
+		place
+	);
+
+	h_bitmap_add_paper = debug::load_bitmap_w(
+		h_instance, 
+		MAKEINTRESOURCEW(IDB_BITMAP3),
+		place
+	);
+
+	h_icon_main_window = debug::load_icon_w(
+		h_instance, 
+		MAKEINTRESOURCEW(macro_icon_main_window),
+		place
+	);
+
+	WNDCLASSW main_class = set_window_class(
 		h_instance,
-		macro_icon_main_window,
-		IDC_ARROW,
+		h_icon_main_window,
 		main_window_class_name,
-		main_procedure
+		main_procedure,
+		place
 	);
-
-	WNDCLASSW debugger_class = main_class_example(
-		COLOR_WINDOW,
+	
+	WNDCLASSW debugger_class = set_window_class(
 		h_instance,
-		macro_icon_main_window,
-		IDC_ARROW,
+		h_icon_main_window,
 		debugger_window_class_name,
-		debugger_procedure
+		debugger_procedure,
+		place
 	);
 
-	bool main_class_is_registered =
-		register_class_name(
-			&main_class,
-			translate::string_cannot_create_class_main.c_style()
-		);
+	ATOM main_class_is_registered = RegisterClassW(&main_class);
+	ATOM debugger_class_is_registered = RegisterClassW(&debugger_class);
 
-	register_class_name(
-		&debugger_class,
-		translate::string_cannot_create_class_name.c_style()
-	);
+	HWND h_window_main = nullptr;
 
-	if (main_class_is_registered) {
-		if (paranormal) {
-			MessageBoxW(
-				NULL,
-				L"Обнаружено паранормальное явление!",
-				translate::string_program_name.c_style(),
-				MB_ICONWARNING
-			);
-		}
+	MSG message_ = { 0 };
 
-		MSG main_message = { 0 };
+	reopen_window = true;
 
-		set_window_center_position(
-			&main_window_x,
-			&main_window_y,
-			main_window_width,
-			main_window_height
-		);
+	while (reopen_window) {
+		reopen_window = false;
 
-		HWND h_window_main = CreateWindowExW(
-			0,
-			main_window_class_name,
-			translate::string_title_main_window.c_style(),
-			WS_OVERLAPPEDWINDOW,
-			main_window_x,
-			main_window_y,
-			main_window_width,
-			main_window_height,
-			NULL,
-			NULL,
-			NULL,
-			NULL
-		);
+		if (!main_class_is_registered) {
+			if (debugger_class_is_registered) {
+				HWND h_window_debugger = debug::create_window_ex_w(
+					0,
+					debugger_window_class_name,
+					translate::string_title_debugger_window.show().c_str(),
+					WS_OVERLAPPEDWINDOW,
+					debugger_window_position.left_top_point.abscissa,
+					debugger_window_position.left_top_point.ordinate,
+					debugger_window_position.size_.width,
+					debugger_window_position.size_.height,
+					NULL,
+					NULL,
+					NULL,
+					NULL,
+					place
+				);
 
-		if (h_window_main != nullptr) {
-			ShowWindow(
-				h_window_main,
-				number_command_show
-			);
-
-			while (GetMessageW(&main_message, NULL, NULL, NULL)) {
-				TranslateMessage(&main_message);
-				DispatchMessageW(&main_message);
+				if (h_window_debugger != nullptr) {
+					ShowWindow(
+						h_window_debugger,
+						number_command_show
+					);
+				}
 			}
 		}
 		else {
-			MessageBoxW(
+			h_window_main = debug::create_window_ex_w(
+				0,
+				main_window_class_name,
+				translate::string_title_main_window.show( ).c_str( ),
+				WS_OVERLAPPEDWINDOW,
+				main_window_position.left_top_point.abscissa,
+				main_window_position.left_top_point.ordinate,
+				main_window_position.size_.width,
+				main_window_position.size_.height,
 				NULL,
-				translate::string_cannot_create_main_window.c_style(),
-				translate::string_program_name.c_style(),
-				MB_ICONERROR
+				NULL,
+				NULL,
+				NULL,
+				place
 			);
+
+			if (h_window_main != nullptr) {
+				ShowWindow(
+					h_window_main,
+					number_command_show
+				);
+			}
+		}
+
+		if (main_class_is_registered || debugger_class_is_registered) {
+			while (GetMessageW(&message_, NULL, NULL, NULL)) {
+				TranslateMessage(&message_);
+				DispatchMessageW(&message_);
+			}
+		}
+
+		if (reopen_window) {
+			memset(&message_, 0, sizeof(message_));
+
+			if (h_window_main != nullptr) {
+				DestroyWindow(h_window_main);
+			}
 		}
 	}
 

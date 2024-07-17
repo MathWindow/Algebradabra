@@ -1,10 +1,11 @@
 ﻿#pragma once
-#include <array>
 #include <string>
+#include <array>
 #include <vector>
 #include <winnt.h>
 #include "Counter.h"
 #include "VersionInfo.h"
+#include "FileWork.h"
 
 #ifndef macro_header_translate
 #define macro_header_translate
@@ -13,45 +14,43 @@ namespace translate {
 	using language_index = size_t;
 	using c_language_index = const language_index;
 
-	c_language_index language_per_vocabulary = 2;
-
 	c_language_index language_English = put_index_counter<language_index>(0);
 	c_language_index language_Russian = put_index_counter<language_index>(continue_counting);
 	
-	language_index language_using = language_Russian;
+	c_language_index language_per_vocabulary = 2;
+
+	variable_file<language_index> language_using = set_value_file<language_index>(language_Russian, 1);
 
 	class string {
 	private:
 		std::array<std::vector<WCHAR>, language_per_vocabulary> fixed{};
 
 		void fix() {
-			if (fixed.at(language_using).size() == 0) {
+			if (fixed.at(language_using.value).size() == 0) {
 				for (
-					size_t index_language = 0; 
-					index_language < language_per_vocabulary; 
-					index_language++
+					size_t index_symbol = 0;
+					index_symbol < language_variant.at(language_using.value).size();
+					index_symbol++
 				) {
-					for (
-						size_t index = 0; 
-						index < language_variant.at(index_language).size(); 
-						index++
-					) {
-						fixed.at(index_language).push_back(
-							*(language_variant.at(language_using).c_str() + index)
-						);
-					}
-
-					fixed.at(index_language).push_back(L'\0');
+					fixed.at(language_using.value).push_back(
+						language_variant.at(language_using.value).at(index_symbol)
+					);
 				}
+
+				fixed.at(language_using.value).push_back(L'\0');
 			}
 		}
 	public:
 		std::array<std::wstring, language_per_vocabulary> language_variant{};
+			
+		std::wstring show() {
+			return language_variant.at(language_using.value);
+		}
 
-		LPCWSTR c_style() {
+		LPCWSTR show_fixed() {
 			fix();
 
-			return fixed.at(language_using).data();
+			return fixed.at(language_using.value).data();
 		}
 	};
 	
@@ -67,30 +66,21 @@ namespace translate {
 		return string_bringer;
 	}
 
+	string convert_to_translating(
+		std::wstring string_argument
+	) {
+		return set_string(
+			string_argument,
+			string_argument
+		);
+	}
+
 	// Universal using
 	// Универсальное применение
 
 	string string_program_name = set_string(
 		L"Algebradabra " + program_version_family,
 		L"Алгебрадабра " + program_version_family
-	);
-
-	// Dialog boxes about errors in program
-	// Диалоговые окна об ошибках в программе
-
-	string string_cannot_create_class_name = set_string(
-		L"Cannot create name of class", 
-		L"Невозможно создать имя класса"
-	);
-
-	string string_cannot_create_class_main = set_string(
-		L"Cannot create name of class for main window", 
-		L"Невозможно создать имя класса к главному окну"
-	);
-
-	string string_cannot_create_main_window = set_string(
-		L"Cannot create main window",
-		L"Невозможно создать главное окно"
 	);
 
 	// Главное окно
@@ -101,17 +91,14 @@ namespace translate {
 		L"Выход"
 	);
 
-	string string__whats_new = set_string(
+	string string_what_is_new = set_string(
 		L"What's new?", 
 		L"Что нового?"
 	);
 
-	string string_thats_new = set_string(
-		L"Icon was remade fully. \
-Save & open file dialog boxes were appeared. \
-Technical window's checking of these dialog boxes & color choice were appeared too.",
-		L"Иконка полностью переделывалась, появились диалоговые окна открытия и сохранения файла. \
-Появились технические обзоры вышеперечисленных окон, а также технический обзор выбора цвета."
+	string string_that_is_new = set_string(
+		L"Window \"Debugger\" came, you can analyze of event and search it. You also can also install language with help of menu bar(Russian or English).",
+		L"Окно \"Отладчик\" пришел, вы можете анализировать событие и найти его. Также вы можете установить язык с помощью панель меню (Русский или Английский)."
 	);
 
 	string string__program = set_string(
@@ -370,7 +357,7 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 	string string_program_description = set_string(
 		L"Author: "
 		+ string_program_author.language_variant.at(language_English)
-		+ L";\nVersion:"
+		+ L";\nVersion: "
 		+ program_version
 		+ L".",
 		L"Автор: "
@@ -383,16 +370,6 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 	// Window as debugger
 	// Окно как отладчик
 
-	string string__look = set_string(
-		L"Look",
-		L"Посмотреть"
-	);
-
-	string string__write_random_event = set_string(
-		L"Write random event",
-		L"Записать случайное событие"
-	);
-
 	string string_title_debugger_window = set_string(
 		string_program_name.language_variant.at(language_English)
 		+ L" | "
@@ -400,6 +377,101 @@ Technical window's checking of these dialog boxes & color choice were appeared t
 		string_program_name.language_variant.at(language_Russian)
 		+ L" | "
 		+ string__debugger.language_variant.at(language_Russian)
+	);
+
+	string string_event_list = set_string(
+		L"Events' list",
+		L"Список событии"
+	);
+
+	string string_block_hierarchy = set_string(
+		L"Block's hierarchy",
+		L"Иерархия блока"
+	);
+
+	string string_event_title = set_string(
+		L"Event's title",
+		L"Заголовок события"
+	);
+
+	string string_event_extra_title = set_string(
+		L"Event's extra title",
+		L"Дополненный заголовок события"
+	);
+
+	string string_event_type = set_string(
+		L"Event's type",
+		L"Тип события"
+	);
+
+	string string_handle_value = set_string(
+		L"Handle's value",
+		L"Значение дескриптора"
+	);
+
+	string string_handle_type = set_string(
+		L"Handle's type",
+		L"Тип дескриптора"
+	);
+
+	string string_window_or_widget_class = set_string(
+		L"Name of window's or widget's class",
+		L"Имя класса виджета или окна"
+	);
+
+	string string_index_about_other_event = set_string(
+		L"Index about other event",
+		L"Индекс другого события"
+	);
+	
+	string string__local_time = set_string(
+		L"Local time",
+		L"Локальное время"
+	);
+	
+	string string__system_time = set_string(
+		L"System time",
+		L"Системное время"
+	);
+
+	string string_block_type = set_string(
+		L"Block's type",
+		L"Тип блока"
+	);
+
+	string string_function_name = set_string(
+		L"Function's name",
+		L"Имя функции"
+	);
+
+	string string_variable_address = set_string(
+		L"Variable's address",
+		L"Адрес переменной"
+	);
+
+	string string_variable_value = set_string(
+		L"Variable's value",
+		L"Значение переменной"
+	);
+
+	string string__searcher = set_string(
+		L"Searcher",
+		L"Поисковик"
+	);
+
+	string string_n_event_was_found = set_string(
+		L" event was found",
+		L" событие было найдено"
+	);
+
+	string string_n_events_were_found = set_string(
+		L" events were found",
+		L" событи(я/и) были найдены"
+	);
+
+	string string__no_any_event_was_found = set_string(
+		L"No any event was found",
+		L"Ни одно событие не было найдено"
 	);
 }
 

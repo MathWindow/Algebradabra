@@ -26,5 +26,8 @@ using cu_long_ = const unsigned long;
 using cu_long_2_ = const unsigned long long;
 
 using booleam_parameter_char = u_char_;
+using booleam_parameter_int = u_int_;
+
+using c_size_t = const size_t;
 
 #endif

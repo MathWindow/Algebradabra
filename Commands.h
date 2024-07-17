@@ -30,10 +30,8 @@ command_type command_open_file = put_index_counter<command_type>(continue_counti
 command_type command_choose_color = put_index_counter<command_type>(continue_counting);
 command_type command_testing_dialog_window = put_index_counter<command_type>(continue_counting);
 
-// For window like debugger
-// Для окна как отладчика
+command_type command_reopen_window = put_index_counter<command_type>(continue_counting);
 
-command_type command_look_event = put_index_counter<command_type>(continue_counting);
-command_type command_write_random_event = put_index_counter<command_type>(continue_counting);
+command_type command_the_last_value = put_index_counter<command_type>(no_counting);
 
 #endif

@@ -1,6 +1,6 @@
 #pragma once
 #include <windows.h>
-#include "Translate.h"
+#include "CodeWork.h"
 
 #ifndef macro_header_class_window
 #define macro_header_class_window
@@ -8,43 +8,25 @@
 LPCWSTR main_window_class_name = L"Main window class";
 LPCWSTR debugger_window_class_name = L"Debugger window class";
 
-WNDCLASSW main_class_example(
-	int background_color,
+WNDCLASSW set_window_class(
 	HINSTANCE h_instance,
-	int icon,
-	LPCWSTR cursor,
+	HICON icon,
 	LPCWSTR class_string_name,
-	WNDPROC main_procedure
+	WNDPROC main_procedure,
+	macro_add_block_argument
 ) {
-	WNDCLASSW class_bringer = { 0 };
+	macro_add_block_function(place_argument);
 
-	class_bringer.hbrBackground = (HBRUSH)background_color;
-	class_bringer.hInstance = h_instance;
-	class_bringer.hIcon = LoadIconW(h_instance, MAKEINTRESOURCEW(icon));
-	class_bringer.hCursor = LoadCursorW(NULL, cursor);
-	class_bringer.lpszClassName = class_string_name;
-	class_bringer.lpfnWndProc = main_procedure;
+	WNDCLASSW result = { 0 };
 
-	return class_bringer;
-}
+	result.hbrBackground = (HBRUSH)COLOR_WINDOW;
+	result.hInstance = h_instance;
+	result.hIcon = icon;
+	result.hCursor = LoadCursorW(NULL, IDC_ARROW);
+	result.lpszClassName = class_string_name;
+	result.lpfnWndProc = main_procedure;
 
-bool register_class_name(
-	WNDCLASSW* class_window_input,
-	LPCWSTR details
-) {
-	if (!RegisterClassW(class_window_input)) {
-		MessageBoxW(
-			NULL, 
-			details,
-			translate::string_program_name.c_style(),
-			MB_ICONERROR
-		);
-
-		return false;
-	}
-	else {
-		return true;
-	}
+	return result;
 }
 
 #endif

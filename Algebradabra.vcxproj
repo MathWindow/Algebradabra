@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -132,7 +132,10 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BlockCode.h" />
+    <ClInclude Include="Algebra.h" />
+    <ClInclude Include="ArrayWork.h" />
+    <ClInclude Include="Bitmap.h" />
+    <ClInclude Include="CodeWork.h" />
     <ClInclude Include="ClassWindow.h" />
     <ClInclude Include="ColorDialog.h" />
     <ClInclude Include="Commands.h" />
@@ -141,23 +144,30 @@
     <ClInclude Include="ExitDialog.h" />
     <ClInclude Include="FileDialog.h" />
     <ClInclude Include="FileWork.h" />
+    <ClInclude Include="Icon.h" />
     <ClInclude Include="Monitor.h" />
     <ClInclude Include="ShortTypes.h" />
+    <ClInclude Include="StringWork.h" />
     <ClInclude Include="Symbols.h" />
+    <ClInclude Include="Toolbar.h" />
     <ClInclude Include="Translate.h" />
     <ClInclude Include="ProcedureWindow.h" />
     <ClInclude Include="VersionInfo.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Widgets.h" />
-    <ClInclude Include="WindowXY.h" />
+    <ClInclude Include="Coordinate.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Algebradabra.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Bitmap.bmp" />
+    <Image Include="bitmap2.bmp" />
+    <Image Include="bitmap3.bmp" />
     <Image Include="icon1.ico">
       <FileType>Image</FileType>
+      <DeploymentContent>false</DeploymentContent>
     </Image>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

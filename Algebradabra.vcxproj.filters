@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков\FileWork">
-      <UniqueIdentifier>{71649fa4-4815-497b-a82f-ef5381eb3d9d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Scince headers">
       <UniqueIdentifier>{d9f26320-0df1-420a-affe-a626a74cb929}</UniqueIdentifier>
     </Filter>
@@ -43,6 +40,21 @@
     <Filter Include="Файлы заголовков\Window &amp; monitor\Dialog window">
       <UniqueIdentifier>{3133b13f-8350-4e01-b0a3-f143ba4962f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Debug">
+      <UniqueIdentifier>{a263e4c1-67b9-4119-a4e4-25265e358304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Image">
+      <UniqueIdentifier>{49f6213a-168c-43ad-a2ac-298316b441a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\String work">
+      <UniqueIdentifier>{6b5bd8ea-eb4e-4a2e-a733-6efe36187b88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\File work">
+      <UniqueIdentifier>{71649fa4-4815-497b-a82f-ef5381eb3d9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Variable work">
+      <UniqueIdentifier>{17e5e620-a26d-4789-875c-0b7bbd3e4679}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -65,15 +77,6 @@
     <ClInclude Include="Menu.h">
       <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
     </ClInclude>
-    <ClInclude Include="Translate.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
-    <ClInclude Include="Symbols.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
-    <ClInclude Include="ShortTypes.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
@@ -82,9 +85,6 @@
     </ClInclude>
     <ClInclude Include="Counter.h">
       <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowXY.h">
-      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
     </ClInclude>
     <ClInclude Include="Monitor.h">
       <Filter>Файлы заголовков\Window &amp; monitor</Filter>
@@ -98,14 +98,44 @@
     <ClInclude Include="ProcedureWindow.h">
       <Filter>Файлы заголовков\Window &amp; monitor</Filter>
     </ClInclude>
-    <ClInclude Include="Debugger.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
-    <ClInclude Include="BlockCode.h">
-      <Filter>Файлы заголовков\Others</Filter>
-    </ClInclude>
     <ClInclude Include="FileWork.h">
-      <Filter>Файлы заголовков\FileWork</Filter>
+      <Filter>Файлы заголовков\File work</Filter>
+    </ClInclude>
+    <ClInclude Include="Toolbar.h">
+      <Filter>Файлы заголовков\Window &amp; monitor\Window%27s elements and commands\Main tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Debugger.h">
+      <Filter>Файлы заголовков\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeWork.h">
+      <Filter>Файлы заголовков\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Icon.h">
+      <Filter>Файлы заголовков\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmap.h">
+      <Filter>Файлы заголовков\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Translate.h">
+      <Filter>Файлы заголовков\String work</Filter>
+    </ClInclude>
+    <ClInclude Include="Symbols.h">
+      <Filter>Файлы заголовков\String work</Filter>
+    </ClInclude>
+    <ClInclude Include="Algebra.h">
+      <Filter>Файлы заголовков\Scince headers\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate.h">
+      <Filter>Файлы заголовков\Window &amp; monitor</Filter>
+    </ClInclude>
+    <ClInclude Include="StringWork.h">
+      <Filter>Файлы заголовков\String work</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayWork.h">
+      <Filter>Файлы заголовков\Others</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortTypes.h">
+      <Filter>Файлы заголовков\Variable work</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +145,15 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="Bitmap.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="bitmap2.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="bitmap3.bmp">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>
