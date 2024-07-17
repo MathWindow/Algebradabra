@@ -141,11 +141,13 @@
     <ClInclude Include="Commands.h" />
     <ClInclude Include="Counter.h" />
     <ClInclude Include="Debugger.h" />
+    <ClInclude Include="DocumentWork.h" />
     <ClInclude Include="ExitDialog.h" />
     <ClInclude Include="FileDialog.h" />
     <ClInclude Include="FileWork.h" />
     <ClInclude Include="Icon.h" />
     <ClInclude Include="Monitor.h" />
+    <ClInclude Include="Paint.h" />
     <ClInclude Include="ShortTypes.h" />
     <ClInclude Include="StringWork.h" />
     <ClInclude Include="Symbols.h" />

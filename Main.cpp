@@ -33,13 +33,13 @@ int WINAPI wWinMain(
 	
 	h_bitmap_coordinate = debug::load_bitmap_w(
 		h_instance, 
-		MAKEINTRESOURCEW(IDB_BITMAP2),
+		MAKEINTRESOURCEW(IDB_BITMAP4),
 		place
 	);
 
 	h_bitmap_add_paper = debug::load_bitmap_w(
 		h_instance, 
-		MAKEINTRESOURCEW(IDB_BITMAP3),
+		MAKEINTRESOURCEW(IDB_BITMAP5),
 		place
 	);
 
@@ -65,8 +65,17 @@ int WINAPI wWinMain(
 		place
 	);
 
+	WNDCLASS create_book_class = set_window_class(
+		h_instance,
+		h_icon_main_window,
+		create_book_window_class_name,
+		create_book_procedure,
+		place
+	);
+
 	ATOM main_class_is_registered = RegisterClassW(&main_class);
 	ATOM debugger_class_is_registered = RegisterClassW(&debugger_class);
+	RegisterClassW(&create_book_class);
 
 	HWND h_window_main = nullptr;
 

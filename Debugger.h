@@ -64,7 +64,7 @@ namespace debug {
 
 	c_size_t extra_title_index_handle_was_created
 		= put_index_counter<size_t>(continue_counting);
-	c_size_t extra_title_index_couldnt_create_handle
+	c_size_t extra_title_index_could_not_create_handle
 		= put_index_counter<size_t>(continue_counting);
 	c_size_t extra_title_index_instance_was_pointed
 		= put_index_counter<size_t>(continue_counting);
@@ -85,6 +85,14 @@ namespace debug {
 		= put_index_counter<size_t>(continue_counting);
 
 	c_size_t extra_title_index_command_has_not_been_pointed
+		= put_index_counter<size_t>(continue_counting);
+
+	// splitting by zero
+
+	c_size_t title_index_split_by_zero
+		= put_index_counter<size_t>(continue_counting);
+
+	c_size_t extra_title_index_split_by_zero
 		= put_index_counter<size_t>(continue_counting);
 
 
@@ -278,6 +286,12 @@ namespace debug {
 					L"Команда не была указана"
 				);
 			}
+			else if (title_index == title_index_split_by_zero) {
+				return translate::set_string(
+					L"Program has tried to split number by zero",
+					L"Программа попыталась делить число на ноль"
+				);
+			}
 
 			return translate::set_string(
 				L"Where is title?",
@@ -316,7 +330,7 @@ namespace debug {
 					L"Дескриптор был создан"
 				);
 			}
-			else if (extra_title_index == extra_title_index_couldnt_create_handle) {
+			else if (extra_title_index == extra_title_index_could_not_create_handle) {
 				return translate::set_string(
 					L"Couldn't create handle",
 					L"Не удалось создать дескриптор"
@@ -344,6 +358,12 @@ namespace debug {
 				return translate::set_string(
 					L"Command has not been pointed",
 					L"Команда не была указана"
+				);
+			}
+			else if (extra_title_index == extra_title_index_split_by_zero) {
+				return translate::set_string(
+					L"Program has tried to split number by zero. Splitting by zero is not possible.",
+					L"Программа попыталась делить число на ноль. Деление на ноль не представляется возможным."
 				);
 			}
 
@@ -514,7 +534,7 @@ namespace debug {
 			write_event(
 				event_type_error,
 				title_index_couldnt_create_handle,
-				extra_title_index_couldnt_create_handle,
+				extra_title_index_could_not_create_handle,
 				block_hierarchy,
 				handle,
 				handle_type,

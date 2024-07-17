@@ -1,6 +1,5 @@
 #pragma once
 #include <Windows.h>
-#include "Widgets.h"
 #include "Commands.h"
 #include "Coordinate.h"
 #include "Debugger.h"
@@ -35,8 +34,8 @@ void append_button_toolbar(
 		L"button",
 		L"",
 		WS_VISIBLE | WS_CHILD | WS_BORDER | BS_BITMAP,
-		out.abscissa * row + button_size_toolbar.width * (row - 1),
-		out.ordinate,
+		coordinate::out.abscissa * row + button_size_toolbar.width * (row - 1),
+		coordinate::out.ordinate,
 		button_size_toolbar.width,
 		button_size_toolbar.height,
 		h_window,
@@ -71,12 +70,12 @@ LONG create_toolbar(
 	append_button_toolbar(
 		h_window,
 		h_bitmap_add_paper,
-		NULL,
+		command_create_book,
 		true,
 		place
 	);
 
-	return out.ordinate + button_size_toolbar.height;
+	return coordinate::out.ordinate + button_size_toolbar.height;
 }
 
 #endif

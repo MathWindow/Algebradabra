@@ -18,7 +18,7 @@ void create_test_file(
 		NULL
 	);
 
-	std::wstring text = L"\tProgram will be graphic calculator.";
+	std::wstring text = L"\t Program is graphic calculator.";
 
 	WriteFile(
 		handle,

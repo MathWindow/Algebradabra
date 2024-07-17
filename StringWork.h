@@ -106,63 +106,46 @@ integer_type convert_string_to_number(
 ) {
 	integer_type result = 0;
 
-	size_t index_symbol = *index_begin;
-
 	for (
 		;
-		(index_symbol < string.size())
-		&& (
-			string.at(index_symbol) == L'0'
-			|| string.at(index_symbol) == L'1'
-			|| string.at(index_symbol) == L'2'
-			|| string.at(index_symbol) == L'3'
-			|| string.at(index_symbol) == L'4'
-			|| string.at(index_symbol) == L'5'
-			|| string.at(index_symbol) == L'6'
-			|| string.at(index_symbol) == L'7'
-			|| string.at(index_symbol) == L'8'
-			|| string.at(index_symbol) == L'9'
-		);
-		index_symbol++
-	);
-
-	for (
-		size_t index_symbol_ = *index_begin;
-		index_symbol_ < index_symbol;
-		index_symbol_++
+		(*index_begin < string.size());
+		(*index_begin)++
 	) {
 		result *= 10;
 
-		if (string.at(index_symbol_) == L'1') {
+		if (string.at(*index_begin) == L'1') {
 			result += 1;
 		}
-		else if (string.at(index_symbol_) == L'2') {
+		else if (string.at(*index_begin) == L'2') {
 			result += 2;
 		}
-		else if (string.at(index_symbol_) == L'3') {
+		else if (string.at(*index_begin) == L'3') {
 			result += 3;
 		}
-		else if (string.at(index_symbol_) == L'4') {
+		else if (string.at(*index_begin) == L'4') {
 			result += 4;
 		}
-		else if (string.at(index_symbol_) == L'5') {
+		else if (string.at(*index_begin) == L'5') {
 			result += 5;
 		}
-		else if (string.at(index_symbol_) == L'6') {
+		else if (string.at(*index_begin) == L'6') {
 			result += 6;
 		}
-		else if (string.at(index_symbol_) == L'7') {
+		else if (string.at(*index_begin) == L'7') {
 			result += 7;
 		}
-		else if (string.at(index_symbol_) == L'8') {
+		else if (string.at(*index_begin) == L'8') {
 			result += 8;
 		}
-		else if (string.at(index_symbol_) == L'9') {
+		else if (string.at(*index_begin) == L'9') {
 			result += 9;
 		}
-	}
+		else if (string.at(*index_begin) != L'0') {
+			result /= 10;
 
-	*index_begin = index_symbol;
+			return result;
+		}
+	}
 
 	return result;
 }

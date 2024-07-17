@@ -17,6 +17,7 @@
 #include "Toolbar.h"
 #include "CodeWork.h"
 #include "StringWork.h"
+#include "Algebra.h"
 
 #ifndef macro_header_procedure_window
 #define macro_header_procedure_window
@@ -44,6 +45,13 @@ LRESULT CALLBACK main_procedure(
 		plan_ofn_algebraic_book(h_window, place);
 		plan_ofn_technical_check(h_window,place);
 		plan_choose_color_technical_check(h_window, place);
+		break;
+	case WM_PAINT:
+		canvas_graphic_function.draw(
+			h_window,
+			{edit_expression_vector.at(0).get_text(place)},
+			place
+		);
 		break;
 	case WM_COMMAND:
 		if (w_param == command_exit) {
@@ -78,7 +86,7 @@ LRESULT CALLBACK main_procedure(
 				);
 			}
 		}
-		else if (w_param == command_whats_new) {
+		else if (w_param == command_what_is_new) {
 			MessageBoxW(
 				h_window,
 				translate::string_that_is_new.show().c_str(),
@@ -94,18 +102,35 @@ LRESULT CALLBACK main_procedure(
 				MB_ICONINFORMATION
 			);
 		}
-		else if (w_param == command_open_algebraic_book) {
+		else if (w_param == command_create_book) {
+			debug::create_window_ex_w(
+				0,
+				create_book_window_class_name,
+				translate::string_title_create_book_window.show().c_str(),
+				WS_VISIBLE | WS_POPUPWINDOW | WS_CAPTION,
+				create_book_window_position.left_top_point.abscissa,
+				create_book_window_position.left_top_point.ordinate,
+				create_book_window_position.size_.width,
+				create_book_window_position.size_.height,
+				h_window,
+				NULL,
+				NULL,
+				NULL,
+				place
+			);
+		}
+		else if (w_param == command_open_book) {
 			ofn_algebraic_book.open_file_dialog(place);
 		}
-		else if (w_param == command_save_algebraic_book) {
+		else if (w_param == command_save_book) {
 			SendMessageW(
 				h_window,
 				WM_COMMAND,
-				command_save_algebraic_book_as,
+				command_save_book_as,
 				NULL
 			);
 		}
-		else if (w_param == command_save_algebraic_book_as) {
+		else if (w_param == command_save_book_as) {
 			if (ofn_algebraic_book.save_file_dialog(place)) {
 				create_test_file(string_path);
 			}
@@ -132,12 +157,12 @@ LRESULT CALLBACK main_procedure(
 				0,
 				debugger_window_class_name,
 				translate::string_title_debugger_window.show().c_str(),
-				WS_VISIBLE | WS_OVERLAPPEDWINDOW,
+				WS_VISIBLE | WS_POPUPWINDOW | WS_CAPTION,
 				debugger_window_position.left_top_point.abscissa,
 				debugger_window_position.left_top_point.ordinate,
 				debugger_window_position.size_.width,
 				debugger_window_position.size_.height,
-				NULL,
+				h_window,
 				NULL,
 				NULL,
 				NULL,
@@ -149,12 +174,60 @@ LRESULT CALLBACK main_procedure(
 
 			PostQuitMessage(0);
 		}
+		else if ( 
+			LOWORD(w_param) == edit_expression_vector.at(0).command
+			|| HIWORD(w_param) == EN_CHANGE
+		) {
+			algebra::variable* x_pointer
+				= algebra::get_pointer_of_variable_from_letter(L'x', place);
+			algebra::variable* y_pointer
+				= algebra::get_pointer_of_variable_from_letter(L'y', place);
+
+			bool stop_calculating = false;
+
+			algebra::formula formula_of_y = algebra::find_variable_from_equation(
+				edit_expression_vector.at(0).get_text(place),
+				y_pointer,
+				x_pointer,
+				&stop_calculating,
+				place
+			);
+
+			x_pointer->value.number = 11;
+
+			formula_of_y.find_variable(
+				&stop_calculating,
+				place
+			);
+
+			if (stop_calculating) {
+				static_result.set_string(
+					L"!",
+					place
+				);
+			}
+			else {
+				static_result.set_string(
+					std::to_wstring(y_pointer->value.convert_to_double(
+						nullptr,
+						place
+					)).c_str(),
+					place
+				);
+			}
+
+			RedrawWindow(
+				h_window,
+				nullptr,
+				nullptr,
+				RDW_INVALIDATE | RDW_UPDATENOW
+			);
+		}
 		break;
 	case WM_CLOSE:
 		// Use WM_CLOSE instead WM_DESTROY
 
-		if (ask_wish_save(h_window, place))
-			PostQuitMessage(0);
+		PostQuitMessage(0);
 		break;
 	default:
 		return DefWindowProcW(h_window, message, w_param, l_param);
@@ -319,6 +392,45 @@ LRESULT CALLBACK debugger_procedure(
 	end_block
 	
 	return 0L;
+}
+
+LRESULT CALLBACK create_book_procedure(
+	HWND h_window,
+	UINT message,
+	WPARAM w_parameter,
+	LPARAM l_parameter
+) {
+	macro_add_block_function({});
+
+	switch (coding::push_variable_switch_in_block_hierarchy(&message, message, &place)) begin_block
+	case WM_CREATE:
+		create_widgets_create_book_window(h_window, place);
+		break;
+	case WM_COMMAND:
+		if (w_parameter == edit_path.command_button) {
+			if (ofn_algebraic_book.save_file_dialog(place)) {
+				edit_path.set_string(string_path, place);
+			}
+		}
+		else if (w_parameter == button_create.command) {
+			DestroyWindow(h_window);
+		}
+		break;
+	case WM_DESTROY:
+
+		break;
+	default:
+		return DefWindowProcW(
+			h_window,
+			message,
+			w_parameter,
+			l_parameter
+		);
+		break;
+
+	end_block
+
+	return 0;
 }
 
 #endif

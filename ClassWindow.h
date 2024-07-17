@@ -7,6 +7,7 @@
 
 LPCWSTR main_window_class_name = L"Main window class";
 LPCWSTR debugger_window_class_name = L"Debugger window class";
+LPCWSTR create_book_window_class_name = L"Create book window class";
 
 WNDCLASSW set_window_class(
 	HINSTANCE h_instance,

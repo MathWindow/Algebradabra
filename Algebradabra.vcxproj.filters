@@ -46,14 +46,17 @@
     <Filter Include="Файлы заголовков\Image">
       <UniqueIdentifier>{49f6213a-168c-43ad-a2ac-298316b441a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\String work">
-      <UniqueIdentifier>{6b5bd8ea-eb4e-4a2e-a733-6efe36187b88}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\File work">
       <UniqueIdentifier>{71649fa4-4815-497b-a82f-ef5381eb3d9d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Файлы заголовков\Variable work">
       <UniqueIdentifier>{17e5e620-a26d-4789-875c-0b7bbd3e4679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Document work">
+      <UniqueIdentifier>{0b639a2a-94db-4e91-bc2f-5684227550a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Text work">
+      <UniqueIdentifier>{6b5bd8ea-eb4e-4a2e-a733-6efe36187b88}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -117,10 +120,10 @@
       <Filter>Файлы заголовков\Image</Filter>
     </ClInclude>
     <ClInclude Include="Translate.h">
-      <Filter>Файлы заголовков\String work</Filter>
+      <Filter>Файлы заголовков\Text work</Filter>
     </ClInclude>
     <ClInclude Include="Symbols.h">
-      <Filter>Файлы заголовков\String work</Filter>
+      <Filter>Файлы заголовков\Text work</Filter>
     </ClInclude>
     <ClInclude Include="Algebra.h">
       <Filter>Файлы заголовков\Scince headers\Math</Filter>
@@ -129,13 +132,19 @@
       <Filter>Файлы заголовков\Window &amp; monitor</Filter>
     </ClInclude>
     <ClInclude Include="StringWork.h">
-      <Filter>Файлы заголовков\String work</Filter>
+      <Filter>Файлы заголовков\Text work</Filter>
     </ClInclude>
     <ClInclude Include="ArrayWork.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
     <ClInclude Include="ShortTypes.h">
       <Filter>Файлы заголовков\Variable work</Filter>
+    </ClInclude>
+    <ClInclude Include="DocumentWork.h">
+      <Filter>Файлы заголовков\Document work</Filter>
+    </ClInclude>
+    <ClInclude Include="Paint.h">
+      <Filter>Файлы заголовков\Window &amp; monitor\Paints</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

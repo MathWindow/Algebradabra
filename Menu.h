@@ -46,9 +46,10 @@ void create_menu_main_window(
 	// Third floor
 	// Третий этаж
 
-	debug::append_menu_w(algebraic_book_menu, MF_STRING, command_open_algebraic_book, translate::string__open.show().c_str(), place);
-	debug::append_menu_w(algebraic_book_menu, MF_STRING, command_save_algebraic_book, translate::string__save.show().c_str(), place);
-	debug::append_menu_w(algebraic_book_menu, MF_STRING, command_save_algebraic_book_as, translate::string__save_as.show().c_str(), place);
+	debug::append_menu_w(algebraic_book_menu, MF_STRING, command_create_book, translate::string__create.show().c_str(), place);
+	debug::append_menu_w(algebraic_book_menu, MF_STRING, command_open_book, translate::string__open.show().c_str(), place);
+	debug::append_menu_w(algebraic_book_menu, MF_STRING, command_save_book, translate::string__save.show().c_str(), place);
+	debug::append_menu_w(algebraic_book_menu, MF_STRING, command_save_book_as, translate::string__save_as.show().c_str(), place);
 
 	debug::append_menu_w(technical_windows_check_menu, MF_STRING, command_open_file, translate::string_check_open_file.show().c_str(), place);
 	debug::append_menu_w(technical_windows_check_menu, MF_STRING, command_save_file_as, translate::string_check_save_file_as.show().c_str(), place);
@@ -76,7 +77,7 @@ void create_menu_main_window(
 	debug::append_menu_w(root_menu, MF_POPUP, (UINT_PTR)program_menu, translate::string__program.show().c_str(), place);
 	debug::append_menu_w(root_menu, MF_POPUP, (UINT_PTR)window_menu, translate::string__window.show().c_str(), place);
 	debug::append_menu_w(root_menu, MF_POPUP, (UINT_PTR)help_settings_menu, translate::string_help_and_settings.show().c_str(), place);
-	debug::append_menu_w(root_menu, MF_STRING, command_whats_new, translate::string_what_is_new.show().c_str(), place);
+	debug::append_menu_w(root_menu, MF_STRING, command_what_is_new, translate::string_what_is_new.show().c_str(), place);
 	debug::append_menu_w(root_menu, MF_POPUP | MF_HELP, (UINT_PTR)language_menu, translate::string__language.show().c_str(), place);
 
 	SetMenu(h_window, root_menu);

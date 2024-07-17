@@ -97,8 +97,8 @@ namespace translate {
 	);
 
 	string string_that_is_new = set_string(
-		L"Window \"Debugger\" came, you can analyze of event and search it. You also can also install language with help of menu bar(Russian or English).",
-		L"Окно \"Отладчик\" пришел, вы можете анализировать событие и найти его. Также вы можете установить язык с помощью панель меню (Русский или Английский)."
+		L"Ability to build graphic function is appeared, but it has serious constraint.",
+		L"Появился возможность чертить график функции через выражение, но пока что имеет серьезное ограничение."
 	);
 
 	string string__program = set_string(
@@ -144,26 +144,6 @@ namespace translate {
 	string string__page_add = set_string(
 		L"Add the page", 
 		L"Добавить страницу"
-	);
-
-	string string__coordinate = set_string(
-		L"Coordinate", 
-		L"Координата"
-	);
-
-	string string__circuit = set_string(
-		L"Circuit",
-		L"Схема"
-	);
-
-	string string__paint = set_string(
-		L"Paint", 
-		L"Рисунок"
-	);
-
-	string string__file_txt = set_string(
-		L"File .txt", 
-		L"Файл .txt"
 	);
 
 	string string__edit = set_string(
@@ -472,6 +452,57 @@ namespace translate {
 	string string__no_any_event_was_found = set_string(
 		L"No any event was found",
 		L"Ни одно событие не было найдено"
+	);
+
+	// "Create book" as window
+
+	string string_title_create_book_window = set_string(
+		string_program_name.language_variant.at(language_English)
+		+ L" | "
+		+ L"Create book",
+		string_program_name.language_variant.at(language_Russian)
+		+ L" | "
+		+ L"Открыть книгу"
+	);
+
+	string string_start_page_type = set_string(
+		L"Starting page's type",
+		L"Тип начальной страницы"
+	);
+
+	string string_path_with_file_name = set_string(
+		L"Path with file's name:",
+		L"Путь с именем файла:"
+	);
+
+	string string__none = set_string(
+		L"None",
+		L"Нет"
+	);
+
+	string string__calculator = set_string(
+		L"Calculator",
+		L"Калькулятор"
+	);
+
+	string string__coordinate = set_string(
+		L"Coordinate",
+		L"Координата"
+	);
+	
+	string string__circuit = set_string(
+		L"Circuit",
+		L"Схема"
+	);
+	
+	string string__text = set_string(
+		L"Text",
+		L"Текст"
+	);
+	
+	string string__picture = set_string(
+		L"Picture",
+		L"Картина"
 	);
 }
 
