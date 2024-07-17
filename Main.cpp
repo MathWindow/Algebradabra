@@ -8,6 +8,7 @@
 #include "Monitor.h"
 #include "WindowXY.h"
 #include "ProcedureWindow.h"
+#include "Counter.h"
 
 int WINAPI wWinMain(
 	HINSTANCE h_instance, 
@@ -45,6 +46,15 @@ int WINAPI wWinMain(
 	);
 
 	if (main_class_is_registered) {
+		if (paranormal) {
+			MessageBoxW(
+				NULL,
+				L"Обнаружено паранормальное явление!",
+				translate::string_program_name.c_style(),
+				MB_ICONWARNING
+			);
+		}
+
 		MSG main_message = { 0 };
 
 		set_window_center_position(

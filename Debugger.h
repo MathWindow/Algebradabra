@@ -1,12 +1,12 @@
 #pragma once
 #include <vector>
-#include <string>
 #include <Windows.h>
 #include <minwinbase.h>
 #include <sysinfoapi.h>
 #include "ShortTypes.h"
 #include "Counter.h"
 #include "Translate.h"
+#include "BlockCode.h"
 
 #ifndef macro_header_debugger
 #define macro_header_debugger
@@ -54,32 +54,6 @@ namespace debug {
 		= put_index_counter<event_type_index>(continue_counting);
 	c_event_type_index event_type_error
 		= put_index_counter<event_type_index>(continue_counting);
-	
-	using block_type_index = u_char_;
-	using c_block_type_index = const block_type_index;
-
-	c_block_type_index block_type_function
-		= put_index_counter<block_type_index>(0);
-	c_block_type_index block_type_try_catch
-		= put_index_counter<block_type_index>(continue_counting);
-	c_block_type_index block_type_if
-		= put_index_counter<block_type_index>(continue_counting);
-	c_block_type_index block_type_switch
-		= put_index_counter<block_type_index>(continue_counting);
-	c_block_type_index block_type_while
-		= put_index_counter<block_type_index>(continue_counting);
-	c_block_type_index block_type_for
-		= put_index_counter<block_type_index>(continue_counting);
-
-	class block_information {
-	public:
-		block_type_index event_type = block_type_function;
-
-		std::wstring name = L"";
-
-		void* variable_address = nullptr;
-		int variable_value = 0;
-	};
 
 	class event_information {
 	public:
@@ -91,7 +65,7 @@ namespace debug {
 		std::vector<std::size_t> reason_index_list{};
 		std::vector<std::size_t> advance_index_list{};
 
-		std::vector<block_information> block_array{};
+		std::vector<coding::block_information> block_array{};
 
 		SYSTEMTIME time_system{};
 		SYSTEMTIME time_local{};
@@ -100,31 +74,31 @@ namespace debug {
 			if (event_type == event_type_message) {
 				return translate::set_string(
 					L"Message",
-					L"Ñîîáùåíèå"
+					L"Сообщение"
 				);
 			}
 			else if (event_type == event_type_question) {
 				return translate::set_string(
 					L"Question",
-					L"Âîïðîñ"
+					L"Вопрос"
 				);
 			}
 			else if (event_type == event_type_warning) {
 				return translate::set_string(
 					L"Warning",
-					L"Ïðåäóïðåæäåíèå"
+					L"Предупреждение"
 				);
 			}
 			else if (event_type == event_type_error) {
 				return translate::set_string(
 					L"Error",
-					L"Îøèáêà"
+					L"Ошибка"
 				);
 			}
 
 			return translate::set_string(
 				L"Where is type?",
-				L"Ãäå òèï?"
+				L"Где тип?"
 			);
 		}
 
@@ -132,19 +106,19 @@ namespace debug {
 			if (title_index == title_index_just_message) {
 				return translate::set_string(
 					L"Just a message",
-					L"Ïðîñòî ñîîáùåíèå"
+					L"Просто сообщение"
 				);
 			}
 			else if (title_index == title_index_cannot_register_class_name) {
 				return translate::set_string(
 					L"Couldn't create class' name",
-					L"Íå óäàëîñü ñîçäàòü èìÿ êëàññà"
+					L"Не удалось создать имя класса"
 				);
 			}
 
 			return translate::set_string(
 				L"Where is title?",
-				L"Ãäå çàãîëîâîê?"
+				L"Где заголовок?"
 			);
 		}
 
@@ -152,31 +126,31 @@ namespace debug {
 			if (details_index == details_index_it_is_a_test) {
 				return translate::set_string(
 					L"This is a test",
-					L"Ýòî ÿâëÿåòñÿ òåñòîì"
+					L"Это является тестом"
 				);
 			}
 			else if (details_index == details_index_cannot_register_main_class_name) {
 				return translate::set_string(
 					L"Couldn't create class' name for main window",
-					L"Íå óäàëîñü ñîçäàòü êëàññ äëÿ ãëàâíîãî îêíà"
+					L"Не удалось создать имя класса для главного окна"
 				);
 			}
 			else if (details_index == details_index_cannot_register_debugger_class_name) {
 				return translate::set_string(
 					L"Couldn't create class' name for debugger's window",
-					L"Íå óäàëîñü ñîçäàòü êëàññ äëÿ îêíà îòëàä÷èêà"
+					L"Не удалось создать имя класса для окна отладчика"
 				);
 			}
 			else if (details_index == details_index_cannot_register_unknown_class_name) {
 				return translate::set_string(
 					L"Couldn't create class' name for unknown window",
-					L"Íå óäàëîñü ñîçäàòü êëàññ äëÿ íåèçâåñòíîãî îêíà"
+					L"Не удалось создать имя класса для неизвестного окна"
 				);
 			}
 
 			return translate::set_string(
 				L"Where is details?",
-				L"Ãäå ïîäðîáíîñòè?"
+				L"Где подробности?"
 			);
 		}
 	};
@@ -190,7 +164,7 @@ namespace debug {
 		size_t details_index,
 		std::vector<std::size_t> reason_index_list,
 		std::vector<std::size_t> advance_index_list,
-		std::vector<block_information> block_array
+		std::vector<coding::block_information> block_array
 	) {
 		history_of_event.push_back(
 			{

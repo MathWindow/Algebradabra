@@ -9,7 +9,7 @@
 
 CHOOSECOLORW choose_color_1;
 static COLORREF rgb_current_1 = RGB(200, 200, 200);
-std::array<COLORREF, 16> acr_custom_color_1;
+std::array<COLORREF, 16> acr_custom_color_1{};
 
 void plan_choose_color_technical_check(HWND h_window) {
 	memset(&choose_color_1, 0, sizeof(choose_color_1));

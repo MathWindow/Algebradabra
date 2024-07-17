@@ -22,10 +22,10 @@ void set_window_center_position
 			= GetClipCursor(&monitor_information);
 
 		monitor_width 
-			= monitor_information.right - monitor_information.left;
+			= monitor_information.right;
 
 		monitor_height 
-			= monitor_information.bottom - monitor_information.top;
+			= monitor_information.bottom;
 	}
 
 	*x_position = (monitor_width - width) / 2;

@@ -13,6 +13,7 @@
 #include "WindowXY.h"
 #include "Debugger.h"
 #include <cstdlib>
+#include "ShortTypes.h"
 
 #ifndef macro_header_procedure_window
 #define macro_header_procedure_window
@@ -194,6 +195,19 @@ LRESULT CALLBACK debugger_procedure(
 			}
 		}
 		else if (w_param == command_write_random_event) {
+			for (
+				u_int_ index = 0;
+				index < debug::history_of_event.size();
+				index++
+			) {
+				SendMessageW(
+					listbox_debugger,
+					LB_DELETESTRING,
+					0,
+					0
+				);
+			}
+
 			debug::write_event(
 				(unsigned int)rand() % 5,
 				debug::characteristic_none,
@@ -203,6 +217,8 @@ LRESULT CALLBACK debugger_procedure(
 				{},
 				{}
 			);
+
+			add_history_to_listbox();
 		}
 		break;
 	case WM_DESTROY:

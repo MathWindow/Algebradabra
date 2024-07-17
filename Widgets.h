@@ -64,6 +64,28 @@ HWND listbox_debugger = nullptr;
 HWND static_event_type_debugger = nullptr;
 HWND static_details_debugger = nullptr;
 
+void add_history_to_listbox() {
+	for (
+		u_int_ index = 0;
+		index < debug::history_of_event.size();
+		index++
+		) {
+		int position = SendMessageW(
+			listbox_debugger,
+			LB_ADDSTRING,
+			index,
+			(LPARAM)debug::history_of_event.at(index).show_title().c_style()
+		);
+
+		SendMessageW(
+			listbox_debugger,
+			LB_SETITEMDATA,
+			position,
+			index
+		);
+	}
+}
+
 void create_widgets_debugger_window(HWND h_window) {
 	listbox_debugger = CreateWindowExW(
 		0,
@@ -110,25 +132,7 @@ void create_widgets_debugger_window(HWND h_window) {
 		NULL
 	);
 
-	for (
-		u_int_ index = 0;
-		index < debug::history_of_event.size();
-		index++
-	) {
-		int position = SendMessageW(
-			listbox_debugger, 
-			LB_ADDSTRING,
-			index,
-			(LPARAM)debug::history_of_event.at(index).show_title().c_style()
-		);
-
-		SendMessageW(
-			listbox_debugger,
-			LB_SETITEMDATA,
-			position,
-			index
-		);
-	}
+	add_history_to_listbox();
 }
 
 #endif

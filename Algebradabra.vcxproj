@@ -132,6 +132,7 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlockCode.h" />
     <ClInclude Include="ClassWindow.h" />
     <ClInclude Include="ColorDialog.h" />
     <ClInclude Include="Commands.h" />
@@ -144,7 +145,6 @@
     <ClInclude Include="Symbols.h" />
     <ClInclude Include="Translate.h" />
     <ClInclude Include="ProcedureWindow.h" />
-    <ClInclude Include="DialogBox.h" />
     <ClInclude Include="VersionInfo.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Menu.h" />
