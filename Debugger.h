@@ -34,9 +34,6 @@ namespace debug {
 	const size_t title_index_cannot_register_class_name
 		= put_index_counter<size_t>(continue_counting);
 
-	const size_t title_index_count
-		= put_index_counter<size_t>(no_counting) + 1;
-
 	const size_t details_index_it_is_a_test
 		= put_index_counter<size_t>(0);
 	const size_t details_index_cannot_register_main_class_name
@@ -45,9 +42,6 @@ namespace debug {
 		= put_index_counter<size_t>(continue_counting);
 	const size_t details_index_cannot_register_unknown_class_name
 		= put_index_counter<size_t>(continue_counting);
-
-	const size_t details_index_count
-		= put_index_counter<size_t>(no_counting) + 1;
 
 	using event_type_index = u_char_;
 	using c_event_type_index = const event_type_index;
@@ -60,9 +54,6 @@ namespace debug {
 		= put_index_counter<event_type_index>(continue_counting);
 	c_event_type_index event_type_error
 		= put_index_counter<event_type_index>(continue_counting);
-
-	c_event_type_index event_type_count
-		= put_index_counter<event_type_index>(no_counting) + 1;
 	
 	using block_type_index = u_char_;
 	using c_block_type_index = const block_type_index;
@@ -109,31 +100,31 @@ namespace debug {
 			if (event_type == event_type_message) {
 				return translate::set_string(
 					L"Message",
-					L"Сообщение"
+					L"Г‘Г®Г®ГЎГ№ГҐГ­ГЁГҐ"
 				);
 			}
 			else if (event_type == event_type_question) {
 				return translate::set_string(
 					L"Question",
-					L"Вопрос"
+					L"Г‚Г®ГЇГ°Г®Г±"
 				);
 			}
 			else if (event_type == event_type_warning) {
 				return translate::set_string(
 					L"Warning",
-					L"Предупреждение"
+					L"ГЏГ°ГҐГ¤ГіГЇГ°ГҐГ¦Г¤ГҐГ­ГЁГҐ"
 				);
 			}
 			else if (event_type == event_type_error) {
 				return translate::set_string(
 					L"Error",
-					L"Ошибка"
+					L"ГЋГёГЁГЎГЄГ "
 				);
 			}
 
 			return translate::set_string(
 				L"Where is type?",
-				L"Где тип?"
+				L"ГѓГ¤ГҐ ГІГЁГЇ?"
 			);
 		}
 
@@ -141,19 +132,19 @@ namespace debug {
 			if (title_index == title_index_just_message) {
 				return translate::set_string(
 					L"Just a message",
-					L"Просто сообщение"
+					L"ГЏГ°Г®Г±ГІГ® Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ"
 				);
 			}
 			else if (title_index == title_index_cannot_register_class_name) {
 				return translate::set_string(
 					L"Couldn't create class' name",
-					L"Не удалось создать имя класса"
+					L"ГЌГҐ ГіГ¤Г Г«Г®Г±Гј Г±Г®Г§Г¤Г ГІГј ГЁГ¬Гї ГЄГ«Г Г±Г±Г "
 				);
 			}
 
 			return translate::set_string(
 				L"Where is title?",
-				L"Где заголовок?"
+				L"ГѓГ¤ГҐ Г§Г ГЈГ®Г«Г®ГўГ®ГЄ?"
 			);
 		}
 
@@ -161,31 +152,31 @@ namespace debug {
 			if (details_index == details_index_it_is_a_test) {
 				return translate::set_string(
 					L"This is a test",
-					L"Это является тестом"
+					L"ГќГІГ® ГїГўГ«ГїГҐГІГ±Гї ГІГҐГ±ГІГ®Г¬"
 				);
 			}
 			else if (details_index == details_index_cannot_register_main_class_name) {
 				return translate::set_string(
 					L"Couldn't create class' name for main window",
-					L"Не удалось создать класс для главного окна"
+					L"ГЌГҐ ГіГ¤Г Г«Г®Г±Гј Г±Г®Г§Г¤Г ГІГј ГЄГ«Г Г±Г± Г¤Г«Гї ГЈГ«Г ГўГ­Г®ГЈГ® Г®ГЄГ­Г "
 				);
 			}
 			else if (details_index == details_index_cannot_register_debugger_class_name) {
 				return translate::set_string(
 					L"Couldn't create class' name for debugger's window",
-					L"Не удалось создать класс для окна отладчика"
+					L"ГЌГҐ ГіГ¤Г Г«Г®Г±Гј Г±Г®Г§Г¤Г ГІГј ГЄГ«Г Г±Г± Г¤Г«Гї Г®ГЄГ­Г  Г®ГІГ«Г Г¤Г·ГЁГЄГ "
 				);
 			}
 			else if (details_index == details_index_cannot_register_unknown_class_name) {
 				return translate::set_string(
 					L"Couldn't create class' name for unknown window",
-					L"Не удалось создать класс для неизвестного окна"
+					L"ГЌГҐ ГіГ¤Г Г«Г®Г±Гј Г±Г®Г§Г¤Г ГІГј ГЄГ«Г Г±Г± Г¤Г«Гї Г­ГҐГЁГ§ГўГҐГ±ГІГ­Г®ГЈГ® Г®ГЄГ­Г "
 				);
 			}
 
 			return translate::set_string(
 				L"Where is details?",
-				L"Где подробности?"
+				L"ГѓГ¤ГҐ ГЇГ®Г¤Г°Г®ГЎГ­Г®Г±ГІГЁ?"
 			);
 		}
 	};
