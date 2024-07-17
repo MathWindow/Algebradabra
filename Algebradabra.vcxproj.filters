@@ -104,6 +104,9 @@
     <ClInclude Include="BlockCode.h">
       <Filter>Файлы заголовков\Others</Filter>
     </ClInclude>
+    <ClInclude Include="FileWork.h">
+      <Filter>Файлы заголовков\FileWork</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Algebradabra.rc">

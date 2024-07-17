@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include <commdlg.h>
+#include <cstdlib>
 #include "Translate.h"
 #include "Menu.h"
 #include "Widgets.h"
@@ -12,7 +13,7 @@
 #include "Monitor.h"
 #include "WindowXY.h"
 #include "Debugger.h"
-#include <cstdlib>
+#include "FileWork.h"
 #include "ShortTypes.h"
 
 #ifndef macro_header_procedure_window
@@ -93,7 +94,9 @@ LRESULT CALLBACK main_procedure(
 			);
 		}
 		else if (w_param == command_save_algebraic_book_as) {
-			ofn_algebraic_book.save_file_dialog();
+			if (ofn_algebraic_book.save_file_dialog()) {
+				create_file(string_path);
+			}
 		}
 		else if (w_param == command_choose_color) {
 			ChooseColorW(&choose_color_1);

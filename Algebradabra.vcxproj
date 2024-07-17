@@ -140,6 +140,7 @@
     <ClInclude Include="Debugger.h" />
     <ClInclude Include="ExitDialog.h" />
     <ClInclude Include="FileDialog.h" />
+    <ClInclude Include="FileWork.h" />
     <ClInclude Include="Monitor.h" />
     <ClInclude Include="ShortTypes.h" />
     <ClInclude Include="Symbols.h" />

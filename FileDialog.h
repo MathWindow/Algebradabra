@@ -1,9 +1,9 @@
 #pragma once
 #include <windows.h>
 #include <commdlg.h>
+#include <cstring>
 #include "Translate.h"
 #include "ShortTypes.h"
-#include <cstring>
 
 #ifndef macro_header_file_dialog
 #define macro_header_file_dialog
