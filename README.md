@@ -1,14 +1,6 @@
-Glory to the Ukraine
+As author of program I criticize hateness to people because of nation, ethnos and species (including to Russians and Ukrainians). My position about the Ukraine is not same as position of Russian state's sources. I don't believe in these sources and I don't trust to some power's part. 
 
-Freedom to Russia
-
-No to war
-
-Слава Украине
-
-Свобода России
-
-Нет войне
+Я как автор программы осуждаю ненависть людям по признакам нации, этносом и расы (включая русских и украинцев). Моя позиция про Украины не соответсвует позиции российских государственных источниках, я не верю в этих источниках и не проявляю доверие к некоторым частям власти.
 # Алгебрадабра (от имени Дмитрия Чамкина)/Algebradabra (by Dmitry Chamkin)
 ![Снимок экрана (106)](https://github.com/user-attachments/assets/33e10549-4319-4cb5-850b-88835f0c3d3b)
 ![Снимок экрана (105)](https://github.com/user-attachments/assets/0e32514d-33dc-418b-9d48-625e23461e52)
